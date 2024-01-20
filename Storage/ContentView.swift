@@ -10,38 +10,75 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var spaces: [Space]
+    @State private var showAddTitleForm = false
+    @State private var newSpaceName = ""
 
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                Section(spaces.isEmpty ? "" : "Spaces") {
+                    ForEach(spaces) { item in
+                        NavigationLink {
+                            Text(item.name ?? "Untitled")
+                        } label: {
+                            Text(item.name ?? "Untitled")
+                        }
                     }
+                    .onDelete(perform: deleteItems)
                 }
-                .onDelete(perform: deleteItems)
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu {
+                        EditButton()
+                    } label: {
+                        Label("More options", systemImage: "ellipsis.circle")
+                    }
+
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: addSpace) {
+                        Image(systemName: "plus.circle.fill")
+                            .accessibilityLabel("Add space")
+                            .symbolRenderingMode(.hierarchical)
+                            .font(.title2)
                     }
                 }
             }
+            .overlay {
+                // Placeholder View for when spaces is empty
+                if spaces.isEmpty {
+                    ContentUnavailableView("Start Organizing", systemImage: "shippingbox.fill", description: Text("Create your first space. Tap the plus button to get started."))
+                }
+            }
+            .alert("Add Space", isPresented: $showAddTitleForm) {
+                TextField("Enter your Space Name", text: $newSpaceName)
+                Button("Cancel") {
+                    withAnimation {
+                        showAddTitleForm = false
+                    }
+                }
+                Button("Ok") {
+                    createSpace(newSpaceName)
+                }
+            }
+            .navigationTitle("Storage")
         } detail: {
-            Text("Select an item")
+            // Placeholder when no space is selected
+            ContentUnavailableView("Let's Get Organized", systemImage: "square.split.bottomrightquarter.fill", description: Text("Select a space."))
+        }
+    }
+    
+    private func addSpace() {
+        withAnimation {
+            showAddTitleForm = true
         }
     }
 
-    private func addItem() {
+    private func createSpace(_ name: String) {
         withAnimation {
-            let newItem = Item(timestamp: Date())
+            let newItem = Space(name: name)
             modelContext.insert(newItem)
         }
     }
@@ -49,7 +86,7 @@ struct ContentView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(spaces[index])
             }
         }
     }
@@ -57,5 +94,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Space.self, inMemory: true)
 }
