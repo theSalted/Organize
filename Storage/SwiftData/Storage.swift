@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Storage {
+final class Storage {
     var name : String?
     var id : UUID
     @Relationship(deleteRule: .deny, inverse: \Item.storage)

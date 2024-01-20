@@ -17,12 +17,12 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                Section(spaces.isEmpty ? "" : "Spaces") {
-                    ForEach(spaces) { item in
+                Section(spaces.isEmpty ? "" : "Space") {
+                    ForEach(spaces) { space in
                         NavigationLink {
-                            Text(item.name ?? "Untitled")
+                            SpaceView(space: space)
                         } label: {
-                            Text(item.name ?? "Untitled")
+                            Text(space.name ?? "Untitled")
                         }
                     }
                     .onDelete(perform: deleteItems)

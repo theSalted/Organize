@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Item {
+final class Item {
     var id : UUID
     var name : String
     var storage : Storage?

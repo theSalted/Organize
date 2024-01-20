@@ -10,9 +10,13 @@ import SwiftData
 
 @main
 struct StorageApp: App {
+    static let bundleId = "app.chenyuhao.storage"
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Space.self,
+            Storage.self,
+            Item.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
