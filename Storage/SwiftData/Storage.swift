@@ -16,7 +16,7 @@ final class Storage {
     var items = [Item]()
     var space : Space?
     
-    init(name: String? = "") {
+    init(name: String? = "Untitled") {
         self.name = name
         self.id = UUID()
     }

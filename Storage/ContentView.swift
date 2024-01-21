@@ -13,9 +13,11 @@ struct ContentView: View {
     @Query private var spaces: [Space]
     @State private var showAddTitleForm = false
     @State private var newSpaceName = ""
+    @State private var selection: Set<String> = []
+    @State private var columnVisibility = NavigationSplitViewVisibility.all
 
     var body: some View {
-        NavigationSplitView {
+        NavigationSplitView(columnVisibility: $columnVisibility) {
             List {
                 Section(spaces.isEmpty ? "" : "Space") {
                     ForEach(spaces) { space in
@@ -64,9 +66,11 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Storage")
+        } content: {
+            ContentUnavailableView("Select a Space", systemImage: "square.split.bottomrightquarter.fill", description: Text("Select or create your first space. And get organized."))
         } detail: {
             // Placeholder when no space is selected
-            ContentUnavailableView("Let's Get Organized", systemImage: "square.split.bottomrightquarter.fill", description: Text("Select a space."))
+            ContentUnavailableView("Let's Get Organized", systemImage: Item.randomSystemSymbol, description: Text("Select an item or create your first one."))
         }
     }
     
