@@ -12,12 +12,14 @@ import SwiftData
 final class Storage {
     var name : String?
     var id : UUID
+    var createdAt: Date?
     @Relationship(deleteRule: .deny, inverse: \Item.storage)
     var items = [Item]()
     var space : Space?
     
     init(name: String? = "Untitled") {
         self.name = name
+        self.createdAt = Date()
         self.id = UUID()
     }
 }

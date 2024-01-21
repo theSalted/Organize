@@ -18,10 +18,10 @@ struct InformationLabelView: View {
     
     var body: some View {
         HStack {
-            Text(content)
+            Text(label)
                 .foregroundStyle(.secondary)
             Spacer()
-            Text(label)
+            Text(content)
         }
         .font(.caption)
         .padding(.vertical, 2)

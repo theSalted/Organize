@@ -16,22 +16,7 @@ struct StorageView: View {
     var body: some View {
         VStack {
             List {
-                VStack(alignment: .leading) {
-                    Text("Information").font(.headline)
-                    Divider()
-                    VStack {
-                        if let storedAt = storage.space?.name {
-                            HStack {
-                                Text("Where")
-                                    .foregroundStyle(.secondary)
-                                Spacer()
-                                Text(storedAt)
-                            }
-                            .font(.caption)
-                            .padding(.vertical, 2)
-                        }
-                    }
-                }
+                StorageInfoView(storage)
                 
                 Section(storage.items.isEmpty ? "" : "Items") {
                     ForEach(storage.items) { item in

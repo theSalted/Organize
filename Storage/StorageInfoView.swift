@@ -9,7 +9,9 @@ import SwiftUI
 
 struct StorageInfoView: View {
     var storage : Storage
-    
+    init(_ storage: Storage) {
+        self.storage = storage
+    }
     var body: some View {
         VStack(alignment: .leading) {
             Text("Information").font(.headline)
@@ -18,11 +20,17 @@ struct StorageInfoView: View {
                 if let storedAt = storage.space?.name {
                     InformationLabelView("Where", info: storedAt)
                 }
+                
+                if let createdAt = storage.createdAt {
+                    Divider()
+                    InformationLabelView("Created", info: createdAt.formatted())
+                }
+                
             }
         }
     }
 }
 
 #Preview {
-    StorageInfoView(storage: Storage(name: "Closet"))
+    StorageInfoView(Storage(name: "Closet"))
 }
