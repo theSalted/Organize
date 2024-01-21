@@ -13,12 +13,21 @@ struct SpaceView: View {
     @Bindable var space : Space
     @State private var showAddTitleAlert = false
     @State private var newStorageName = ""
+    @State private var searchText = ""
+    
+    private var searchedStorages : [Storage] {
+        if searchText.isEmpty {
+            return space.storages
+        } else {
+            return space.storages.filter { $0.name?.contains(searchText) ?? false }
+        }
+    }
     
     var body: some View {
         VStack {
             List {
-                Section(space.storages.isEmpty ? "" : "Storage") {
-                    ForEach(space.storages) { storage in
+                Section(searchedStorages.isEmpty ? "" : "Storage") {
+                    ForEach(searchedStorages) { storage in
                         NavigationLink {
                             StorageView(storage: storage)
                         } label: {
@@ -31,8 +40,12 @@ struct SpaceView: View {
         }
         .overlay {
             // Placeholder View when space don't have any storage
-            if space.storages.isEmpty {
-                ContentUnavailableView("Create a Storage", systemImage: "cabinet.fill", description: Text("Create your first storage for this space. Tap the plus button to get started."))
+            if searchedStorages.isEmpty {
+                if searchText.isEmpty{
+                    ContentUnavailableView("Create a Storage", systemImage: "cabinet.fill", description: Text("Create your first storage for this space. Tap the plus button to get started."))
+                } else {
+                    ContentUnavailableView.search(text: searchText)
+                }
             }
         }
         .toolbar {
@@ -47,6 +60,14 @@ struct SpaceView: View {
                 }
             }
         }
+        .navigationTitle(Binding(get: {
+            space.name ?? "Untitled"
+        }, set: { newName in
+            withAnimation {
+                space.name = newName
+            }
+            try? context.save()
+        }))
         .alert("Add Storage", isPresented: $showAddTitleAlert) {
             TextField("Enter your Space Name", text: $newStorageName)
             Button("Cancel") {
@@ -58,14 +79,7 @@ struct SpaceView: View {
                 createStorage(newStorageName)
             }
         }
-        .navigationTitle(Binding(get: {
-            space.name ?? "Untitled"
-        }, set: { newName in
-            withAnimation {
-                space.name = newName
-            }
-            try? context.save()
-        }))
+        .searchable(text: $searchText)
     }
     
     private func addStorage() {

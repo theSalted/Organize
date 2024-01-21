@@ -12,14 +12,26 @@ struct StorageView: View {
     @Bindable var storage: Storage
     @State private var showAddTitleAlert = false
     @State private var newItemName = ""
+    @State private var searchText = ""
+    @State private var isSearchPresented = false
+    
+    private var searchedItems : [Item] {
+        if searchText.isEmpty {
+            return storage.items
+        } else {
+            return storage.items.filter { $0.name?.contains(searchText) ?? false }
+        }
+    }
     
     var body: some View {
         VStack {
             List {
-                StorageInfoView(storage)
+                if !isSearchPresented {
+                    StorageInfoView(storage)
+                }
                 
-                Section(storage.items.isEmpty ? "" : "Items") {
-                    ForEach(storage.items) { item in
+                Section(searchedItems.isEmpty ? "" : "Items") {
+                    ForEach(searchedItems) { item in
                         Text(item.name ?? "Untitled")
                     }
                     .onDelete(perform: deleteItems)
@@ -28,8 +40,12 @@ struct StorageView: View {
         }
         .overlay {
             // Placeholder View when storage don't have any items
-            if storage.items.isEmpty {
-                ContentUnavailableView("Let's Get Organized", systemImage: Item.randomSystemSymbol, description: Text("Select an item or create your first one."))
+            if searchedItems.isEmpty {
+                if searchText.isEmpty{
+                    ContentUnavailableView("Let's Get Organized", systemImage: Item.randomSystemSymbol, description: Text("Select an item or create your first one."))
+                } else {
+                    ContentUnavailableView.search(text: searchText)
+                }
             }
         }
         .toolbar {
@@ -44,6 +60,14 @@ struct StorageView: View {
                 }
             }
         }
+        .navigationTitle(Binding(get: {
+            storage.name ?? "Untitled"
+        }, set: { newName in
+            withAnimation {
+                storage.name = newName
+            }
+            try? context.save()
+        }))
         .alert("Add Item", isPresented: $showAddTitleAlert) {
             TextField("Enter your Space Name", text: $newItemName)
             Button("Cancel") {
@@ -55,14 +79,7 @@ struct StorageView: View {
                 createItem(newItemName)
             }
         }
-        .navigationTitle(Binding(get: {
-            storage.name ?? "Untitled"
-        }, set: { newName in
-            withAnimation {
-                storage.name = newName
-            }
-            try? context.save()
-        }))
+        .searchable(text: $searchText, isPresented: $isSearchPresented)
     }
     
     private func addItem() {
