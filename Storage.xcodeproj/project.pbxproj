@@ -12,6 +12,7 @@
 		8E5528522B5D925B00EEBCCB /* SpaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528512B5D925B00EEBCCB /* SpaceListView.swift */; };
 		8E5528542B5D9A1A00EEBCCB /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528532B5D9A1A00EEBCCB /* ItemView.swift */; };
 		8E5528582B5D9AB900EEBCCB /* ItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528572B5D9AB900EEBCCB /* ItemInfoView.swift */; };
+		8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */; };
 		8E88ACFE2B5C4CE5003BDB04 /* StorageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88ACFD2B5C4CE5003BDB04 /* StorageApp.swift */; };
 		8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */; };
 		8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88AD012B5C4CE5003BDB04 /* Space.swift */; };
@@ -21,6 +22,7 @@
 		8E88AD112B5C5CEA003BDB04 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88AD102B5C5CEA003BDB04 /* Storage.swift */; };
 		8E88AD132B5C6447003BDB04 /* SpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88AD122B5C6447003BDB04 /* SpaceView.swift */; };
 		8E88AD152B5D7395003BDB04 /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88AD142B5D7395003BDB04 /* StorageView.swift */; };
+		8ED48FC02B5DACF900EB643A /* AppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FBF2B5DACF900EB643A /* AppDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,7 @@
 		8E5528512B5D925B00EEBCCB /* SpaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceListView.swift; sourceTree = "<group>"; };
 		8E5528532B5D9A1A00EEBCCB /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		8E5528572B5D9AB900EEBCCB /* ItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoView.swift; sourceTree = "<group>"; };
+		8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		8E88ACFA2B5C4CE5003BDB04 /* Storage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88ACFD2B5C4CE5003BDB04 /* StorageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageApp.swift; sourceTree = "<group>"; };
 		8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 		8E88AD102B5C5CEA003BDB04 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		8E88AD122B5C6447003BDB04 /* SpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceView.swift; sourceTree = "<group>"; };
 		8E88AD142B5D7395003BDB04 /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
+		8ED48FBF2B5DACF900EB643A /* AppDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				8E88ACFD2B5C4CE5003BDB04 /* StorageApp.swift */,
+				8ED48FBF2B5DACF900EB643A /* AppDataModel.swift */,
 				8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */,
+				8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */,
 				8E5528512B5D925B00EEBCCB /* SpaceListView.swift */,
 				8E88AD122B5C6447003BDB04 /* SpaceView.swift */,
 				8E88AD142B5D7395003BDB04 /* StorageView.swift */,
@@ -178,11 +184,13 @@
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,
 				8E88AD0F2B5C5C41003BDB04 /* Item.swift in Sources */,
 				8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */,
+				8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */,
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
 				8E88AD112B5C5CEA003BDB04 /* Storage.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* ItemView.swift in Sources */,
 				8E5528302B5D81C900EEBCCB /* StorageInfoView.swift in Sources */,
 				8E88ACFE2B5C4CE5003BDB04 /* StorageApp.swift in Sources */,
+				8ED48FC02B5DACF900EB643A /* AppDataModel.swift in Sources */,
 				8E88AD132B5C6447003BDB04 /* SpaceView.swift in Sources */,
 				8E88AD152B5D7395003BDB04 /* StorageView.swift in Sources */,
 				8E5528522B5D925B00EEBCCB /* SpaceListView.swift in Sources */,

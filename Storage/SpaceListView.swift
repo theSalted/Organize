@@ -10,7 +10,10 @@ import SwiftData
 
 struct SpaceListView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @Environment(AppDataModel.self) private var appModel
     @Query private var spaces: [Space]
+    @State private var isSearchPresented = false
     @State private var showAddTitleForm = false
     @State private var newSpaceName = ""
     @State private var selection: Set<String> = []
@@ -27,6 +30,15 @@ struct SpaceListView: View {
     
     var body: some View {
         List {
+            // Tab bar hide itself when device is in horizontal. Switch tab with a button instead.
+            if verticalSizeClass == .compact && !isSearchPresented {
+                Button {
+                    appModel.tabViewSelection = "Scan"
+                } label : {
+                    Label("Scan", systemImage: "cube.fill")
+                }
+            }
+            
             Section(searchedSpaces.isEmpty ? "" : "Space") {
                 ForEach(searchedSpaces) { space in
                     NavigationLink {
@@ -78,7 +90,7 @@ struct SpaceListView: View {
                 createSpace(newSpaceName)
             }
         }
-        .searchable(text: $searchText)
+        .searchable(text: $searchText, isPresented: $isSearchPresented)
     }
     
     private func addSpace() {
