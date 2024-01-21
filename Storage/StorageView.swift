@@ -39,49 +39,49 @@ struct StorageView: View {
                     .onDelete(perform: deleteItems)
                 }
             }
-        }
-        .overlay {
-            // Placeholder View when storage don't have any items
-            if searchedItems.isEmpty {
-                if searchText.isEmpty{
-                    ContentUnavailableView("Let's Get Organized", systemImage: Item.randomSystemSymbol, description: Text("Select an item or create your first one."))
-                } else {
-                    ContentUnavailableView.search(text: searchText)
+            .overlay {
+                // Placeholder View when storage don't have any items
+                if searchedItems.isEmpty {
+                    if searchText.isEmpty{
+                        ContentUnavailableView("Let's Get Organized", systemImage: Item.randomSystemSymbol, description: Text("Select an item or create your first one."))
+                    } else {
+                        ContentUnavailableView.search(text: searchText)
+                    }
                 }
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    addItem()
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .symbolRenderingMode(.hierarchical)
-                        .font(.title2)
-                        .accessibilityLabel("Add item")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        addItem()
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                            .symbolRenderingMode(.hierarchical)
+                            .font(.title2)
+                            .accessibilityLabel("Add item")
+                    }
                 }
             }
-        }
-        .navigationTitle(Binding(get: {
-            storage.name ?? "Untitled"
-        }, set: { newName in
-            withAnimation {
-                storage.name = newName
-            }
-            try? context.save()
-        }))
-        .alert("Add Item", isPresented: $showAddTitleAlert) {
-            TextField("Enter your Space Name", text: $newItemName)
-            Button("Cancel") {
+            .navigationTitle(Binding(get: {
+                storage.name ?? "Untitled"
+            }, set: { newName in
                 withAnimation {
-                    showAddTitleAlert = false
+                    storage.name = newName
+                }
+                try? context.save()
+            }))
+            .alert("Add Item", isPresented: $showAddTitleAlert) {
+                TextField("Enter your Space Name", text: $newItemName)
+                Button("Cancel") {
+                    withAnimation {
+                        showAddTitleAlert = false
+                    }
+                }
+                Button("Ok") {
+                    createItem(newItemName)
                 }
             }
-            Button("Ok") {
-                createItem(newItemName)
-            }
+            .searchable(text: $searchText, isPresented: $isSearchPresented)
         }
-        .searchable(text: $searchText, isPresented: $isSearchPresented)
     }
     
     private func addItem() {
