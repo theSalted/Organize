@@ -9,5 +9,17 @@ import Foundation
 
 @Observable
 class AppDataModel {
-    var tabViewSelection = "Storage"
+    private var _tabViewSelection : TabViewTag = .storage
+    var tabViewSelection : String {
+        get {
+            _tabViewSelection.rawValue
+        }
+        set {
+            _tabViewSelection = TabViewTag(rawValue: newValue) ?? .storage
+        }
+    }
+    
+    enum TabViewTag : String {
+        case storage, scan
+    }
 }

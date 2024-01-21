@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Space  {
+final class Space : Identifiable {
     var id: UUID
     var name: String?
     

@@ -33,12 +33,11 @@ struct SpaceListView: View {
             // Tab bar hide itself when device is in horizontal. Switch tab with a button instead.
             if verticalSizeClass == .compact && !isSearchPresented {
                 Button {
-                    appModel.tabViewSelection = "Scan"
+                    appModel.tabViewSelection = AppDataModel.TabViewTag.scan.rawValue
                 } label : {
                     Label("Scan", systemImage: "cube.fill")
                 }
             }
-            
             Section(searchedSpaces.isEmpty ? "" : "Space") {
                 ForEach(searchedSpaces) { space in
                     NavigationLink {

@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Storage {
+final class Storage : Identifiable {
     var name : String?
     var id : UUID
     var createdAt: Date?
