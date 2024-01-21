@@ -24,7 +24,7 @@ struct StorageView: View {
     }
     
     var body: some View {
-        VStack {
+        NavigationStack {
             List {
                 if !isSearchPresented {
                     StorageInfoView(storage)
@@ -32,7 +32,9 @@ struct StorageView: View {
                 
                 Section(searchedItems.isEmpty ? "" : "Items") {
                     ForEach(searchedItems) { item in
-                        Text(item.name ?? "Untitled")
+                        NavigationLink(item.name ?? "Untitled") {
+                            ItemView(item)
+                        }
                     }
                     .onDelete(perform: deleteItems)
                 }
