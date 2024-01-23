@@ -9,9 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct SpaceSelectionsView: View {
-    // Environments
+    // Environments and SwiftData Queries
     @Environment(\.modelContext) private var context
     @Environment(AppViewModel.self) private var appModel
+    @State private var editMode: EditMode = .inactive
     @Query private var spaces: [Space]
     
     // Parameters
@@ -65,6 +66,19 @@ struct SpaceSelectionsView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
+                    Button("Edit Button", systemImage: "checklist.unchecked") {
+                        withAnimation {
+                            if editMode == .active {
+                                editMode = .inactive
+                            } else {
+                                editMode = .active
+                            }
+                        }
+                    }
+                    .symbolEffect(.bounce, value: editMode)
+                    .symbolRenderingMode(.hierarchical)
+                }
+                ToolbarItem(placement: .primaryAction) {
                     Button {
                         addStorage()
                     } label: {
@@ -74,6 +88,8 @@ struct SpaceSelectionsView: View {
                             .accessibilityLabel("Add storage")
                     }
                     .disabled(selectedSpaces.count > 1)
+                    .symbolEffect(.bounce, value: showAddStorageFields)
+                    .sensoryFeedback(.success, trigger: showAddStorageFields)
                 }
             }
             .overlay {

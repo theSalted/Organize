@@ -13,10 +13,10 @@ struct SpaceListView: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(AppViewModel.self) private var appModel
     @Query private var spaces: [Space]
+    @State private var editMode: EditMode = .inactive
     @State private var isSearchPresented = false
     @State private var showAddTitleForm = false
     @State private var newSpaceName = ""
-    @State private var selection: Set<String> = []
     @State private var searchText = ""
     
     
@@ -43,31 +43,35 @@ struct SpaceListView: View {
             Section(searchedSpaces.isEmpty ? "" : "Space") {
                 ForEach(searchedSpaces) { space in
                     Text(space.name ?? "Untitled")
-//                    NavigationLink( {
-//                        SpaceView(space: space)
-//                    } label: {
-//                        Text(space.name ?? "Untitled")
-//                    }
+
                 }
                 .onDelete(perform: deleteItems)
             }
         }
+        .environment(\.editMode, $editMode)
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Menu {
-                    EditButton()
-                } label: {
-                    Label("More options", systemImage: "ellipsis.circle")
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Edit Button", systemImage: "checklist.unchecked") {
+                    withAnimation {
+                        if editMode == .active {
+                            editMode = .inactive
+                        } else {
+                            editMode = .active
+                        }
+                    }
                 }
-
+                .symbolEffect(.bounce, value: editMode)
+                .symbolRenderingMode(.hierarchical)
             }
-            ToolbarItem {
+            ToolbarItem(placement: .primaryAction) {
                 Button(action: addSpace) {
                     Image(systemName: "plus.circle.fill")
                         .accessibilityLabel("Add space")
                         .symbolRenderingMode(.hierarchical)
                         .font(.title2)
                 }
+                .symbolEffect(.bounce, value: showAddTitleForm)
+                .sensoryFeedback(.success, trigger: showAddTitleForm)
             }
         }
         .overlay {
