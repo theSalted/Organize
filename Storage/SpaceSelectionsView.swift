@@ -61,6 +61,7 @@ struct SpaceSelectionsView: View {
                     .onDelete(perform: deleteStorages)
                 }
             }
+            .environment(\.editMode, $editMode)
             .adaptiveNavigationTitle(canRename: selectedSpaces.count == 1, get: title) { newTitle in
                 spaces.first?.name = newTitle
             }
