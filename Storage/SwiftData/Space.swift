@@ -13,7 +13,7 @@ final class Space : Identifiable {
     var id: UUID
     var name: String?
     
-    @Relationship(deleteRule: .deny, inverse: \Storage.space)
+    @Relationship(deleteRule: .cascade, inverse: \Storage.space)
     var storages = [Storage]()
     
     init(name: String? = "Untitled") {

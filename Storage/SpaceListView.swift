@@ -11,7 +11,7 @@ import SwiftData
 struct SpaceListView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(AppDataModel.self) private var appModel
+    @Environment(AppViewModel.self) private var appModel
     @Query private var spaces: [Space]
     @State private var isSearchPresented = false
     @State private var showAddTitleForm = false
@@ -29,22 +29,25 @@ struct SpaceListView: View {
     }
     
     var body: some View {
-        List {
+        @Bindable var appModel = appModel
+        List(selection: $appModel.spaceListSelections) {
             // Tab bar hide itself when device is in horizontal. Switch tab with a button instead.
             if verticalSizeClass == .compact && !isSearchPresented {
                 Button {
-                    appModel.tabViewSelection = AppDataModel.TabViewTag.scan.rawValue
+                    appModel.tabViewSelection = AppViewModel.TabViewTag.scan
                 } label : {
                     Label("Scan", systemImage: "cube.fill")
                 }
             }
+            
             Section(searchedSpaces.isEmpty ? "" : "Space") {
                 ForEach(searchedSpaces) { space in
-                    NavigationLink {
-                        SpaceView(space: space)
-                    } label: {
-                        Text(space.name ?? "Untitled")
-                    }
+                    Text(space.name ?? "Untitled")
+//                    NavigationLink( {
+//                        SpaceView(space: space)
+//                    } label: {
+//                        Text(space.name ?? "Untitled")
+//                    }
                 }
                 .onDelete(perform: deleteItems)
             }

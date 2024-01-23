@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @State var appModel = AppDataModel()
+    @State var appModel = AppViewModel()
     @State private var columnVisibility = NavigationSplitViewVisibility.all
     @Environment(\.verticalSizeClass) private var verticalSizeClass
 //    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -19,7 +19,8 @@ struct ContentView: View {
             NavigationSplitView(columnVisibility: $columnVisibility) {
                 SpaceListView()
             } content: {
-                ContentUnavailableView("Select a Space", systemImage: "square.split.bottomrightquarter.fill", description: Text("Select or create your first space. And get organized."))
+                SpaceSelectionsView(for: appModel.spaceListSelections)
+                
             } detail: {
                 // Placeholder when no space is selected
                 ContentUnavailableView("Let's Get Organized", systemImage: Item.randomSystemSymbol, description: Text("Select an item or create your first one."))
@@ -27,7 +28,7 @@ struct ContentView: View {
             .tabItem {
                 Label("Storage", systemImage: "circle.grid.3x3.fill")
             }
-            .tag(AppDataModel.TabViewTag.storage.rawValue)
+            .tag(AppViewModel.TabViewTag.storage)
             .toolbar(verticalSizeClass == .compact ? .hidden : .automatic, for: .tabBar)
 //            .toolbar(horizontalSizeClass != .compact ? .hidden : .automatic, for: .tabBar)
             
@@ -35,7 +36,7 @@ struct ContentView: View {
             .tabItem {
                 Label("Scan", systemImage: "cube.fill")
             }
-            .tag(AppDataModel.TabViewTag.scan.rawValue)
+            .tag(AppViewModel.TabViewTag.scan)
             .toolbar(verticalSizeClass == .compact ? .hidden : .automatic, for: .tabBar)
 //            .toolbar(horizontalSizeClass != .compact ? .hidden : .automatic, for: .tabBar)
         }

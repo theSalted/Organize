@@ -13,7 +13,7 @@ final class Storage : Identifiable {
     var name : String?
     var id : UUID
     var createdAt: Date?
-    @Relationship(deleteRule: .deny, inverse: \Item.storage)
+    @Relationship(deleteRule: .cascade, inverse: \Item.storage)
     var items = [Item]()
     var space : Space?
     
