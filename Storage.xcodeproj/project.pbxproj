@@ -123,8 +123,8 @@
 		8EB944902B615AE1005FBADC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8EF034382B615B5F00A15340 /* CaptureViews */,
-				8EF034372B615B3800A15340 /* StorageViews */,
+				8EF034382B615B5F00A15340 /* CaptureTabViews */,
+				8EF034372B615B3800A15340 /* StorageTabViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,22 +138,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		8EF034372B615B3800A15340 /* StorageViews */ = {
+		8EF034372B615B3800A15340 /* StorageTabViews */ = {
 			isa = PBXGroup;
 			children = (
 				8EF034412B6166E700A15340 /* InfoViews */,
 				8EF034402B6166BA00A15340 /* ContentSidebarViews */,
 				8EF034422B61670700A15340 /* DetailViews */,
 			);
-			path = StorageViews;
+			path = StorageTabViews;
 			sourceTree = "<group>";
 		};
-		8EF034382B615B5F00A15340 /* CaptureViews */ = {
+		8EF034382B615B5F00A15340 /* CaptureTabViews */ = {
 			isa = PBXGroup;
 			children = (
 				8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */,
 			);
-			path = CaptureViews;
+			path = CaptureTabViews;
 			sourceTree = "<group>";
 		};
 		8EF0343A2B61662B00A15340 /* SwiftData */ = {
