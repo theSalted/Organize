@@ -1,5 +1,5 @@
 //
-//  ItemView.swift
+//  MetaView.swift
 //  Storage
 //
 //  Created by Yuhao Chen on 1/22/24.
@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-struct ItemView: View {
-    @Bindable var item : Item
-    init(_ item: Item) {
-        self.item = item
+struct MetaView: View {
+    var meta : any Meta
+    init(_ meta: any Meta) {
+        self.meta = meta
     }
     var body: some View {
         VStack {
             GroupBox {
-                ItemInfoView(item)
+                MetaInfoView(meta)
             }
             .padding()
             
             Spacer()
         }
-        .navigationTitle(item.name ?? "Untitled")
+        .navigationTitle(meta.name ?? "Untitled")
     }
 }
 
 #Preview {
-    ItemView(Item(name: "Baseball"))
+    MetaView(Item(name: "Baseball"))
 }

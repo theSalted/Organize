@@ -19,7 +19,6 @@ struct SpaceListView: View {
     @State private var newSpaceName = ""
     @State private var searchText = ""
     
-    
     private var searchedSpaces : [Space] {
         if searchText.isEmpty {
             return spaces
@@ -33,17 +32,12 @@ struct SpaceListView: View {
         List(selection: $appModel.spaceListSelections) {
             // Tab bar hide itself when device is in horizontal. Switch tab with a button instead.
             if verticalSizeClass == .compact && !isSearchPresented {
-                Button {
-                    appModel.tabViewSelection = AppViewModel.TabViewTag.scan
-                } label : {
-                    Label("Scan", systemImage: "cube.fill")
-                }
+                Label("Scan", systemImage: "cube.fill")
             }
             
             Section(searchedSpaces.isEmpty ? "" : "Space") {
                 ForEach(searchedSpaces) { space in
                     Text(space.name ?? "Untitled")
-
                 }
                 .onDelete(perform: deleteItems)
             }
@@ -72,6 +66,21 @@ struct SpaceListView: View {
                 }
                 .symbolEffect(.bounce, value: showAddTitleForm)
                 .sensoryFeedback(.success, trigger: showAddTitleForm)
+            }
+            ToolbarItem {
+                // Allow user to view detail of spaces
+                let selections = appModel.spaceListSelections
+                Button("View detail", systemImage: "info.circle.fill") {
+                    guard selections.count == 1,
+                           let id = selections.first,
+                           let selectedSpace = spaces.first(where: { $0.id == id })
+                    else { return }
+                    appModel.appendDetailPath(selectedSpace)
+                }
+                .symbolEffect(.bounce, value: appModel.detailPath)
+                .sensoryFeedback(.success, trigger: appModel.detailPath)
+                .symbolRenderingMode(.hierarchical)
+                .disabled(selections.count != 1)
             }
         }
         .overlay {

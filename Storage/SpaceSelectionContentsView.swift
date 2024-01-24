@@ -1,5 +1,5 @@
 //
-//  SpaceSelectionsView.swift
+//  SpaceSelectionContentsView.swift
 //  Storage
 //
 //  Created by Yuhao Chen on 1/24/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct SpaceSelectionsView: View {
+struct SpaceSelectionContentsView: View {
     // Environments and SwiftData Queries
     @Environment(\.modelContext) private var context
     @Environment(AppViewModel.self) private var appModel
@@ -22,6 +22,7 @@ struct SpaceSelectionsView: View {
     @State private var showAddStorageFields = false
     @State private var newStorageName = ""
     @State private var searchText = ""
+    @State private var cancelButtonHighlight = false
     
     // Computed Properties
     var selectedSpaces : [Space] {
@@ -56,11 +57,33 @@ struct SpaceSelectionsView: View {
             List(selection: $appModel.storageListSelections) {
                 Section(storages.isEmpty ? "" : "^[\(storages.count) Storages](inflect: true)") {
                     ForEach(storages) { storage in
-                        Text(storage.name ?? "Untitled")
+//                        NavigationLink(storage.name ?? "Untitled", value: storage)
+                        Button {
+                            appModel.appendDetailPath(storage)
+                            cancelButtonHighlight = false
+                        } label: {
+                            Text(storage.name ?? "Untitled")
+                        }
+                        .if(editMode == .inactive &&
+                            storage.id == appModel.lastVisitedPathId &&
+                            !cancelButtonHighlight
+                        ) { view in
+                            view.listRowBackground(Color.accentColor.clipped()
+                                .cornerRadius(10))
+                            .foregroundStyle(.white)
+                            .onChange(of: appModel.detailPath.count) { oldValue, newValue in
+                                if newValue < oldValue {
+                                    withAnimation {
+                                        cancelButtonHighlight = true
+                                    }
+                                }
+                            }
+                        }
                     }
                     .onDelete(perform: deleteStorages)
                 }
             }
+            .navigationDestination(for: Storage.self) { storage in StorageView(storage) }
             .environment(\.editMode, $editMode)
             .adaptiveNavigationTitle(canRename: selectedSpaces.count == 1, get: title) { newTitle in
                 spaces.first?.name = newTitle
@@ -147,5 +170,5 @@ struct SpaceSelectionsView: View {
 }
 
 #Preview {
-    SpaceSelectionsView(for: [])
+    SpaceSelectionContentsView(for: [])
 }

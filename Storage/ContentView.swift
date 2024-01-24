@@ -19,11 +19,24 @@ struct ContentView: View {
             NavigationSplitView(columnVisibility: $columnVisibility) {
                 SpaceListView()
             } content: {
-                SpaceSelectionsView(for: appModel.spaceListSelections)
-                
+                SpaceSelectionContentsView(for: appModel.spaceListSelections)
             } detail: {
                 // Placeholder when no space is selected
-                ContentUnavailableView("Let's Get Organized", systemImage: Item.randomSystemSymbol, description: Text("Select an item or create your first one."))
+                NavigationStack(path: $appModel.detailPath) {
+                    ContentUnavailableView("Let's Get Organized", systemImage: "soccerball", description: Text("Select an item or create your first one."))
+                        .navigationDestination(for: Item.self) { item in MetaView(item) }
+                        .navigationDestination(for: Storage.self) { storage in StorageView(storage) }
+                        .navigationDestination(for: Space.self) { space in MetaView(space) }
+                }
+                
+//                if !appModel.itemsListSelections.isEmpty {
+//                    DetailsView<Item>(selections: appModel.itemsListSelections)
+//                } else if !appModel.storageListSelections.isEmpty {
+//                    DetailsView<Storage>(selections: appModel.storageListSelections)
+//                } else {
+//                    DetailsView<Space>(selections: appModel.spaceListSelections)
+//                }
+                
             }
             .tabItem {
                 Label("Storage", systemImage: "circle.grid.3x3.fill")

@@ -9,11 +9,14 @@ import Foundation
 import SwiftData
 
 @Model
-final class Item : Identifiable {
+final class Item : Identifiable, Meta {
     var id : UUID
     var name : String?
     var createdAt: Date?
     var storage : Storage?
+    @Transient lazy var storedIn: String? = {
+        storage?.name
+    }()
     
     init(name: String) {
         self.name = name
@@ -34,4 +37,3 @@ final class Item : Identifiable {
         }
     }
 }
-

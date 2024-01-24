@@ -9,13 +9,16 @@ import Foundation
 import SwiftData
 
 @Model
-final class Storage : Identifiable {
+final class Storage : Identifiable, Meta {
     var name : String?
     var id : UUID
     var createdAt: Date?
     @Relationship(deleteRule: .cascade, inverse: \Item.storage)
     var items = [Item]()
     var space : Space?
+    @Transient lazy var storedIn: String? = {
+        space?.name
+    }()
     
     init(name: String? = "Untitled") {
         self.name = name
