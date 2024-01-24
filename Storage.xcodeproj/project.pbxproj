@@ -84,19 +84,11 @@
 			isa = PBXGroup;
 			children = (
 				8ED48FC52B6028E800EB643A /* Extensions */,
-				8E88ACFD2B5C4CE5003BDB04 /* StorageApp.swift */,
-				8ED48FBF2B5DACF900EB643A /* AppViewModel.swift */,
+				8E88AD0D2B5C5C22003BDB04 /* Models */,
+				8EB9448F2B615A75005FBADC /* ViewModels */,
+				8EB944902B615AE1005FBADC /* Views */,
 				8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */,
-				8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */,
-				8E5528512B5D925B00EEBCCB /* SpaceListView.swift */,
-				8ED48FC12B601A7000EB643A /* SpaceSelectionContentsView.swift */,
-				8E8B49782B60456500E6A932 /* DetailsView.swift */,
-				8E88AD122B5C6447003BDB04 /* SpaceView.swift */,
-				8E88AD142B5D7395003BDB04 /* StorageView.swift */,
-				8E5528532B5D9A1A00EEBCCB /* MetaView.swift */,
-				8E5528572B5D9AB900EEBCCB /* MetaInfoView.swift */,
-				8E5528312B5D823300EEBCCB /* InformationLabelView.swift */,
-				8E88AD0D2B5C5C22003BDB04 /* SwiftData */,
+				8E88ACFD2B5C4CE5003BDB04 /* StorageApp.swift */,
 				8E88AD032B5C4CE7003BDB04 /* Assets.xcassets */,
 				8E88AD052B5C4CE7003BDB04 /* Preview Content */,
 			);
@@ -111,15 +103,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8E88AD0D2B5C5C22003BDB04 /* SwiftData */ = {
+		8E88AD0D2B5C5C22003BDB04 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8E88AD012B5C4CE5003BDB04 /* Space.swift */,
-				8E88AD102B5C5CEA003BDB04 /* Storage.swift */,
-				8E88AD0E2B5C5C41003BDB04 /* Item.swift */,
+				8EF0343A2B61662B00A15340 /* SwiftData */,
 				8ECBDC402B605BDF00CCF70F /* Meta.swift */,
 			);
-			path = SwiftData;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8EB9448F2B615A75005FBADC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8ED48FBF2B5DACF900EB643A /* AppViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8EB944902B615AE1005FBADC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8EF034382B615B5F00A15340 /* CaptureViews */,
+				8EF034372B615B3800A15340 /* StorageViews */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8ED48FC52B6028E800EB643A /* Extensions */ = {
@@ -129,6 +136,63 @@
 				8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8EF034372B615B3800A15340 /* StorageViews */ = {
+			isa = PBXGroup;
+			children = (
+				8EF034412B6166E700A15340 /* InfoViews */,
+				8EF034402B6166BA00A15340 /* ContentSidebarViews */,
+				8EF034422B61670700A15340 /* DetailViews */,
+			);
+			path = StorageViews;
+			sourceTree = "<group>";
+		};
+		8EF034382B615B5F00A15340 /* CaptureViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */,
+			);
+			path = CaptureViews;
+			sourceTree = "<group>";
+		};
+		8EF0343A2B61662B00A15340 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				8E88AD012B5C4CE5003BDB04 /* Space.swift */,
+				8E88AD102B5C5CEA003BDB04 /* Storage.swift */,
+				8E88AD0E2B5C5C41003BDB04 /* Item.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		8EF034402B6166BA00A15340 /* ContentSidebarViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E5528512B5D925B00EEBCCB /* SpaceListView.swift */,
+				8ED48FC12B601A7000EB643A /* SpaceSelectionContentsView.swift */,
+			);
+			path = ContentSidebarViews;
+			sourceTree = "<group>";
+		};
+		8EF034412B6166E700A15340 /* InfoViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E5528532B5D9A1A00EEBCCB /* MetaView.swift */,
+				8E5528572B5D9AB900EEBCCB /* MetaInfoView.swift */,
+				8E5528312B5D823300EEBCCB /* InformationLabelView.swift */,
+			);
+			path = InfoViews;
+			sourceTree = "<group>";
+		};
+		8EF034422B61670700A15340 /* DetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E8B49782B60456500E6A932 /* DetailsView.swift */,
+				8E88AD142B5D7395003BDB04 /* StorageView.swift */,
+				8E88AD122B5C6447003BDB04 /* SpaceView.swift */,
+			);
+			path = DetailViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
