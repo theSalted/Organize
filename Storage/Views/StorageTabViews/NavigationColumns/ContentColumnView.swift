@@ -1,5 +1,5 @@
 //
-//  SpaceSelectionContentsView.swift
+//  ContentColumnView.swift
 //  Storage
 //
 //  Created by Yuhao Chen on 1/24/24.
@@ -8,32 +8,28 @@
 import SwiftUI
 import SwiftData
 
-struct SpaceSelectionContentsView: View {
+struct ContentColumnView: View {
     // Environments and SwiftData Queries
     @Environment(\.modelContext) private var context
     @Environment(AppViewModel.self) private var appModel
-    @State private var editMode: EditMode = .inactive
     @Query private var spaces: [Space]
     
-    // Parameters
-    var spaceListSelections : Set<Space.ID>
-    
     // View States
+    @State private var editMode: EditMode   = .inactive
     @State private var showAddStorageFields = false
-    @State private var newStorageName = ""
-    @State private var searchText = ""
-    @State private var cancelButtonHighlight = false
+    @State private var newStorageName       = ""
+    @State private var searchText           = ""
     
     // Computed Properties
-    var selectedSpaces : [Space] {
-        spaces.filter { spaceListSelections.contains($0.id) }
+    var selectedSpaces: [Space] {
+        spaces.filter { appModel.spaceListSelections.contains($0.id) }
     }
-    var storages : [Storage] {
+    var storages: [Storage] {
         selectedSpaces.flatMap { space in
             space.storages
         }
     }
-    var title : String {
+    var title: String {
         if selectedSpaces.isEmpty {
             ""
         } else if selectedSpaces.count == 1 {
@@ -43,64 +39,30 @@ struct SpaceSelectionContentsView: View {
         }
     }
     
-    // Initializer
-    init(for spaceListSelections: Set<Space.ID>) {
-        self.spaceListSelections = spaceListSelections
-    }
-    
     // Views
     var body: some View {
-        if spaceListSelections.isEmpty {
-            ContentUnavailableView("Select a Space", systemImage: "square.split.bottomrightquarter.fill", description: Text("Select or create your first space. And get organized."))
-        } else {
-            @Bindable var appModel = appModel
+        @Bindable var appModel = appModel
+        let count = appModel.spaceListSelections.count
+        switch appModel.spaceListSelections.isEmpty {
+        case false:
             List(selection: $appModel.storageListSelections) {
                 Section(storages.isEmpty ? "" : "^[\(storages.count) Storages](inflect: true)") {
                     ForEach(storages) { storage in
-//                        NavigationLink(storage.name ?? "Untitled", value: storage)
-                        Button {
-                            appModel.appendDetailPath(storage)
-                            cancelButtonHighlight = false
-                        } label: {
-                            Text(storage.name ?? "Untitled")
-                        }
-                        .if(editMode == .inactive &&
-                            storage.id == appModel.lastVisitedPathId &&
-                            !cancelButtonHighlight
-                        ) { view in
-                            view.listRowBackground(Color.accentColor.clipped()
-                                .cornerRadius(10))
-                            .foregroundStyle(.white)
-                            .onChange(of: appModel.detailPath.count) { oldValue, newValue in
-                                if newValue < oldValue {
-                                    withAnimation {
-                                        cancelButtonHighlight = true
-                                    }
-                                }
-                            }
-                        }
+                        Text(storage.name ?? "Untitled")
                     }
                     .onDelete(perform: deleteStorages)
                 }
             }
-            .navigationDestination(for: Storage.self) { storage in StorageView(storage) }
             .environment(\.editMode, $editMode)
+            .searchable(text: $searchText)
             .adaptiveNavigationTitle(canRename: selectedSpaces.count == 1, get: title) { newTitle in
                 spaces.first?.name = newTitle
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Edit Button", systemImage: "checklist.unchecked") {
-                        withAnimation {
-                            if editMode == .active {
-                                editMode = .inactive
-                            } else {
-                                editMode = .active
-                            }
-                        }
-                    }
-                    .symbolEffect(.bounce, value: editMode)
-                    .symbolRenderingMode(.hierarchical)
+                    Button("Edit Button", systemImage: "checklist.unchecked") { toggleEditMode() }
+                        .symbolEffect(.bounce, value: editMode)
+                        .symbolRenderingMode(.hierarchical)
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button {
@@ -121,10 +83,16 @@ struct SpaceSelectionContentsView: View {
                 if !searchText.isEmpty{
                     ContentUnavailableView.search(text: searchText)
                 } else if storages.isEmpty {
-                    ContentUnavailableView("Create a Storage", systemImage: Item.randomSystemSymbol, description: Text("The selected ^[\(spaceListSelections.count) spaces](inflect: true) don't have a storage. Press the plus button to add one."))
+                    ContentUnavailableView(
+                        "Create a Storage",
+                        systemImage: Item.randomSystemSymbol,
+                        description:
+                            Text("The selected " +
+                                 (count > 0 ? "spaces " : "space ") +
+                                 "don't have any storage. Press the plus button to add one.")
+                    )
                 }
             }
-            .searchable(text: $searchText)
             .alert("Add Storage", isPresented: $showAddStorageFields) {
                 TextField("Enter your Space Name", text: $newStorageName)
                 Button("Cancel") {
@@ -139,9 +107,13 @@ struct SpaceSelectionContentsView: View {
                     createStorage(newStorageName, atSpace: space)
                 }
             }
+        default:
+            ContentUnavailableView(
+                "Select a Space",
+                systemImage: "square.split.bottomrightquarter.fill",
+                description: Text("Select or create your first space. And get organized."))
         }
     }
-    
     // Methods
     private func addStorage() {
         withAnimation {
@@ -167,8 +139,19 @@ struct SpaceSelectionContentsView: View {
         }
         try? context.save()
     }
+    
+    private func toggleEditMode() {
+        withAnimation {
+            if editMode == .active {
+                editMode = .inactive
+            } else {
+                editMode = .active
+            }
+        }
+    }
 }
 
 #Preview {
-    SpaceSelectionContentsView(for: [])
+    ContentColumnView()
+        .environment(AppViewModel())
 }

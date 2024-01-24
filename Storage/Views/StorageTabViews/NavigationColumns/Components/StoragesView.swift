@@ -6,41 +6,63 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct StorageView: View {
+struct StoragesView: View {
     @Environment(\.modelContext) private var context
-    @Bindable var storage: Storage
+    @Environment(AppViewModel.self) private var appModel
+    @Query private var storages: [Storage]
+    
     @State private var showAddTitleAlert = false
     @State private var newItemName = ""
     @State private var searchText = ""
     @State private var isSearchPresented = false
     
-    private var searchedItems : [Item] {
-        if searchText.isEmpty {
-            return storage.items
-        } else {
-            return storage.items.filter { $0.name?.contains(searchText) ?? false }
+    var selectedStorages: [Storage] {
+        storages.filter { appModel.storageListSelections.contains($0.id) }
+    }
+    
+    var itemsFromStorages: [Item] {
+        selectedStorages.flatMap { storage in
+            storage.items
         }
     }
     
-    init(_ storage: Storage) {
-        self.storage = storage
+    private var searchedItems : [Item] {
+        if searchText.isEmpty {
+            return itemsFromStorages
+        } else {
+            return itemsFromStorages.filter { $0.name?.contains(searchText) ?? false }
+        }
     }
     
     var body: some View {
-        List {
-            if !isSearchPresented {
-//                StorageInfoView(storage)
-                MetaInfoView(storage)
-            }
-            
-            Section(searchedItems.isEmpty ? "" : "Items") {
-                ForEach(searchedItems) { item in
-                    NavigationLink(item.name ?? "Untitled") {
-                        MetaView(item)
+        VStack {
+            List {
+                GeometryReader { geometry in
+                    ScrollView(.horizontal) {
+                        LazyHStack {
+                            ForEach(storages) { storage in
+                                MetaPrimitiveView(storage)
+                                    .frame(idealWidth: geometry.size.width - 10,
+                                           maxHeight: .infinity,
+                                           alignment: .top)
+                            }
+                        }
+                        .scrollTargetLayout()
                     }
+                    .scrollTargetBehavior(.viewAligned)
+                    .scrollIndicators(.hidden)
                 }
-                .onDelete(perform: deleteItems)
+                .frame(height: 200, alignment: .center)
+                Section(searchedItems.isEmpty ? "" : "Items") {
+                    ForEach(searchedItems) { item in
+                        NavigationLink(item.name ?? "Untitled") {
+                            MetaInfoView(item)
+                        }
+                    }
+                    .onDelete(perform: deleteItems)
+                }
             }
         }
         .overlay {
@@ -65,12 +87,12 @@ struct StorageView: View {
                 }
             }
         }
-        .adaptiveNavigationTitle(canRename: true, get: storage.name ?? "Untitled") { newTitle in
-            withAnimation {
-                storage.name = newTitle
-            }
-            try? context.save()
-        }
+//        .adaptiveNavigationTitle(canRename: true, get: storage.name ?? "Untitled") { newTitle in
+//            withAnimation {
+//                storage.name = newTitle
+//            }
+//            try? context.save()
+//        }
         .alert("Add Item", isPresented: $showAddTitleAlert) {
             TextField("Enter your Space Name", text: $newItemName)
             Button("Cancel") {
@@ -94,20 +116,20 @@ struct StorageView: View {
     private func createItem(_ name: String) {
         let item = Item(name: name)
         context.insert(item)
-        withAnimation {
-            storage.items.append(item)
-        }
         try? context.save()
     }
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            storage.items.remove(atOffsets: offsets)
+            for index in offsets {
+                guard index < itemsFromStorages.count else { continue }
+                context.delete(itemsFromStorages[index])
+            }
         }
         try? context.save()
     }
 }
 
 #Preview {
-    StorageView(Storage(name: "Soccer Ball"))
+    StoragesView()
 }

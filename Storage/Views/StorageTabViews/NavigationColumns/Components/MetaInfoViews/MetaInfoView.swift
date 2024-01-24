@@ -1,5 +1,5 @@
 //
-//  MetaView.swift
+//  MetaInfoView.swift
 //  Storage
 //
 //  Created by Yuhao Chen on 1/22/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MetaView: View {
+struct MetaInfoView: View {
     var meta : any Meta
     init(_ meta: any Meta) {
         self.meta = meta
@@ -15,7 +15,7 @@ struct MetaView: View {
     var body: some View {
         VStack {
             GroupBox {
-                MetaInfoView(meta)
+                MetaPrimitiveView(meta, title: "Information")
             }
             .padding()
             
@@ -26,5 +26,5 @@ struct MetaView: View {
 }
 
 #Preview {
-    MetaView(Item(name: "Baseball"))
+    MetaInfoView(Item(name: "Baseball"))
 }

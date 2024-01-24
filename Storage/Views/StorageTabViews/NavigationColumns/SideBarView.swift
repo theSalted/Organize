@@ -1,5 +1,5 @@
 //
-//  SpaceListView.swift
+//  SideBarView.swift
 //  Storage
 //
 //  Created by Yuhao Chen on 1/22/24.
@@ -8,16 +8,16 @@
 import SwiftUI
 import SwiftData
 
-struct SpaceListView: View {
+struct SideBarView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(AppViewModel.self) private var appModel
     @Query private var spaces: [Space]
-    @State private var editMode: EditMode = .inactive
-    @State private var isSearchPresented = false
-    @State private var showAddTitleForm = false
-    @State private var newSpaceName = ""
-    @State private var searchText = ""
+    @State private var editMode: EditMode  = .inactive
+    @State private var isSearchPresented   = false
+    @State private var showAddTitleForm    = false
+    @State private var newSpaceName        = ""
+    @State private var searchText          = ""
     
     private var searchedSpaces : [Space] {
         if searchText.isEmpty {
@@ -67,27 +67,16 @@ struct SpaceListView: View {
                 .symbolEffect(.bounce, value: showAddTitleForm)
                 .sensoryFeedback(.success, trigger: showAddTitleForm)
             }
-            ToolbarItem {
-                // Allow user to view detail of spaces
-                let selections = appModel.spaceListSelections
-                Button("View detail", systemImage: "info.circle.fill") {
-                    guard selections.count == 1,
-                           let id = selections.first,
-                           let selectedSpace = spaces.first(where: { $0.id == id })
-                    else { return }
-                    appModel.appendDetailPath(selectedSpace)
-                }
-                .symbolEffect(.bounce, value: appModel.detailPath)
-                .sensoryFeedback(.success, trigger: appModel.detailPath)
-                .symbolRenderingMode(.hierarchical)
-                .disabled(selections.count != 1)
-            }
         }
         .overlay {
             // Placeholder View for when spaces is empty
             if searchedSpaces.isEmpty {
                 if searchText.isEmpty{
-                    ContentUnavailableView("Start Organizing", systemImage: "shippingbox.fill", description: Text("Create your first space. Tap the plus button to get started."))
+                    ContentUnavailableView(
+                        "Start Organizing",
+                        systemImage: "shippingbox.fill",
+                        description: Text("Create your first space. " +
+                                          "Tap the plus button to get started."))
                 } else {
                     ContentUnavailableView.search(text: searchText)
                 }
@@ -131,5 +120,6 @@ struct SpaceListView: View {
 }
 
 #Preview {
-    SpaceListView()
+    SideBarView()
+        .environment(AppViewModel())
 }

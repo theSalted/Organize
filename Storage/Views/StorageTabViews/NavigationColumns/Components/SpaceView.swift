@@ -29,7 +29,7 @@ struct SpaceView: View {
                 Section(searchedStorages.isEmpty ? "" : "Storage") {
                     ForEach(searchedStorages) { storage in
                         NavigationLink {
-                            StorageView(storage)
+//                            StoragesView()
                         } label: {
                             Text(storage.name ?? "Untitled")
                         }
