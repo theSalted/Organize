@@ -12,7 +12,7 @@
 		8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */; };
 		8E5528582B5D9AB900EEBCCB /* MetaPrimitiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528572B5D9AB900EEBCCB /* MetaPrimitiveView.swift */; };
 		8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */; };
-		8E88ACFE2B5C4CE5003BDB04 /* StorageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88ACFD2B5C4CE5003BDB04 /* StorageApp.swift */; };
+		8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88ACFD2B5C4CE5003BDB04 /* OrganizeApp.swift */; };
 		8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */; };
 		8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88AD012B5C4CE5003BDB04 /* Space.swift */; };
 		8E88AD042B5C4CE7003BDB04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88AD032B5C4CE7003BDB04 /* Assets.xcassets */; };
@@ -35,8 +35,8 @@
 		8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoView.swift; sourceTree = "<group>"; };
 		8E5528572B5D9AB900EEBCCB /* MetaPrimitiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaPrimitiveView.swift; sourceTree = "<group>"; };
 		8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
-		8E88ACFA2B5C4CE5003BDB04 /* Storage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storage.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E88ACFD2B5C4CE5003BDB04 /* StorageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageApp.swift; sourceTree = "<group>"; };
+		8E88ACFA2B5C4CE5003BDB04 /* Organize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Organize.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E88ACFD2B5C4CE5003BDB04 /* OrganizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizeApp.swift; sourceTree = "<group>"; };
 		8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8E88AD012B5C4CE5003BDB04 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		8E88AD032B5C4CE7003BDB04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		8E88ACF12B5C4CE5003BDB04 = {
 			isa = PBXGroup;
 			children = (
-				8E88ACFC2B5C4CE5003BDB04 /* Storage */,
+				8E88ACFC2B5C4CE5003BDB04 /* Organize */,
 				8E88ACFB2B5C4CE5003BDB04 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,12 +75,12 @@
 		8E88ACFB2B5C4CE5003BDB04 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E88ACFA2B5C4CE5003BDB04 /* Storage.app */,
+				8E88ACFA2B5C4CE5003BDB04 /* Organize.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8E88ACFC2B5C4CE5003BDB04 /* Storage */ = {
+		8E88ACFC2B5C4CE5003BDB04 /* Organize */ = {
 			isa = PBXGroup;
 			children = (
 				8ED48FC52B6028E800EB643A /* Extensions */,
@@ -88,11 +88,11 @@
 				8EB9448F2B615A75005FBADC /* ViewModels */,
 				8EB944902B615AE1005FBADC /* Views */,
 				8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */,
-				8E88ACFD2B5C4CE5003BDB04 /* StorageApp.swift */,
+				8E88ACFD2B5C4CE5003BDB04 /* OrganizeApp.swift */,
 				8E88AD032B5C4CE7003BDB04 /* Assets.xcassets */,
 				8E88AD052B5C4CE7003BDB04 /* Preview Content */,
 			);
-			path = Storage;
+			path = Organize;
 			sourceTree = "<group>";
 		};
 		8E88AD052B5C4CE7003BDB04 /* Preview Content */ = {
@@ -198,9 +198,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8E88ACF92B5C4CE5003BDB04 /* Storage */ = {
+		8E88ACF92B5C4CE5003BDB04 /* Organize */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E88AD0A2B5C4CE7003BDB04 /* Build configuration list for PBXNativeTarget "Storage" */;
+			buildConfigurationList = 8E88AD0A2B5C4CE7003BDB04 /* Build configuration list for PBXNativeTarget "Organize" */;
 			buildPhases = (
 				8E88ACF62B5C4CE5003BDB04 /* Sources */,
 				8E88ACF72B5C4CE5003BDB04 /* Frameworks */,
@@ -210,9 +210,9 @@
 			);
 			dependencies = (
 			);
-			name = Storage;
+			name = Organize;
 			productName = Storage;
-			productReference = 8E88ACFA2B5C4CE5003BDB04 /* Storage.app */;
+			productReference = 8E88ACFA2B5C4CE5003BDB04 /* Organize.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8E88ACF52B5C4CE5003BDB04 /* Build configuration list for PBXProject "Storage" */;
+			buildConfigurationList = 8E88ACF52B5C4CE5003BDB04 /* Build configuration list for PBXProject "Organize" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -243,7 +243,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E88ACF92B5C4CE5003BDB04 /* Storage */,
+				8E88ACF92B5C4CE5003BDB04 /* Organize */,
 			);
 		};
 /* End PBXProject section */
@@ -274,7 +274,7 @@
 				8E88AD112B5C5CEA003BDB04 /* Storage.swift in Sources */,
 				8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */,
-				8E88ACFE2B5C4CE5003BDB04 /* StorageApp.swift in Sources */,
+				8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */,
 				8ED48FC02B5DACF900EB643A /* AppViewModel.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
 				8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */,
@@ -415,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Storage/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Organize/Preview Content\"";
 				DEVELOPMENT_TEAM = 52JMW2697M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -430,7 +430,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.chenyuhao.Storage;
+				PRODUCT_BUNDLE_IDENTIFIER = app.chenyuhao.organize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -445,7 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Storage/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Organize/Preview Content\"";
 				DEVELOPMENT_TEAM = 52JMW2697M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -460,7 +460,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.chenyuhao.Storage;
+				PRODUCT_BUNDLE_IDENTIFIER = app.chenyuhao.organize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -471,7 +471,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8E88ACF52B5C4CE5003BDB04 /* Build configuration list for PBXProject "Storage" */ = {
+		8E88ACF52B5C4CE5003BDB04 /* Build configuration list for PBXProject "Organize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E88AD082B5C4CE7003BDB04 /* Debug */,
@@ -480,7 +480,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E88AD0A2B5C4CE7003BDB04 /* Build configuration list for PBXNativeTarget "Storage" */ = {
+		8E88AD0A2B5C4CE7003BDB04 /* Build configuration list for PBXNativeTarget "Organize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E88AD0B2B5C4CE7003BDB04 /* Debug */,

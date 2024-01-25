@@ -1,6 +1,6 @@
 //
 //  SideBarView.swift
-//  Storage
+//  Organize
 //
 //  Created by Yuhao Chen on 1/22/24.
 //
@@ -82,7 +82,7 @@ struct SideBarView: View {
                 }
             }
         }
-        .navigationTitle("Storage")
+        .navigationTitle("Organize")
         .alert("Add Space", isPresented: $showAddTitleForm) {
             TextField("Enter your Space Name", text: $newSpaceName)
             Button("Cancel") {

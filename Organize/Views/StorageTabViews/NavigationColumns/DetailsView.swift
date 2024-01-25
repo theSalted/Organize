@@ -1,6 +1,6 @@
 //
 //  DetailsView.swift
-//  Storage
+//  Organize
 //
 //  Created by Yuhao Chen on 1/25/24.
 //

@@ -1,6 +1,6 @@
 //
-//  StorageApp.swift
-//  Storage
+//  OrganizeApp.swift
+//  Organize
 //
 //  Created by Yuhao Chen on 1/21/24.
 //
@@ -9,8 +9,8 @@ import SwiftUI
 import SwiftData
 
 @main
-struct StorageApp: App {
-    static let bundleId = "app.chenyuhao.storage"
+struct OrganizeApp: App {
+    static let bundleId = "app.chenyuhao.organize"
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([

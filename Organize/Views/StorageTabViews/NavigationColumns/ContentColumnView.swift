@@ -1,6 +1,6 @@
 //
 //  ContentColumnView.swift
-//  Storage
+//  Organize
 //
 //  Created by Yuhao Chen on 1/24/24.
 //

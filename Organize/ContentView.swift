@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Storage
+//  Organize
 //
 //  Created by Yuhao Chen on 1/21/24.
 //
@@ -24,7 +24,7 @@ struct ContentView: View {
                 DetailsView()
             }
             .tabItem {
-                Label("Storage", systemImage: "circle.grid.3x3.fill")
+                Label("Organize", systemImage: "circle.grid.3x3.fill")
             }
             .tag(AppViewModel.TabViewTag.storage)
             .toolbar(verticalSizeClass == .compact ? .hidden : .automatic, for: .tabBar)
