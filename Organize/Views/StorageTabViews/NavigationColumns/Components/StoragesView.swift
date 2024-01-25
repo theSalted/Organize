@@ -42,7 +42,7 @@ struct StoragesView: View {
                 GeometryReader { geometry in
                     ScrollView(.horizontal) {
                         LazyHStack {
-                            ForEach(storages) { storage in
+                            ForEach(selectedStorages) { storage in
                                 MetaPrimitiveView(storage)
                                     .frame(idealWidth: geometry.size.width - 10,
                                            maxHeight: .infinity,
@@ -115,6 +115,8 @@ struct StoragesView: View {
     
     private func createItem(_ name: String) {
         let item = Item(name: name)
+        #warning("TODO: Finish this implementation")
+        selectedStorages.first?.items.append(item)
         context.insert(item)
         try? context.save()
     }
