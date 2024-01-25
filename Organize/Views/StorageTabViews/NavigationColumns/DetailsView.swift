@@ -37,20 +37,28 @@ struct DetailsView: View {
                 TabView {
                     if !appModel.storageListSelections.isEmpty {
                         StoragesView()
+                            .navigationTitle("Storage")
+                            .tabItem { Label("Storage", systemImage: "archivebox") }
                     }
-                    List(selection: $appModel.storageListSelections) {
-                        Section(storages.isEmpty ? "" :
-                                    "^[\(storages.count) storage details](inflect: true) in ^[\(selectedSpaces.count) spaces](inflect: true)") {
-                            ForEach(storages) { storage in
-                                MetaPrimitiveView(storage)
+                    // Space Selection Detail
+                    NavigationStack {
+                        List(selection: $appModel.storageListSelections) {
+                            Section(storages.isEmpty
+                                    ? ""
+                                    : "^[\(storages.count) storage details](inflect: true) in ^[\(selectedSpaces.count) spaces](inflect: true)") {
+                                ForEach(storages) { storage in
+                                    MetaPrimitiveView(storage)
+                                }
+                                .listRowSpacing(10)
                             }
-                            .listRowSpacing(10)
                         }
+                        .navigationTitle("Space")
+                        .listStyle(.inset)
                     }
-                    .navigationTitle("Space Detail")
-                    .listStyle(.inset)
+                    .tabItem { Label("Space", systemImage: "square.split.bottomrightquarter") }
                     
                 }
+                .navigationBarTitleDisplayMode(.large)
                 .tabViewStyle(.page)
             default:
                 ContentUnavailableView(

@@ -19,7 +19,7 @@ struct SpaceView: View {
         if searchText.isEmpty {
             return space.storages
         } else {
-            return space.storages.filter { $0.name?.contains(searchText) ?? false }
+            return space.storages.filter { $0.name.contains(searchText) }
         }
     }
     
@@ -31,7 +31,7 @@ struct SpaceView: View {
                         NavigationLink {
 //                            StoragesView()
                         } label: {
-                            Text(storage.name ?? "Untitled")
+                            Text(storage.name)
                         }
                     }
                     .onDelete(perform: deleteStorages)
@@ -61,7 +61,7 @@ struct SpaceView: View {
             }
         }
         .navigationTitle(Binding(get: {
-            space.name ?? "Untitled"
+            space.name
         }, set: { newName in
             withAnimation {
                 space.name = newName

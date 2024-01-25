@@ -48,7 +48,7 @@ struct ContentColumnView: View {
             List(selection: $appModel.storageListSelections) {
                 Section(storages.isEmpty ? "" : "^[\(storages.count) Storages](inflect: true)") {
                     ForEach(storages) { storage in
-                        Text(storage.name ?? "Untitled")
+                        Text(storage.name)
                     }
                     .onDelete(perform: deleteStorages)
                 }

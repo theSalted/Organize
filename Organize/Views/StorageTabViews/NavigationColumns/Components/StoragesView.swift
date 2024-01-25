@@ -32,7 +32,7 @@ struct StoragesView: View {
         if searchText.isEmpty {
             return itemsFromStorages
         } else {
-            return itemsFromStorages.filter { $0.name?.contains(searchText) ?? false }
+            return itemsFromStorages.filter { $0.name.contains(searchText) }
         }
     }
     
@@ -57,7 +57,7 @@ struct StoragesView: View {
                 .frame(height: 200, alignment: .center)
                 Section(searchedItems.isEmpty ? "" : "Items") {
                     ForEach(searchedItems) { item in
-                        NavigationLink(item.name ?? "Untitled") {
+                        NavigationLink(item.name) {
                             MetaInfoView(item)
                         }
                     }
@@ -69,7 +69,11 @@ struct StoragesView: View {
             // Placeholder View when storage don't have any items
             if searchedItems.isEmpty {
                 if searchText.isEmpty{
-                    ContentUnavailableView("Let's Get Organized", systemImage: Item.randomSystemSymbol, description: Text("Select an item or create your first one."))
+                    ContentUnavailableView(
+                        "Empty Storage",
+                        systemImage: Item.randomSystemSymbol,
+                        description: 
+                            Text("This storage don't have any item, tap on the plus button to create your first one."))
                 } else {
                     ContentUnavailableView.search(text: searchText)
                 }

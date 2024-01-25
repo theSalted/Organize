@@ -21,7 +21,7 @@ struct MetaInfoView: View {
             
             Spacer()
         }
-        .navigationTitle(meta.name ?? "Untitled")
+        .navigationTitle(meta.name)
     }
 }
 

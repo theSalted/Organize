@@ -11,8 +11,8 @@ import SwiftData
 @Model
 final class Space : Identifiable, Meta {
     var id: UUID
-    var name: String?
-    var createdAt : Date?
+    var name: String
+    var createdAt : Date
     @Relationship(deleteRule: .cascade, inverse: \Storage.space)
     var storages = [Storage]()
     
@@ -20,7 +20,7 @@ final class Space : Identifiable, Meta {
         nil
     }()
     
-    init(name: String? = "Untitled") {
+    init(name: String = "Untitled") {
         self.name = name
         self.id = UUID()
         self.createdAt = Date()

@@ -17,7 +17,7 @@ struct MetaPrimitiveView: View {
     
     init(_ meta: any Meta) {
         self.meta = meta
-        self.title = meta.name ?? "Information"
+        self.title = meta.name
     }
     
     var body: some View {
@@ -25,20 +25,16 @@ struct MetaPrimitiveView: View {
             Text(title).font(.headline)
             
             VStack {
-                if let name = meta.name {
-                    Divider()
-                    InformationLabelView("Name", info: name)
-                }
+                Divider()
+                InformationLabelView("Name", info: meta.name)
                 
                 if let storedIn  = meta.storedIn {
                     Divider()
                     InformationLabelView("Where", info: storedIn)
                 }
                 
-                if let createdAt = meta.createdAt {
-                    Divider()
-                    InformationLabelView("Created", info: createdAt.formatted())
-                }
+                Divider()
+                InformationLabelView("Created", info: meta.createdAt.formatted())
                 
                 Divider()
                 InformationLabelView("Id", info: meta.id.uuidString)

@@ -11,9 +11,10 @@ import SwiftData
 @Model
 final class Item : Identifiable, Meta {
     var id : UUID
-    var name : String?
-    var createdAt: Date?
+    var name : String
+    var createdAt: Date
     var storage : Storage?
+    
     @Transient lazy var storedIn: String? = {
         storage?.name
     }()
@@ -24,7 +25,7 @@ final class Item : Identifiable, Meta {
         self.id = UUID()
     }
     
-    init(name: String? = "Untitled", storage: Storage) {
+    init(name: String = "Untitled", storage: Storage) {
         self.name = name
         self.createdAt = Date.now
         self.id = UUID()

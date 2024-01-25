@@ -23,7 +23,7 @@ struct SideBarView: View {
         if searchText.isEmpty {
             return spaces
         } else {
-            return spaces.filter { $0.name?.contains(searchText) ?? false }
+            return spaces.filter { $0.name.contains(searchText) }
         }
     }
     
@@ -37,7 +37,7 @@ struct SideBarView: View {
             
             Section(searchedSpaces.isEmpty ? "" : "Space") {
                 ForEach(searchedSpaces) { space in
-                    Text(space.name ?? "Untitled")
+                    Text(space.name)
                 }
                 .onDelete(perform: deleteItems)
             }
