@@ -55,6 +55,10 @@ import SwiftUI
     .edgesIgnoringSafeArea(.all)
 }
 
+enum Pattern : CaseIterable {
+    case halfToneDots, pokaDoubts, fishScale, lines, waves
+}
+
 // See Pattern.metal for notes on the individual patterns.
 extension ShapeStyle where Self == AnyShapeStyle {
     static func halfToneDots(foregroundColor: Color = .primary, backgroundColor: Color = .accentColor, radius: Double = 4, patternSize: CGSize? = nil, startPoint: UnitPoint = .leading, endPoint: UnitPoint = .trailing) -> Self {

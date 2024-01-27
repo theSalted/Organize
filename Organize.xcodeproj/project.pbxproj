@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8E11CFC32B6449F3000E13B0 /* WaveShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8E11CFC22B6449F3000E13B0 /* WaveShader.metal */; };
+		8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269092B654EEA007F0C89 /* PatternDesignView.swift */; };
+		8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690C2B65529F007F0C89 /* PatternView.swift */; };
+		8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690E2B655905007F0C89 /* AuroraView.swift */; };
+		8E2269112B657BEB007F0C89 /* AuroraView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269102B657BEB007F0C89 /* AuroraView+Styles.swift */; };
 		8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528312B5D823300EEBCCB /* InformationLabelView.swift */; };
 		8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528512B5D925B00EEBCCB /* SideBarView.swift */; };
 		8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */; };
@@ -34,6 +38,10 @@
 
 /* Begin PBXFileReference section */
 		8E11CFC22B6449F3000E13B0 /* WaveShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WaveShader.metal; sourceTree = "<group>"; };
+		8E2269092B654EEA007F0C89 /* PatternDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDesignView.swift; sourceTree = "<group>"; };
+		8E22690C2B65529F007F0C89 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
+		8E22690E2B655905007F0C89 /* AuroraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraView.swift; sourceTree = "<group>"; };
+		8E2269102B657BEB007F0C89 /* AuroraView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuroraView+Styles.swift"; sourceTree = "<group>"; };
 		8E5528312B5D823300EEBCCB /* InformationLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLabelView.swift; sourceTree = "<group>"; };
 		8E5528512B5D925B00EEBCCB /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoView.swift; sourceTree = "<group>"; };
@@ -70,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E22690B2B655255007F0C89 /* PatternViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E2269092B654EEA007F0C89 /* PatternDesignView.swift */,
+				8E22690E2B655905007F0C89 /* AuroraView.swift */,
+				8E22690C2B65529F007F0C89 /* PatternView.swift */,
+			);
+			path = PatternViews;
+			sourceTree = "<group>";
+		};
 		8E88ACF12B5C4CE5003BDB04 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				8E8D092D2B64162800AB088B /* Pattern.swift */,
+				8E2269102B657BEB007F0C89 /* AuroraView+Styles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -148,6 +167,7 @@
 		8EB944902B615AE1005FBADC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E22690B2B655255007F0C89 /* PatternViews */,
 				8EF034382B615B5F00A15340 /* CaptureTabViews */,
 				8EF034372B615B3800A15340 /* StorageTabViews */,
 			);
@@ -290,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */,
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,
 				8E88AD0F2B5C5C41003BDB04 /* Item.swift in Sources */,
 				8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */,
@@ -301,10 +322,13 @@
 				8E8D092B2B6412B000AB088B /* Pattern.metal in Sources */,
 				8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */,
+				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
 				8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */,
 				8E11CFC32B6449F3000E13B0 /* WaveShader.metal in Sources */,
 				8ED48FC02B5DACF900EB643A /* AppViewModel.swift in Sources */,
+				8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
+				8E2269112B657BEB007F0C89 /* AuroraView+Styles.swift in Sources */,
 				8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */,
 				8E88AD132B5C6447003BDB04 /* SpaceView.swift in Sources */,
 				8E88AD152B5D7395003BDB04 /* StoragesView.swift in Sources */,
