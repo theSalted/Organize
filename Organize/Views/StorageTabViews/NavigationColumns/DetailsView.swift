@@ -37,7 +37,6 @@ struct DetailsView: View {
                 TabView {
                     if !appModel.storageListSelections.isEmpty {
                         StoragesView()
-                            .navigationTitle("Storage")
                             .tabItem { Label("Storage", systemImage: "archivebox") }
                     }
                     // Space Selection Detail
