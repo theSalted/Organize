@@ -9,21 +9,21 @@ import SwiftUI
 import Metal
 
 struct PatternDesignView: View {
-    let design : PatternDesign
-    let patternColor : Color
+    let design :          PatternDesign
+    let patternColor :    Color
     let backgroundColor : Color
     
-    init(_ design: PatternDesign,
-         patternColor: Color,
+    init(_ design:        PatternDesign,
+         patternColor:    Color,
          backgroundColor: Color) {
-        self.design = design
-        self.patternColor = patternColor
+        self.design =          design
+        self.patternColor =    patternColor
         self.backgroundColor = backgroundColor
     }
-    
-    init(_ design: PatternDesign, patternColor : Color) {
-        self.design = design
-        self.patternColor = patternColor
+    init(_ design:      PatternDesign,
+         patternColor : Color) {
+        self.design =          design
+        self.patternColor =    patternColor
         self.backgroundColor = Color(uiColor: UIColor.systemBackground)
     }
     
@@ -32,23 +32,24 @@ struct PatternDesignView: View {
             ZStack {
                 TimelineView(.animation()) { timeline in
                     let t = timeline.date.timeIntervalSinceReferenceDate
-                    ZStack {
-                        PatternView(
-                            design.pattern,
-                            patternColor: patternColor,
-                            backgroundColor: backgroundColor,
-                            timeInterval: t,
-                            opacity: design.opacityStyle.patternOpacityValue(),
-                            direction: design.patternAnimationDirection)
-                        LinearGradient(
-                            colors:
-                                [backgroundColor,
-                                 backgroundColor.opacity(0.8),
-                                 .clear],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing)
-                    }
-
+                    PatternView(
+                        design.pattern,
+                        patternColor: patternColor,
+                        backgroundColor: backgroundColor,
+                        timeInterval: t,
+                        opacity: design.opacityStyle.patternOpacityValue(),
+                        direction: design.patternAnimationDirection)
+                }
+                if let startPoint = design.gradientEffect.startingPoint,
+                   let endPoint   = design.gradientEffect.endPoint,
+                   design.gradientEffect != .noGradient {
+                    LinearGradient(
+                        colors:
+                            [backgroundColor,
+                             backgroundColor.opacity(0.8),
+                             .clear],
+                        startPoint: startPoint,
+                        endPoint: endPoint)
                 }
                 AuroraView(
                     patternColor:
@@ -63,7 +64,7 @@ struct PatternDesignView: View {
 }
 
 #Preview {
-    PatternDesignView(PatternDesign.getRandomDesign() ,
+    PatternDesignView(PatternDesign.getRandomDesign(gradientEffect: .topLeadingToBottomTrailing) ,
         patternColor: .accent,
         backgroundColor: Color(uiColor: UIColor.secondarySystemBackground))
         .ignoresSafeArea()
