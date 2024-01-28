@@ -81,7 +81,7 @@ extension AuroraView {
         func offsetStartingPoint() -> (CGPoint, CGPoint) {
             switch self {
             case .dipFromTop:
-                (CGPoint(x: 2, y: 2),     CGPoint(x: 3, y: 1.5))
+                (CGPoint(x: 5, y: 1.6),     CGPoint(x: 3, y: 1.5))
             case .downToMiddle:
                 (CGPoint(x: 2, y: 2),     CGPoint(x: 1, y: 2.5))
             case .riseToMiddle:
@@ -95,7 +95,7 @@ extension AuroraView {
         func offsetMultiplier() -> (CGPoint, CGPoint) {
             switch self {
             case .dipFromTop:
-                (CGPoint(x: 1, y: 1.3), CGPoint(x: 1, y: 0.7))
+                (CGPoint(x: 1, y: 0.25), CGPoint(x: 1, y: 0.7))
             case .riseToMiddle:
                 (CGPoint(x: 3, y: 7),   CGPoint(x: 3, y: 5))
             case .downToMiddle:
@@ -109,7 +109,7 @@ extension AuroraView {
         func startingScale() -> (CGFloat, CGFloat) {
             switch self {
             case .dipFromTop:
-                (0.6 , 0.4)
+                (2 , 0.4)
             case .riseToMiddle:
                 (1 , -0.5)
             case .downToMiddle:
@@ -123,7 +123,7 @@ extension AuroraView {
         func scaleMultiplier() -> (CGFloat, CGFloat) {
             switch self {
             case .dipFromTop:
-                (0.7, 1)
+                (0.3, 1)
             case .riseToMiddle:
                 (0.7, -1)
             case .downToMiddle:

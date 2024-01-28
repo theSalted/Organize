@@ -46,60 +46,17 @@ struct SideBarView: View {
         .environment(\.editMode, $editMode)
         .scrollContentBackground(.hidden)
         .background {
-            GeometryReader { geometry in
-                TimelineView(.animation) { timeline in
-                    let x = geometry.size.width
-                    let y = geometry.size.height
-                    let t = timeline.date.timeIntervalSinceReferenceDate
-                    let a = t.remainder(dividingBy: 360)
-                    let v = (sin(t) + 1)/2
-                    
-                    let t2 = timeline.date.timeIntervalSince1970 - Date().timeIntervalSince1970
-                    let speed: CGFloat = 1
-                    let amplitude: CGFloat = 5
-                    let frequency: CGFloat = 2
-                    
-                    Rectangle().fill(.fishScale(
-                        foregroundColor: .accentColor.opacity(0.3),
-                        backgroundColor: backgroundColor,
-                        radius: 26,
-                        thickness: v - 0.5,
-                        angle: .degrees(a * 0.5)
-                    ))
-                    .fill(LinearGradient(
-                        colors:
-                            [backgroundColor,
-                             backgroundColor.opacity(0.8),
-                             .clear],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing))
-                    .ignoresSafeArea()
-                    Group {
-                        Circle()
-                            .fill(Color.accentColor.gradient.opacity(0.2)).blur(radius: 20 + (v * 30))
-                            .scaleEffect((v * 0.7) + 1.3)
-                            .offset(x: -x/(2 + 1 * v), y: -y/(1 + v * 0.3))
-                            
-                        Circle()
-                            .fill(Color.accentColor.gradient.opacity(0.2)).blur(radius: 30 + (v * 70))
-                            .scaleEffect((v * 0.7) - 1.3)
-                            .offset(x: v * 0.5 + 0.5, y: -y/(1 + v * 0.1))
-                            .ignoresSafeArea()
-                    }
-                    .distortionEffect(
-                        .init(
-                            function: .init(library: .default, name: "wave"),
-                            arguments: [
-                                .float(t2),
-                                .float(speed),
-                                .float(frequency),
-                                .float(amplitude)
-                            ]
-                        ),
-                        maxSampleOffset: .zero
-                    )
-                }
-            }
+            PatternDesignView(
+                .init(pattern: .fishScale,
+                      patternAnimationDirection: .counterClockwise,
+                      auroraAnimationStyle: .dipFromTop,
+                      auroraShape: .jelly,
+                      auroraBlurStyle: .halo,
+                      opacityStyle: .light,
+                      gradientEffect: .topLeadingToBottomTrailing),
+                patternColor: .accentColor,
+                backgroundColor: Color(uiColor: UIColor.secondarySystemBackground))
+            .ignoresSafeArea()
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
