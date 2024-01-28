@@ -13,20 +13,54 @@ extension AuroraView {
         case halo = 30
         case blurry = 100
     }
+    enum WaveType {
+        case simple, spiky, complex
+    }
     enum AuroraShapeStyle : CaseIterable {
-        case spiky, fluffy, smokey
+        case spiky, fluffy, wavy, puffy, jelly, slimey
         func amplitude() -> Double {
             switch self {
             case .spiky: 20
-            case .fluffy: 5
-            case .smokey: 5
+            case .fluffy, .wavy: 5
+            case .puffy, .jelly, .slimey: 0
             }
         }
         func frequency() -> Double {
             switch self {
             case .spiky: 2
             case .fluffy: 2
-            case .smokey: 20
+            case .wavy: 20
+            case .puffy: 0 //Ignore frequency
+            case .jelly: 10
+            case .slimey: 5
+            }
+        }
+        func strength() -> Double {
+            switch self {
+            // These ignore strength
+            case .spiky, .fluffy, .wavy, .puffy:
+                1
+            case .jelly:
+                8
+            case .slimey:
+                20
+            }
+        }
+        func speed() -> Double {
+            switch self.waveType() {
+            case .simple: 0 // Don't care speed
+            case .spiky: 20
+            case .complex: 0.5
+            }
+        }
+        func waveType() -> WaveType {
+            switch self {
+            case .fluffy, .wavy, .spiky:
+                .spiky
+            case .puffy:
+                .simple
+            case .jelly, .slimey:
+                .complex
             }
         }
     }
@@ -61,7 +95,7 @@ extension AuroraView {
         func offsetMultiplier() -> (CGPoint, CGPoint) {
             switch self {
             case .dipFromTop:
-                (CGPoint(x: 1, y: 2), CGPoint(x: 1, y: 1))
+                (CGPoint(x: 1, y: 1.3), CGPoint(x: 1, y: 0.7))
             case .riseToMiddle:
                 (CGPoint(x: 3, y: 7), CGPoint(x: 3, y: 5))
             case .downToMiddle:

@@ -56,7 +56,7 @@ import SwiftUI
 }
 
 enum Pattern : CaseIterable {
-    case halfToneDots, pokaDoubts, fishScale, lines, waves
+    case halfToneDots, pokaDots, fishScale, lines, waves
 }
 
 // See Pattern.metal for notes on the individual patterns.
