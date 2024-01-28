@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct PatternView: View {
-    enum Direction {
+    enum Direction : CaseIterable {
         case clockwise, counterClockwise
         
         func angle() -> Double {
