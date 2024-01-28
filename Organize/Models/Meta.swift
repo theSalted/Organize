@@ -12,4 +12,5 @@ protocol Meta : Identifiable, Hashable where ID == UUID {
     var name : String { get set }
     var storedIn : String? { get }
     var createdAt : Date { get set }
+    var pattern : PatternDesign { get set }
 }

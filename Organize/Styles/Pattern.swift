@@ -55,7 +55,7 @@ import SwiftUI
     .edgesIgnoringSafeArea(.all)
 }
 
-enum Pattern : CaseIterable {
+enum Pattern : CaseIterable, Codable {
     case halfToneDots, pokaDots, fishScale, lines, waves
 }
 

@@ -13,6 +13,7 @@ final class Space : Identifiable, Meta {
     var id: UUID
     var name: String
     var createdAt : Date
+    var pattern: PatternDesign
     @Relationship(deleteRule: .cascade, inverse: \Storage.space)
     var storages = [Storage]()
     
@@ -24,5 +25,6 @@ final class Space : Identifiable, Meta {
         self.name = name
         self.id = UUID()
         self.createdAt = Date()
+        self.pattern = PatternDesign.getRandomDesign()
     }
 }

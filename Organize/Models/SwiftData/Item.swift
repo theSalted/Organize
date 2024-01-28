@@ -14,6 +14,7 @@ final class Item : Identifiable, Meta {
     var name : String
     var createdAt: Date
     var storage : Storage?
+    var pattern: PatternDesign
     
     @Transient lazy var storedIn: String? = {
         storage?.name
@@ -23,6 +24,7 @@ final class Item : Identifiable, Meta {
         self.name = name
         self.createdAt = Date.now
         self.id = UUID()
+        self.pattern = PatternDesign.getRandomDesign()
     }
     
     init(name: String = "Untitled", storage: Storage) {
@@ -30,6 +32,7 @@ final class Item : Identifiable, Meta {
         self.createdAt = Date.now
         self.id = UUID()
         self.storage = storage
+        self.pattern = PatternDesign.getRandomDesign()
     }
     
     static var randomSystemSymbol : String {

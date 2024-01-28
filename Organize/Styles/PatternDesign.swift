@@ -8,7 +8,7 @@
 import Foundation
 import OSLog
 
-struct PatternDesign {
+struct PatternDesign : Codable {
     let pattern : Pattern
     let patternAnimationDirection : PatternView.Direction
     let auroraAnimationStyle : AuroraView.AuroraAnimationStyle
@@ -18,7 +18,7 @@ struct PatternDesign {
 }
 
 extension PatternDesign {
-    enum OpacityStyle : CaseIterable {
+    enum OpacityStyle : CaseIterable, Codable {
         case light, medium, heavy
         func patternOpacityValue() -> Double {
             switch self {
@@ -92,3 +92,4 @@ extension PatternDesign {
         }
     }
 }
+

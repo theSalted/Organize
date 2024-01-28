@@ -9,16 +9,6 @@ import SwiftUI
 
 
 struct PatternView: View {
-    enum Direction : CaseIterable {
-        case clockwise, counterClockwise
-        
-        func angle() -> Double {
-            switch self {
-            case .clockwise: -1
-            case .counterClockwise: 1 }
-        }
-    }
-    
     let pattern : Pattern
     let patternColor : Color
     let backgroundColor : Color
@@ -105,6 +95,18 @@ struct PatternView: View {
                        patternSize: CGSize(width: 50 - (v * 10), height: 50)
                       )
             ).blur(radius: 5)
+        }
+    }
+}
+
+extension PatternView {
+    enum Direction : CaseIterable, Codable {
+        case clockwise, counterClockwise
+        
+        func angle() -> Double {
+            switch self {
+            case .clockwise: -1
+            case .counterClockwise: 1 }
         }
     }
 }

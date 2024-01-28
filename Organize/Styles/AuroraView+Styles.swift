@@ -8,7 +8,7 @@
 import Foundation
 
 extension AuroraView {
-    enum AuroraBlurStyle : Double, CaseIterable {
+    enum AuroraBlurStyle : Double, CaseIterable, Codable {
         case clear = 10
         case halo = 30
         case blurry = 100
@@ -16,7 +16,7 @@ extension AuroraView {
     enum WaveType {
         case simple, spiky, complex
     }
-    enum AuroraShapeStyle : CaseIterable {
+    enum AuroraShapeStyle : CaseIterable, Codable {
         case spiky, fluffy, wavy, puffy, jelly, slimey
         func amplitude() -> Double {
             switch self {
@@ -64,7 +64,7 @@ extension AuroraView {
             }
         }
     }
-    enum AuroraAnimationStyle : CaseIterable {
+    enum AuroraAnimationStyle : CaseIterable, Codable {
         case dipFromTop, riseToMiddle, downToMiddle, meetAtMiddle, meetAtMiddleMirrored
         func direction() -> (CGPoint, CGPoint) {
             switch self {
