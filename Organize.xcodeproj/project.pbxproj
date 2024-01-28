@@ -19,6 +19,9 @@
 		8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */; };
 		8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8452592B663D84005CA22D /* PatternDesign.swift */; };
 		8E84525C2B664A85005CA22D /* Collection+randomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84525B2B664A85005CA22D /* Collection+randomElement.swift */; };
+		8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84525E2B669047005CA22D /* OpacityStyle.swift */; };
+		8E8452612B66906B005CA22D /* GradientEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8452602B66906B005CA22D /* GradientEffect.swift */; };
+		8E8452632B6690A2005CA22D /* GetRandomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8452622B6690A2005CA22D /* GetRandomDesign.swift */; };
 		8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88ACFD2B5C4CE5003BDB04 /* OrganizeApp.swift */; };
 		8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */; };
 		8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88AD012B5C4CE5003BDB04 /* Space.swift */; };
@@ -51,6 +54,9 @@
 		8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		8E8452592B663D84005CA22D /* PatternDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDesign.swift; sourceTree = "<group>"; };
 		8E84525B2B664A85005CA22D /* Collection+randomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+randomElement.swift"; sourceTree = "<group>"; };
+		8E84525E2B669047005CA22D /* OpacityStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityStyle.swift; sourceTree = "<group>"; };
+		8E8452602B66906B005CA22D /* GradientEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientEffect.swift; sourceTree = "<group>"; };
+		8E8452622B6690A2005CA22D /* GetRandomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomDesign.swift; sourceTree = "<group>"; };
 		8E88ACFA2B5C4CE5003BDB04 /* Organize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Organize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88ACFD2B5C4CE5003BDB04 /* OrganizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizeApp.swift; sourceTree = "<group>"; };
 		8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +96,17 @@
 				8E22690C2B65529F007F0C89 /* PatternView.swift */,
 			);
 			path = PatternViews;
+			sourceTree = "<group>";
+		};
+		8E84525D2B66902D005CA22D /* PatternDesign */ = {
+			isa = PBXGroup;
+			children = (
+				8E8452592B663D84005CA22D /* PatternDesign.swift */,
+				8E84525E2B669047005CA22D /* OpacityStyle.swift */,
+				8E8452602B66906B005CA22D /* GradientEffect.swift */,
+				8E8452622B6690A2005CA22D /* GetRandomDesign.swift */,
+			);
+			path = PatternDesign;
 			sourceTree = "<group>";
 		};
 		8E88ACF12B5C4CE5003BDB04 = {
@@ -154,9 +171,9 @@
 		8E8D092C2B64161400AB088B /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				8E84525D2B66902D005CA22D /* PatternDesign */,
 				8E8D092D2B64162800AB088B /* Pattern.swift */,
 				8E2269102B657BEB007F0C89 /* AuroraView+Styles.swift */,
-				8E8452592B663D84005CA22D /* PatternDesign.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -183,8 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				8ED48FC32B6028CA00EB643A /* View+If.swift */,
-				8E84525B2B664A85005CA22D /* Collection+randomElement.swift */,
 				8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */,
+				8E84525B2B664A85005CA22D /* Collection+randomElement.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +336,7 @@
 				8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */,
 				8E84525C2B664A85005CA22D /* Collection+randomElement.swift in Sources */,
 				8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */,
+				8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */,
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,
 				8E88AD0F2B5C5C41003BDB04 /* Item.swift in Sources */,
 				8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */,
@@ -336,9 +354,11 @@
 				8ED48FC02B5DACF900EB643A /* AppViewModel.swift in Sources */,
 				8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
+				8E8452632B6690A2005CA22D /* GetRandomDesign.swift in Sources */,
 				8E2269112B657BEB007F0C89 /* AuroraView+Styles.swift in Sources */,
 				8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */,
 				8E88AD132B5C6447003BDB04 /* SpaceView.swift in Sources */,
+				8E8452612B66906B005CA22D /* GradientEffect.swift in Sources */,
 				8E88AD152B5D7395003BDB04 /* StoragesView.swift in Sources */,
 				8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */,
 				8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */,

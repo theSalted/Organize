@@ -21,7 +21,7 @@ struct PatternDesignView: View {
         self.backgroundColor = backgroundColor
     }
     
-    init(_ design: PatternDesign,patternColor : Color) {
+    init(_ design: PatternDesign, patternColor : Color) {
         self.design = design
         self.patternColor = patternColor
         self.backgroundColor = Color(uiColor: UIColor.systemBackground)

@@ -61,7 +61,14 @@ enum Pattern : CaseIterable, Codable {
 
 // See Pattern.metal for notes on the individual patterns.
 extension ShapeStyle where Self == AnyShapeStyle {
-    static func halfToneDots(foregroundColor: Color = .primary, backgroundColor: Color = .accentColor, radius: Double = 4, patternSize: CGSize? = nil, startPoint: UnitPoint = .leading, endPoint: UnitPoint = .trailing) -> Self {
+    static func halfToneDots(
+        foregroundColor: Color = .primary,
+        backgroundColor: Color = .accentColor,
+        radius: Double = 4,
+        patternSize: CGSize? = nil,
+        startPoint: UnitPoint = .leading,
+        endPoint: UnitPoint = .trailing) -> Self {
+            
         let d = radius * 2
         let size = patternSize ?? CGSize(width: d, height: d);
 
@@ -76,7 +83,14 @@ extension ShapeStyle where Self == AnyShapeStyle {
         ))
     }
 
-    static func polkaDots(foregroundColor: Color = .primary, backgroundColor: Color = .accentColor, radius: Double = 8, angle: Angle = .zero, offset: CGSize = .zero, patternSize: CGSize? = nil) -> Self {
+    static func polkaDots(
+        foregroundColor: Color = .primary,
+        backgroundColor: Color = .accentColor,
+        radius: Double = 8,
+        angle: Angle = .zero,
+        offset: CGSize = .zero,
+        patternSize: CGSize? = nil) -> Self {
+            
         let d = radius * 3 * sqrt(2)
         let size = patternSize ?? CGSize(width: d, height: d)
 
@@ -91,7 +105,13 @@ extension ShapeStyle where Self == AnyShapeStyle {
         ))
     }
 
-    static func fishScale(foregroundColor: Color = .primary, backgroundColor: Color = .accentColor, radius: Double = 20, thickness: Double = 2, angle: Angle = .zero, offset: CGSize = .zero) -> Self {
+    static func fishScale(
+        foregroundColor: Color = .primary,
+        backgroundColor: Color = .accentColor,
+        radius: Double = 20, thickness: Double = 2,
+        angle: Angle = .zero,
+        offset: CGSize = .zero) -> Self {
+            
         AnyShapeStyle(ShaderLibrary.default.fishScale(
             .boundingRect,
             .float(radius),
@@ -103,7 +123,12 @@ extension ShapeStyle where Self == AnyShapeStyle {
         ))
     }
 
-    static func lines(colors: [Color], width: CGFloat = 10, angle: Angle = .zero, offset: CGSize = .zero) -> Self {
+    static func lines(
+        colors: [Color],
+        width: CGFloat = 10,
+        angle: Angle = .zero,
+        offset: CGSize = .zero) -> Self {
+            
         AnyShapeStyle(ShaderLibrary.default.lines(
             .boundingRect,
             .float(width),
@@ -113,7 +138,13 @@ extension ShapeStyle where Self == AnyShapeStyle {
         ))
     }
 
-    static func waves(colors: [Color], width: CGFloat = 10, angle: Angle = .zero, offset: CGSize = .zero, patternSize: CGSize? = nil) -> Self {
+    static func waves(
+        colors: [Color],
+        width: CGFloat = 10,
+        angle: Angle = .zero, 
+        offset: CGSize = .zero,
+        patternSize: CGSize? = nil) -> Self {
+            
         AnyShapeStyle(ShaderLibrary.default.waves(
             .boundingRect,
             .float(width),

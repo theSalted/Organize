@@ -71,9 +71,9 @@ extension AuroraView {
             case .dipFromTop, .downToMiddle:
                 (CGPoint(x: -1, y: -1), CGPoint(x: 1, y: -1))
             case .riseToMiddle:
-                (CGPoint(x: -1, y: 1), CGPoint(x: 1, y: 1))
+                (CGPoint(x: -1, y: 1),  CGPoint(x: 1, y: 1))
             case .meetAtMiddle:
-                (CGPoint(x: -1, y: 1), CGPoint(x: 1, y: -1))
+                (CGPoint(x: -1, y: 1),  CGPoint(x: 1, y: -1))
             case .meetAtMiddleMirrored:
                 (CGPoint(x: -1, y: -1), CGPoint(x: 1, y: 1))
             }
@@ -81,15 +81,15 @@ extension AuroraView {
         func offsetStartingPoint() -> (CGPoint, CGPoint) {
             switch self {
             case .dipFromTop:
-                (CGPoint(x: 2, y: 2), CGPoint(x: 3, y: 1.5))
+                (CGPoint(x: 2, y: 2),     CGPoint(x: 3, y: 1.5))
             case .downToMiddle:
-                (CGPoint(x: 2, y: 2), CGPoint(x: 1, y: 2.5))
+                (CGPoint(x: 2, y: 2),     CGPoint(x: 1, y: 2.5))
             case .riseToMiddle:
                 (CGPoint(x: 2.2, y: 1.2), CGPoint(x: 1.3, y: 1.5))
             case .meetAtMiddle:
-                (CGPoint(x: 2, y: 1.2), CGPoint(x: 1.5, y: 3))
+                (CGPoint(x: 2, y: 1.2),   CGPoint(x: 1.5, y: 3))
             case .meetAtMiddleMirrored:
-                (CGPoint(x: 2, y: 2), CGPoint(x: 2, y: 1.2))
+                (CGPoint(x: 2, y: 2),     CGPoint(x: 2, y: 1.2))
             }
         }
         func offsetMultiplier() -> (CGPoint, CGPoint) {
@@ -97,13 +97,13 @@ extension AuroraView {
             case .dipFromTop:
                 (CGPoint(x: 1, y: 1.3), CGPoint(x: 1, y: 0.7))
             case .riseToMiddle:
-                (CGPoint(x: 3, y: 7), CGPoint(x: 3, y: 5))
+                (CGPoint(x: 3, y: 7),   CGPoint(x: 3, y: 5))
             case .downToMiddle:
-                (CGPoint(x: 1, y: 6), CGPoint(x: 7, y: 3))
+                (CGPoint(x: 1, y: 6),   CGPoint(x: 7, y: 3))
             case .meetAtMiddle:
                 (CGPoint(x: 10, y: 10), CGPoint(x: 7, y: 10))
             case .meetAtMiddleMirrored:
-                (CGPoint(x: 1, y: 20), CGPoint(x: 9, y: 20))
+                (CGPoint(x: 1, y: 20),  CGPoint(x: 9, y: 20))
             }
         }
         func startingScale() -> (CGFloat, CGFloat) {
