@@ -12,7 +12,6 @@ struct StoragesView: View {
     @Environment(\.modelContext) private var context
     @Environment(AppViewModel.self) private var appModel
     @Query private var storages: [Storage]
-
     var selectedStorages: [Storage] {
         storages.filter { appModel.storageListSelections.contains($0.id) }
     }
@@ -48,19 +47,17 @@ struct StoragesView: View {
                             NavigationLink {
                                 MetaInfoView(storage)
                             } label: {
+                                let color = storage.color
                                 VStack {
-                                    Image(systemName: "soccerball")
+                                    PatternDesignView(storage.pattern, patternColor: color)
                                         .frame(maxWidth: .infinity, minHeight: 200)
-                                        .background {
-                                            Rectangle().fill(.fishScale(
-                                                foregroundColor: .white,
-                                                backgroundColor: .blue.opacity(0.3),
-                                                radius: 26,
-                                                thickness: 1.5,
-                                                angle: .degrees(12)
-                                            ))
-                                        }
                                         .clipShape(RoundedRectangle(cornerRadius: 20))
+                                        .overlay( /// apply a rounded border
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(LinearGradient(colors: [color, .clear, .clear], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1)
+                                                 .brightness(1.1)
+                                        )
+                                        .shadow(color: color.opacity(0.5), radius: 10)
                                     Text(storage.name)
                                         .font(.headline)
                                 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 final class Item : Identifiable, Meta {
@@ -15,6 +16,12 @@ final class Item : Identifiable, Meta {
     var createdAt: Date
     var storage : Storage?
     var pattern: PatternDesign
+    private var _colorComponents : ColorComponents
+    
+    @Transient var color : Color {
+        get { _colorComponents.color }
+        set { _colorComponents = ColorComponents.fromColor(newValue) }
+    }
     
     @Transient lazy var storedIn: String? = {
         storage?.name
@@ -25,6 +32,7 @@ final class Item : Identifiable, Meta {
         self.createdAt = Date.now
         self.id = UUID()
         self.pattern = PatternDesign.getRandomDesign()
+        self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
     }
     
     init(name: String = "Untitled", storage: Storage) {
@@ -33,6 +41,7 @@ final class Item : Identifiable, Meta {
         self.id = UUID()
         self.storage = storage
         self.pattern = PatternDesign.getRandomDesign()
+        self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
     }
     
     static var randomSystemSymbol : String {

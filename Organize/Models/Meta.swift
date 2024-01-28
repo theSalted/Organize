@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol Meta : Identifiable, Hashable where ID == UUID {
     var id : UUID { get set }
@@ -13,4 +14,5 @@ protocol Meta : Identifiable, Hashable where ID == UUID {
     var storedIn : String? { get }
     var createdAt : Date { get set }
     var pattern : PatternDesign { get set }
+    var color : Color { get set }
 }

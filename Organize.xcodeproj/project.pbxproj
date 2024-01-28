@@ -33,6 +33,8 @@
 		8E88AD152B5D7395003BDB04 /* StoragesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88AD142B5D7395003BDB04 /* StoragesView.swift */; };
 		8E8D092B2B6412B000AB088B /* Pattern.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D092A2B6412B000AB088B /* Pattern.metal */; };
 		8E8D092E2B64162800AB088B /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D092D2B64162800AB088B /* Pattern.swift */; };
+		8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDED2B66A3130049E709 /* ColorHelper.swift */; };
+		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
 		8ED48FC02B5DACF900EB643A /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FBF2B5DACF900EB643A /* AppViewModel.swift */; };
 		8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC12B601A7000EB643A /* ContentColumnView.swift */; };
@@ -69,6 +71,8 @@
 		8E88AD142B5D7395003BDB04 /* StoragesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoragesView.swift; sourceTree = "<group>"; };
 		8E8D092A2B6412B000AB088B /* Pattern.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Pattern.metal; sourceTree = "<group>"; };
 		8E8D092D2B64162800AB088B /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
+		8EB7EDED2B66A3130049E709 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		8ED48FBF2B5DACF900EB643A /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		8ED48FC12B601A7000EB643A /* ContentColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentColumnView.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				8E8D09222B640CFB00AB088B /* Shaders */,
 				8E8D092C2B64161400AB088B /* Styles */,
 				8ED48FC52B6028E800EB643A /* Extensions */,
+				8EB7EDEC2B66A2EF0049E709 /* Helpers */,
 				8E88AD0D2B5C5C22003BDB04 /* Models */,
 				8EB9448F2B615A75005FBADC /* ViewModels */,
 				8EB944902B615AE1005FBADC /* Views */,
@@ -176,6 +181,15 @@
 				8E2269102B657BEB007F0C89 /* AuroraView+Styles.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		8EB7EDEC2B66A2EF0049E709 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8EB7EDED2B66A3130049E709 /* ColorHelper.swift */,
+				8EB7EDF12B66D3130049E709 /* ColorComponents.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8EB9448F2B615A75005FBADC /* ViewModels */ = {
@@ -340,6 +354,7 @@
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,
 				8E88AD0F2B5C5C41003BDB04 /* Item.swift in Sources */,
 				8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */,
+				8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */,
 				8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */,
 				8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */,
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
@@ -347,6 +362,7 @@
 				8E88AD112B5C5CEA003BDB04 /* Storage.swift in Sources */,
 				8E8D092B2B6412B000AB088B /* Pattern.metal in Sources */,
 				8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */,
+				8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
 				8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */,

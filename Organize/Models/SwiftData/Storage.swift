@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 final class Storage : Identifiable, Meta {
@@ -17,6 +18,13 @@ final class Storage : Identifiable, Meta {
     @Relationship(deleteRule: .cascade, inverse: \Item.storage)
     var items = [Item]()
     var space : Space?
+    private var _colorComponents : ColorComponents
+    
+    @Transient var color : Color {
+        get { _colorComponents.color }
+        set { _colorComponents = ColorComponents.fromColor(newValue) }
+    }
+    
     @Transient lazy var storedIn: String? = {
         space?.name
     }()
@@ -26,5 +34,6 @@ final class Storage : Identifiable, Meta {
         self.createdAt = Date()
         self.id = UUID()
         self.pattern = PatternDesign.getRandomDesign()
+        self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
     }
 }
