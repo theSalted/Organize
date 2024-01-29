@@ -146,7 +146,7 @@
 				8E8D092C2B64161400AB088B /* Styles */,
 				8ED48FC52B6028E800EB643A /* Extensions */,
 				8EB7EDEC2B66A2EF0049E709 /* Helpers */,
-				8E88AD0D2B5C5C22003BDB04 /* Models */,
+				8E88AD0D2B5C5C22003BDB04 /* DataModels */,
 				8EB9448F2B615A75005FBADC /* ViewModels */,
 				8EB944902B615AE1005FBADC /* Views */,
 				8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */,
@@ -165,13 +165,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8E88AD0D2B5C5C22003BDB04 /* Models */ = {
+		8E88AD0D2B5C5C22003BDB04 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				8EF0343A2B61662B00A15340 /* SwiftData */,
 				8ECBDC402B605BDF00CCF70F /* Meta.swift */,
 			);
-			path = Models;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		8E8D09222B640CFB00AB088B /* Shaders */ = {

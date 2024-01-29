@@ -93,13 +93,6 @@ struct ContentColumnView: View {
                     )
                 }
             }
-            .scrollContentBackground(.hidden)
-//            .background {
-//                if let firstSelection = selectedSpaces.first {
-//                    PatternDesignView(firstSelection.pattern, patternColor: firstSelection.color)
-//                        .ignoresSafeArea()
-//                }
-//            }
             .alert("Add Storage", isPresented: $showAddStorageFields) {
                 TextField("Enter your Space Name", text: $newStorageName)
                 Button("Cancel") {
