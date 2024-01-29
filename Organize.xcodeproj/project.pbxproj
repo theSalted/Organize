@@ -227,6 +227,7 @@
 		8ED1EB7F2B681047003377CA /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				8EF034412B6166E700A15340 /* MetaInfoViews */,
 				8ED1EB752B680385003377CA /* CurtainStack.swift */,
 			);
 			path = SubViews;
@@ -272,10 +273,10 @@
 		8EF034402B6166BA00A15340 /* NavigationColumns */ = {
 			isa = PBXGroup;
 			children = (
-				8EF034422B61670700A15340 /* Components */,
-				8E5528512B5D925B00EEBCCB /* SideBarView.swift */,
-				8ED48FC12B601A7000EB643A /* ContentColumnView.swift */,
+				8EF034422B61670700A15340 /* DetailViews */,
 				8EF034432B61A8F100A15340 /* DetailsView.swift */,
+				8ED48FC12B601A7000EB643A /* ContentColumnView.swift */,
+				8E5528512B5D925B00EEBCCB /* SideBarView.swift */,
 			);
 			path = NavigationColumns;
 			sourceTree = "<group>";
@@ -290,14 +291,13 @@
 			path = MetaInfoViews;
 			sourceTree = "<group>";
 		};
-		8EF034422B61670700A15340 /* Components */ = {
+		8EF034422B61670700A15340 /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
-				8EF034412B6166E700A15340 /* MetaInfoViews */,
 				8E88AD122B5C6447003BDB04 /* SpaceView.swift */,
 				8E88AD142B5D7395003BDB04 /* StorageView.swift */,
 			);
-			path = Components;
+			path = DetailViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
