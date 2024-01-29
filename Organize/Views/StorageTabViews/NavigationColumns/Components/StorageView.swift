@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct StoragesView: View {
+struct StorageView: View {
     @Environment(\.modelContext) private var context
     @Environment(AppViewModel.self) private var appModel
     @Query private var storages: [Storage]
@@ -80,6 +80,6 @@ struct StoragesView: View {
 }
 
 #Preview {
-    StoragesView()
+    StorageView()
         .environment(AppViewModel())
 }

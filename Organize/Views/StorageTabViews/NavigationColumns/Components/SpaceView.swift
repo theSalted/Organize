@@ -9,102 +9,102 @@ import SwiftUI
 import SwiftData
 
 struct SpaceView: View {
-    @Environment(\.modelContext) private var context
-    @Bindable var space : Space
-    @State private var showAddTitleAlert = false
-    @State private var newStorageName = ""
-    @State private var searchText = ""
+    @Environment(AppViewModel.self) private var appModel
+    @Query private var spaces: [Space]
     
-    private var searchedStorages : [Storage] {
-        if searchText.isEmpty {
-            return space.storages
-        } else {
-            return space.storages.filter { $0.name.contains(searchText) }
+    var selectedSpaces: [Space] {
+        spaces.filter { appModel.spaceListSelections.contains($0.id) }
+    }
+    
+    var storages: [Storage] {
+        selectedSpaces.flatMap { space in
+            space.storages
+        }
+    }
+    
+    var title : String {
+        switch selectedSpaces.count {
+        case 1:
+            selectedSpaces.first?.name ?? "Storages"
+        case 2:
+            "\(selectedSpaces[0].name) and \(selectedSpaces[1].name)"
+        case 3...:
+            "\(selectedSpaces[0].name) and \(selectedSpaces.count - 1) More"
+        default:
+            "Storages"
         }
     }
     
     var body: some View {
+        @Bindable var appModel = appModel
+        
         VStack {
-            List {
-                Section(searchedStorages.isEmpty ? "" : "Storage") {
-                    ForEach(searchedStorages) { storage in
-                        NavigationLink {
-//                            StoragesView()
-                        } label: {
-                            Text(storage.name)
+            switch selectedSpaces.count {
+            case 0:
+                List(selection: $appModel.storageListSelections) {
+                    Section(storages.isEmpty
+                            ? ""
+                            : "^[\(storages.count) storage details](inflect: true) in ^[\(selectedSpaces.count) spaces](inflect: true)") {
+                        ForEach(storages) { storage in
+                            MetaPrimitiveView(storage)
                         }
+                        .listRowSpacing(10)
                     }
-                    .onDelete(perform: deleteStorages)
                 }
-            }
-        }
-        .overlay {
-            // Placeholder View when space don't have any storage
-            if searchedStorages.isEmpty {
-                if searchText.isEmpty{
-                    ContentUnavailableView("Create a Storage", systemImage: "cabinet.fill", description: Text("Create your first storage for this space. Tap the plus button to get started."))
-                } else {
-                    ContentUnavailableView.search(text: searchText)
+                .toolbarBackground(Color.pink, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .navigationTitle(title)
+                .listStyle(.inset)
+            case 1:
+                let space = selectedSpaces.first!
+                MetaInfoView(space)
+                    .background {
+                        LinearGradient(
+                            colors: [space.color,
+                                     Color(uiColor: UIColor.systemBackground),
+                                     Color(uiColor: UIColor.systemBackground)
+                                    ], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    }
+            case 2...:
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 300, maximum: .infinity), spacing: 15)]) {
+                        ForEach(selectedSpaces) { space in
+                            NavigationLink {
+                                MetaInfoView(space)
+                            } label: {
+                                let color = space.color
+                                VStack {
+                                    PatternDesignView(space.pattern, patternColor: color)
+                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                        .overlay( /// apply a rounded border
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(LinearGradient(colors: [color, .clear, .clear], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1)
+                                                 .brightness(1.1)
+                                        )
+                                        .shadow(color: color.opacity(0.5), radius: 10)
+                                        .frame(maxWidth: .infinity, minHeight: 200)
+                                    Text(space.name)
+                                        .font(.headline)
+                                }
+                                
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }.padding()
                 }
+                .toolbarBackground(.clear, for: .navigationBar)
+                .toolbarBackground(.hidden, for: .navigationBar)
+                .navigationTitle(title)
+            default:
+                ContentUnavailableView(
+                    "Something Went Wrong...",
+                    systemImage: "exclamationmark.triangle",
+                    description: Text("Please contact support, we are sorry for your inconvenience."))
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    addStorage()
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .symbolRenderingMode(.hierarchical)
-                        .font(.title2)
-                        .accessibilityLabel("Add storage")
-                }
-            }
-        }
-        .navigationTitle(Binding(get: {
-            space.name
-        }, set: { newName in
-            withAnimation {
-                space.name = newName
-            }
-            try? context.save()
-        }))
-        .alert("Add Storage", isPresented: $showAddTitleAlert) {
-            TextField("Enter your Space Name", text: $newStorageName)
-            Button("Cancel") {
-                withAnimation {
-                    showAddTitleAlert = false
-                }
-            }
-            Button("Ok") {
-                createStorage(newStorageName)
-            }
-        }
-        .searchable(text: $searchText)
-    }
-    
-    private func addStorage() {
-        withAnimation {
-            showAddTitleAlert = true
-        }
-    }
-    
-    private func createStorage(_ name: String) {
-        let storage = Storage(name: name)
-        context.insert(storage)
-        withAnimation {
-            space.storages.append(storage)
-        }
-        try? context.save()
-    }
-    
-    private func deleteStorages(offsets: IndexSet) {
-        withAnimation {
-            space.storages.remove(atOffsets: offsets)
-        }
-        try? context.save()
     }
 }
 
 #Preview {
-    SpaceView(space: Space(name: "Bedroom"))
+    SpaceView()
 }

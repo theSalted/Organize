@@ -8,7 +8,7 @@
 import SwiftUI
 import Metal
 
-struct PatternDesignView: View {
+struct PatternDesignView: View, ShapeStyle {
     let design :          PatternDesign
     let patternColor :    Color
     let backgroundColor : Color

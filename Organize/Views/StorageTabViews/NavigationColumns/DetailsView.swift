@@ -36,24 +36,11 @@ struct DetailsView: View {
             case false:
                 TabView {
                     if !appModel.storageListSelections.isEmpty {
-                        StoragesView()
+                        StorageView()
                             .tabItem { Label("Storage", systemImage: "archivebox") }
                     }
                     // Space Selection Detail
-                    NavigationStack {
-                        List(selection: $appModel.storageListSelections) {
-                            Section(storages.isEmpty
-                                    ? ""
-                                    : "^[\(storages.count) storage details](inflect: true) in ^[\(selectedSpaces.count) spaces](inflect: true)") {
-                                ForEach(storages) { storage in
-                                    MetaPrimitiveView(storage)
-                                }
-                                .listRowSpacing(10)
-                            }
-                        }
-                        .navigationTitle("Space")
-                        .listStyle(.inset)
-                    }
+                    SpaceView()
                     .tabItem { Label("Space", systemImage: "square.split.bottomrightquarter") }
                     
                 }
