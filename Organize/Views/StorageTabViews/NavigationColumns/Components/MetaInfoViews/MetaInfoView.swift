@@ -13,15 +13,18 @@ struct MetaInfoView: View {
         self.meta = meta
     }
     var body: some View {
-        VStack {
-            GroupBox {
-                MetaPrimitiveView(meta, title: "Information")
+        ScrollView {
+            CurtainStack(folds: 10) {
+                GroupBox {
+                    MetaPrimitiveView(meta, title: "Information")
+                }
+            } background: {
+                Text("Shit")
             }
             .padding()
-            
-            Spacer()
         }
         .navigationTitle(meta.name)
+        .scrollContentBackground(.hidden)
     }
 }
 

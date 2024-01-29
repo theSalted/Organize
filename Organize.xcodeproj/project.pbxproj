@@ -11,7 +11,7 @@
 		8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269092B654EEA007F0C89 /* PatternDesignView.swift */; };
 		8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690C2B65529F007F0C89 /* PatternView.swift */; };
 		8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690E2B655905007F0C89 /* AuroraView.swift */; };
-		8E2269112B657BEB007F0C89 /* AuroraView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269102B657BEB007F0C89 /* AuroraView+Styles.swift */; };
+		8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269102B657BEB007F0C89 /* AuroraStyles.swift */; };
 		8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528312B5D823300EEBCCB /* InformationLabelView.swift */; };
 		8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528512B5D925B00EEBCCB /* SideBarView.swift */; };
 		8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */; };
@@ -36,6 +36,11 @@
 		8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDED2B66A3130049E709 /* ColorHelper.swift */; };
 		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
+		8ED1EB742B68031E003377CA /* Curtain.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB732B68031E003377CA /* Curtain.metal */; };
+		8ED1EB762B680385003377CA /* CurtainStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB752B680385003377CA /* CurtainStack.swift */; };
+		8ED1EB782B68040C003377CA /* Shader+float2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB772B68040C003377CA /* Shader+float2.swift */; };
+		8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB7B2B680F95003377CA /* Clamp.swift */; };
+		8ED1EB7E2B681028003377CA /* CurtainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB7D2B681028003377CA /* CurtainEffect.swift */; };
 		8ED48FC02B5DACF900EB643A /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FBF2B5DACF900EB643A /* AppViewModel.swift */; };
 		8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC12B601A7000EB643A /* ContentColumnView.swift */; };
 		8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC32B6028CA00EB643A /* View+If.swift */; };
@@ -48,7 +53,7 @@
 		8E2269092B654EEA007F0C89 /* PatternDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDesignView.swift; sourceTree = "<group>"; };
 		8E22690C2B65529F007F0C89 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		8E22690E2B655905007F0C89 /* AuroraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraView.swift; sourceTree = "<group>"; };
-		8E2269102B657BEB007F0C89 /* AuroraView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuroraView+Styles.swift"; sourceTree = "<group>"; };
+		8E2269102B657BEB007F0C89 /* AuroraStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraStyles.swift; sourceTree = "<group>"; };
 		8E5528312B5D823300EEBCCB /* InformationLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLabelView.swift; sourceTree = "<group>"; };
 		8E5528512B5D925B00EEBCCB /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoView.swift; sourceTree = "<group>"; };
@@ -74,6 +79,11 @@
 		8EB7EDED2B66A3130049E709 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		8ED1EB732B68031E003377CA /* Curtain.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Curtain.metal; sourceTree = "<group>"; };
+		8ED1EB752B680385003377CA /* CurtainStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurtainStack.swift; sourceTree = "<group>"; };
+		8ED1EB772B68040C003377CA /* Shader+float2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shader+float2.swift"; sourceTree = "<group>"; };
+		8ED1EB7B2B680F95003377CA /* Clamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clamp.swift; sourceTree = "<group>"; };
+		8ED1EB7D2B681028003377CA /* CurtainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurtainEffect.swift; sourceTree = "<group>"; };
 		8ED48FBF2B5DACF900EB643A /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		8ED48FC12B601A7000EB643A /* ContentColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentColumnView.swift; sourceTree = "<group>"; };
 		8ED48FC32B6028CA00EB643A /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 			children = (
 				8E8D092A2B6412B000AB088B /* Pattern.metal */,
 				8E11CFC22B6449F3000E13B0 /* WaveShader.metal */,
+				8ED1EB732B68031E003377CA /* Curtain.metal */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -178,7 +189,8 @@
 			children = (
 				8E84525D2B66902D005CA22D /* PatternDesign */,
 				8E8D092D2B64162800AB088B /* Pattern.swift */,
-				8E2269102B657BEB007F0C89 /* AuroraView+Styles.swift */,
+				8E2269102B657BEB007F0C89 /* AuroraStyles.swift */,
+				8ED1EB7D2B681028003377CA /* CurtainEffect.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -187,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				8EB7EDED2B66A3130049E709 /* ColorHelper.swift */,
+				8ED1EB7B2B680F95003377CA /* Clamp.swift */,
 				8EB7EDF12B66D3130049E709 /* ColorComponents.swift */,
 			);
 			path = Helpers;
@@ -203,11 +216,20 @@
 		8EB944902B615AE1005FBADC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8ED1EB7F2B681047003377CA /* SubViews */,
 				8E22690B2B655255007F0C89 /* PatternViews */,
 				8EF034382B615B5F00A15340 /* CaptureTabViews */,
 				8EF034372B615B3800A15340 /* StorageTabViews */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8ED1EB7F2B681047003377CA /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				8ED1EB752B680385003377CA /* CurtainStack.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		8ED48FC52B6028E800EB643A /* Extensions */ = {
@@ -216,6 +238,7 @@
 				8ED48FC32B6028CA00EB643A /* View+If.swift */,
 				8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */,
 				8E84525B2B664A85005CA22D /* Collection+randomElement.swift */,
+				8ED1EB772B68040C003377CA /* Shader+float2.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,25 +383,30 @@
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
 				8E8D092E2B64162800AB088B /* Pattern.swift in Sources */,
 				8E88AD112B5C5CEA003BDB04 /* Storage.swift in Sources */,
+				8ED1EB782B68040C003377CA /* Shader+float2.swift in Sources */,
 				8E8D092B2B6412B000AB088B /* Pattern.metal in Sources */,
 				8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */,
 				8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */,
+				8ED1EB7E2B681028003377CA /* CurtainEffect.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
+				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
 				8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */,
 				8E11CFC32B6449F3000E13B0 /* WaveShader.metal in Sources */,
 				8ED48FC02B5DACF900EB643A /* AppViewModel.swift in Sources */,
 				8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
 				8E8452632B6690A2005CA22D /* GetRandomDesign.swift in Sources */,
-				8E2269112B657BEB007F0C89 /* AuroraView+Styles.swift in Sources */,
+				8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */,
 				8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */,
 				8E88AD132B5C6447003BDB04 /* SpaceView.swift in Sources */,
 				8E8452612B66906B005CA22D /* GradientEffect.swift in Sources */,
 				8E88AD152B5D7395003BDB04 /* StoragesView.swift in Sources */,
 				8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */,
 				8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */,
+				8ED1EB762B680385003377CA /* CurtainStack.swift in Sources */,
 				8E5528582B5D9AB900EEBCCB /* MetaPrimitiveView.swift in Sources */,
+				8ED1EB742B68031E003377CA /* Curtain.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

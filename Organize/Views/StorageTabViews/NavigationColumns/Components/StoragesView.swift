@@ -50,7 +50,6 @@ struct StoragesView: View {
                                 let color = storage.color
                                 VStack {
                                     PatternDesignView(storage.pattern, patternColor: color)
-                                        .frame(maxWidth: .infinity, minHeight: 200)
                                         .clipShape(RoundedRectangle(cornerRadius: 20))
                                         .overlay( /// apply a rounded border
                                             RoundedRectangle(cornerRadius: 20)
@@ -58,6 +57,7 @@ struct StoragesView: View {
                                                  .brightness(1.1)
                                         )
                                         .shadow(color: color.opacity(0.5), radius: 10)
+                                        .frame(maxWidth: .infinity, minHeight: 200)
                                     Text(storage.name)
                                         .font(.headline)
                                 }
@@ -75,6 +75,7 @@ struct StoragesView: View {
                     description: Text("Please contact support, we are sorry for your inconvenience."))
             }
         }
+        .scrollContentBackground(.hidden)
     }
 }
 

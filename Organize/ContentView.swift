@@ -29,7 +29,6 @@ struct ContentView: View {
             .tag(AppViewModel.TabViewTag.storage)
             .toolbar(verticalSizeClass == .compact ? .hidden : .automatic, for: .tabBar)
 //            .toolbar(horizontalSizeClass != .compact ? .hidden : .automatic, for: .tabBar)
-            
             CaptureView()
             .tabItem {
                 Label("Scan", systemImage: "cube.fill")
