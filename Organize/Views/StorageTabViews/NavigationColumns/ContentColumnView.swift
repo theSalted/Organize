@@ -48,7 +48,12 @@ struct ContentColumnView: View {
             List(selection: $appModel.storageListSelections) {
                 Section(storages.isEmpty ? "" : "^[\(storages.count) Storages](inflect: true)") {
                     ForEach(storages) { storage in
-                        Text(storage.name)
+                        Label {
+                            Text(storage.name)
+                        } icon: {
+                            Image(systemName: storage.systemImage ?? "archivebox")
+                                .foregroundStyle(storage.color)
+                        }
                     }
                     .onDelete(perform: deleteStorages)
                 }
@@ -94,7 +99,7 @@ struct ContentColumnView: View {
                 }
             }
             .alert("Add Storage", isPresented: $showAddStorageFields) {
-                TextField("Enter your Space Name", text: $newStorageName)
+                TextField("Enter your Storage Name", text: $newStorageName)
                 Button("Cancel") {
                     withAnimation {
                         showAddStorageFields = false

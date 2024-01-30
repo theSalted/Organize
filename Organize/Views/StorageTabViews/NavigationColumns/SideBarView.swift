@@ -30,6 +30,7 @@ struct SideBarView: View {
     
     var body: some View {
         @Bindable var appModel = appModel
+        
         List(selection: $appModel.spaceListSelections) {
             // Tab bar hide itself when device is in horizontal. Switch tab with a button instead.
             if verticalSizeClass == .compact && !isSearchPresented {
@@ -38,7 +39,13 @@ struct SideBarView: View {
             
             Section(searchedSpaces.isEmpty ? "" : "Space") {
                 ForEach(searchedSpaces) { space in
-                    Text(space.name)
+                    Label {
+                        Text(space.name)
+                    } icon: {
+                        Image(systemName: space.systemImage ?? "square.split.bottomrightquarter")
+                            .foregroundStyle(space.color)
+                    }
+                        
                 }
                 .onDelete(perform: deleteItems)
             }

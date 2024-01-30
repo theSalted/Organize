@@ -17,6 +17,7 @@ final class Space : Identifiable, Meta {
     var pattern: PatternDesign
     @Relationship(deleteRule: .cascade, inverse: \Storage.space)
     var storages = [Storage]()
+    var systemImage : String?
     private var _colorComponents : ColorComponents
     
     @Transient var color : Color {
@@ -28,11 +29,12 @@ final class Space : Identifiable, Meta {
         nil
     }()
     
-    init(name: String = "Untitled") {
+    init(name: String = "Untitled", systemImage : String = "square.split.bottomrightquarter") {
         self.name = name
         self.id = UUID()
         self.createdAt = Date()
         self.pattern = PatternDesign.getRandomDesign()
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
+        self.systemImage = systemImage
     }
 }

@@ -45,6 +45,7 @@
 		8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC12B601A7000EB643A /* ContentColumnView.swift */; };
 		8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC32B6028CA00EB643A /* View+If.swift */; };
 		8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */; };
+		8EE9639E2B6983F8002AA850 /* SingleStorageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9639D2B6983F8002AA850 /* SingleStorageDetailView.swift */; };
 		8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF034432B61A8F100A15340 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		8ED48FC12B601A7000EB643A /* ContentColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentColumnView.swift; sourceTree = "<group>"; };
 		8ED48FC32B6028CA00EB643A /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
 		8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AdaptiveNavigationTitle.swift"; sourceTree = "<group>"; };
+		8EE9639D2B6983F8002AA850 /* SingleStorageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStorageDetailView.swift; sourceTree = "<group>"; };
 		8EF034432B61A8F100A15340 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				8E88AD122B5C6447003BDB04 /* SpaceView.swift */,
+				8EE9639D2B6983F8002AA850 /* SingleStorageDetailView.swift */,
 				8E88AD142B5D7395003BDB04 /* StorageView.swift */,
 			);
 			path = DetailViews;
@@ -383,6 +386,7 @@
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
 				8E8D092E2B64162800AB088B /* Pattern.swift in Sources */,
 				8E88AD112B5C5CEA003BDB04 /* Storage.swift in Sources */,
+				8EE9639E2B6983F8002AA850 /* SingleStorageDetailView.swift in Sources */,
 				8ED1EB782B68040C003377CA /* Shader+float2.swift in Sources */,
 				8E8D092B2B6412B000AB088B /* Pattern.metal in Sources */,
 				8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */,

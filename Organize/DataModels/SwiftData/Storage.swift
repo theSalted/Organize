@@ -14,6 +14,7 @@ final class Storage : Identifiable, Meta {
     var name : String
     var id : UUID
     var createdAt: Date
+    var systemImage: String?
     var pattern: PatternDesign
     @Relationship(deleteRule: .cascade, inverse: \Item.storage)
     var items = [Item]()
@@ -29,11 +30,12 @@ final class Storage : Identifiable, Meta {
         space?.name
     }()
     
-    init(name: String = "Untitled") {
+    init(name: String = "Untitled", systemImage: String = "archivebox") {
         self.name = name
         self.createdAt = Date()
         self.id = UUID()
         self.pattern = PatternDesign.getRandomDesign()
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
+        self.systemImage = systemImage
     }
 }

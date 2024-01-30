@@ -38,7 +38,8 @@ struct StorageView: View {
                     systemImage: "archivebox",
                     description: Text("Select one or multiple storages to get started."))
             case 1: // Single Item selected
-                MetaInfoView(selectedStorages.first!)
+                
+                SingleStorageDetailView(selectedStorages.first!)
                     .navigationTitle(title)
             case 2...: // Multiple Item selected
                 ScrollView {

@@ -11,10 +11,11 @@ import SwiftUI
 
 @Model
 final class Item : Identifiable, Meta {
-    var id : UUID
-    var name : String
+    var id: UUID
+    var name: String
     var createdAt: Date
-    var storage : Storage?
+    var storage: Storage?
+    var systemImage: String?
     var pattern: PatternDesign
     private var _colorComponents : ColorComponents
     
@@ -35,16 +36,17 @@ final class Item : Identifiable, Meta {
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
     }
     
-    init(name: String = "Untitled", storage: Storage) {
+    init(name: String = "Untitled", systemImage: String = "cube", storage: Storage) {
         self.name = name
         self.createdAt = Date.now
         self.id = UUID()
         self.storage = storage
         self.pattern = PatternDesign.getRandomDesign()
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
+        self.systemImage = systemImage
     }
     
-    static var randomSystemSymbol : String {
+    static var randomSystemSymbol: String {
         get {
             ["soccerball", "lamp.desk.fill", "medal.fill", "gym.bag.fill", "skateboard.fill", "tennisball.fill", "tennis.racket", "basketball.fill", "gamecontroller.fill"].randomElement() ?? "soccerball"
         }
