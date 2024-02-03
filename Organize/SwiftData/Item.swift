@@ -10,14 +10,18 @@ import SwiftData
 import SwiftUI
 
 @Model
-final class Item : Identifiable, Meta {
+class Item : Identifiable, Meta {
     var id: UUID
     var name: String
     var createdAt: Date
     var storage: Storage?
     var systemImage: String?
     var pattern: PatternDesign
+    
     private var _colorComponents : ColorComponents
+    
+    @Attribute(.externalStorage) private var squareThumbnailData: Data?
+    @Attribute(.externalStorage) private var rectangleThumbnailData: Data?
     
     @Transient var color : Color {
         get { _colorComponents.color }
@@ -48,7 +52,16 @@ final class Item : Identifiable, Meta {
     
     static var randomSystemSymbol: String {
         get {
-            ["soccerball", "lamp.desk.fill", "medal.fill", "gym.bag.fill", "skateboard.fill", "tennisball.fill", "tennis.racket", "basketball.fill", "gamecontroller.fill"].randomElement() ?? "soccerball"
+            ["soccerball",
+             "lamp.desk.fill",
+             "medal.fill",
+             "gym.bag.fill",
+             "skateboard.fill",
+             "tennisball.fill",
+             "tennis.racket",
+             "basketball.fill",
+             "gamecontroller.fill"
+            ].randomElement() ?? "soccerball"
         }
     }
 }

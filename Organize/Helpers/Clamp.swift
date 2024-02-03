@@ -7,8 +7,7 @@
 
 import Foundation
 
-extension CurtainStack {
-    
+extension CurtainStack { 
     func clamp(_ min: CGFloat, _ value: CGFloat, _ max: CGFloat) -> CGFloat {
         Swift.max(min, Swift.min(value, max))
     }

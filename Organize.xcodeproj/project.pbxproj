@@ -33,6 +33,17 @@
 		8E88AD152B5D7395003BDB04 /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88AD142B5D7395003BDB04 /* StorageView.swift */; };
 		8E8D092B2B6412B000AB088B /* Pattern.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D092A2B6412B000AB088B /* Pattern.metal */; };
 		8E8D092E2B64162800AB088B /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D092D2B64162800AB088B /* Pattern.swift */; };
+		8E9D350B2B6E2EE500154078 /* CaptureFolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D350A2B6E2EE500154078 /* CaptureFolderManager.swift */; };
+		8E9D350D2B6E2F3E00154078 /* ShotFileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D350C2B6E2F3E00154078 /* ShotFileInfo.swift */; };
+		8E9D350F2B6E2FDD00154078 /* FeedbackMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D350E2B6E2FDD00154078 /* FeedbackMessages.swift */; };
+		8E9D35132B6E312100154078 /* ObjectCaptureDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35122B6E312100154078 /* ObjectCaptureDataModel.swift */; };
+		8E9D35152B6E31FC00154078 /* ObjectCaptureDataModel+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35142B6E31FC00154078 /* ObjectCaptureDataModel+State.swift */; };
+		8E9D35172B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35162B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift */; };
+		8E9D35192B6E337300154078 /* TimedMessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35182B6E337300154078 /* TimedMessageList.swift */; };
+		8E9D351B2B6E344100154078 /* CaptureOnBoardingStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D351A2B6E344100154078 /* CaptureOnBoardingStateMachine.swift */; };
+		8E9D351D2B6E38AE00154078 /* ModelDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D351C2B6E38AE00154078 /* ModelDirectory.swift */; };
+		8E9D35222B6E431700154078 /* URL+isDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35212B6E431700154078 /* URL+isDirectory.swift */; };
+		8E9D35252B6E6D5800154078 /* CapturedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35242B6E6D5800154078 /* CapturedObject.swift */; };
 		8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDED2B66A3130049E709 /* ColorHelper.swift */; };
 		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
@@ -77,6 +88,17 @@
 		8E88AD142B5D7395003BDB04 /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
 		8E8D092A2B6412B000AB088B /* Pattern.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Pattern.metal; sourceTree = "<group>"; };
 		8E8D092D2B64162800AB088B /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
+		8E9D350A2B6E2EE500154078 /* CaptureFolderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureFolderManager.swift; sourceTree = "<group>"; };
+		8E9D350C2B6E2F3E00154078 /* ShotFileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotFileInfo.swift; sourceTree = "<group>"; };
+		8E9D350E2B6E2FDD00154078 /* FeedbackMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackMessages.swift; sourceTree = "<group>"; };
+		8E9D35122B6E312100154078 /* ObjectCaptureDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCaptureDataModel.swift; sourceTree = "<group>"; };
+		8E9D35142B6E31FC00154078 /* ObjectCaptureDataModel+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectCaptureDataModel+State.swift"; sourceTree = "<group>"; };
+		8E9D35162B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectCaptureDataModel+Orbit.swift"; sourceTree = "<group>"; };
+		8E9D35182B6E337300154078 /* TimedMessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedMessageList.swift; sourceTree = "<group>"; };
+		8E9D351A2B6E344100154078 /* CaptureOnBoardingStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureOnBoardingStateMachine.swift; sourceTree = "<group>"; };
+		8E9D351C2B6E38AE00154078 /* ModelDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDirectory.swift; sourceTree = "<group>"; };
+		8E9D35212B6E431700154078 /* URL+isDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+isDirectory.swift"; sourceTree = "<group>"; };
+		8E9D35242B6E6D5800154078 /* CapturedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedObject.swift; sourceTree = "<group>"; };
 		8EB7EDED2B66A3130049E709 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -147,7 +169,10 @@
 				8E8D09222B640CFB00AB088B /* Shaders */,
 				8E8D092C2B64161400AB088B /* Styles */,
 				8ED48FC52B6028E800EB643A /* Extensions */,
+				8E9D35092B6E2E7800154078 /* Managers */,
 				8EB7EDEC2B66A2EF0049E709 /* Helpers */,
+				8E9D35102B6E305C00154078 /* Protocols */,
+				8EF0343A2B61662B00A15340 /* SwiftData */,
 				8E88AD0D2B5C5C22003BDB04 /* DataModels */,
 				8EB9448F2B615A75005FBADC /* ViewModels */,
 				8EB944902B615AE1005FBADC /* Views */,
@@ -170,8 +195,7 @@
 		8E88AD0D2B5C5C22003BDB04 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				8EF0343A2B61662B00A15340 /* SwiftData */,
-				8ECBDC402B605BDF00CCF70F /* Meta.swift */,
+				8E9D35112B6E309C00154078 /* AppDataModel */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -197,12 +221,60 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
+		8E9D35092B6E2E7800154078 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D350A2B6E2EE500154078 /* CaptureFolderManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		8E9D35102B6E305C00154078 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8ECBDC402B605BDF00CCF70F /* Meta.swift */,
+				8E9D351C2B6E38AE00154078 /* ModelDirectory.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8E9D35112B6E309C00154078 /* AppDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D35122B6E312100154078 /* ObjectCaptureDataModel.swift */,
+				8E9D35142B6E31FC00154078 /* ObjectCaptureDataModel+State.swift */,
+				8E9D35162B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift */,
+			);
+			path = AppDataModel;
+			sourceTree = "<group>";
+		};
+		8E9D35202B6E42FF00154078 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8ED48FC32B6028CA00EB643A /* View+If.swift */,
+				8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8E9D35232B6E481500154078 /* ObjectCapture */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D350C2B6E2F3E00154078 /* ShotFileInfo.swift */,
+				8E9D350E2B6E2FDD00154078 /* FeedbackMessages.swift */,
+				8E9D35182B6E337300154078 /* TimedMessageList.swift */,
+				8E9D351A2B6E344100154078 /* CaptureOnBoardingStateMachine.swift */,
+			);
+			path = ObjectCapture;
+			sourceTree = "<group>";
+		};
 		8EB7EDEC2B66A2EF0049E709 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				8EB7EDED2B66A3130049E709 /* ColorHelper.swift */,
 				8ED1EB7B2B680F95003377CA /* Clamp.swift */,
 				8EB7EDF12B66D3130049E709 /* ColorComponents.swift */,
+				8E9D35232B6E481500154078 /* ObjectCapture */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -238,10 +310,10 @@
 		8ED48FC52B6028E800EB643A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8ED48FC32B6028CA00EB643A /* View+If.swift */,
-				8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */,
+				8E9D35202B6E42FF00154078 /* Views */,
 				8E84525B2B664A85005CA22D /* Collection+randomElement.swift */,
 				8ED1EB772B68040C003377CA /* Shader+float2.swift */,
+				8E9D35212B6E431700154078 /* URL+isDirectory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +340,7 @@
 				8E88AD012B5C4CE5003BDB04 /* Space.swift */,
 				8E88AD102B5C5CEA003BDB04 /* Storage.swift */,
 				8E88AD0E2B5C5C41003BDB04 /* Item.swift */,
+				8E9D35242B6E6D5800154078 /* CapturedObject.swift */,
 			);
 			path = SwiftData;
 			sourceTree = "<group>";
@@ -373,15 +446,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9D35222B6E431700154078 /* URL+isDirectory.swift in Sources */,
 				8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */,
 				8E84525C2B664A85005CA22D /* Collection+randomElement.swift in Sources */,
 				8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */,
 				8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */,
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,
+				8E9D351B2B6E344100154078 /* CaptureOnBoardingStateMachine.swift in Sources */,
 				8E88AD0F2B5C5C41003BDB04 /* Item.swift in Sources */,
 				8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */,
 				8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */,
 				8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */,
+				8E9D35132B6E312100154078 /* ObjectCaptureDataModel.swift in Sources */,
+				8E9D35172B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift in Sources */,
 				8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */,
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
 				8E8D092E2B64162800AB088B /* Pattern.swift in Sources */,
@@ -390,10 +467,13 @@
 				8ED1EB782B68040C003377CA /* Shader+float2.swift in Sources */,
 				8E8D092B2B6412B000AB088B /* Pattern.metal in Sources */,
 				8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */,
+				8E9D35252B6E6D5800154078 /* CapturedObject.swift in Sources */,
 				8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */,
 				8ED1EB7E2B681028003377CA /* CurtainEffect.swift in Sources */,
+				8E9D35152B6E31FC00154078 /* ObjectCaptureDataModel+State.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
+				8E9D350F2B6E2FDD00154078 /* FeedbackMessages.swift in Sources */,
 				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
 				8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */,
 				8E11CFC32B6449F3000E13B0 /* WaveShader.metal in Sources */,
@@ -401,16 +481,20 @@
 				8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
 				8E8452632B6690A2005CA22D /* GetRandomDesign.swift in Sources */,
+				8E9D35192B6E337300154078 /* TimedMessageList.swift in Sources */,
 				8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */,
 				8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */,
 				8E88AD132B5C6447003BDB04 /* SpaceView.swift in Sources */,
 				8E8452612B66906B005CA22D /* GradientEffect.swift in Sources */,
+				8E9D351D2B6E38AE00154078 /* ModelDirectory.swift in Sources */,
+				8E9D350B2B6E2EE500154078 /* CaptureFolderManager.swift in Sources */,
 				8E88AD152B5D7395003BDB04 /* StorageView.swift in Sources */,
 				8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */,
 				8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */,
 				8ED1EB762B680385003377CA /* CurtainStack.swift in Sources */,
 				8E5528582B5D9AB900EEBCCB /* MetaPrimitiveView.swift in Sources */,
 				8ED1EB742B68031E003377CA /* Curtain.metal in Sources */,
+				8E9D350D2B6E2F3E00154078 /* ShotFileInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
