@@ -44,6 +44,16 @@
 		8E9D351D2B6E38AE00154078 /* ModelDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D351C2B6E38AE00154078 /* ModelDirectory.swift */; };
 		8E9D35222B6E431700154078 /* URL+isDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35212B6E431700154078 /* URL+isDirectory.swift */; };
 		8E9D35252B6E6D5800154078 /* CapturedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35242B6E6D5800154078 /* CapturedObject.swift */; };
+		8E9D35272B6ECD6000154078 /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35262B6ECD6000154078 /* OrganizationView.swift */; };
+		8E9D35292B6ED4D000154078 /* CaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35282B6ED4D000154078 /* CaptureViewModel.swift */; };
+		8E9D352C2B6EDCBC00154078 /* ReconstructionPrimaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D352B2B6EDCBC00154078 /* ReconstructionPrimaryView.swift */; };
+		8E9D352E2B6EDDF300154078 /* UntilPhotogrammetryProcessingCompleteFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D352D2B6EDDF300154078 /* UntilPhotogrammetryProcessingCompleteFilter.swift */; };
+		8E9D35302B6EDF1500154078 /* CapturedObjectARQuickLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D352F2B6EDF1500154078 /* CapturedObjectARQuickLookView.swift */; };
+		8E9D35332B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35322B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift */; };
+		8E9D35352B6EE12700154078 /* QuickLookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35342B6EE12700154078 /* QuickLookViewController.swift */; };
+		8E9D35372B6EE22900154078 /* ProcessingStage+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35362B6EE22900154078 /* ProcessingStage+String.swift */; };
+		8E9D35392B6EE2BC00154078 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35382B6EE2BC00154078 /* TitleView.swift */; };
+		8E9D353B2B6EE52000154078 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D353A2B6EE52000154078 /* ProgressView.swift */; };
 		8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDED2B66A3130049E709 /* ColorHelper.swift */; };
 		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
@@ -99,6 +109,16 @@
 		8E9D351C2B6E38AE00154078 /* ModelDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDirectory.swift; sourceTree = "<group>"; };
 		8E9D35212B6E431700154078 /* URL+isDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+isDirectory.swift"; sourceTree = "<group>"; };
 		8E9D35242B6E6D5800154078 /* CapturedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedObject.swift; sourceTree = "<group>"; };
+		8E9D35262B6ECD6000154078 /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
+		8E9D35282B6ED4D000154078 /* CaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModel.swift; sourceTree = "<group>"; };
+		8E9D352B2B6EDCBC00154078 /* ReconstructionPrimaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconstructionPrimaryView.swift; sourceTree = "<group>"; };
+		8E9D352D2B6EDDF300154078 /* UntilPhotogrammetryProcessingCompleteFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UntilPhotogrammetryProcessingCompleteFilter.swift; sourceTree = "<group>"; };
+		8E9D352F2B6EDF1500154078 /* CapturedObjectARQuickLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedObjectARQuickLookView.swift; sourceTree = "<group>"; };
+		8E9D35322B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedObjectARQuickLookRepresentable.swift; sourceTree = "<group>"; };
+		8E9D35342B6EE12700154078 /* QuickLookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookViewController.swift; sourceTree = "<group>"; };
+		8E9D35362B6EE22900154078 /* ProcessingStage+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessingStage+String.swift"; sourceTree = "<group>"; };
+		8E9D35382B6EE2BC00154078 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		8E9D353A2B6EE52000154078 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		8EB7EDED2B66A3130049E709 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -175,6 +195,7 @@
 				8EF0343A2B61662B00A15340 /* SwiftData */,
 				8E88AD0D2B5C5C22003BDB04 /* DataModels */,
 				8EB9448F2B615A75005FBADC /* ViewModels */,
+				8E9D35312B6EDF5E00154078 /* ViewController */,
 				8EB944902B615AE1005FBADC /* Views */,
 				8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */,
 				8E88ACFD2B5C4CE5003BDB04 /* OrganizeApp.swift */,
@@ -264,8 +285,29 @@
 				8E9D350E2B6E2FDD00154078 /* FeedbackMessages.swift */,
 				8E9D35182B6E337300154078 /* TimedMessageList.swift */,
 				8E9D351A2B6E344100154078 /* CaptureOnBoardingStateMachine.swift */,
+				8E9D352D2B6EDDF300154078 /* UntilPhotogrammetryProcessingCompleteFilter.swift */,
 			);
 			path = ObjectCapture;
+			sourceTree = "<group>";
+		};
+		8E9D352A2B6EDCA100154078 /* ReconstructionViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D352F2B6EDF1500154078 /* CapturedObjectARQuickLookView.swift */,
+				8E9D353A2B6EE52000154078 /* ProgressView.swift */,
+				8E9D35382B6EE2BC00154078 /* TitleView.swift */,
+				8E9D352B2B6EDCBC00154078 /* ReconstructionPrimaryView.swift */,
+			);
+			path = ReconstructionViews;
+			sourceTree = "<group>";
+		};
+		8E9D35312B6EDF5E00154078 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D35322B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift */,
+				8E9D35342B6EE12700154078 /* QuickLookViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		8EB7EDEC2B66A2EF0049E709 /* Helpers */ = {
@@ -283,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED48FBF2B5DACF900EB643A /* AppViewModel.swift */,
+				8E9D35282B6ED4D000154078 /* CaptureViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -293,7 +336,7 @@
 				8ED1EB7F2B681047003377CA /* SubViews */,
 				8E22690B2B655255007F0C89 /* PatternViews */,
 				8EF034382B615B5F00A15340 /* CaptureTabViews */,
-				8EF034372B615B3800A15340 /* StorageTabViews */,
+				8EF034372B615B3800A15340 /* OrganizationTabViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,23 +355,26 @@
 			children = (
 				8E9D35202B6E42FF00154078 /* Views */,
 				8E84525B2B664A85005CA22D /* Collection+randomElement.swift */,
+				8E9D35362B6EE22900154078 /* ProcessingStage+String.swift */,
 				8ED1EB772B68040C003377CA /* Shader+float2.swift */,
 				8E9D35212B6E431700154078 /* URL+isDirectory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		8EF034372B615B3800A15340 /* StorageTabViews */ = {
+		8EF034372B615B3800A15340 /* OrganizationTabViews */ = {
 			isa = PBXGroup;
 			children = (
 				8EF034402B6166BA00A15340 /* NavigationColumns */,
+				8E9D35262B6ECD6000154078 /* OrganizationView.swift */,
 			);
-			path = StorageTabViews;
+			path = OrganizationTabViews;
 			sourceTree = "<group>";
 		};
 		8EF034382B615B5F00A15340 /* CaptureTabViews */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D352A2B6EDCA100154078 /* ReconstructionViews */,
 				8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */,
 			);
 			path = CaptureTabViews;
@@ -454,6 +500,7 @@
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,
 				8E9D351B2B6E344100154078 /* CaptureOnBoardingStateMachine.swift in Sources */,
 				8E88AD0F2B5C5C41003BDB04 /* Item.swift in Sources */,
+				8E9D352E2B6EDDF300154078 /* UntilPhotogrammetryProcessingCompleteFilter.swift in Sources */,
 				8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */,
 				8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */,
 				8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */,
@@ -462,6 +509,7 @@
 				8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */,
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
 				8E8D092E2B64162800AB088B /* Pattern.swift in Sources */,
+				8E9D35352B6EE12700154078 /* QuickLookViewController.swift in Sources */,
 				8E88AD112B5C5CEA003BDB04 /* Storage.swift in Sources */,
 				8EE9639E2B6983F8002AA850 /* SingleStorageDetailView.swift in Sources */,
 				8ED1EB782B68040C003377CA /* Shader+float2.swift in Sources */,
@@ -469,14 +517,18 @@
 				8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */,
 				8E9D35252B6E6D5800154078 /* CapturedObject.swift in Sources */,
 				8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */,
+				8E9D352C2B6EDCBC00154078 /* ReconstructionPrimaryView.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */,
 				8ED1EB7E2B681028003377CA /* CurtainEffect.swift in Sources */,
 				8E9D35152B6E31FC00154078 /* ObjectCaptureDataModel+State.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
+				8E9D35332B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift in Sources */,
 				8E9D350F2B6E2FDD00154078 /* FeedbackMessages.swift in Sources */,
 				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
+				8E9D35292B6ED4D000154078 /* CaptureViewModel.swift in Sources */,
 				8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */,
 				8E11CFC32B6449F3000E13B0 /* WaveShader.metal in Sources */,
+				8E9D35272B6ECD6000154078 /* OrganizationView.swift in Sources */,
 				8ED48FC02B5DACF900EB643A /* AppViewModel.swift in Sources */,
 				8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
@@ -487,12 +539,16 @@
 				8E88AD132B5C6447003BDB04 /* SpaceView.swift in Sources */,
 				8E8452612B66906B005CA22D /* GradientEffect.swift in Sources */,
 				8E9D351D2B6E38AE00154078 /* ModelDirectory.swift in Sources */,
+				8E9D35392B6EE2BC00154078 /* TitleView.swift in Sources */,
+				8E9D35372B6EE22900154078 /* ProcessingStage+String.swift in Sources */,
+				8E9D353B2B6EE52000154078 /* ProgressView.swift in Sources */,
 				8E9D350B2B6E2EE500154078 /* CaptureFolderManager.swift in Sources */,
 				8E88AD152B5D7395003BDB04 /* StorageView.swift in Sources */,
 				8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */,
 				8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */,
 				8ED1EB762B680385003377CA /* CurtainStack.swift in Sources */,
 				8E5528582B5D9AB900EEBCCB /* MetaPrimitiveView.swift in Sources */,
+				8E9D35302B6EDF1500154078 /* CapturedObjectARQuickLookView.swift in Sources */,
 				8ED1EB742B68031E003377CA /* Curtain.metal in Sources */,
 				8E9D350D2B6E2F3E00154078 /* ShotFileInfo.swift in Sources */,
 			);

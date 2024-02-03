@@ -10,6 +10,8 @@ import RealityKit
 import SwiftUI
 import os
 
+// TODO: Decouple DataModel and ViewModel
+// TODO: Adapt Observation framework
 @MainActor
 @available(iOS 17.0, *)
 class ObjectCaptureDataModel: ObservableObject, Identifiable {
@@ -59,6 +61,9 @@ class ObjectCaptureDataModel: ObservableObject, Identifiable {
     @Published var orbit: Orbit = .orbit1
     @Published var isObjectFlipped: Bool = false
     
+    // CANCELABLE
+    var cancellable: AnyCancellable?
+    
     var preventRestartOnCancel : Bool = false
     var hasIndicatedObjectCannotBeFlipped: Bool = false
     var hasIndicatedFlipObjectAnyway: Bool = false
@@ -86,9 +91,10 @@ class ObjectCaptureDataModel: ObservableObject, Identifiable {
     /// ``objectCaptureSession``.
     @Published private(set) var showPreviewModel = false
     
-    private init(objectCaptureSession: ObjectCaptureSession) {
+    
+    private convenience init(objectCaptureSession: ObjectCaptureSession) {
+        self.init()
         self.objectCaptureSession = objectCaptureSession
-        state = .ready
     }
     
     // Leaves the model state in ready.
