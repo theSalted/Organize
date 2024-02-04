@@ -189,13 +189,14 @@
 				8E8D09222B640CFB00AB088B /* Shaders */,
 				8E8D092C2B64161400AB088B /* Styles */,
 				8ED48FC52B6028E800EB643A /* Extensions */,
-				8E9D35092B6E2E7800154078 /* Managers */,
 				8EB7EDEC2B66A2EF0049E709 /* Helpers */,
 				8E9D35102B6E305C00154078 /* Protocols */,
 				8EF0343A2B61662B00A15340 /* SwiftData */,
+				8E9D35092B6E2E7800154078 /* Managers */,
 				8E88AD0D2B5C5C22003BDB04 /* DataModels */,
 				8EB9448F2B615A75005FBADC /* ViewModels */,
 				8E9D35312B6EDF5E00154078 /* ViewController */,
+				8E9D353C2B6EE7BB00154078 /* ViewRepresentable */,
 				8EB944902B615AE1005FBADC /* Views */,
 				8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */,
 				8E88ACFD2B5C4CE5003BDB04 /* OrganizeApp.swift */,
@@ -304,10 +305,17 @@
 		8E9D35312B6EDF5E00154078 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8E9D35322B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift */,
 				8E9D35342B6EE12700154078 /* QuickLookViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8E9D353C2B6EE7BB00154078 /* ViewRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D35322B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift */,
+			);
+			path = ViewRepresentable;
 			sourceTree = "<group>";
 		};
 		8EB7EDEC2B66A2EF0049E709 /* Helpers */ = {
