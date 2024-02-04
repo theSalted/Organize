@@ -54,6 +54,20 @@
 		8E9D35372B6EE22900154078 /* ProcessingStage+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35362B6EE22900154078 /* ProcessingStage+String.swift */; };
 		8E9D35392B6EE2BC00154078 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35382B6EE2BC00154078 /* TitleView.swift */; };
 		8E9D353B2B6EE52000154078 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D353A2B6EE52000154078 /* ProgressView.swift */; };
+		8E9D353E2B6FB5A000154078 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D353D2B6FB5A000154078 /* CircularProgressView.swift */; };
+		8E9D35412B6FB64400154078 /* ObjectCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35402B6FB64400154078 /* ObjectCaptureView.swift */; };
+		8E9D35432B6FB72300154078 /* CaptureOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35422B6FB72300154078 /* CaptureOverlayView.swift */; };
+		8E9D35452B6FB7B100154078 /* CaptureOverlayView+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35442B6FB7B100154078 /* CaptureOverlayView+Buttons.swift */; };
+		8E9D35482B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35472B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift */; };
+		8E9D354B2B6FBB7E00154078 /* HelpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D354A2B6FBB7E00154078 /* HelpPageView.swift */; };
+		8E9D354E2B6FBC3A00154078 /* ObjectCaptureOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D354D2B6FBC3A00154078 /* ObjectCaptureOnboardingView.swift */; };
+		8E9D35502B6FBCF100154078 /* OnboardingTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D354F2B6FBCF100154078 /* OnboardingTutorialView.swift */; };
+		8E9D35522B6FBDA200154078 /* OnboardingTutorialView+LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35512B6FBDA200154078 /* OnboardingTutorialView+LocalizedString.swift */; };
+		8E9D35542B6FBE2200154078 /* TutorialVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35532B6FBE2200154078 /* TutorialVideoView.swift */; };
+		8E9D35562B6FBE6A00154078 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35552B6FBE6A00154078 /* PlayerView.swift */; };
+		8E9D35582B6FBF2600154078 /* OnboardingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35572B6FBF2600154078 /* OnboardingButtonView.swift */; };
+		8E9D355A2B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35592B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift */; };
+		8E9D355C2B6FC04F00154078 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D355B2B6FC04F00154078 /* FeedbackView.swift */; };
 		8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDED2B66A3130049E709 /* ColorHelper.swift */; };
 		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
@@ -119,6 +133,20 @@
 		8E9D35362B6EE22900154078 /* ProcessingStage+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessingStage+String.swift"; sourceTree = "<group>"; };
 		8E9D35382B6EE2BC00154078 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		8E9D353A2B6EE52000154078 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		8E9D353D2B6FB5A000154078 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		8E9D35402B6FB64400154078 /* ObjectCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCaptureView.swift; sourceTree = "<group>"; };
+		8E9D35422B6FB72300154078 /* CaptureOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureOverlayView.swift; sourceTree = "<group>"; };
+		8E9D35442B6FB7B100154078 /* CaptureOverlayView+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureOverlayView+Buttons.swift"; sourceTree = "<group>"; };
+		8E9D35472B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureOverlayView+LocalizedString.swift"; sourceTree = "<group>"; };
+		8E9D354A2B6FBB7E00154078 /* HelpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageView.swift; sourceTree = "<group>"; };
+		8E9D354D2B6FBC3A00154078 /* ObjectCaptureOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCaptureOnboardingView.swift; sourceTree = "<group>"; };
+		8E9D354F2B6FBCF100154078 /* OnboardingTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTutorialView.swift; sourceTree = "<group>"; };
+		8E9D35512B6FBDA200154078 /* OnboardingTutorialView+LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingTutorialView+LocalizedString.swift"; sourceTree = "<group>"; };
+		8E9D35532B6FBE2200154078 /* TutorialVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVideoView.swift; sourceTree = "<group>"; };
+		8E9D35552B6FBE6A00154078 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		8E9D35572B6FBF2600154078 /* OnboardingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButtonView.swift; sourceTree = "<group>"; };
+		8E9D35592B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingButtonView+LocailizedString.swift"; sourceTree = "<group>"; };
+		8E9D355B2B6FC04F00154078 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		8EB7EDED2B66A3130049E709 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -318,6 +346,49 @@
 			path = ViewRepresentable;
 			sourceTree = "<group>";
 		};
+		8E9D353F2B6FB60500154078 /* ObjectCaptureViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D354C2B6FBC1B00154078 /* OnboardingViews */,
+				8E9D35492B6FBB6000154078 /* HelpViews */,
+				8E9D35462B6FB80E00154078 /* CaptureOverlayViews */,
+				8E9D35402B6FB64400154078 /* ObjectCaptureView.swift */,
+			);
+			path = ObjectCaptureViews;
+			sourceTree = "<group>";
+		};
+		8E9D35462B6FB80E00154078 /* CaptureOverlayViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D35472B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift */,
+				8E9D35442B6FB7B100154078 /* CaptureOverlayView+Buttons.swift */,
+				8E9D35422B6FB72300154078 /* CaptureOverlayView.swift */,
+			);
+			path = CaptureOverlayViews;
+			sourceTree = "<group>";
+		};
+		8E9D35492B6FBB6000154078 /* HelpViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D354A2B6FBB7E00154078 /* HelpPageView.swift */,
+				8E9D35532B6FBE2200154078 /* TutorialVideoView.swift */,
+				8E9D355B2B6FC04F00154078 /* FeedbackView.swift */,
+			);
+			path = HelpViews;
+			sourceTree = "<group>";
+		};
+		8E9D354C2B6FBC1B00154078 /* OnboardingViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D354D2B6FBC3A00154078 /* ObjectCaptureOnboardingView.swift */,
+				8E9D354F2B6FBCF100154078 /* OnboardingTutorialView.swift */,
+				8E9D35512B6FBDA200154078 /* OnboardingTutorialView+LocalizedString.swift */,
+				8E9D35572B6FBF2600154078 /* OnboardingButtonView.swift */,
+				8E9D35592B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift */,
+			);
+			path = OnboardingViews;
+			sourceTree = "<group>";
+		};
 		8EB7EDEC2B66A2EF0049E709 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +425,8 @@
 			children = (
 				8EF034412B6166E700A15340 /* MetaInfoViews */,
 				8ED1EB752B680385003377CA /* CurtainStack.swift */,
+				8E9D353D2B6FB5A000154078 /* CircularProgressView.swift */,
+				8E9D35552B6FBE6A00154078 /* PlayerView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -382,6 +455,7 @@
 		8EF034382B615B5F00A15340 /* CaptureTabViews */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D353F2B6FB60500154078 /* ObjectCaptureViews */,
 				8E9D352A2B6EDCA100154078 /* ReconstructionViews */,
 				8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */,
 			);
@@ -503,6 +577,7 @@
 				8E9D35222B6E431700154078 /* URL+isDirectory.swift in Sources */,
 				8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */,
 				8E84525C2B664A85005CA22D /* Collection+randomElement.swift in Sources */,
+				8E9D35582B6FBF2600154078 /* OnboardingButtonView.swift in Sources */,
 				8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */,
 				8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */,
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,
@@ -513,13 +588,18 @@
 				8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */,
 				8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */,
 				8E9D35132B6E312100154078 /* ObjectCaptureDataModel.swift in Sources */,
+				8E9D35482B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift in Sources */,
 				8E9D35172B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift in Sources */,
 				8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */,
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
+				8E9D355A2B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift in Sources */,
+				8E9D354B2B6FBB7E00154078 /* HelpPageView.swift in Sources */,
 				8E8D092E2B64162800AB088B /* Pattern.swift in Sources */,
 				8E9D35352B6EE12700154078 /* QuickLookViewController.swift in Sources */,
 				8E88AD112B5C5CEA003BDB04 /* Storage.swift in Sources */,
 				8EE9639E2B6983F8002AA850 /* SingleStorageDetailView.swift in Sources */,
+				8E9D35542B6FBE2200154078 /* TutorialVideoView.swift in Sources */,
+				8E9D35562B6FBE6A00154078 /* PlayerView.swift in Sources */,
 				8ED1EB782B68040C003377CA /* Shader+float2.swift in Sources */,
 				8E8D092B2B6412B000AB088B /* Pattern.metal in Sources */,
 				8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */,
@@ -528,8 +608,10 @@
 				8E9D352C2B6EDCBC00154078 /* ReconstructionPrimaryView.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */,
 				8ED1EB7E2B681028003377CA /* CurtainEffect.swift in Sources */,
+				8E9D35412B6FB64400154078 /* ObjectCaptureView.swift in Sources */,
 				8E9D35152B6E31FC00154078 /* ObjectCaptureDataModel+State.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
+				8E9D35452B6FB7B100154078 /* CaptureOverlayView+Buttons.swift in Sources */,
 				8E9D35332B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift in Sources */,
 				8E9D350F2B6E2FDD00154078 /* FeedbackMessages.swift in Sources */,
 				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
@@ -541,11 +623,13 @@
 				8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
 				8E8452632B6690A2005CA22D /* GetRandomDesign.swift in Sources */,
+				8E9D35432B6FB72300154078 /* CaptureOverlayView.swift in Sources */,
 				8E9D35192B6E337300154078 /* TimedMessageList.swift in Sources */,
 				8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */,
 				8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */,
 				8E88AD132B5C6447003BDB04 /* SpaceView.swift in Sources */,
 				8E8452612B66906B005CA22D /* GradientEffect.swift in Sources */,
+				8E9D354E2B6FBC3A00154078 /* ObjectCaptureOnboardingView.swift in Sources */,
 				8E9D351D2B6E38AE00154078 /* ModelDirectory.swift in Sources */,
 				8E9D35392B6EE2BC00154078 /* TitleView.swift in Sources */,
 				8E9D35372B6EE22900154078 /* ProcessingStage+String.swift in Sources */,
@@ -556,8 +640,12 @@
 				8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */,
 				8ED1EB762B680385003377CA /* CurtainStack.swift in Sources */,
 				8E5528582B5D9AB900EEBCCB /* MetaPrimitiveView.swift in Sources */,
+				8E9D355C2B6FC04F00154078 /* FeedbackView.swift in Sources */,
+				8E9D35522B6FBDA200154078 /* OnboardingTutorialView+LocalizedString.swift in Sources */,
 				8E9D35302B6EDF1500154078 /* CapturedObjectARQuickLookView.swift in Sources */,
 				8ED1EB742B68031E003377CA /* Curtain.metal in Sources */,
+				8E9D353E2B6FB5A000154078 /* CircularProgressView.swift in Sources */,
+				8E9D35502B6FBCF100154078 /* OnboardingTutorialView.swift in Sources */,
 				8E9D350D2B6E2F3E00154078 /* ShotFileInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
