@@ -1,5 +1,5 @@
 //
-//  ObjectCaptureView.swift
+//  CubicObjectCaptureView.swift
 //  Organize
 //
 //  Created by Yuhao Chen on 2/4/24.

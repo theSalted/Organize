@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension PatternDesign {
-    enum GradientEffect : CaseIterable, Codable {
+    enum GradientEffect: CaseIterable, Codable {
         case noGradient,
              topToBottom,
              bottomToTop,
@@ -16,7 +16,7 @@ extension PatternDesign {
              topTrailingToBottomLeading,
              leadingToTrailing,
              trailingToLeading
-        var startingPoint : UnitPoint? {
+        var startingPoint: UnitPoint? {
             switch self {
             case .noGradient:                 nil
             case .topToBottom:                UnitPoint.top
@@ -27,7 +27,7 @@ extension PatternDesign {
             case .trailingToLeading:          UnitPoint.trailing
             }
         }
-        var endPoint : UnitPoint? {
+        var endPoint: UnitPoint? {
             switch self {
             case .noGradient:                 nil
             case .topToBottom:                UnitPoint.bottom

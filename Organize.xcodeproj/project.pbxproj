@@ -55,7 +55,7 @@
 		8E9D35392B6EE2BC00154078 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35382B6EE2BC00154078 /* TitleView.swift */; };
 		8E9D353B2B6EE52000154078 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D353A2B6EE52000154078 /* ProgressView.swift */; };
 		8E9D353E2B6FB5A000154078 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D353D2B6FB5A000154078 /* CircularProgressView.swift */; };
-		8E9D35412B6FB64400154078 /* ObjectCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35402B6FB64400154078 /* ObjectCaptureView.swift */; };
+		8E9D35412B6FB64400154078 /* CubicObjectCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35402B6FB64400154078 /* CubicObjectCaptureView.swift */; };
 		8E9D35432B6FB72300154078 /* CaptureOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35422B6FB72300154078 /* CaptureOverlayView.swift */; };
 		8E9D35452B6FB7B100154078 /* CaptureOverlayView+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35442B6FB7B100154078 /* CaptureOverlayView+Buttons.swift */; };
 		8E9D35482B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35472B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift */; };
@@ -135,7 +135,7 @@
 		8E9D35382B6EE2BC00154078 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		8E9D353A2B6EE52000154078 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		8E9D353D2B6FB5A000154078 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		8E9D35402B6FB64400154078 /* ObjectCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCaptureView.swift; sourceTree = "<group>"; };
+		8E9D35402B6FB64400154078 /* CubicObjectCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicObjectCaptureView.swift; sourceTree = "<group>"; };
 		8E9D35422B6FB72300154078 /* CaptureOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureOverlayView.swift; sourceTree = "<group>"; };
 		8E9D35442B6FB7B100154078 /* CaptureOverlayView+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureOverlayView+Buttons.swift"; sourceTree = "<group>"; };
 		8E9D35472B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureOverlayView+LocalizedString.swift"; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		8E88AD0D2B5C5C22003BDB04 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				8E9D35112B6E309C00154078 /* AppDataModel */,
+				8E9D35112B6E309C00154078 /* ObjectCaptureDataModel */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -290,14 +290,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		8E9D35112B6E309C00154078 /* AppDataModel */ = {
+		8E9D35112B6E309C00154078 /* ObjectCaptureDataModel */ = {
 			isa = PBXGroup;
 			children = (
 				8E9D35122B6E312100154078 /* ObjectCaptureDataModel.swift */,
 				8E9D35142B6E31FC00154078 /* ObjectCaptureDataModel+State.swift */,
 				8E9D35162B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift */,
 			);
-			path = AppDataModel;
+			path = ObjectCaptureDataModel;
 			sourceTree = "<group>";
 		};
 		8E9D35202B6E42FF00154078 /* Views */ = {
@@ -354,7 +354,7 @@
 				8E9D354C2B6FBC1B00154078 /* OnboardingViews */,
 				8E9D35492B6FBB6000154078 /* HelpViews */,
 				8E9D35462B6FB80E00154078 /* CaptureOverlayViews */,
-				8E9D35402B6FB64400154078 /* ObjectCaptureView.swift */,
+				8E9D35402B6FB64400154078 /* CubicObjectCaptureView.swift */,
 			);
 			path = ObjectCaptureViews;
 			sourceTree = "<group>";
@@ -611,7 +611,7 @@
 				8E9D352C2B6EDCBC00154078 /* ReconstructionPrimaryView.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */,
 				8ED1EB7E2B681028003377CA /* CurtainEffect.swift in Sources */,
-				8E9D35412B6FB64400154078 /* ObjectCaptureView.swift in Sources */,
+				8E9D35412B6FB64400154078 /* CubicObjectCaptureView.swift in Sources */,
 				8E9D35152B6E31FC00154078 /* ObjectCaptureDataModel+State.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
 				8E9D35452B6FB7B100154078 /* CaptureOverlayView+Buttons.swift in Sources */,
