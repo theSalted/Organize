@@ -16,7 +16,8 @@ struct OrganizeApp: App {
         let schema = Schema([
             Space.self,
             Storage.self,
-            Item.self
+            Item.self,
+            CapturedObject.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

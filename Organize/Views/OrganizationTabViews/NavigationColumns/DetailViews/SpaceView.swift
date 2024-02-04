@@ -99,7 +99,7 @@ struct SpaceView: View {
                 ContentUnavailableView(
                     "Something Went Wrong...",
                     systemImage: "exclamationmark.triangle",
-                    description: Text("Please contact support, we are sorry for your inconvenience."))
+                    description: "Please contact support, we are sorry for your inconvenience.".inText)
             }
         }
     }

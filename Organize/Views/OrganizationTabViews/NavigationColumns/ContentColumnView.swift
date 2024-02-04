@@ -116,7 +116,7 @@ struct ContentColumnView: View {
             ContentUnavailableView(
                 "Select a Space",
                 systemImage: "square.split.bottomrightquarter.fill",
-                description: Text("Select or create your first space. And get organized."))
+                description: "Select or create your first space. And get organized.".inText)
         }
     }
     // Methods

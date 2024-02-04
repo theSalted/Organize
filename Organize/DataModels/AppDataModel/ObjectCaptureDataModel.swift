@@ -61,16 +61,13 @@ class ObjectCaptureDataModel: ObservableObject, Identifiable {
     @Published var orbit: Orbit = .orbit1
     @Published var isObjectFlipped: Bool = false
     
-    // CANCELABLE
-    var cancellable: AnyCancellable?
-    
     var preventRestartOnCancel : Bool = false
     var hasIndicatedObjectCannotBeFlipped: Bool = false
     var hasIndicatedFlipObjectAnyway: Bool = false
     var isObjectFlippable: Bool {
         // Overrides the `objectNotFlippable` feedback if the user indicates
         // the object can flip or if they want to flip the object anyway.
-        guard !hasIndicatedObjectCannotBeFlipped else { return false }
+//        guard !hasIndicatedObjectCannotBeFlipped else { return false }
         guard !hasIndicatedFlipObjectAnyway else { return true }
         guard let session = objectCaptureSession else { return true }
         return !session.feedback.contains(.objectNotFlippable)

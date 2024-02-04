@@ -68,6 +68,7 @@
 		8E9D35582B6FBF2600154078 /* OnboardingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35572B6FBF2600154078 /* OnboardingButtonView.swift */; };
 		8E9D355A2B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D35592B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift */; };
 		8E9D355C2B6FC04F00154078 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D355B2B6FC04F00154078 /* FeedbackView.swift */; };
+		8E9D355E2B6FE0A800154078 /* String+inText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D355D2B6FE0A800154078 /* String+inText.swift */; };
 		8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDED2B66A3130049E709 /* ColorHelper.swift */; };
 		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
@@ -147,6 +148,7 @@
 		8E9D35572B6FBF2600154078 /* OnboardingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButtonView.swift; sourceTree = "<group>"; };
 		8E9D35592B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingButtonView+LocailizedString.swift"; sourceTree = "<group>"; };
 		8E9D355B2B6FC04F00154078 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		8E9D355D2B6FE0A800154078 /* String+inText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+inText.swift"; sourceTree = "<group>"; };
 		8EB7EDED2B66A3130049E709 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			children = (
 				8E9D35202B6E42FF00154078 /* Views */,
 				8E84525B2B664A85005CA22D /* Collection+randomElement.swift */,
+				8E9D355D2B6FE0A800154078 /* String+inText.swift */,
 				8E9D35362B6EE22900154078 /* ProcessingStage+String.swift */,
 				8ED1EB772B68040C003377CA /* Shader+float2.swift */,
 				8E9D35212B6E431700154078 /* URL+isDirectory.swift */,
@@ -624,6 +627,7 @@
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
 				8E8452632B6690A2005CA22D /* GetRandomDesign.swift in Sources */,
 				8E9D35432B6FB72300154078 /* CaptureOverlayView.swift in Sources */,
+				8E9D355E2B6FE0A800154078 /* String+inText.swift in Sources */,
 				8E9D35192B6E337300154078 /* TimedMessageList.swift in Sources */,
 				8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */,
 				8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */,
@@ -783,6 +787,7 @@
 				DEVELOPMENT_TEAM = 52JMW2697M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to help you capture objects and rooms.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -813,6 +818,7 @@
 				DEVELOPMENT_TEAM = 52JMW2697M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to help you capture objects and rooms.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

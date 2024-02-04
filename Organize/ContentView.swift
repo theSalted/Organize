@@ -53,8 +53,8 @@ struct ContentView: View {
                 .tag(AppViewModel.TabViewTag.scan)
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
-                .onAppear { objectCaptureModel.resumeSession() }
-                .onDisappear { objectCaptureModel.pauseSession() }
+                .environmentObject(objectCaptureModel)
+                .environment(captureViewModel)
                 
         }
         .alert(

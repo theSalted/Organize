@@ -36,7 +36,7 @@ struct StorageView: View {
                 ContentUnavailableView(
                     "Select a Storage",
                     systemImage: "archivebox",
-                    description: Text("Select one or multiple storages to get started."))
+                    description: "Select one or multiple storages to get started.".inText)
             case 1: // Single Item selected
                 
                 SingleStorageDetailView(selectedStorages.first!)
@@ -73,7 +73,7 @@ struct StorageView: View {
                 ContentUnavailableView(
                     "Something Went Wrong...",
                     systemImage: "exclamationmark.triangle",
-                    description: Text("Please contact support, we are sorry for your inconvenience."))
+                    description: "Please contact support, we are sorry for your inconvenience.".inText)
             }
         }
         .scrollContentBackground(.hidden)

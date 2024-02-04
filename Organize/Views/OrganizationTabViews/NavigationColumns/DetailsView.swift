@@ -50,7 +50,7 @@ struct DetailsView: View {
                 ContentUnavailableView(
                     "Let's Get Organized",
                     systemImage: "soccerball",
-                    description: Text("Select an item or create your first one."))
+                    description: "Select an item or create your first one.".inText)
             }
         }
     }
