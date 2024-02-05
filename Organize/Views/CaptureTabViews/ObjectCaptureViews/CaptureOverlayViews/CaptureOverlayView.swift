@@ -23,23 +23,6 @@ struct CaptureOverlayView: View {
 
     var body: some View {
         VStack() {
-//            HStack {
-//                CancelButton()
-//                    .opacity(!shouldShowTutorial ? 1 : 0)
-////                    .opacity(!shouldDisableCancelButton ? 1 : 0)
-//                    .disabled(shouldDisableCancelButton ? true : false)
-//                    .transition(.opacity)
-//                Spacer()
-//                Text(objectCaptureModel.modelName)
-//                    .modifier(VisualEffectRoundedCorner())
-//                    .lineLimit(1)
-//                    .frame(maxWidth: 100)
-//                Spacer()
-//                NextButton()
-//                    .opacity(shouldShowNextButton ? 1 : 0)
-//                    .disabled(!shouldShowNextButton)
-//            }
-//            .foregroundColor(.white)
             if !capturingStarted {
                 BoundingBoxGuidanceView(session: session, hasDetectionFailed: hasDetectionFailed)
                     .modifier(VisualEffectRoundedCorner())
@@ -67,10 +50,6 @@ struct CaptureOverlayView: View {
                         ResetBoundingBoxButton(session: session)
                             .transition(.opacity)
                     }
-//                    } else if case .ready = session.state {
-//                        FilesButton()
-//                            .transition(.opacity)
-//                    }
 
                     Spacer()
                 }
@@ -83,10 +62,6 @@ struct CaptureOverlayView: View {
 
                 HStack {
                     Spacer()
-//                    if !capturingStarted {
-//                        HelpButton(showInfo: $showInfo)
-//                            .transition(.opacity)
-//                    } else
                     if case .capturing = session.state {
                         ManualShotButton(session: session)
                             .transition(.opacity)
@@ -99,13 +74,13 @@ struct CaptureOverlayView: View {
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 CancelButton()
-                    .opacity(!shouldShowTutorial ? 1 : 0)
+//                    .opacity(!shouldShowTutorial ? 1 : 0)
                     .disabled(shouldDisableCancelButton ? true : false)
                     .transition(.opacity)
             }
             ToolbarItem(placement: .confirmationAction){
                 NextButton()
-                    .opacity(shouldShowNextButton ? 1 : 0)
+//                    .opacity(shouldShowNextButton ? 1 : 0)
                     .disabled(!shouldShowNextButton)
             }
         }

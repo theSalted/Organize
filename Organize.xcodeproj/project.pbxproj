@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E0D3FBB2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 */; };
+		8E0D3FBC2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 */; };
+		8E0D3FBD2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 */; };
+		8E0D3FBE2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 */; };
+		8E0D3FBF2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB52B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 */; };
+		8E0D3FC02B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB62B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 */; };
+		8E0D3FC12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB72B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 */; };
+		8E0D3FC22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB82B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 */; };
+		8E0D3FC32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB92B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 */; };
+		8E0D3FC42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FBA2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 */; };
 		8E11CFC32B6449F3000E13B0 /* WaveShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8E11CFC22B6449F3000E13B0 /* WaveShader.metal */; };
 		8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269092B654EEA007F0C89 /* PatternDesignView.swift */; };
 		8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690C2B65529F007F0C89 /* PatternView.swift */; };
@@ -86,6 +96,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E0D3FB12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-3.mp4"; sourceTree = "<group>"; };
+		8E0D3FB22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-unflippable-high.mp4"; sourceTree = "<group>"; };
+		8E0D3FB32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-1.mp4"; sourceTree = "<group>"; };
+		8E0D3FB42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-unflippable-high.mp4"; sourceTree = "<group>"; };
+		8E0D3FB52B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-2.mp4"; sourceTree = "<group>"; };
+		8E0D3FB62B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-2.mp4"; sourceTree = "<group>"; };
+		8E0D3FB72B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-1.mp4"; sourceTree = "<group>"; };
+		8E0D3FB82B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-unflippable-low.mp4"; sourceTree = "<group>"; };
+		8E0D3FB92B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-unflippable-low.mp4"; sourceTree = "<group>"; };
+		8E0D3FBA2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-3.mp4"; sourceTree = "<group>"; };
 		8E11CFC22B6449F3000E13B0 /* WaveShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WaveShader.metal; sourceTree = "<group>"; };
 		8E2269092B654EEA007F0C89 /* PatternDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDesignView.swift; sourceTree = "<group>"; };
 		8E22690C2B65529F007F0C89 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
@@ -176,6 +196,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E0D3FB02B717E3E00C89018 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8E0D3FB32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 */,
+				8E0D3FB52B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 */,
+				8E0D3FBA2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 */,
+				8E0D3FB42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 */,
+				8E0D3FB92B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 */,
+				8E0D3FB72B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 */,
+				8E0D3FB62B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 */,
+				8E0D3FB12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 */,
+				8E0D3FB22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 */,
+				8E0D3FB82B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8E22690B2B655255007F0C89 /* PatternViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +253,7 @@
 		8E88ACFC2B5C4CE5003BDB04 /* Organize */ = {
 			isa = PBXGroup;
 			children = (
+				8E0D3FB02B717E3E00C89018 /* Resources */,
 				8E8D09222B640CFB00AB088B /* Shaders */,
 				8E8D092C2B64161400AB088B /* Styles */,
 				8ED48FC52B6028E800EB643A /* Extensions */,
@@ -565,8 +603,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E0D3FBE2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 in Resources */,
+				8E0D3FBF2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 in Resources */,
 				8E88AD072B5C4CE7003BDB04 /* Preview Assets.xcassets in Resources */,
+				8E0D3FC02B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 in Resources */,
+				8E0D3FC12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 in Resources */,
+				8E0D3FBB2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 in Resources */,
 				8E88AD042B5C4CE7003BDB04 /* Assets.xcassets in Resources */,
+				8E0D3FC42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 in Resources */,
+				8E0D3FBD2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 in Resources */,
+				8E0D3FC22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 in Resources */,
+				8E0D3FC32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 in Resources */,
+				8E0D3FBC2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
