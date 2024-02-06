@@ -12,6 +12,7 @@ import os
 
 // TODO: Decouple DataModel and ViewModel
 // TODO: Adapt Observation framework
+#if !targetEnvironment(simulator)
 @MainActor
 @available(iOS 17.0, *)
 class ObjectCaptureDataModel: ObservableObject, Identifiable {
@@ -407,4 +408,4 @@ extension ObjectCaptureDataModel {
         )
     }
 }
-
+#endif

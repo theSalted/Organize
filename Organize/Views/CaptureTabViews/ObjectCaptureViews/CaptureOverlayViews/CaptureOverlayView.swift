@@ -9,6 +9,7 @@ import Foundation
 import RealityKit
 import SwiftUI
 
+#if !targetEnvironment(simulator)
 @available(iOS 17.0, *)
 struct CaptureOverlayView: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
@@ -199,3 +200,4 @@ private struct BoundingBoxGuidanceView: View {
         }
     }
 }
+#endif

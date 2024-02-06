@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if !targetEnvironment(simulator)
 struct ReconstructionTitleView: View {
     var body: some View {
         Text(LocalizedString.processingTitle)
@@ -24,3 +25,4 @@ struct ReconstructionTitleView: View {
         )
     }
 }
+#endif

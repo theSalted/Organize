@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if !targetEnvironment(simulator)
 struct TutorialVideoView: View {
     @EnvironmentObject var appModel: ObjectCaptureDataModel
     let url: URL
@@ -54,4 +55,4 @@ struct TutorialVideoView: View {
         }
     }
 }
-
+#endif

@@ -7,6 +7,7 @@
 
 import Foundation
 
+#if !targetEnvironment(simulator)
 extension OnboardingButtonView {
     struct LocalizedString {
         static let `continue` = NSLocalizedString(
@@ -52,3 +53,4 @@ extension OnboardingButtonView {
         )
     }
 }
+#endif

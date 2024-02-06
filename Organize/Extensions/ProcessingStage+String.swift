@@ -8,6 +8,7 @@
 import Foundation
 import RealityKit
 
+#if !targetEnvironment(simulator)
 extension PhotogrammetrySession.Output.ProcessingStage {
     var string: String? {
         switch self {
@@ -58,3 +59,4 @@ extension PhotogrammetrySession.Output.ProcessingStage {
         }
     }
 }
+#endif

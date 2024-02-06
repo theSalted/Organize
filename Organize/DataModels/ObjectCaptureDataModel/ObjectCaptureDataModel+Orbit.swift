@@ -7,6 +7,7 @@
 
 import UIKit
 
+#if !targetEnvironment(simulator)
 extension ObjectCaptureDataModel {
     enum Orbit: Int, CaseIterable, Identifiable, Comparable {
         case orbit1, orbit2, orbit3
@@ -78,4 +79,4 @@ extension ObjectCaptureDataModel {
         case initial, capturing
     }
 }
-
+#endif

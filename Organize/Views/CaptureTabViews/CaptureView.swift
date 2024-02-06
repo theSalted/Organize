@@ -8,6 +8,7 @@
 import SwiftUI
 import RealityKit
 
+#if !targetEnvironment(simulator)
 struct CaptureView: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
     var showProgressView: Bool {
@@ -67,7 +68,4 @@ extension CaptureView {
         case capturing, progressing, unsupportedDevice, errorState
     }
 }
-
-#Preview {
-    CaptureView()
-}
+#endif

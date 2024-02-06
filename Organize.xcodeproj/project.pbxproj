@@ -27,6 +27,7 @@
 		8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */; };
 		8E5528582B5D9AB900EEBCCB /* MetaPrimitiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528572B5D9AB900EEBCCB /* MetaPrimitiveView.swift */; };
 		8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */; };
+		8E7357A82B72842900F779B2 /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7357A72B72842900F779B2 /* ItemFormView.swift */; };
 		8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8452592B663D84005CA22D /* PatternDesign.swift */; };
 		8E84525C2B664A85005CA22D /* Collection+randomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84525B2B664A85005CA22D /* Collection+randomElement.swift */; };
 		8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84525E2B669047005CA22D /* OpacityStyle.swift */; };
@@ -116,6 +117,7 @@
 		8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoView.swift; sourceTree = "<group>"; };
 		8E5528572B5D9AB900EEBCCB /* MetaPrimitiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaPrimitiveView.swift; sourceTree = "<group>"; };
 		8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		8E7357A72B72842900F779B2 /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
 		8E8452592B663D84005CA22D /* PatternDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDesign.swift; sourceTree = "<group>"; };
 		8E84525B2B664A85005CA22D /* Collection+randomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+randomElement.swift"; sourceTree = "<group>"; };
 		8E84525E2B669047005CA22D /* OpacityStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityStyle.swift; sourceTree = "<group>"; };
@@ -223,6 +225,14 @@
 			path = PatternViews;
 			sourceTree = "<group>";
 		};
+		8E7357A62B72837900F779B2 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				8E7357A72B72842900F779B2 /* ItemFormView.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
 		8E84525D2B66902D005CA22D /* PatternDesign */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				8E0D3FB02B717E3E00C89018 /* Resources */,
+				8ED5C58E2B727F7300897F20 /* Playground */,
 				8E8D09222B640CFB00AB088B /* Shaders */,
 				8E8D092C2B64161400AB088B /* Styles */,
 				8ED48FC52B6028E800EB643A /* Extensions */,
@@ -452,6 +463,7 @@
 		8EB944902B615AE1005FBADC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E7357A62B72837900F779B2 /* Forms */,
 				8ED1EB7F2B681047003377CA /* SubViews */,
 				8E22690B2B655255007F0C89 /* PatternViews */,
 				8EF034382B615B5F00A15340 /* CaptureTabViews */,
@@ -482,6 +494,13 @@
 				8E9D35212B6E431700154078 /* URL+isDirectory.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8ED5C58E2B727F7300897F20 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 		8EF034372B615B3800A15340 /* OrganizationTabViews */ = {
@@ -629,6 +648,7 @@
 				8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */,
 				8E84525C2B664A85005CA22D /* Collection+randomElement.swift in Sources */,
 				8E9D35582B6FBF2600154078 /* OnboardingButtonView.swift in Sources */,
+				8E7357A82B72842900F779B2 /* ItemFormView.swift in Sources */,
 				8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */,
 				8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */,
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,

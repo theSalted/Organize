@@ -7,6 +7,7 @@
 
 import Foundation
 
+#if !targetEnvironment(simulator)
 extension ObjectCaptureDataModel {
     enum ModelState: String, CustomStringConvertible {
         var description: String { rawValue }
@@ -24,3 +25,4 @@ extension ObjectCaptureDataModel {
         case failed
     }
 }
+#endif

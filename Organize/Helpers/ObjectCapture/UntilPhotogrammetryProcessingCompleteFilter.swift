@@ -8,6 +8,7 @@
 import Foundation
 import RealityKit
 
+#if !targetEnvironment(simulator)
 struct UntilPhotogrammetryProcessingCompleteFilter<Base>:
     AsyncSequence,
     AsyncIteratorProtocol where Base: AsyncSequence, Base.Element == PhotogrammetrySession.Output {
@@ -48,3 +49,4 @@ struct UntilPhotogrammetryProcessingCompleteFilter<Base>:
         return nextElement
     }
 }
+#endif

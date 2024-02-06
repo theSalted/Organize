@@ -10,6 +10,7 @@ import RealityKit
 import SwiftUI
 import os
 
+#if !targetEnvironment(simulator)
 @available(iOS 17.0, *)
 struct ReconstructionPrimaryView: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
@@ -224,7 +225,7 @@ struct ReconstructionProgressView: View {
     }
 
 }
-
+#endif
 
 //private func addItem() {
 //    withAnimation {
@@ -232,4 +233,3 @@ struct ReconstructionProgressView: View {
 //        modelContext.insert(newItem)
 //    }
 //}
-

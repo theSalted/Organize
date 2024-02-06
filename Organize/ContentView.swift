@@ -11,7 +11,9 @@ import OSLog
 
 struct ContentView: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
+    #if !targetEnvironment(simulator)
     @StateObject var objectCaptureModel: ObjectCaptureDataModel = ObjectCaptureDataModel.instance
+    #endif
     @State var appModel = AppViewModel()
     @State var captureViewModel = CaptureViewModel()
     private var logger = Logger(
@@ -29,7 +31,7 @@ struct ContentView: View {
                         .hidden : .automatic,
                     for: .tabBar)
                 .toolbarBackground(.hidden, for: .tabBar)
-                
+            #if !targetEnvironment(simulator)
             CaptureView()
                 .sheet(isPresented: $captureViewModel.showReconstructionView) {
                     if let folderManager = objectCaptureModel.scanFolderManager {
@@ -55,8 +57,9 @@ struct ContentView: View {
                 .toolbarColorScheme(.dark, for: .tabBar)
                 .environmentObject(objectCaptureModel)
                 .environment(captureViewModel)
-                
+            #endif
         }
+        #if !targetEnvironment(simulator)
         .alert(
             objectCaptureModel.error != nil  ?
                 "Failed: \(String(describing: objectCaptureModel.error!))" :
@@ -71,7 +74,6 @@ struct ContentView: View {
             },
             message: {}
         )
-        .environment(appModel)
         .onChange(of: objectCaptureModel.state) { _, newState in
             if newState == .failed {
                 captureViewModel.showErrorAlert = true
@@ -84,6 +86,8 @@ struct ContentView: View {
             }
             
         }
+        #endif
+        .environment(appModel)
     }
 }
 

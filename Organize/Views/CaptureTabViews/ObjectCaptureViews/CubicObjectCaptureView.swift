@@ -11,6 +11,7 @@ import RealityKit
 import SwiftUI
 import os
 
+#if !targetEnvironment(simulator)
 struct CubicObjectCaptureView: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
     var session: ObjectCaptureSession
@@ -93,4 +94,4 @@ private struct GradientBackground: View {
         .allowsHitTesting(false)
     }
 }
-
+#endif

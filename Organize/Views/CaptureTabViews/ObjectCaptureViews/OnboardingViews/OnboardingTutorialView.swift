@@ -10,6 +10,7 @@ import Foundation
 import RealityKit
 import SwiftUI
 
+#if !targetEnvironment(simulator)
 /// The view that either shows the point cloud or plays the guidance tutorials on the review screens.
 /// This depends on `currentState` in `onboardingStateMachine`.
 @available(iOS 17.0, *)
@@ -147,4 +148,4 @@ struct OnboardingTutorialView: View {
         onboardingStateTodetailTextMap[onboardingStateMachine.currentState] ?? ""
     }
 }
-
+#endif

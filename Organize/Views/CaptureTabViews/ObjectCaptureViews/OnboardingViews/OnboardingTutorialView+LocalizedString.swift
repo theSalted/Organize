@@ -7,6 +7,7 @@
 
 import Foundation
 
+#if !targetEnvironment(simulator)
 extension OnboardingTutorialView {
     struct LocalizedString {
         static let tooFewImagesTitle = NSLocalizedString(
@@ -196,3 +197,4 @@ extension OnboardingTutorialView {
         )
     }
 }
+#endif

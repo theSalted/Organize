@@ -9,6 +9,7 @@ import Foundation
 import RealityKit
 import SwiftUI
 
+#if !targetEnvironment(simulator)
 @available(iOS 17.0, *)
 /// Keeps the UI string conversions all in one place for simplicity
 final class FeedbackMessages {
@@ -58,3 +59,4 @@ final class FeedbackMessages {
         }
     }
 }
+#endif

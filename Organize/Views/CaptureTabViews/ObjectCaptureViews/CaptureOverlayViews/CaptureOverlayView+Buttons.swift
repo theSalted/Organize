@@ -10,6 +10,7 @@ import RealityKit
 import UniformTypeIdentifiers
 import os
 
+#if !targetEnvironment(simulator)
 extension CaptureOverlayView {
     static let logger = Logger(subsystem: OrganizeApp.bundleId,
                                category: "CaptureOverlayView+Buttons")
@@ -306,3 +307,4 @@ extension CaptureOverlayView {
         }
     }
 }
+#endif

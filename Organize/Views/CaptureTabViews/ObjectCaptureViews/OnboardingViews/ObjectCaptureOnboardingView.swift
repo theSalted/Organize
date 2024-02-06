@@ -9,6 +9,7 @@ import Foundation
 import RealityKit
 import SwiftUI
 
+#if !targetEnvironment(simulator)
 @available(iOS 17.0, *)
 /// View that shows the guidance text and tutorials on the review screen.
 struct ObjectCaptureOnboardingView: View {
@@ -38,3 +39,4 @@ struct ObjectCaptureOnboardingView: View {
     }
 }
 
+#endif

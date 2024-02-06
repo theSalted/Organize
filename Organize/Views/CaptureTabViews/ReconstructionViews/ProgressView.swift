@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+#if !targetEnvironment(simulator)
 struct ReconstructionProgressBarView: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
     // The progress value from 0 to 1 which describes how much coverage is done.
@@ -113,4 +114,4 @@ struct ReconstructionProgressBarView: View {
         )
     }
 }
-
+#endif

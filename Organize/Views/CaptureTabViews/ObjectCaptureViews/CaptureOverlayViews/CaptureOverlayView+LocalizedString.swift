@@ -7,6 +7,7 @@
 
 import Foundation
 
+#if !targetEnvironment(simulator)
 extension CaptureOverlayView {
     struct LocalizedString {
         static let startCapture = NSLocalizedString(
@@ -52,3 +53,4 @@ extension CaptureOverlayView {
             comment: "Title for help button on the object capture screen to show the tutorial pages.")
     }
 }
+#endif
