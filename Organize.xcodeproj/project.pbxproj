@@ -22,12 +22,16 @@
 		8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690C2B65529F007F0C89 /* PatternView.swift */; };
 		8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690E2B655905007F0C89 /* AuroraView.swift */; };
 		8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269102B657BEB007F0C89 /* AuroraStyles.swift */; };
+		8E486C172B729361005F0C4A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8E486C162B729361005F0C4A /* README.md */; };
+		8E486C1A2B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C192B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift */; };
+		8E486C1C2B72B6E1005F0C4A /* ShapeIconView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C1B2B72B6E1005F0C4A /* ShapeIconView+Design.swift */; };
+		8E486C1E2B72B9F4005F0C4A /* ShapedLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C1D2B72B9F4005F0C4A /* ShapedLabelStyle.swift */; };
 		8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528312B5D823300EEBCCB /* InformationLabelView.swift */; };
 		8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528512B5D925B00EEBCCB /* SideBarView.swift */; };
 		8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */; };
 		8E5528582B5D9AB900EEBCCB /* MetaPrimitiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528572B5D9AB900EEBCCB /* MetaPrimitiveView.swift */; };
 		8E55285A2B5DA3CF00EEBCCB /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */; };
-		8E7357A82B72842900F779B2 /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7357A72B72842900F779B2 /* ItemFormView.swift */; };
+		8E7357A82B72842900F779B2 /* ItemAddFormView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7357A72B72842900F779B2 /* ItemAddFormView+Design.swift */; };
 		8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8452592B663D84005CA22D /* PatternDesign.swift */; };
 		8E84525C2B664A85005CA22D /* Collection+randomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84525B2B664A85005CA22D /* Collection+randomElement.swift */; };
 		8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84525E2B669047005CA22D /* OpacityStyle.swift */; };
@@ -112,12 +116,16 @@
 		8E22690C2B65529F007F0C89 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		8E22690E2B655905007F0C89 /* AuroraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraView.swift; sourceTree = "<group>"; };
 		8E2269102B657BEB007F0C89 /* AuroraStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraStyles.swift; sourceTree = "<group>"; };
+		8E486C162B729361005F0C4A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8E486C192B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeLabelStyle+Design.swift"; sourceTree = "<group>"; };
+		8E486C1B2B72B6E1005F0C4A /* ShapeIconView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeIconView+Design.swift"; sourceTree = "<group>"; };
+		8E486C1D2B72B9F4005F0C4A /* ShapedLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapedLabelStyle.swift; sourceTree = "<group>"; };
 		8E5528312B5D823300EEBCCB /* InformationLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLabelView.swift; sourceTree = "<group>"; };
 		8E5528512B5D925B00EEBCCB /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		8E5528532B5D9A1A00EEBCCB /* MetaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoView.swift; sourceTree = "<group>"; };
 		8E5528572B5D9AB900EEBCCB /* MetaPrimitiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaPrimitiveView.swift; sourceTree = "<group>"; };
 		8E5528592B5DA3CF00EEBCCB /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
-		8E7357A72B72842900F779B2 /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
+		8E7357A72B72842900F779B2 /* ItemAddFormView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemAddFormView+Design.swift"; sourceTree = "<group>"; };
 		8E8452592B663D84005CA22D /* PatternDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDesign.swift; sourceTree = "<group>"; };
 		8E84525B2B664A85005CA22D /* Collection+randomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+randomElement.swift"; sourceTree = "<group>"; };
 		8E84525E2B669047005CA22D /* OpacityStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityStyle.swift; sourceTree = "<group>"; };
@@ -225,10 +233,28 @@
 			path = PatternViews;
 			sourceTree = "<group>";
 		};
+		8E486C152B72934A005F0C4A /* DIP */ = {
+			isa = PBXGroup;
+			children = (
+				8E7357A72B72842900F779B2 /* ItemAddFormView+Design.swift */,
+				8E486C1F2B72BC90005F0C4A /* Archive */,
+				8E486C162B729361005F0C4A /* README.md */,
+			);
+			path = DIP;
+			sourceTree = "<group>";
+		};
+		8E486C1F2B72BC90005F0C4A /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				8E486C192B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift */,
+				8E486C1B2B72B6E1005F0C4A /* ShapeIconView+Design.swift */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
 		8E7357A62B72837900F779B2 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
-				8E7357A72B72842900F779B2 /* ItemFormView.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -276,6 +302,7 @@
 				8EB9448F2B615A75005FBADC /* ViewModels */,
 				8E9D35312B6EDF5E00154078 /* ViewController */,
 				8E9D353C2B6EE7BB00154078 /* ViewRepresentable */,
+				8E486C152B72934A005F0C4A /* DIP */,
 				8EB944902B615AE1005FBADC /* Views */,
 				8E88ACFF2B5C4CE5003BDB04 /* ContentView.swift */,
 				8E88ACFD2B5C4CE5003BDB04 /* OrganizeApp.swift */,
@@ -318,6 +345,7 @@
 				8E8D092D2B64162800AB088B /* Pattern.swift */,
 				8E2269102B657BEB007F0C89 /* AuroraStyles.swift */,
 				8ED1EB7D2B681028003377CA /* CurtainEffect.swift */,
+				8E486C1D2B72B9F4005F0C4A /* ShapedLabelStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -626,6 +654,7 @@
 				8E0D3FBF2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 in Resources */,
 				8E88AD072B5C4CE7003BDB04 /* Preview Assets.xcassets in Resources */,
 				8E0D3FC02B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 in Resources */,
+				8E486C172B729361005F0C4A /* README.md in Resources */,
 				8E0D3FC12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 in Resources */,
 				8E0D3FBB2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 in Resources */,
 				8E88AD042B5C4CE7003BDB04 /* Assets.xcassets in Resources */,
@@ -648,7 +677,7 @@
 				8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */,
 				8E84525C2B664A85005CA22D /* Collection+randomElement.swift in Sources */,
 				8E9D35582B6FBF2600154078 /* OnboardingButtonView.swift in Sources */,
-				8E7357A82B72842900F779B2 /* ItemFormView.swift in Sources */,
+				8E7357A82B72842900F779B2 /* ItemAddFormView+Design.swift in Sources */,
 				8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */,
 				8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */,
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,
@@ -665,6 +694,7 @@
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
 				8E9D355A2B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift in Sources */,
 				8E9D354B2B6FBB7E00154078 /* HelpPageView.swift in Sources */,
+				8E486C1E2B72B9F4005F0C4A /* ShapedLabelStyle.swift in Sources */,
 				8E8D092E2B64162800AB088B /* Pattern.swift in Sources */,
 				8E9D35352B6EE12700154078 /* QuickLookViewController.swift in Sources */,
 				8E88AD112B5C5CEA003BDB04 /* Storage.swift in Sources */,
@@ -681,6 +711,7 @@
 				8ED1EB7E2B681028003377CA /* CurtainEffect.swift in Sources */,
 				8E9D35412B6FB64400154078 /* CubicObjectCaptureView.swift in Sources */,
 				8E9D35152B6E31FC00154078 /* ObjectCaptureDataModel+State.swift in Sources */,
+				8E486C1C2B72B6E1005F0C4A /* ShapeIconView+Design.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
 				8E9D35452B6FB7B100154078 /* CaptureOverlayView+Buttons.swift in Sources */,
 				8E9D35332B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift in Sources */,
@@ -694,6 +725,7 @@
 				8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
 				8E8452632B6690A2005CA22D /* GetRandomDesign.swift in Sources */,
+				8E486C1A2B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift in Sources */,
 				8E9D35432B6FB72300154078 /* CaptureOverlayView.swift in Sources */,
 				8E9D355E2B6FE0A800154078 /* String+inText.swift in Sources */,
 				8E9D35192B6E337300154078 /* TimedMessageList.swift in Sources */,
