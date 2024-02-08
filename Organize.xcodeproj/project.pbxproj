@@ -23,8 +23,6 @@
 		8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690E2B655905007F0C89 /* AuroraView.swift */; };
 		8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269102B657BEB007F0C89 /* AuroraStyles.swift */; };
 		8E486C172B729361005F0C4A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8E486C162B729361005F0C4A /* README.md */; };
-		8E486C1A2B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C192B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift */; };
-		8E486C1C2B72B6E1005F0C4A /* ShapeIconView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C1B2B72B6E1005F0C4A /* ShapeIconView+Design.swift */; };
 		8E486C1E2B72B9F4005F0C4A /* ShapedLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C1D2B72B9F4005F0C4A /* ShapedLabelStyle.swift */; };
 		8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528312B5D823300EEBCCB /* InformationLabelView.swift */; };
 		8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5528512B5D925B00EEBCCB /* SideBarView.swift */; };
@@ -96,6 +94,12 @@
 		8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC12B601A7000EB643A /* ContentColumnView.swift */; };
 		8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC32B6028CA00EB643A /* View+If.swift */; };
 		8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */; };
+		8EDDFEB32B74B0E50009A290 /* BetterCardPatternView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB22B74B0E50009A290 /* BetterCardPatternView+Design.swift */; };
+		8EDDFEB52B74C2F90009A290 /* SymbolView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB42B74C2F90009A290 /* SymbolView+Design.swift */; };
+		8EDDFEB72B74C6000009A290 /* Character+emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB62B74C6000009A290 /* Character+emoji.swift */; };
+		8EDDFEBA2B74C6980009A290 /* String+emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB92B74C6980009A290 /* String+emoji.swift */; };
+		8EDDFEBB2B74C8FA0009A290 /* ShapeLabelStyle+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C192B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift */; };
+		8EDDFEBC2B74C8FA0009A290 /* ShapeIconView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C1B2B72B6E1005F0C4A /* ShapeIconView+Design.swift */; };
 		8EE9639E2B6983F8002AA850 /* SingleStorageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9639D2B6983F8002AA850 /* SingleStorageDetailView.swift */; };
 		8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF034432B61A8F100A15340 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
@@ -191,6 +195,10 @@
 		8ED48FC12B601A7000EB643A /* ContentColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentColumnView.swift; sourceTree = "<group>"; };
 		8ED48FC32B6028CA00EB643A /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
 		8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AdaptiveNavigationTitle.swift"; sourceTree = "<group>"; };
+		8EDDFEB22B74B0E50009A290 /* BetterCardPatternView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetterCardPatternView+Design.swift"; sourceTree = "<group>"; };
+		8EDDFEB42B74C2F90009A290 /* SymbolView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymbolView+Design.swift"; sourceTree = "<group>"; };
+		8EDDFEB62B74C6000009A290 /* Character+emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+emoji.swift"; sourceTree = "<group>"; };
+		8EDDFEB92B74C6980009A290 /* String+emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+emoji.swift"; sourceTree = "<group>"; };
 		8EE9639D2B6983F8002AA850 /* SingleStorageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStorageDetailView.swift; sourceTree = "<group>"; };
 		8EF034432B61A8F100A15340 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +247,8 @@
 				8E7357A72B72842900F779B2 /* ItemAddFormView+Design.swift */,
 				8E486C1F2B72BC90005F0C4A /* Archive */,
 				8E486C162B729361005F0C4A /* README.md */,
+				8EDDFEB22B74B0E50009A290 /* BetterCardPatternView+Design.swift */,
+				8EDDFEB42B74C2F90009A290 /* SymbolView+Design.swift */,
 			);
 			path = DIP;
 			sourceTree = "<group>";
@@ -516,6 +526,7 @@
 			children = (
 				8E9D35202B6E42FF00154078 /* Views */,
 				8E84525B2B664A85005CA22D /* Collection+randomElement.swift */,
+				8EDDFEB82B74C6800009A290 /* Emoji */,
 				8E9D355D2B6FE0A800154078 /* String+inText.swift */,
 				8E9D35362B6EE22900154078 /* ProcessingStage+String.swift */,
 				8ED1EB772B68040C003377CA /* Shader+float2.swift */,
@@ -529,6 +540,15 @@
 			children = (
 			);
 			path = Playground;
+			sourceTree = "<group>";
+		};
+		8EDDFEB82B74C6800009A290 /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				8EDDFEB62B74C6000009A290 /* Character+emoji.swift */,
+				8EDDFEB92B74C6980009A290 /* String+emoji.swift */,
+			);
+			path = Emoji;
 			sourceTree = "<group>";
 		};
 		8EF034372B615B3800A15340 /* OrganizationTabViews */ = {
@@ -677,16 +697,20 @@
 				8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */,
 				8E84525C2B664A85005CA22D /* Collection+randomElement.swift in Sources */,
 				8E9D35582B6FBF2600154078 /* OnboardingButtonView.swift in Sources */,
+				8EDDFEB32B74B0E50009A290 /* BetterCardPatternView+Design.swift in Sources */,
 				8E7357A82B72842900F779B2 /* ItemAddFormView+Design.swift in Sources */,
+				8EDDFEBB2B74C8FA0009A290 /* ShapeLabelStyle+Design.swift in Sources */,
 				8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */,
 				8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */,
 				8E5528322B5D823300EEBCCB /* InformationLabelView.swift in Sources */,
 				8E9D351B2B6E344100154078 /* CaptureOnBoardingStateMachine.swift in Sources */,
 				8E88AD0F2B5C5C41003BDB04 /* Item.swift in Sources */,
+				8EDDFEBA2B74C6980009A290 /* String+emoji.swift in Sources */,
 				8E9D352E2B6EDDF300154078 /* UntilPhotogrammetryProcessingCompleteFilter.swift in Sources */,
 				8E88AD002B5C4CE5003BDB04 /* ContentView.swift in Sources */,
 				8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */,
 				8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */,
+				8EDDFEB72B74C6000009A290 /* Character+emoji.swift in Sources */,
 				8E9D35132B6E312100154078 /* ObjectCaptureDataModel.swift in Sources */,
 				8E9D35482B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift in Sources */,
 				8E9D35172B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift in Sources */,
@@ -711,13 +735,13 @@
 				8ED1EB7E2B681028003377CA /* CurtainEffect.swift in Sources */,
 				8E9D35412B6FB64400154078 /* CubicObjectCaptureView.swift in Sources */,
 				8E9D35152B6E31FC00154078 /* ObjectCaptureDataModel+State.swift in Sources */,
-				8E486C1C2B72B6E1005F0C4A /* ShapeIconView+Design.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
 				8E9D35452B6FB7B100154078 /* CaptureOverlayView+Buttons.swift in Sources */,
 				8E9D35332B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift in Sources */,
 				8E9D350F2B6E2FDD00154078 /* FeedbackMessages.swift in Sources */,
 				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
 				8E9D35292B6ED4D000154078 /* CaptureViewModel.swift in Sources */,
+				8EDDFEB52B74C2F90009A290 /* SymbolView+Design.swift in Sources */,
 				8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */,
 				8E11CFC32B6449F3000E13B0 /* WaveShader.metal in Sources */,
 				8E9D35272B6ECD6000154078 /* OrganizationView.swift in Sources */,
@@ -725,7 +749,6 @@
 				8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
 				8E8452632B6690A2005CA22D /* GetRandomDesign.swift in Sources */,
-				8E486C1A2B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift in Sources */,
 				8E9D35432B6FB72300154078 /* CaptureOverlayView.swift in Sources */,
 				8E9D355E2B6FE0A800154078 /* String+inText.swift in Sources */,
 				8E9D35192B6E337300154078 /* TimedMessageList.swift in Sources */,
@@ -735,6 +758,7 @@
 				8E8452612B66906B005CA22D /* GradientEffect.swift in Sources */,
 				8E9D354E2B6FBC3A00154078 /* ObjectCaptureOnboardingView.swift in Sources */,
 				8E9D351D2B6E38AE00154078 /* ModelDirectory.swift in Sources */,
+				8EDDFEBC2B74C8FA0009A290 /* ShapeIconView+Design.swift in Sources */,
 				8E9D35392B6EE2BC00154078 /* TitleView.swift in Sources */,
 				8E9D35372B6EE22900154078 /* ProcessingStage+String.swift in Sources */,
 				8E9D353B2B6EE52000154078 /* ProgressView.swift in Sources */,
