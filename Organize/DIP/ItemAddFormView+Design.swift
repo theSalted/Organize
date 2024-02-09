@@ -410,7 +410,7 @@ private struct HiFiView : View {
 fileprivate struct Playground {
     func metaGenericTest(target: any Meta) {
         let space = target as? Space
-        print(space?.systemImage ?? "")
+//        print(space?.systemImage ?? "")
     }
     
     func whatIsInsideItem() {

@@ -47,8 +47,10 @@ struct SingleStorageDetailView: View {
                 Label {
                     Text(item.name)
                 } icon: {
-                    Image(systemName: item.systemImage ?? "archivebox")
+                    SymbolView(symbol: item.symbol)
                         .foregroundStyle(item.color)
+//                    Image(systemName: item.systemImage ?? "archivebox")
+                        
                 }
             }
         }

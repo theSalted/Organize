@@ -17,8 +17,33 @@ final class Space : Identifiable, Meta {
     var pattern: PatternDesign
     @Relationship(deleteRule: .cascade, inverse: \Storage.space)
     var storages = [Storage]()
-    var systemImage : String?
     private var _colorComponents : ColorComponents
+    
+    private var systemImage: String?
+    private var emoji: String?
+    
+    var symbol: String {
+        get {
+            if let systemImage {
+                return systemImage
+            } else if let emoji {
+                return emoji
+            } else {
+                systemImage = "square.split.bottomrightquarter"
+                return systemImage!
+            }
+        }
+        
+        set {
+            if newValue.isSingleEmoji {
+                systemImage = nil
+                emoji = newValue
+            } else {
+                emoji = nil
+                systemImage = newValue
+            }
+        }
+    }
     
     @Transient var color : Color {
         get { _colorComponents.color }
@@ -29,12 +54,12 @@ final class Space : Identifiable, Meta {
         nil
     }()
     
-    init(name: String = "Untitled", systemImage : String = "square.split.bottomrightquarter") {
+    init(name: String = "Untitled", symbol : String = "square.split.bottomrightquarter") {
         self.name = name
         self.id = UUID()
         self.createdAt = Date()
         self.pattern = PatternDesign.getRandomDesign()
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
-        self.systemImage = systemImage
+        self.symbol = symbol
     }
 }

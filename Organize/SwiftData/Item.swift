@@ -15,8 +15,32 @@ class Item : Identifiable, Meta {
     var name: String
     var createdAt: Date
     var storage: Storage?
-    var systemImage: String?
     var pattern: PatternDesign
+    private var systemImage: String?
+    private var emoji: String?
+    
+    var symbol: String {
+        get {
+            if let systemImage {
+                return systemImage
+            } else if let emoji {
+                return emoji
+            } else {
+                systemImage = Item.randomSystemSymbol
+                return systemImage!
+            }
+        }
+        
+        set {
+            if newValue.isSingleEmoji {
+                systemImage = nil
+                emoji = newValue
+            } else {
+                emoji = nil 
+                systemImage = newValue
+            }
+        }
+    }
     
     private var _colorComponents : ColorComponents
     
@@ -40,14 +64,14 @@ class Item : Identifiable, Meta {
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
     }
     
-    init(name: String = "Untitled", systemImage: String = "cube", storage: Storage) {
+    init(name: String = "Untitled", symbol: String = "cube", storage: Storage) {
         self.name = name
         self.createdAt = Date.now
         self.id = UUID()
         self.storage = storage
         self.pattern = PatternDesign.getRandomDesign()
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
-        self.systemImage = systemImage
+        self.symbol = symbol
     }
     
     static var randomSystemSymbol: String {

@@ -42,7 +42,7 @@ struct SideBarView: View {
                     Label {
                         Text(space.name)
                     } icon: {
-                        Image(systemName: space.systemImage ?? "square.split.bottomrightquarter")
+                        SymbolView(symbol: space.symbol)
                             .foregroundStyle(space.color)
                     }
                         

@@ -51,7 +51,7 @@ struct ContentColumnView: View {
                         Label {
                             Text(storage.name)
                         } icon: {
-                            Image(systemName: storage.systemImage ?? "archivebox")
+                            SymbolView(symbol: storage.symbol)
                                 .foregroundStyle(storage.color)
                         }
                     }

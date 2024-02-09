@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Skeleton: View {
+/// Implemented by ``SymbolView``
+private struct Skeleton: View {
     var symbol : String
     var body: some View {
         Group {
