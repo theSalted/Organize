@@ -47,41 +47,43 @@ struct FormEditView: View {
     var body: some View {
         NavigationStack {
             Form {
-                List {
-                    // MARK: IconNameCard
-                    Section { IconNameCardView(target) }
-                    
-                    // MARK: Styles
-                    DisclosureGroup(isExpanded: $isStyleDisclosureGroupExpanded) {
-                    } label: {
-                        Label { "Styles".inText
-                        } icon: {
-                            Image(systemName: "paintbrush")
-                                .resizable()
-                                .scaledToFit()
-                                .foregroundStyle(.white)
-                                .frame(width: 28, height: 28)
-                        }
-                        .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), backgroundColor: .orange))
+                // MARK: IconNameCard
+                Section { IconNameCardView(target) }
+                
+                // MARK: Styles
+                DisclosureGroup(isExpanded: $isStyleDisclosureGroupExpanded) {
+                } label: {
+                    Label { "Styles".inText
+                    } icon: {
+                        Image(systemName: "paintbrush")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundStyle(.white)
+                            .frame(width: 28, height: 28)
                     }
-                    if isStyleDisclosureGroupExpanded {
-                        Section { ColorSelectionGridView($target.color) }
-                        Section {
-                            switch target {
-                            case let item as Item:
-                                let symbol = Binding {
-                                    item.symbol
-                                } set: { newSymbol in
-                                    item.symbol = newSymbol
-                                }
-                                IconSelectionGridView(symbol, presetIcons: Item.symbolList)
-                            default:
-                                EmptyView()
+                    .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), backgroundColor: .orange))
+                }
+                if isStyleDisclosureGroupExpanded {
+                    Section { ColorSelectionGridView($target.color) }
+                    Section {
+                        switch target {
+                        case let item as Item:
+                            let symbol = Binding {
+                                item.symbol
+                            } set: { newSymbol in
+                                item.symbol = newSymbol
                             }
+                            IconSelectionGridView(symbol, presetIcons: Item.symbolList)
+                        default:
+                            EmptyView()
                         }
                     }
-                    
-                    
+                    Section("Pattern") {
+                        PatternSelectionView(
+                            $target.pattern,
+                            color: target.color)
+                        .padding(.vertical)
+                    }
                 }
             }
             .navigationTitle(title)

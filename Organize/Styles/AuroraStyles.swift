@@ -16,7 +16,7 @@ extension AuroraView {
     enum WaveType {
         case simple, spiky, complex
     }
-    enum AuroraShapeStyle: CaseIterable, Codable {
+    enum AuroraShapeStyle: CaseIterable, Codable, Equatable {
         case spiky, fluffy, wavy, puffy, jelly, slimey
         func amplitude() -> Double {
             switch self {
