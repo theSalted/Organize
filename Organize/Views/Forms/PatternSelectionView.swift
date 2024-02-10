@@ -19,8 +19,8 @@ struct PatternSelectionView: View {
         self._patternTarget = pattern
         self.color = color
         self.availableSelectionCount = availableSelectionCount
-        self.randomAuroraShapeList = PatternSelectionView.generateRandomList(of: availableSelectionCount)
-        self.randomPatternList = PatternSelectionView.generateRandomList(of: availableSelectionCount)
+        self.randomAuroraShapeList = PatternSelectionView.generateUniqueRandomList(of: availableSelectionCount)
+        self.randomPatternList = PatternSelectionView.generateUniqueRandomList(of: availableSelectionCount)
     }
     
     var body: some View {
@@ -95,25 +95,25 @@ struct PatternSelectionView: View {
     }
     func randomizeLists() {
         withAnimation {
-            self.randomAuroraShapeList = PatternSelectionView.generateRandomList(of: availableSelectionCount)
-            self.randomPatternList = PatternSelectionView.generateRandomList(of: availableSelectionCount)
+            self.randomAuroraShapeList = PatternSelectionView.generateUniqueRandomList(of: availableSelectionCount)
+            self.randomPatternList = PatternSelectionView.generateUniqueRandomList(of: availableSelectionCount)
         }
     }
 }
 
 extension PatternSelectionView {
-    static func generateRandomList<T>(of size: Int = 3) -> [T] where T: CaseIterable, T: Equatable  {
-        var randomListOfShapes = [T]()
-        for _ in 1...size {
-            while let randomShape = T.allCases.randomElement() {
-                if !randomListOfShapes.contains(where: { $0 == randomShape}) {
-                    randomListOfShapes.append(randomShape)
-                    break;
-                }
-            }
-        }
-        
-        return randomListOfShapes
+    /// Generates a unique random list of elements from an enumeration.
+    ///
+    /// This function creates a list of unique elements of a given size from an enumeration that conforms to `CaseIterable` and `Equatable`. It shuffles the collection of all cases and then takes the first `n` elements, ensuring uniqueness without the need to check for duplicates.
+    ///
+    /// - Parameters:
+    ///   - elementCount: The desired number of unique elements in the list. Defaults to 3 if not specified. If `elementCount` is greater than the number of available cases, the function returns a shuffled list of all cases.
+    /// - Returns: An array of unique random elements of type `T`.
+    ///
+    /// - Complexity: O(n), where n is the number of cases in the enumeration. This is due to the shuffling operation.
+    static func generateUniqueRandomList<T>(of elementCount: Int = 3) -> [T] where T: CaseIterable, T: Equatable {
+        let allCasesShuffled = T.allCases.shuffled()
+        return Array(allCasesShuffled.prefix(elementCount))
     }
 }
 
