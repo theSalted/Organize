@@ -25,3 +25,12 @@ struct ColorComponents: Codable {
         )
     }
 }
+
+extension ColorComponents: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return
+            lhs.red.isApproximateEqual(to: rhs.red, tolerance: 0.0000001) &&
+            lhs.blue.isApproximateEqual(to: rhs.blue, tolerance: 0.0000001) &&
+            lhs.green.isApproximateEqual(to: rhs.green, tolerance: 0.0000001)
+    }
+}

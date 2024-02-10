@@ -65,7 +65,7 @@ struct IconNameCardView: View {
         ZStack {
             Circle().foregroundStyle(color.gradient)
             SymbolView(symbol: symbol)
-                .font(.custom("LargeIcon", size: 50))
+                .font(.custom("LargeIcon", size: 45))
                 .foregroundStyle(.white)
         }
         .frame(height: 90)

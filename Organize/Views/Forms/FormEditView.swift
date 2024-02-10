@@ -9,7 +9,12 @@ import OSLog
 import SwiftUI
 
 struct FormEditView: View {
+    typealias ButtonAction = () -> Void
+    
     @Binding var target: any Meta
+    
+    @State var isStyleDisclosureGroupExpanded = true
+    
     var mode: FormMode = .add
     var title: String {
         guard let targetString = {
@@ -27,17 +32,59 @@ struct FormEditView: View {
         let modeString = mode.rawValue
         return (modeString + " an " + targetString)
     }
+    var confirmationButtonString: String {
+        switch mode {
+        case .edit:
+            "Done"
+        case .add:
+            "Add"
+        case .create:
+            "Create"
+        }
+    }
+    var cancelationAction: ButtonAction?
     
     var body: some View {
         NavigationStack {
             Form {
                 List {
-                   IconNameCardView(target)
+                    Section { IconNameCardView(target) }
+                    
+                    DisclosureGroup(isExpanded: $isStyleDisclosureGroupExpanded) {
+                        Section { ColorSelectionGridView($target.color) }
+                    } label: {
+                        Label {
+                            Text("Styles")
+                        } icon: {
+                            Image(systemName: "paintbrush")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(.white)
+                                .frame(width: 28, height: 28)
+                        }
+                        .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), backgroundColor: .orange))
+                    }
                 }
             }
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(confirmationButtonString) {}
+                        .disabled(true)
+                }
+                
+                if let cancelationAction {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") {
+                            cancelationAction()
+                        }
+                    }
+                }
+                
+            }
         }
+        .tint(target.color)
         .ignoresSafeArea()
     }
 }
@@ -56,6 +103,7 @@ fileprivate let logger = Logger(subsystem: OrganizeApp.bundleId, category: "Form
     FormEditView(
         target: .constant(
             Item(name: "My Item")
-        )
-    )
+        )) {
+            print("Cancelled")
+        }
 }
