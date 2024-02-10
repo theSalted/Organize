@@ -24,6 +24,46 @@ struct PatternSelectionView: View {
     }
     
     var body: some View {
+        ViewThatFits {
+            horizontalPatterns
+            verticalPatterns
+        }
+    }
+    
+    var horizontalPatterns: some View {
+        HStack(spacing: 20) {
+            ForEach(0...(availableSelectionCount - 1), id: \.self) { i in
+                let pattern = PatternDesign.getRandomDesign(
+                    patternOverwrite: randomPatternList[i],
+                    auroraShapeOverwrite: randomAuroraShapeList[i])
+                
+                Button {
+                    withAnimation {
+                        patternTarget = pattern
+                    }
+                    randomizeLists()
+                } label: {
+                    PatternCardView(design: pattern, color: color)
+                        .frame(height: 120)
+                        .frame(minWidth: 120)
+                }
+            }
+            
+            Button {
+                randomizeLists()
+            } label: {
+                Image(systemName: "arrow.clockwise.circle.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundStyle(color)
+                    .symbolRenderingMode(.hierarchical)
+                    .frame(width: 50, height: 50)
+                    .padding()
+            }
+        }
+    }
+    
+    var verticalPatterns: some View {
         VStack(spacing: 20) {
             ForEach(0...(availableSelectionCount - 1), id: \.self) { i in
                 let pattern = PatternDesign.getRandomDesign(
@@ -52,10 +92,7 @@ struct PatternSelectionView: View {
                     .frame(width: 40, height: 40)
             }
         }
-        .tint(color)
-        .buttonStyle(.plain)
     }
-    
     func randomizeLists() {
         withAnimation {
             self.randomAuroraShapeList = PatternSelectionView.generateRandomList(of: availableSelectionCount)
