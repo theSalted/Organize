@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-protocol Meta : Identifiable, Hashable where ID == UUID {
+protocol Meta : Identifiable, Hashable, AnyObject where ID == UUID {
     var id:             UUID            { get set }
     var name:           String          { get set }
     var createdAt:      Date            { get set }
@@ -16,5 +16,4 @@ protocol Meta : Identifiable, Hashable where ID == UUID {
     var color:          Color           { get set }
     var symbol:         String          { get set }
     var storedIn:       String?         { get }
-//    var systemImage:    String?         { get set }
 }
