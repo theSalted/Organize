@@ -26,7 +26,7 @@ class Item : Identifiable, Meta {
             } else if let emoji {
                 return emoji
             } else {
-                systemImage = Item.randomSystemSymbol
+                systemImage = "cube.fill"
                 return systemImage!
             }
         }
@@ -64,7 +64,7 @@ class Item : Identifiable, Meta {
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
     }
     
-    init(name: String = "Untitled", symbol: String = "cube", storage: Storage) {
+    init(name: String = "Untitled", symbol: String = "cube.fill", storage: Storage) {
         self.name = name
         self.createdAt = Date.now
         self.id = UUID()
@@ -74,18 +74,21 @@ class Item : Identifiable, Meta {
         self.symbol = symbol
     }
     
+    static var symbolList: [String] = [
+        "cube.fill",
+        "soccerball",
+        "lamp.desk.fill",
+        "medal.fill",
+        "gym.bag.fill",
+        "skateboard.fill",
+        "tennisball.fill",
+        "tennis.racket",
+        "basketball.fill",
+        "gamecontroller.fill"]
+    
     static var randomSystemSymbol: String {
         get {
-            ["soccerball",
-             "lamp.desk.fill",
-             "medal.fill",
-             "gym.bag.fill",
-             "skateboard.fill",
-             "tennisball.fill",
-             "tennis.racket",
-             "basketball.fill",
-             "gamecontroller.fill"
-            ].randomElement() ?? "soccerball"
+            symbolList.randomElement() ?? "cube.fill"
         }
     }
 }

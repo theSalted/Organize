@@ -1,5 +1,5 @@
 //
-//  CircleColorSelectionView.swift
+//  CircularColorSelectionView.swift
 //  Organize
 //
 //  Created by Yuhao Chen on 2/10/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CircleColorSelectionView: View {
+struct CircularColorSelectionView: View {
     let color: Color
     @Binding var selectionColor: Color
     
@@ -42,5 +42,5 @@ struct CircleColorSelectionView: View {
 }
 
 #Preview {
-    CircleColorSelectionView(.green, selection: .constant(.gray))
+    CircularColorSelectionView(.green, selection: .constant(.gray))
 }

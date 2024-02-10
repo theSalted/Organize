@@ -28,14 +28,14 @@ struct ColorSelectionGridView: View {
         VStack(spacing: verticalSpacing) {
             HStack {
                 ForEach(ColorSelectionGridView.rowOneColors, id: \.self) { presetColor in
-                    CircleColorSelectionView(presetColor, selection: $color)
+                    CircularColorSelectionView(presetColor, selection: $color)
                         .frame(maxWidth: .infinity)
                 }
             }
             .allowsTightening(false)
             HStack {
                 ForEach(ColorSelectionGridView.rowTwoColors, id: \.self) { presetColor in
-                    CircleColorSelectionView(presetColor, selection: $color)
+                    CircularColorSelectionView(presetColor, selection: $color)
                         .frame(maxWidth: .infinity)
                 }
                 
