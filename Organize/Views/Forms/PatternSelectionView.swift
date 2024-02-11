@@ -14,6 +14,7 @@ struct PatternSelectionView: View {
     
     @State var randomAuroraShapeList: [AuroraView.AuroraShapeStyle]
     @State var randomPatternList: [Pattern]
+    @State private var refreshCount = 0
     
     init(_ pattern: Binding<PatternDesign>, color: Color, of availableSelectionCount: Int = 3) {
         self._patternTarget = pattern
@@ -28,6 +29,7 @@ struct PatternSelectionView: View {
             horizontalPatterns
             verticalPatterns
         }
+        .buttonStyle(.plain)
     }
     
     var horizontalPatterns: some View {
@@ -60,6 +62,8 @@ struct PatternSelectionView: View {
                     .frame(width: 50, height: 50)
                     .padding()
             }
+            .symbolEffect(.bounce.up.byLayer, value: refreshCount)
+            .sensoryFeedback(.impact, trigger: refreshCount)
         }
     }
     
@@ -91,12 +95,15 @@ struct PatternSelectionView: View {
                     .symbolRenderingMode(.hierarchical)
                     .frame(width: 40, height: 40)
             }
+            .symbolEffect(.bounce.up.byLayer, value: refreshCount)
+            .sensoryFeedback(.impact, trigger: refreshCount)
         }
     }
     func randomizeLists() {
         withAnimation {
             self.randomAuroraShapeList = PatternSelectionView.generateUniqueRandomList(of: availableSelectionCount)
             self.randomPatternList = PatternSelectionView.generateUniqueRandomList(of: availableSelectionCount)
+            refreshCount += 1
         }
     }
 }
