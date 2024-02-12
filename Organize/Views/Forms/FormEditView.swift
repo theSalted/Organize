@@ -50,6 +50,21 @@ struct FormEditView: View {
                 // MARK: IconNameCard
                 Section { IconNameCardView(target) }
                 
+                // MARK: Placement Picker
+                switch target {
+                case is Item:
+                    let selection = Binding {
+                        target as! Item
+                    } set: { newItem in
+                        target = newItem
+                    }
+                    Section {
+                        ItemPlacementPickerView(selection: selection)
+                    }
+                default:
+                    EmptyView()
+                }
+                
                 // MARK: Styles
                 DisclosureGroup(isExpanded: $isStyleDisclosureGroupExpanded) {
                 } label: {

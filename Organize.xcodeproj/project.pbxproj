@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E00F9DD2B7936680094B8F6 /* ItemPlacementPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00F9DC2B7936680094B8F6 /* ItemPlacementPickerView.swift */; };
 		8E0D3FBB2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 */; };
 		8E0D3FBC2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 */; };
 		8E0D3FBD2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 */; };
@@ -117,6 +118,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E00F9DC2B7936680094B8F6 /* ItemPlacementPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPlacementPickerView.swift; sourceTree = "<group>"; };
 		8E0D3FB12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-3.mp4"; sourceTree = "<group>"; };
 		8E0D3FB22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-unflippable-high.mp4"; sourceTree = "<group>"; };
 		8E0D3FB32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-1.mp4"; sourceTree = "<group>"; };
@@ -238,6 +240,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E00F9DE2B7938030094B8F6 /* PlacementPickerViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E00F9DC2B7936680094B8F6 /* ItemPlacementPickerView.swift */,
+			);
+			path = PlacementPickerViews;
+			sourceTree = "<group>";
+		};
 		8E0D3FB02B717E3E00C89018 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +303,7 @@
 				8E8FC6C72B77BC220038E9B0 /* ColorSelectionViews */,
 				8E97DEBC2B77E7810007A9BA /* IconSelectionView */,
 				8E53A3F42B77FC9A00A92BDB /* PatternSelectionView.swift */,
+				8E00F9DE2B7938030094B8F6 /* PlacementPickerViews */,
 				8E6CD0812B7755A300BF1A18 /* FormEditView.swift */,
 			);
 			path = Forms;
@@ -764,6 +775,7 @@
 				8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */,
 				8E6CD0842B7757F200BF1A18 /* IconNameCardView.swift in Sources */,
 				8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */,
+				8E00F9DD2B7936680094B8F6 /* ItemPlacementPickerView.swift in Sources */,
 				8EDDFEB72B74C6000009A290 /* Character+emoji.swift in Sources */,
 				8E9D35132B6E312100154078 /* ObjectCaptureDataModel.swift in Sources */,
 				8E9D35482B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift in Sources */,
