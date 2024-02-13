@@ -67,7 +67,10 @@ struct CubicObjectCaptureView: View {
     }
     
     private var shouldShowOverlayView: Bool {
-        !showInfo && !objectCaptureModel.showPreviewModel && !session.isPaused && session.cameraTracking == .normal
+        !showInfo && 
+        !objectCaptureModel.showPreviewModel &&
+        !session.isPaused &&
+        session.cameraTracking == .normal
     }
 }
 

@@ -15,7 +15,10 @@ struct ItemPlacementPickerView: View {
     var body: some View {
         if storages.isEmpty {
             NavigationLink {
-                ContentUnavailableView("Create a storage first", systemImage: "square.split.bottomrightquarter", description: "No storage available for your item.".inText)
+                ContentUnavailableView(
+                    "Create a storage first",
+                    systemImage: "square.split.bottomrightquarter",
+                    description: "No storage available for your item.".inText)
                     .navigationTitle("Storage")
             } label: {
                 pickerLabel
@@ -30,7 +33,7 @@ struct ItemPlacementPickerView: View {
             } label: {
                 pickerLabel
             }.pickerStyle(.navigationLink)
-        } 
+        }
     }
     
     var pickerLabel: some View {

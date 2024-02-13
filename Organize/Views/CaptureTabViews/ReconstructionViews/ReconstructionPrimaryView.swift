@@ -68,43 +68,25 @@ struct ReconstructionProgressView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            if isReconstructing() {
-                HStack {
-                    Button {
-                        logger.log("Cancelling...")
+        NavigationStack {
+            VStack(spacing: 20) {
+                ReconstructionTitleView()
+                ReconstructionProgressBarView(progress: progress,
+                                estimatedRemainingTime: estimatedRemainingTime,
+                                processingStageDescription: processingStageDescription)
+                .padding(padding)
+            }
+            .frame(maxWidth: .infinity)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(LocalizedString.cancel) {
+                        logger.log("Cancelling reconstruction...")
                         isCancelling = true
                         objectCaptureModel.photogrammetrySession?.cancel()
-                    } label: {
-                        Text(LocalizedString.cancel)
-                            .font(.headline)
-                            .bold()
-                            .padding(30)
-                            .foregroundColor(.blue)
                     }
-                    .padding(.trailing)
-
-                    Spacer()
                 }
             }
-
-            Spacer()
-
-            ReconstructionTitleView()
-
-            Spacer()
-
-            ReconstructionProgressBarView(progress: progress,
-                            estimatedRemainingTime: estimatedRemainingTime,
-                            processingStageDescription: processingStageDescription)
-            .padding(padding)
-
-            Spacer()
-            Spacer()
-            Spacer()
         }
-        .frame(maxWidth: .infinity)
-        .padding(.bottom, 20)
         .alert(
             "Failed:  " + (error != nil  ? "\(String(describing: error!))" : ""),
             isPresented: $gotError,

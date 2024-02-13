@@ -22,11 +22,13 @@ struct ObjectCaptureOnboardingView: View {
     }
 
     var body: some View {
-        ZStack {
-            Color(colorScheme == .light ? .white : .black).ignoresSafeArea()
-            if let session = objectCaptureModel.objectCaptureSession {
-                OnboardingTutorialView(session: session, onboardingStateMachine: stateMachine)
-                OnboardingButtonView(session: session, onboardingStateMachine: stateMachine)
+        NavigationStack {
+            ZStack {
+                Color(colorScheme == .light ? .white : .black).ignoresSafeArea()
+                if let session = objectCaptureModel.objectCaptureSession {
+                    OnboardingTutorialView(session: session, onboardingStateMachine: stateMachine)
+                    OnboardingButtonView(session: session, onboardingStateMachine: stateMachine)
+                }
             }
         }
         .interactiveDismissDisabled(objectCaptureModel.objectCaptureSession?.userCompletedScanPass ?? false)

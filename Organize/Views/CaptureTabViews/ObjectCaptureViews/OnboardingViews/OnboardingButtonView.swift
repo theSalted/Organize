@@ -22,13 +22,7 @@ struct OnboardingButtonView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                CancelButton(buttonLabel: LocalizedString.cancel)
-                Spacer()
-            }
-
             Spacer()
-
             VStack(spacing: 0) {
                 let currentStateInputs = onboardingStateMachine.currentStateInputs()
                 if currentStateInputs.contains(where: { $0 == .continue(isFlippable: false) || $0 == .continue(isFlippable: true) }) {
@@ -40,7 +34,7 @@ struct OnboardingButtonView: View {
                 }
                 if currentStateInputs.contains(where: { $0 == .flipObjectAnyway }) {
                     CreateButton(buttonLabel: LocalizedString.flipAnyway,
-                                 buttonLabelColor: .blue,
+                                 buttonLabelColor: .accentColor,
                                  action: {
                         userHasIndicatedFlipObjectAnyway = true
                         transition(with: .flipObjectAnyway)
@@ -48,21 +42,21 @@ struct OnboardingButtonView: View {
                 }
                 if currentStateInputs.contains(where: { $0 == .skip(isFlippable: false) || $0 == .skip(isFlippable: true) }) {
                     CreateButton(buttonLabel: LocalizedString.skip,
-                                 buttonLabelColor: .blue,
+                                 buttonLabelColor: .accentColor,
                                  action: {
                         transition(with: .skip(isFlippable: objectCaptureModel.isObjectFlippable))
                     })
                 }
                 if currentStateInputs.contains(where: { $0 == .finish }) {
                     CreateButton(buttonLabel: LocalizedString.finish,
-                                 buttonLabelColor: onboardingStateMachine.currentState == .thirdSegmentComplete ? .white : .blue,
+                                 buttonLabelColor: onboardingStateMachine.currentState == .thirdSegmentComplete ? .white : .accentColor,
                                  shouldApplyBackground: onboardingStateMachine.currentState == .thirdSegmentComplete,
                                  showBusyIndicator: session.state == .finishing,
                                  action: { [weak session] in session?.finish() })
                 }
                 if currentStateInputs.contains(where: { $0 == .objectCannotBeFlipped }) {
                     CreateButton(buttonLabel: LocalizedString.cannotFlipYourObject,
-                                 buttonLabelColor: .blue,
+                                 buttonLabelColor: .accentColor,
                                  action: {
                         userHasIndicatedObjectCannotBeFlipped = true
                         transition(with: .objectCannotBeFlipped)
@@ -74,7 +68,11 @@ struct OnboardingButtonView: View {
                     CreateButton(buttonLabel: "", action: {})
                 }
             }
-            .padding(.bottom)
+        }
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                CancelButton(buttonLabel: LocalizedString.cancel)
+            }
         }
     }
 
@@ -126,7 +124,7 @@ private struct CreateButton: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
     let buttonLabel: String
     var buttonLabelColor: Color = Color.white
-    var buttonBackgroundColor: Color = Color.blue
+    var buttonBackgroundColor: Color = Color.accentColor
     var shouldApplyBackground = false
     var showBusyIndicator = false
     let action: () -> Void
@@ -176,18 +174,10 @@ private struct CancelButton: View {
     let buttonLabel: String
 
     var body: some View {
-        Button(
-            action: {
-                CancelButton.logger.log("Cancel button clicked!")
-                objectCaptureModel.setPreviewModelState(shown: false)
-            },
-            label: {
-                Text(buttonLabel)
-                    .font(.headline)
-                    .bold()
-                    .padding(30)
-                    .foregroundColor(.blue)
-            })
+        Button(buttonLabel) {
+            CancelButton.logger.log("Cancel button clicked!")
+            objectCaptureModel.setPreviewModelState(shown: false)
+        }
     }
 }
 #endif

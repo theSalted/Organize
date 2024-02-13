@@ -12,20 +12,20 @@ struct HelpPageView: View {
     @Binding var showInfo: Bool
 
     var body: some View {
-        ZStack {
+        NavigationStack {
             VStack(alignment: .leading) {
                 HStack {
                     Text("Capture Help").foregroundColor(.secondary)
                     Spacer()
-                    Button(action: {
+                    Button {
                         withAnimation {
                             showInfo = false
-                        }},
-                           label: {
+                        }
+                    } label: {
                         Image(systemName: "xmark.circle.fill")
                             .foregroundColor(.init(white: 0.7, opacity: 0.5))
                             .font(.title)
-                    })
+                    }
                 }
 
                 TabView {
@@ -41,7 +41,7 @@ struct HelpPageView: View {
             }.padding()
         }
         .navigationTitle("Scanning Info")
-        .navigationViewStyle(StackNavigationViewStyle())
+
     }
 }
 
