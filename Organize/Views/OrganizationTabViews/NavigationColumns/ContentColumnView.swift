@@ -46,7 +46,9 @@ struct ContentColumnView: View {
         switch appModel.spaceListSelections.isEmpty {
         case false:
             List(selection: $appModel.storageListSelections) {
-                Section(storages.isEmpty ? "" : "^[\(storages.count) Storages](inflect: true)") {
+                Section(
+                    storages.isEmpty ? "" : "^[\(storages.count) Storages](inflect: true)"
+                ) {
                     ForEach(storages) { storage in
                         Label {
                             Text(storage.name)
@@ -60,12 +62,18 @@ struct ContentColumnView: View {
             }
             .environment(\.editMode, $editMode)
             .searchable(text: $searchText)
-            .adaptiveNavigationTitle(canRename: selectedSpaces.count == 1, get: title) { newTitle in
+            .adaptiveNavigationTitle(
+                canRename: selectedSpaces.count == 1,
+                get: title
+            ) { newTitle in
                 spaces.first?.name = newTitle
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Edit Button", systemImage: "checklist.unchecked") { toggleEditMode() }
+                    Button(
+                        "Edit Button",
+                        systemImage: "checklist.unchecked"
+                    ) { toggleEditMode() }
                         .symbolEffect(.bounce, value: editMode)
                         .symbolRenderingMode(.hierarchical)
                 }

@@ -340,7 +340,6 @@
 			isa = PBXGroup;
 			children = (
 				8E0D3FB02B717E3E00C89018 /* Resources */,
-				8ED5C58E2B727F7300897F20 /* Playground */,
 				8E8D09222B640CFB00AB088B /* Shaders */,
 				8E8D092C2B64161400AB088B /* Styles */,
 				8ED48FC52B6028E800EB643A /* Extensions */,
@@ -596,13 +595,6 @@
 				8E97DEB62B77D1800007A9BA /* Float+isApproximateEqual.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		8ED5C58E2B727F7300897F20 /* Playground */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Playground;
 			sourceTree = "<group>";
 		};
 		8EDDFEB82B74C6800009A290 /* Emoji */ = {
