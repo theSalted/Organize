@@ -30,10 +30,7 @@ struct ItemPlacementPickerView: View {
             } label: {
                 pickerLabel
             }.pickerStyle(.navigationLink)
-        }
-        
-        
-        
+        } 
     }
     
     var pickerLabel: some View {

@@ -114,11 +114,11 @@ struct SideBarView: View {
                 space = newSpaceValue as! Space
             }
             
-            FormEditView(target: target) {
+            FormEditView(target, mode: .create) {
                 withAnimation {
                     showAddTitleForm = false
                 }
-            } confirmationAction: {
+            } confirm: {
                 withAnimation {
                     showAddTitleForm = false
                     modelContext.insert(space)

@@ -45,6 +45,19 @@ struct FormEditView: View {
     var cancelationAction: ButtonAction?
     var confirmationAction: ButtonAction?
     
+    // MARK: Inits
+    init(
+        _ target: Binding<any Meta>,
+        mode: FormMode = .add,
+        cancel cancelationAction: @escaping ButtonAction,
+        confirm confirmationAction: @escaping ButtonAction
+    ) {
+        self._target = target
+        self.mode = mode
+        self.cancelationAction = cancelationAction
+        self.confirmationAction = confirmationAction
+    }
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -140,9 +153,11 @@ fileprivate let logger = Logger(subsystem: OrganizeApp.bundleId, category: "Form
 
 #Preview {
     FormEditView(
-        target: .constant(
+        .constant(
             Item(name: "My Item")
-        ), confirmationAction:  {
+        ), cancel:  {
             print("Cancelled")
+        }, confirm: {
+            print("Confirmmed")
         })
 }

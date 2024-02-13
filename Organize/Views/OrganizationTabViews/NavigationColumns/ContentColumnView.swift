@@ -107,11 +107,11 @@ struct ContentColumnView: View {
                     storage = newSpaceValue as! Storage
                 }
                 if let space = selectedSpaces.first {
-                    FormEditView(target: target) {
+                    FormEditView(target, mode: .create) {
                         withAnimation {
                             showAddTitleForm = false
                         }
-                    } confirmationAction: {
+                    } confirm: {
                         withAnimation {
                             space.storages.append(storage)
                             showAddTitleForm = false
