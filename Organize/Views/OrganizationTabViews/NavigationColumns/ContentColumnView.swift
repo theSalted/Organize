@@ -10,13 +10,13 @@ import SwiftData
 
 struct ContentColumnView: View {
     // Environments and SwiftData Queries
-    @Environment(\.modelContext) private var context
+    @Environment(\.modelContext) private var modelContext
     @Environment(AppViewModel.self) private var appModel
     @Query private var spaces: [Space]
     
     // View States
     @State private var editMode: EditMode   = .inactive
-    @State private var showAddStorageFields = false
+    @State private var showAddTitleForm = false
     @State private var newStorageName       = ""
     @State private var searchText           = ""
     
@@ -79,8 +79,8 @@ struct ContentColumnView: View {
                             .accessibilityLabel("Add storage")
                     }
                     .disabled(selectedSpaces.count > 1)
-                    .symbolEffect(.bounce, value: showAddStorageFields)
-                    .sensoryFeedback(.success, trigger: showAddStorageFields)
+                    .symbolEffect(.bounce, value: showAddTitleForm)
+                    .sensoryFeedback(.success, trigger: showAddTitleForm)
                 }
             }
             .overlay {
@@ -90,7 +90,7 @@ struct ContentColumnView: View {
                 } else if storages.isEmpty {
                     ContentUnavailableView(
                         "Create a Storage",
-                        systemImage: Item.randomSystemSymbol,
+                        systemImage: "archivebox",
                         description:
                             Text("The selected " +
                                  (count > 0 ? "spaces " : "space ") +
@@ -98,20 +98,36 @@ struct ContentColumnView: View {
                     )
                 }
             }
-            .alert("Add Storage", isPresented: $showAddStorageFields) {
-                TextField("Enter your Storage Name", text: $newStorageName)
-                Button("Cancel") {
-                    withAnimation {
-                        showAddStorageFields = false
-                    }
+            .sheet(isPresented: $showAddTitleForm) {
+                var storage = Storage(name: "My Storage")
+                
+                let target = Binding {
+                    storage as (any Meta)
+                } set: { newSpaceValue in
+                    storage = newSpaceValue as! Storage
                 }
-                Button("Ok") {
-                    guard let space = selectedSpaces.first else {
-                        return
+                if let space = selectedSpaces.first {
+                    FormEditView(target: target) {
+                        withAnimation {
+                            showAddTitleForm = false
+                        }
+                    } confirmationAction: {
+                        withAnimation {
+                            space.storages.append(storage)
+                            showAddTitleForm = false
+                            modelContext.insert(storage)
+                        }
+                        try? modelContext.save()
                     }
-                    createStorage(newStorageName, atSpace: space)
+                } else {
+                    // TODO: Could this unavailable view be eliminated
+                    ContentUnavailableView(
+                        "Something went wrong...",
+                        image: "exclamationmark.circle.fill",
+                        description: "Couldn't find the space you selected. This shouldn't happened please contact support".inText)
                 }
             }
+            
         default:
             ContentUnavailableView(
                 "Select a Space",
@@ -122,27 +138,18 @@ struct ContentColumnView: View {
     // Methods
     private func addStorage() {
         withAnimation {
-            showAddStorageFields = true
+            showAddTitleForm = true
         }
-    }
-    
-    private func createStorage(_ name: String, atSpace space: Space) {
-        let storage = Storage(name: name)
-        context.insert(storage)
-        withAnimation {
-            space.storages.append(storage)
-        }
-        try? context.save()
     }
     
     private func deleteStorages(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
                 guard index < storages.count else { continue }
-                context.delete(storages[index])
+                modelContext.delete(storages[index])
             }
         }
-        try? context.save()
+        try? modelContext.save()
     }
     
     private func toggleEditMode() {

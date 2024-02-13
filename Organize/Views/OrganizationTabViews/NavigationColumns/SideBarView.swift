@@ -105,16 +105,27 @@ struct SideBarView: View {
             }
         }
         .navigationTitle("Organize")
-        .alert("Add Space", isPresented: $showAddTitleForm) {
-            TextField("Enter your Space Name", text: $newSpaceName)
-            Button("Cancel") {
+        .sheet(isPresented: $showAddTitleForm) {
+            var space = Space(name: "My Space")
+            
+            let target = Binding {
+                space as (any Meta)
+            } set: { newSpaceValue in
+                space = newSpaceValue as! Space
+            }
+            
+            FormEditView(target: target) {
                 withAnimation {
                     showAddTitleForm = false
                 }
+            } confirmationAction: {
+                withAnimation {
+                    showAddTitleForm = false
+                    modelContext.insert(space)
+                }
+                try? modelContext.save()
             }
-            Button("Ok") {
-                createSpace(newSpaceName)
-            }
+
         }
         .searchable(text: $searchText, isPresented: $isSearchPresented)
         
@@ -123,13 +134,6 @@ struct SideBarView: View {
     private func addSpace() {
         withAnimation {
             showAddTitleForm = true
-        }
-    }
-
-    private func createSpace(_ name: String) {
-        withAnimation {
-            let newItem = Space(name: name)
-            modelContext.insert(newItem)
         }
     }
 
@@ -143,6 +147,8 @@ struct SideBarView: View {
 }
 
 #Preview {
-    SideBarView()
-        .environment(AppViewModel())
+    NavigationStack {
+        SideBarView()
+            .environment(AppViewModel())
+    }
 }

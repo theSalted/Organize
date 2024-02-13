@@ -43,6 +43,7 @@ struct FormEditView: View {
         }
     }
     var cancelationAction: ButtonAction?
+    var confirmationAction: ButtonAction?
     
     var body: some View {
         NavigationStack {
@@ -51,19 +52,19 @@ struct FormEditView: View {
                 Section { IconNameCardView(target) }
                 
                 // MARK: Placement Picker
-                switch target {
-                case is Item:
-                    let selection = Binding {
-                        target as! Item
-                    } set: { newItem in
-                        target = newItem
-                    }
-                    Section {
-                        ItemPlacementPickerView(selection: selection)
-                    }
-                default:
-                    EmptyView()
-                }
+//                switch target {
+//                case is Item:
+//                    let selection = Binding {
+//                        target as! Item
+//                    } set: { newItem in
+//                        target = newItem
+//                    }
+//                    Section {
+//                        ItemPlacementPickerView(selection: selection)
+//                    }
+//                default:
+//                    EmptyView()
+//                }
                 
                 // MARK: Styles
                 DisclosureGroup(isExpanded: $isStyleDisclosureGroupExpanded) {
@@ -104,11 +105,14 @@ struct FormEditView: View {
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button(confirmationButtonString) {}
-                        .disabled(true)
+                if let confirmationAction {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button(confirmationButtonString) {
+                            confirmationAction()
+                        }
+                    }
                 }
-                
+                                
                 if let cancelationAction {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel") {
@@ -138,7 +142,7 @@ fileprivate let logger = Logger(subsystem: OrganizeApp.bundleId, category: "Form
     FormEditView(
         target: .constant(
             Item(name: "My Item")
-        )) {
+        ), confirmationAction:  {
             print("Cancelled")
-        }
+        })
 }
