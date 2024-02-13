@@ -62,7 +62,6 @@ struct StorageView: View {
                                     Text(storage.name)
                                         .font(.headline)
                                 }
-                                
                             }
                             .buttonStyle(.plain)
                         }

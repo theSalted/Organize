@@ -10,14 +10,13 @@ import SwiftData
 
 struct SingleStorageDetailView: View {
     // Environments and SwiftData Queries
-    @Environment(\.modelContext) private var context
+    @Environment(\.modelContext) private var modelContext
     @Environment(AppViewModel.self) private var appModel
     @Query private var storages: [Storage]
     
     // View States
     @State private var editMode: EditMode   = .inactive
-    @State private var showAddStorageFields = false
-    @State private var newStorageName       = ""
+    @State private var showCreateForm       = false
     @State private var searchText           = ""
     
     // Computed Properties
@@ -31,9 +30,11 @@ struct SingleStorageDetailView: View {
     }
     
     var meta : any Meta
+    
     init(_ meta: any Meta) {
         self.meta = meta
     }
+    
     var body: some View {
         @Bindable var appModel = appModel
         List(selection: $appModel.itemsListSelections) {
@@ -49,8 +50,6 @@ struct SingleStorageDetailView: View {
                 } icon: {
                     SymbolView(symbol: item.symbol)
                         .foregroundStyle(item.color)
-//                    Image(systemName: item.systemImage ?? "archivebox")
-                        
                 }
             }
         }
@@ -70,22 +69,33 @@ struct SingleStorageDetailView: View {
                         .accessibilityLabel("Add storage")
                 }
                 .disabled(selectedStorages.count > 1)
-                .symbolEffect(.bounce, value: showAddStorageFields)
-                .sensoryFeedback(.success, trigger: showAddStorageFields)
+                .symbolEffect(.bounce, value: showCreateForm)
+                .sensoryFeedback(.success, trigger: showCreateForm)
             }
         }
-        .alert("Add Item", isPresented: $showAddStorageFields) {
-            TextField("Enter your Item Name", text: $newStorageName)
-            Button("Cancel") {
-                withAnimation {
-                    showAddStorageFields = false
-                }
+        .sheet(isPresented: $showCreateForm) {
+            var item = Item(name: "My Item")
+            
+            let target = Binding {
+                item as (any Meta)
+            } set: { newItemValue in
+                item = newItemValue as! Item
             }
-            Button("Ok") {
-                guard let storage = selectedStorages.first else {
-                    return
+            
+            if let storage = selectedStorages.first {
+                FormEditView(target, mode: .create) {
+                    withAnimation {
+                        showCreateForm = false
+                    }
+                } confirm: {
+                    withAnimation {
+                        storage.items.append(item)
+                        showCreateForm = false
+                        modelContext.insert(item)
+                    }
+                    try? modelContext.save()
                 }
-                createItem(newStorageName, atStorage: storage)
+
             }
         }
         .navigationTitle(meta.name)
@@ -94,19 +104,10 @@ struct SingleStorageDetailView: View {
     
     private func addItem() {
         withAnimation {
-            showAddStorageFields = true
+            showCreateForm = true
         }
     }
-    
-    private func createItem(_ name: String, atStorage storage: Storage) {
-        let item = Item(name: name)
-        context.insert(item)
-        withAnimation {
-            storage.items.append(item)
-        }
-        try? context.save()
-    }
-    
+
     private func toggleEditMode() {
         withAnimation {
             if editMode == .active {

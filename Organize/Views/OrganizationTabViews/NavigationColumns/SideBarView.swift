@@ -15,9 +15,9 @@ struct SideBarView: View {
     @Query private var spaces: [Space]
     @State private var editMode: EditMode  = .inactive
     @State private var isSearchPresented   = false
-    @State private var showAddTitleForm    = false
-    @State private var newSpaceName        = ""
+    @State private var showCreateForm      = false
     @State private var searchText          = ""
+    
     var backgroundColor = Color(uiColor: UIColor.secondarySystemBackground)
     
     private var searchedSpaces : [Space] {
@@ -86,8 +86,8 @@ struct SideBarView: View {
                         .symbolRenderingMode(.hierarchical)
                         .font(.title2)
                 }
-                .symbolEffect(.bounce, value: showAddTitleForm)
-                .sensoryFeedback(.success, trigger: showAddTitleForm)
+                .symbolEffect(.bounce, value: showCreateForm)
+                .sensoryFeedback(.success, trigger: showCreateForm)
             }
         }
         .overlay {
@@ -105,7 +105,7 @@ struct SideBarView: View {
             }
         }
         .navigationTitle("Organize")
-        .sheet(isPresented: $showAddTitleForm) {
+        .sheet(isPresented: $showCreateForm) {
             var space = Space(name: "My Space")
             
             let target = Binding {
@@ -116,11 +116,11 @@ struct SideBarView: View {
             
             FormEditView(target, mode: .create) {
                 withAnimation {
-                    showAddTitleForm = false
+                    showCreateForm = false
                 }
             } confirm: {
                 withAnimation {
-                    showAddTitleForm = false
+                    showCreateForm = false
                     modelContext.insert(space)
                 }
                 try? modelContext.save()
@@ -133,7 +133,7 @@ struct SideBarView: View {
     
     private func addSpace() {
         withAnimation {
-            showAddTitleForm = true
+            showCreateForm = true
         }
     }
 

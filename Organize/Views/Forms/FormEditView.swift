@@ -64,6 +64,26 @@ struct FormEditView: View {
                 // MARK: IconNameCard
                 Section { IconNameCardView(target) }
                 
+                if target is Item {
+                    Section {
+                        Button {
+                            
+                        } label: {
+                            Label {
+                                Text("Model")
+                            } icon: {
+                                Image(systemName: "cube.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 28, height: 28)
+                            }
+                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .mint))
+                        }
+
+                    }
+                }
+                
                 // MARK: Placement Picker
                 #warning("Picker not implemented")
 //                switch target {

@@ -16,8 +16,7 @@ struct ContentColumnView: View {
     
     // View States
     @State private var editMode: EditMode   = .inactive
-    @State private var showAddTitleForm = false
-    @State private var newStorageName       = ""
+    @State private var showCreateForm       = false
     @State private var searchText           = ""
     
     // Computed Properties
@@ -87,8 +86,8 @@ struct ContentColumnView: View {
                             .accessibilityLabel("Add storage")
                     }
                     .disabled(selectedSpaces.count > 1)
-                    .symbolEffect(.bounce, value: showAddTitleForm)
-                    .sensoryFeedback(.success, trigger: showAddTitleForm)
+                    .symbolEffect(.bounce, value: showCreateForm)
+                    .sensoryFeedback(.success, trigger: showCreateForm)
                 }
             }
             .overlay {
@@ -106,7 +105,7 @@ struct ContentColumnView: View {
                     )
                 }
             }
-            .sheet(isPresented: $showAddTitleForm) {
+            .sheet(isPresented: $showCreateForm) {
                 var storage = Storage(name: "My Storage")
                 
                 let target = Binding {
@@ -114,15 +113,16 @@ struct ContentColumnView: View {
                 } set: { newSpaceValue in
                     storage = newSpaceValue as! Storage
                 }
+                
                 if let space = selectedSpaces.first {
                     FormEditView(target, mode: .create) {
                         withAnimation {
-                            showAddTitleForm = false
+                            showCreateForm = false
                         }
                     } confirm: {
                         withAnimation {
                             space.storages.append(storage)
-                            showAddTitleForm = false
+                            showCreateForm = false
                             modelContext.insert(storage)
                         }
                         try? modelContext.save()
@@ -146,7 +146,7 @@ struct ContentColumnView: View {
     // Methods
     private func addStorage() {
         withAnimation {
-            showAddTitleForm = true
+            showCreateForm = true
         }
     }
     

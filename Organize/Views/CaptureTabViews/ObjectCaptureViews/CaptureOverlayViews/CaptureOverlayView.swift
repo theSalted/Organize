@@ -75,13 +75,11 @@ struct CaptureOverlayView: View {
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 CancelButton()
-//                    .opacity(!shouldShowTutorial ? 1 : 0)
                     .disabled(shouldDisableCancelButton ? true : false)
                     .transition(.opacity)
             }
             ToolbarItem(placement: .confirmationAction){
                 NextButton()
-//                    .opacity(shouldShowNextButton ? 1 : 0)
                     .disabled(!shouldShowNextButton)
             }
         }

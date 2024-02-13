@@ -173,29 +173,30 @@ struct ReconstructionProgressView: View {
     private func createCapturedObject() {
         #warning("Implement this with CapturedObject")
         
-//        let object = Item(name: objectCaptureModel.modelName, relativeRoot: objectCaptureModel.scanFolderManager.relativeRoot)
-//
-//        if let modelURL = object.modelURL {
-//            Item.generateThumbnailFromURL(
-//                with: modelURL,
-//                size: CGSize(width: 128, height: 128)
-//            ) { thumbnail in
-//                object.squareThumbnail = thumbnail
-//                try? modelContext.save()
-//            }
-//        }
-//
-//        if let modelURL = object.modelURL {
-//            Item.generateThumbnailFromURL(
-//                with: modelURL,
-//                size: CGSize(width: 1024, height: 1024))
-//            { thumbnail in
-//                object.rectangleThumbnail = thumbnail
-//                try? modelContext.save()
-//            }
-//        }
-//
-//        modelContext.insert(object)
+        let object = CapturedObject(objectCaptureModel.modelName, at: objectCaptureModel.scanFolderManager.relativeRoot)
+        
+        // Generate Preview images
+        if let modelURL = object.modelURL {
+            CapturedObject.generateThumbnailFromURL(
+                with: modelURL,
+                size: CGSize(width: 128, height: 128)
+            ) { thumbnail in
+                object.thumbnail = thumbnail
+                try? modelContext.save()
+            }
+        }
+
+        if let modelURL = object.modelURL {
+            CapturedObject.generateThumbnailFromURL(
+                with: modelURL,
+                size: CGSize(width: 1024, height: 1024))
+            { thumbnail in
+                object.previewImage = thumbnail
+                try? modelContext.save()
+            }
+        }
+        
+        modelContext.insert(object)
     }
 
     struct LocalizedString {
