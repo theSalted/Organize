@@ -25,6 +25,7 @@
 		8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269102B657BEB007F0C89 /* AuroraStyles.swift */; };
 		8E486C172B729361005F0C4A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8E486C162B729361005F0C4A /* README.md */; };
 		8E486C1E2B72B9F4005F0C4A /* ShapedLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C1D2B72B9F4005F0C4A /* ShapedLabelStyle.swift */; };
+		8E4BDAF12B7D2F51003471B2 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4BDAF02B7D2F51003471B2 /* ListButtonStyle.swift */; };
 		8E53A3F12B77E86200A92BDB /* CircularIconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53A3F02B77E86200A92BDB /* CircularIconSelectionView.swift */; };
 		8E53A3F32B77F6E900A92BDB /* CircularEmojiSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53A3F22B77F6E900A92BDB /* CircularEmojiSelectionView.swift */; };
 		8E53A3F52B77FC9A00A92BDB /* PatternSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53A3F42B77FC9A00A92BDB /* PatternSelectionView.swift */; };
@@ -138,6 +139,7 @@
 		8E486C192B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeLabelStyle+Design.swift"; sourceTree = "<group>"; };
 		8E486C1B2B72B6E1005F0C4A /* ShapeIconView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeIconView+Design.swift"; sourceTree = "<group>"; };
 		8E486C1D2B72B9F4005F0C4A /* ShapedLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapedLabelStyle.swift; sourceTree = "<group>"; };
+		8E4BDAF02B7D2F51003471B2 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
 		8E53A3F02B77E86200A92BDB /* CircularIconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularIconSelectionView.swift; sourceTree = "<group>"; };
 		8E53A3F22B77F6E900A92BDB /* CircularEmojiSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularEmojiSelectionView.swift; sourceTree = "<group>"; };
 		8E53A3F42B77FC9A00A92BDB /* PatternSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectionView.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				8E2269102B657BEB007F0C89 /* AuroraStyles.swift */,
 				8ED1EB7D2B681028003377CA /* CurtainEffect.swift */,
 				8E486C1D2B72B9F4005F0C4A /* ShapedLabelStyle.swift */,
+				8E4BDAF02B7D2F51003471B2 /* ListButtonStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				8E6CD0822B7755A300BF1A18 /* FormEditView.swift in Sources */,
 				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
 				8E9D35292B6ED4D000154078 /* CaptureViewModel.swift in Sources */,
+				8E4BDAF12B7D2F51003471B2 /* ListButtonStyle.swift in Sources */,
 				8EA525312B76BDE40085C9B0 /* SymbolView.swift in Sources */,
 				8EDDFEB52B74C2F90009A290 /* SymbolView+Design.swift in Sources */,
 				8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */,

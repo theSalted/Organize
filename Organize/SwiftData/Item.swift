@@ -15,7 +15,10 @@ class Item : Identifiable, Meta {
     var name: String
     var createdAt: Date
     var storage: Storage?
-    var pattern: PatternDesign
+    var pattern: PatternDesign 
+    @Relationship(deleteRule: .cascade, inverse: \CapturedObject.item)
+    var scan: CapturedObject?
+    
     private var systemImage: String?
     private var emoji: String?
     

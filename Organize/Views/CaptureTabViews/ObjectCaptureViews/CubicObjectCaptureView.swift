@@ -9,11 +9,22 @@ import Dispatch
 import Foundation
 import RealityKit
 import SwiftUI
+import SwiftData
 import os
 
 #if !targetEnvironment(simulator)
 struct CubicObjectCaptureView: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
+    @Environment(\.modelContext) private var modelContext
+    @Environment(CaptureViewModel.self) private var captureViewModel
+    @Environment(AppViewModel.self) private var appModel
+    
+    @Query private var storages: [Storage]
+    
+    var selectedStorages: [Storage] {
+        storages.filter { appModel.storageListSelections.contains($0.id)}
+    }
+    
     var session: ObjectCaptureSession
     
     // Pauses the scanning and shows tutorial pages. This sample passes it as
@@ -22,6 +33,7 @@ struct CubicObjectCaptureView: View {
     @State private var showOnboardingView: Bool = false
     
     var body: some View {
+        @Bindable var captureViewModel = captureViewModel
         ZStack {
             ObjectCaptureView(session: session) {
                 GradientBackground()
@@ -30,6 +42,30 @@ struct CubicObjectCaptureView: View {
             .transition(.opacity)
             if shouldShowOverlayView {
                 CaptureOverlayView(session: session, showInfo: $showInfo)
+            }
+        }
+        .sheet(isPresented: $captureViewModel.showCreateForm) {
+            let target = Binding {
+                captureViewModel.item as (any Meta)
+            } set: { newItemValue in
+                captureViewModel.item = newItemValue as! Item
+            }
+            
+            FormEditView(target) {
+                withAnimation {
+                    captureViewModel.showCreateForm = false
+                }
+            } confirm: {
+                withAnimation {
+                    captureViewModel.showCreateForm = false
+                }
+                modelContext.insert(captureViewModel.item)
+                try? modelContext.save()
+            }
+            .task {
+                if let storage = selectedStorages.first {
+                    storage.items.append(captureViewModel.item)
+                }
             }
         }
         .sheet(isPresented: $showInfo) {

@@ -23,6 +23,7 @@ class CapturedObject: Identifiable, ModelDirectory {
     /// - Warning: This is only the `PATH` section of the URL, and can't be used to build
     /// a URL alone.
     var captureRootFolderPathComponentString: String
+    var item: Item?
     /// The data store for thumbnail, mainly for SwiftData
     private var thumbnailData: Data?
     /// The data store for thumbnail, mainly for SwiftData

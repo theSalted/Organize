@@ -13,7 +13,11 @@ import os
 #if !targetEnvironment(simulator)
 @available(iOS 17.0, *)
 struct ReconstructionPrimaryView: View {
+    private let logger = Logger(subsystem: OrganizeApp.bundleId,
+                                category: "ReconstructionPrimaryView")
+    
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
+    @Environment(CaptureViewModel.self) private var captureViewModel
     let outputFile: URL
 
     @State private var completed: Bool = false
@@ -22,7 +26,11 @@ struct ReconstructionPrimaryView: View {
     var body: some View {
         if completed && !cancelled {
             CapturedObjectARQuickLookView(modelFile: outputFile) { [weak objectCaptureModel] in
+                logger.notice("End Capture")
                 objectCaptureModel?.endCapture()
+                withAnimation {
+                    captureViewModel.showCreateForm = true
+                }
             }
         } else {
             ReconstructionProgressView(outputFile: outputFile,
@@ -48,6 +56,9 @@ struct ReconstructionProgressView: View {
     let logger = ReconstructionProgressView.logger
 
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
+    @Environment(CaptureViewModel.self) private var captureViewModel
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    
     let outputFile: URL
     @Binding var completed: Bool
     @Binding var cancelled: Bool
@@ -59,7 +70,7 @@ struct ReconstructionProgressView: View {
     @State private var gotError: Bool = false
     @State private var error: Error?
     @State private var isCancelling: Bool = false
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+        
     private var padding: CGFloat {
         horizontalSizeClass == .regular ? 60.0 : 24.0
     }
@@ -171,8 +182,6 @@ struct ReconstructionProgressView: View {
     }
     
     private func createCapturedObject() {
-        #warning("Implement this with CapturedObject")
-        
         let object = CapturedObject(objectCaptureModel.modelName, at: objectCaptureModel.scanFolderManager.relativeRoot)
         
         // Generate Preview images
@@ -196,7 +205,12 @@ struct ReconstructionProgressView: View {
             }
         }
         
+        withAnimation {
+            captureViewModel.item.scan = object
+        }
+        
         modelContext.insert(object)
+        try? modelContext.save()
     }
 
     struct LocalizedString {

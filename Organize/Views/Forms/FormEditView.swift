@@ -64,13 +64,18 @@ struct FormEditView: View {
                 // MARK: IconNameCard
                 Section { IconNameCardView(target) }
                 
-                if target is Item {
+                // MARK: Add Scan Button
+                if let item = target as? Item,
+                    item.scan === nil {
                     Section {
                         Button {
-                            
+                            withAnimation {
+                                #warning("Need a new button action for add scan")
+//                                cancelationAction?()
+                            }
                         } label: {
                             Label {
-                                Text("Model")
+                                Text("Add a Scan")
                             } icon: {
                                 Image(systemName: "cube.fill")
                                     .resizable()
@@ -80,7 +85,8 @@ struct FormEditView: View {
                             }
                             .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .mint))
                         }
-
+                        .listRowBackground(target.color)
+                        .buttonStyle(ListButtonStyle())
                     }
                 }
                 

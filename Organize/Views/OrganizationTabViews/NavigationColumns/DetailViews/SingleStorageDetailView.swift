@@ -91,8 +91,8 @@ struct SingleStorageDetailView: View {
                     withAnimation {
                         storage.items.append(item)
                         showCreateForm = false
-                        modelContext.insert(item)
                     }
+                    modelContext.insert(item)
                     try? modelContext.save()
                 }
 
