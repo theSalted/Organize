@@ -346,13 +346,6 @@ class ObjectCaptureDataModel: ObservableObject, Identifiable {
             
         case .failed:
             logger.error("App failed state error=\(String(describing: self.error!))")
-            // Shows error screen.
-            //            case .pause:
-            //                pauseSession()
-            //                logger.warning("Session paused")
-            //            case .resume:
-            //                resumeSession()
-            //                logger.warning("Session Resumed")
         default:
             break
         }

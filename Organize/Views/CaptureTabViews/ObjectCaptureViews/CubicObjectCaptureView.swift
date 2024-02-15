@@ -44,6 +44,13 @@ struct CubicObjectCaptureView: View {
                 CaptureOverlayView(session: session, showInfo: $showInfo)
             }
         }
+//        .overlay {
+//            Button("showCreateForm") {
+//                withAnimation {
+//                    captureViewModel.showCreateForm = true
+//                }
+//            }
+//        }
         .sheet(isPresented: $captureViewModel.showCreateForm) {
             let target = Binding {
                 captureViewModel.item as (any Meta)

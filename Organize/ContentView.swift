@@ -34,6 +34,13 @@ struct ContentView: View {
             #if !targetEnvironment(simulator)
             CaptureView()
                 .sheet(isPresented: $captureViewModel.showReconstructionView) {
+                    // TODO: We need a better implementation, but I think that would trigger an entire rewrite
+                    withAnimation {
+                        // Present create item form on dismiss of reconstruction view
+                        captureViewModel.showCreateForm = true
+                    }
+
+                }content: {
                     if let folderManager = objectCaptureModel.scanFolderManager {
                         ReconstructionPrimaryView(
                             outputFile: folderManager

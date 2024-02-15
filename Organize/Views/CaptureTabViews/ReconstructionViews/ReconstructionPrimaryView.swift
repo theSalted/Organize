@@ -28,9 +28,6 @@ struct ReconstructionPrimaryView: View {
             CapturedObjectARQuickLookView(modelFile: outputFile) { [weak objectCaptureModel] in
                 logger.notice("End Capture")
                 objectCaptureModel?.endCapture()
-                withAnimation {
-                    captureViewModel.showCreateForm = true
-                }
             }
         } else {
             ReconstructionProgressView(outputFile: outputFile,
