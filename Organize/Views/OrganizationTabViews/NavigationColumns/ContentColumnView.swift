@@ -106,7 +106,8 @@ struct ContentColumnView: View {
                 }
             }
             .sheet(isPresented: $showCreateForm) {
-                var storage = Storage(name: "My Storage")
+                let space = selectedSpaces.first
+                var storage = Storage(name: "My Storage", at: space)
                 
                 let target = Binding {
                     storage as (any Meta)
@@ -114,25 +115,16 @@ struct ContentColumnView: View {
                     storage = newSpaceValue as! Storage
                 }
                 
-                if let space = selectedSpaces.first {
-                    FormEditView(target, mode: .create) {
-                        withAnimation {
-                            showCreateForm = false
-                        }
-                    } confirm: {
-                        withAnimation {
-                            space.storages.append(storage)
-                            showCreateForm = false
-                            modelContext.insert(storage)
-                        }
-                        try? modelContext.save()
+                FormEditView(target, mode: .create) {
+                    withAnimation {
+                        showCreateForm = false
                     }
-                } else {
-                    // TODO: Could this unavailable view be eliminated
-                    ContentUnavailableView(
-                        "Something went wrong...",
-                        image: "exclamationmark.circle.fill",
-                        description: "Couldn't find the space you selected. This shouldn't happened please contact support".inText)
+                } confirm: {
+                    withAnimation {
+                        showCreateForm = false
+                        modelContext.insert(storage)
+                    }
+                    try? modelContext.save()
                 }
             }
             

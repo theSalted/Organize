@@ -54,11 +54,12 @@ final class Storage : Identifiable, Meta {
         space?.name
     }()
     
-    init(name: String = "Untitled", symbol: String = "archivebox") {
+    init(name: String = "Untitled", symbol: String = "archivebox", at space: Space? = nil) {
         self.name = name
         self.createdAt = Date()
         self.id = UUID()
         self.pattern = PatternDesign.getRandomDesign()
+        self.space = space
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
         self.symbol = symbol
     }

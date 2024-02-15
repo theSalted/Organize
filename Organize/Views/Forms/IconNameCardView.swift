@@ -74,7 +74,7 @@ struct IconNameCardView: View {
 
 struct IconNameCard_Previews: PreviewProvider {
     static var previews: some View {
-        @State var item = Item(name: "My Item", symbol: "🥺", storage: .init())
+        @State var item = Item(name: "My Item", symbol: "🥺")
         IconNameCardView(name: $item.name, color: item.color, pattern: item.pattern, symbol: item.symbol)
             .frame(height: 200)
             .padding()

@@ -74,7 +74,8 @@ struct SingleStorageDetailView: View {
             }
         }
         .sheet(isPresented: $showCreateForm) {
-            var item = Item(name: "My Item")
+            let storage = selectedStorages.first
+            var item = Item(name: "My Item", at: storage)
             
             let target = Binding {
                 item as (any Meta)
@@ -82,20 +83,16 @@ struct SingleStorageDetailView: View {
                 item = newItemValue as! Item
             }
             
-            if let storage = selectedStorages.first {
-                FormEditView(target, mode: .create) {
-                    withAnimation {
-                        showCreateForm = false
-                    }
-                } confirm: {
-                    withAnimation {
-                        storage.items.append(item)
-                        showCreateForm = false
-                    }
-                    modelContext.insert(item)
-                    try? modelContext.save()
+            FormEditView(target, mode: .create) {
+                withAnimation {
+                    showCreateForm = false
                 }
-
+            } confirm: {
+                withAnimation {
+                    showCreateForm = false
+                }
+                modelContext.insert(item)
+                try? modelContext.save()
             }
         }
         .navigationTitle(meta.name)

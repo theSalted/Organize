@@ -67,7 +67,7 @@ class Item : Identifiable, Meta {
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
     }
     
-    init(name: String = "Untitled", symbol: String = "cube.fill", storage: Storage) {
+    init(name: String = "Untitled", symbol: String = "cube.fill", at storage: Storage? = nil) {
         self.name = name
         self.createdAt = Date.now
         self.id = UUID()
