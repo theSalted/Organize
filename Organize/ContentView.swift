@@ -39,8 +39,7 @@ struct ContentView: View {
                         // Present create item form on dismiss of reconstruction view
                         captureViewModel.showCreateForm = true
                     }
-
-                }content: {
+                } content: {
                     if let folderManager = objectCaptureModel.scanFolderManager {
                         ReconstructionPrimaryView(
                             outputFile: folderManager

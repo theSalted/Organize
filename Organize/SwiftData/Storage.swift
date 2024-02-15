@@ -11,14 +11,14 @@ import SwiftUI
 
 @Model
 final class Storage : Identifiable, Meta {
-    var name : String
-    var id : UUID
+    var name: String
+    var id: UUID
     var createdAt: Date
     var pattern: PatternDesign
     @Relationship(deleteRule: .cascade, inverse: \Item.storage)
     var items = [Item]()
-    var space : Space?
-    private var _colorComponents : ColorComponents
+    var space: Space?
+    private var _colorComponents: ColorComponents
     private var systemImage: String?
     private var emoji: String?
     

@@ -4,7 +4,6 @@
 //
 //  Created by Yuhao Chen on 2/4/24.
 //
-
 import SwiftUI
 import RealityKit
 import UniformTypeIdentifiers
@@ -35,21 +34,6 @@ extension CaptureOverlayView {
             }
             .buttonStyle(OverlayCircularStyle())
             .accessibilityLabel(buttonDescription)
-            #warning("Leftover")
-//            Button(
-//                action: {
-//                    performAction()
-//                },
-//                label: {
-//                    Text(buttonDescription)
-//                        .font(.body)
-//                        .fontWeight(.bold)
-//                        .foregroundColor(.white)
-//                        .padding(.horizontal, 25)
-//                        .padding(.vertical, 20)
-//                        .background(.blue)
-//                        .clipShape(Capsule())
-//                })
         }
         
         private var buttonColor : Color {
@@ -131,8 +115,7 @@ extension CaptureOverlayView {
             Button(action: {
                 logger.log("\(LocalizedString.next) button clicked!")
                 objectCaptureModel.setPreviewModelState(shown: true)
-            },
-                   label: {
+            }, label: {
                 Text(LocalizedString.next)
 //                    .modifier(VisualEffectRoundedCorner())
             })
@@ -236,14 +219,10 @@ extension CaptureOverlayView {
         @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
 
         var body: some View {
-            Button(action: {
+            Button(LocalizedString.cancel) {
                 logger.log("\(LocalizedString.cancel) button clicked!")
                 objectCaptureModel.objectCaptureSession?.cancel()
-            }, label: {
-                Text(LocalizedString.cancel)
-                    
-//                    .modifier(VisualEffectRoundedCorner())
-            })//.buttonStyle(OverlayButtonStyle())
+            }
         }
     }
 

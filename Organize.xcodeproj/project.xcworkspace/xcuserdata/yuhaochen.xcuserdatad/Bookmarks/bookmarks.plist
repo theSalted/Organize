@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>42</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
 					<string>41</string>
+					<key>StartingColumnNumber</key>
+					<string>21</string>
+					<key>StartingLineNumber</key>
+					<string>40</string>
 					<key>Timestamp</key>
-					<string>729715041.342399</string>
+					<string>729716000.064808</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -37,11 +37,11 @@
 				<string>
 </string>
 				<key>leading</key>
-				<string>                        captureViewModel.showCreateForm = true
-                    }
-</string>
+				<string>                        // Present create item form on dismiss of reconstruction view
+                        captureViewModel.showCreateForm = true
+                    }</string>
 				<key>trailing</key>
-				<string>                }content: {
+				<string>                } content: {
                     if let folderManager = objectCaptureModel.scanFolderManager {
                         ReconstructionPrimaryView(
 </string>
