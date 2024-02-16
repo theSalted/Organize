@@ -27,9 +27,9 @@ struct SpaceView: View {
         case 1:
             (selectedSpaces.first?.name ?? "Space") + " Detail"
         case 2:
-            "\(selectedSpaces[0].name) and \(selectedSpaces[1].name)"
+            "\(selectedSpaces[0].name) and \(selectedSpaces[1].name) Spaces"
         case 3...:
-            "\(selectedSpaces[0].name) and \(selectedSpaces.count - 1) More"
+            "\(selectedSpaces[0].name) and \(selectedSpaces.count - 1) More Spaces"
         default:
             "Storages"
         }
@@ -49,6 +49,7 @@ struct SpaceView: View {
                         ForEach(selectedSpaces) { space in
                             NavigationLink {
                                 MetaInfoView(space)
+                                    .navigationTitle(space.name)
                             } label: {
                                 let color = space.color
                                 VStack {
@@ -77,7 +78,7 @@ struct SpaceView: View {
                 ContentUnavailableView(
                     "Something Went Wrong...",
                     systemImage: "exclamationmark.triangle",
-                    description: "Please contact support, we are sorry for your inconvenience.".inText)
+                    description: "Number of selected space is outside of possible range. Please contact support, we are sorry for your inconvenience.".inText)
             }
         }
     }

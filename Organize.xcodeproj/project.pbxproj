@@ -108,6 +108,8 @@
 		8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC12B601A7000EB643A /* ContentColumnView.swift */; };
 		8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC32B6028CA00EB643A /* View+If.swift */; };
 		8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */; };
+		8ED633712B7FA80A000113E2 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED633702B7FA80A000113E2 /* ItemView.swift */; };
+		8ED633742B7FADC3000113E2 /* SingleItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED633732B7FADC3000113E2 /* SingleItemDetailView.swift */; };
 		8EDDFEB32B74B0E50009A290 /* BetterCardPatternView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB22B74B0E50009A290 /* BetterCardPatternView+Design.swift */; };
 		8EDDFEB52B74C2F90009A290 /* SymbolView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB42B74C2F90009A290 /* SymbolView+Design.swift */; };
 		8EDDFEB72B74C6000009A290 /* Character+emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB62B74C6000009A290 /* Character+emoji.swift */; };
@@ -223,6 +225,8 @@
 		8ED48FC12B601A7000EB643A /* ContentColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentColumnView.swift; sourceTree = "<group>"; };
 		8ED48FC32B6028CA00EB643A /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
 		8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AdaptiveNavigationTitle.swift"; sourceTree = "<group>"; };
+		8ED633702B7FA80A000113E2 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		8ED633732B7FADC3000113E2 /* SingleItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemDetailView.swift; sourceTree = "<group>"; };
 		8EDDFEB22B74B0E50009A290 /* BetterCardPatternView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetterCardPatternView+Design.swift"; sourceTree = "<group>"; };
 		8EDDFEB42B74C2F90009A290 /* SymbolView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymbolView+Design.swift"; sourceTree = "<group>"; };
 		8EDDFEB62B74C6000009A290 /* Character+emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+emoji.swift"; sourceTree = "<group>"; };
@@ -609,6 +613,15 @@
 			path = StorageViews;
 			sourceTree = "<group>";
 		};
+		8ED633722B7FAD97000113E2 /* ItemViews */ = {
+			isa = PBXGroup;
+			children = (
+				8ED633732B7FADC3000113E2 /* SingleItemDetailView.swift */,
+				8ED633702B7FA80A000113E2 /* ItemView.swift */,
+			);
+			path = ItemViews;
+			sourceTree = "<group>";
+		};
 		8EDDFEB82B74C6800009A290 /* Emoji */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +687,7 @@
 			children = (
 				8E88AD122B5C6447003BDB04 /* SpaceView.swift */,
 				8ED6336F2B7F5541000113E2 /* StorageViews */,
+				8ED633722B7FAD97000113E2 /* ItemViews */,
 			);
 			path = DetailViews;
 			sourceTree = "<group>";
@@ -813,6 +827,7 @@
 				8E6CD0822B7755A300BF1A18 /* FormEditView.swift in Sources */,
 				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
 				8E9D35292B6ED4D000154078 /* CaptureViewModel.swift in Sources */,
+				8ED633742B7FADC3000113E2 /* SingleItemDetailView.swift in Sources */,
 				8E4BDAF12B7D2F51003471B2 /* ListButtonStyle.swift in Sources */,
 				8EA525312B76BDE40085C9B0 /* SymbolView.swift in Sources */,
 				8EDDFEB52B74C2F90009A290 /* SymbolView+Design.swift in Sources */,
@@ -836,6 +851,7 @@
 				8E53A3F52B77FC9A00A92BDB /* PatternSelectionView.swift in Sources */,
 				8EDDFEBC2B74C8FA0009A290 /* ShapeIconView+Design.swift in Sources */,
 				8E9D35392B6EE2BC00154078 /* TitleView.swift in Sources */,
+				8ED633712B7FA80A000113E2 /* ItemView.swift in Sources */,
 				8E9D35372B6EE22900154078 /* ProcessingStage+String.swift in Sources */,
 				8E9D353B2B6EE52000154078 /* ProgressView.swift in Sources */,
 				8E9D350B2B6E2EE500154078 /* CaptureFolderManager.swift in Sources */,

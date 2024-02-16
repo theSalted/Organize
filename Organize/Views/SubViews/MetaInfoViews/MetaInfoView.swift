@@ -19,7 +19,7 @@ struct MetaInfoView: View {
                     MetaPrimitiveView(meta, title: "Information")
                 }
             } background: {
-                Text("Shit")
+                Text("Hey! You found me.")
             }
             .padding()
         }

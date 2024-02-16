@@ -46,6 +46,14 @@ struct DetailsView: View {
             switch appModel.spaceListSelections.isEmpty {
             case false:
                 TabView {
+                    // Item Selection Detail
+                    if !appModel.itemsListSelections.isEmpty {
+                        ItemView()
+                            .tabItem {
+                                Label("Item", systemImage: "cube")
+                            }
+                    }
+                    // Storage Selection Detail
                     if !appModel.storageListSelections.isEmpty {
                         StorageView()
                             .tabItem {

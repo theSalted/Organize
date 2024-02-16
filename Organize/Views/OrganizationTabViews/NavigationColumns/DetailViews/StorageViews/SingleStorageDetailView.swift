@@ -41,10 +41,10 @@ struct SingleStorageDetailView: View {
         }
     }
     
-    var meta : any Meta
+    var storage : Storage
     
-    init(_ meta: any Meta) {
-        self.meta = meta
+    init(_ storage: Storage) {
+        self.storage = storage
     }
     
     var body: some View {
@@ -52,7 +52,7 @@ struct SingleStorageDetailView: View {
         let count = appModel.storageListSelections.count
         List(selection: $appModel.itemsListSelections) {
             Section("Detail") {
-                MetaPrimitiveView(meta, title: "Information")
+                MetaPrimitiveView(storage, title: "Information")
             }
             if itemsList.isEmpty {
                 if searchText.isEmpty {
@@ -127,7 +127,7 @@ struct SingleStorageDetailView: View {
                 try? modelContext.save()
             }
         }
-        .navigationTitle(meta.name)
+        .navigationTitle(storage.name)
         .scrollContentBackground(.hidden)
     }
     
@@ -159,6 +159,6 @@ struct SingleStorageDetailView: View {
 }
 
 #Preview {
-    SingleStorageDetailView(Item(name: "Baseball"))
+    SingleStorageDetailView(Storage(name: "My Storage"))
         .environment(AppViewModel())
 }
