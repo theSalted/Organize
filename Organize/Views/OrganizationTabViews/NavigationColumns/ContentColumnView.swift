@@ -21,7 +21,7 @@ struct ContentColumnView: View {
     
     // Computed Properties
     var selectedSpaces: [Space] {
-        spaces.filter { appModel.spaceListSelections.contains($0.id) }
+        spaces.filter { appModel.spaceListSelectionIDs.contains($0.id) }
     }
     var storages: [Storage] {
         selectedSpaces.flatMap { space in
@@ -32,6 +32,7 @@ struct ContentColumnView: View {
         if searchText.isEmpty {
             return storages
         } else {
+            #warning("Computed variable can't trigger view update")
             // TODO: Improve needed for the match algorithm in this computed property
             // -[ ] Better fuzzy match algorithm
             // -[ ] Implementation in generic of string extension
@@ -53,10 +54,10 @@ struct ContentColumnView: View {
     // Views
     var body: some View {
         @Bindable var appModel = appModel
-        let count = appModel.spaceListSelections.count
-        switch appModel.spaceListSelections.isEmpty {
+        let count = appModel.spaceListSelectionIDs.count
+        switch appModel.spaceListSelectionIDs.isEmpty {
         case false:
-            List(selection: $appModel.storageListSelections) {
+            List(selection: $appModel.storageListSelectionsIDs) {
                 Section(
                     storagesList.isEmpty ? "" : "^[\(storagesList.count) Storages](inflect: true)"
                 ) {

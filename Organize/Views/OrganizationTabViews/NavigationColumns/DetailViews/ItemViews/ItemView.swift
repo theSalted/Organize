@@ -13,7 +13,7 @@ struct ItemView: View {
     @Environment(AppViewModel.self) private var appModel
     @Query private var items: [Item]
     var selectedItems: [Item] {
-        items.filter { appModel.itemsListSelections.contains($0.id) }
+        items.filter { appModel.itemsListSelectionIDs.contains($0.id) }
     }
     
     var title: String {

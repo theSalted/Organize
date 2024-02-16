@@ -13,7 +13,7 @@ struct StorageView: View {
     @Environment(AppViewModel.self) private var appModel
     @Query private var storages: [Storage]
     var selectedStorages: [Storage] {
-        storages.filter { appModel.storageListSelections.contains($0.id) }
+        storages.filter { appModel.storageListSelectionsIDs.contains($0.id) }
     }
     
     var title: String {

@@ -57,15 +57,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>21</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>27</string>
+					<string>29</string>
 					<key>StartingColumnNumber</key>
-					<string>21</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>27</string>
+					<string>28</string>
 					<key>Timestamp</key>
-					<string>729767349.715436</string>
+					<string>729793137.4158911</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -81,15 +81,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>            // TODO: Improve needed for the match algorithm in this computed property
+</string>
 				<key>leading</key>
-				<string>            return spaces
-        } else {
-            // TODO: </string>
+				<string>        } else {
+            #warning("Computed variable can't trigger view update")
+</string>
 				<key>trailing</key>
-				<string>Improve needed for the match algorithm in this computed property
-            // -[ ] Better fuzzy match algorithm
+				<string>            // -[ ] Better fuzzy match algorithm
             // -[ ] Implementation in generic of string extension
+            return spaces.filter { space in
 </string>
 			</dict>
 			<key>title</key>
@@ -103,15 +104,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>16</string>
+					<string>5</string>
 					<key>EndingLineNumber</key>
-					<string>34</string>
+					<string>42</string>
 					<key>StartingColumnNumber</key>
-					<string>16</string>
+					<string>5</string>
 					<key>StartingLineNumber</key>
-					<string>34</string>
+					<string>42</string>
 					<key>Timestamp</key>
-					<string>729767493.881955</string>
+					<string>729796358.7043051</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -129,13 +130,13 @@
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>            return storages
-        } else {
-            // T</string>
+				<string>            }
+        }
+    }</string>
 				<key>trailing</key>
-				<string>ODO: Improve needed for the match algorithm in this computed property
-            // -[ ] Better fuzzy match algorithm
-            // -[ ] Implementation in generic of string extension
+				<string>
+    var title: String {
+        if selectedSpaces.isEmpty {
 </string>
 			</dict>
 			<key>title</key>
@@ -149,15 +150,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>85</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>34</string>
+					<string>31</string>
 					<key>StartingColumnNumber</key>
-					<string>85</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>34</string>
+					<string>30</string>
 					<key>Timestamp</key>
-					<string>729767674.130343</string>
+					<string>729796881.764611</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -173,15 +174,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>    private var itemsList: [Item] {
+</string>
 				<key>leading</key>
-				<string>            return items
-        } else {
-            // TODO: Improve needed for the match algorithm in this computed property</string>
+				<string>        }
+    }
+</string>
 				<key>trailing</key>
-				<string>
-            // -[ ] Better fuzzy match algorithm
-            // -[ ] Implementation in generic of string extension
+				<string>        if searchText.isEmpty {
+            return items
+        } else {
 </string>
 			</dict>
 			<key>type</key>

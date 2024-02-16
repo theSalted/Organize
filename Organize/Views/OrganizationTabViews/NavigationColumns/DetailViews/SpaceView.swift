@@ -13,7 +13,7 @@ struct SpaceView: View {
     @Query private var spaces: [Space]
     
     var selectedSpaces: [Space] {
-        spaces.filter { appModel.spaceListSelections.contains($0.id) }
+        spaces.filter { appModel.spaceListSelectionIDs.contains($0.id) }
     }
     
     var storages: [Storage] {

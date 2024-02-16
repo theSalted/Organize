@@ -22,7 +22,7 @@ struct DetailsView: View {
     
     // Computed Properties
     var selectedSpaces: [Space] {
-        spaces.filter { appModel.spaceListSelections.contains($0.id) }
+        spaces.filter { appModel.spaceListSelectionIDs.contains($0.id) }
     }
     var storages: [Storage] {
         selectedSpaces.flatMap { space in
@@ -43,18 +43,18 @@ struct DetailsView: View {
     var body: some View {
         @Bindable var appModel = appModel
         NavigationStack {
-            switch appModel.spaceListSelections.isEmpty {
+            switch appModel.spaceListSelectionIDs.isEmpty {
             case false:
                 TabView {
                     // Item Selection Detail
-                    if !appModel.itemsListSelections.isEmpty {
+                    if !appModel.itemsListSelectionIDs.isEmpty {
                         ItemView()
                             .tabItem {
                                 Label("Item", systemImage: "cube")
                             }
                     }
                     // Storage Selection Detail
-                    if !appModel.storageListSelections.isEmpty {
+                    if !appModel.storageListSelectionsIDs.isEmpty {
                         StorageView()
                             .tabItem {
                                 Label("Storage", systemImage: "archivebox")

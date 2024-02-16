@@ -21,7 +21,7 @@ struct SingleStorageDetailView: View {
     
     // Computed Properties
     var selectedStorages: [Storage] {
-        storages.filter { appModel.storageListSelections.contains($0.id)}
+        storages.filter { appModel.storageListSelectionsIDs.contains($0.id)}
     }
     var items: [Item] {
         selectedStorages.flatMap { storage in
@@ -32,6 +32,7 @@ struct SingleStorageDetailView: View {
         if searchText.isEmpty {
             return items
         } else {
+            #warning("Computed variable can't trigger view update")
             // TODO: Improve needed for the match algorithm in this computed property
             // -[ ] Better fuzzy match algorithm
             // -[ ] Implementation in generic of string extension
@@ -49,8 +50,8 @@ struct SingleStorageDetailView: View {
     
     var body: some View {
         @Bindable var appModel = appModel
-        let count = appModel.storageListSelections.count
-        List(selection: $appModel.itemsListSelections) {
+        let count = appModel.storageListSelectionsIDs.count
+        List(selection: $appModel.itemsListSelectionIDs) {
             Section("Detail") {
                 MetaPrimitiveView(storage, title: "Information")
             }

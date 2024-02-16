@@ -25,6 +25,7 @@ struct SideBarView: View {
         if searchText.isEmpty {
             return spaces
         } else {
+            #warning("Computed variable can't trigger view update")
             // TODO: Improve needed for the match algorithm in this computed property
             // -[ ] Better fuzzy match algorithm
             // -[ ] Implementation in generic of string extension
@@ -37,7 +38,7 @@ struct SideBarView: View {
     var body: some View {
         @Bindable var appModel = appModel
         
-        List(selection: $appModel.spaceListSelections) {
+        List(selection: $appModel.spaceListSelectionIDs) {
             // Tab bar hide itself when device is in horizontal. Switch tab with a button instead.
             if verticalSizeClass == .compact && !isSearchPresented {
                 Label("Scan", systemImage: "cube.fill")
