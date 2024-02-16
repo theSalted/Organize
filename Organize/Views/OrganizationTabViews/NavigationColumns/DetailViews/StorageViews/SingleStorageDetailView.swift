@@ -13,6 +13,7 @@ struct SingleStorageDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(AppViewModel.self) private var appModel
     @Query private var storages: [Storage]
+    @Query private var items: [Item]
     
     // View States
     @State private var editMode: EditMode   = .inactive
@@ -23,25 +24,21 @@ struct SingleStorageDetailView: View {
     var selectedStorages: [Storage] {
         storages.filter { appModel.storageListSelectionsIDs.contains($0.id)}
     }
-    var items: [Item] {
-        selectedStorages.flatMap { storage in
-            storage.items
-        }
-    }
     private var itemsList: [Item] {
-        if searchText.isEmpty {
-            return items
-        } else {
-            #warning("Computed variable can't trigger view update")
-            // TODO: Improve needed for the match algorithm in this computed property
-            // -[ ] Better fuzzy match algorithm
-            // -[ ] Implementation in generic of string extension
-            return items.filter { item in
-                item.name.localizedCaseInsensitiveContains(searchText)
+        // TODO: Improve needed for the match algorithm in this computed property
+        // -[ ] Better fuzzy match algorithm
+        // -[ ] Implementation in generic of string extension
+        return items.filter { item in
+            guard let placement = item.storage else {
+                return false
             }
+            if searchText.isEmpty {
+                return selectedStorages.contains(placement)
+            }
+            return selectedStorages.contains(placement) &&
+                item.name.localizedCaseInsensitiveContains(searchText)
         }
     }
-    
     var storage : Storage
     
     init(_ storage: Storage) {

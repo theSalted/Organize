@@ -9,16 +9,19 @@ import SwiftUI
 import SwiftData
 
 struct SideBarView: View {
+    // Environments and SwiftData Queries
     @Environment(\.modelContext) private var modelContext
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(AppViewModel.self) private var appModel
     @Query private var spaces: [Space]
+    
+    // View States
     @State private var editMode: EditMode  = .inactive
     @State private var isSearchPresented   = false
     @State private var showCreateForm      = false
     @State private var searchText          = ""
     
-    var backgroundColor = Color(uiColor: UIColor.secondarySystemBackground)
+    let backgroundColor = Color(uiColor: UIColor.secondarySystemBackground)
     
     /// A list of spaces available for display on side bar, this taken in account of searchText and other vectors
     private var spacesList: [Space] {

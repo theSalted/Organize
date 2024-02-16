@@ -59,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>28</string>
+					<string>31</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>27</string>
+					<string>30</string>
 					<key>Timestamp</key>
-					<string>729800601.198423</string>
+					<string>729804853.105293</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -95,50 +95,6 @@
 			</dict>
 			<key>title</key>
 			<string>Improve needed for the match algorithm in this computed property</string>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>35</string>
-					<key>EndingLineNumber</key>
-					<string>35</string>
-					<key>StartingColumnNumber</key>
-					<string>35</string>
-					<key>StartingLineNumber</key>
-					<string>35</string>
-					<key>Timestamp</key>
-					<string>729800872.105243</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>Organize/Views/OrganizationTabViews/NavigationColumns/ContentColumnView.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string></string>
-				<key>leading</key>
-				<string>        } else {
-            #warning("Computed variable can't trigger view update")
-            // TODO: Improve needed</string>
-				<key>trailing</key>
-				<string> for the match algorithm in this computed property
-            // -[ ] Better fuzzy match algorithm
-            // -[ ] Implementation in generic of string extension
-</string>
-			</dict>
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
@@ -181,6 +137,95 @@
 				<string>cator TabView page style lightmode workaround
         // PageIndicator of TabViewStyle don't adopt to lightmode for some reason
         // manual implementation for lightmode
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>47</string>
+					<key>EndingLineNumber</key>
+					<string>27</string>
+					<key>StartingColumnNumber</key>
+					<string>47</string>
+					<key>StartingLineNumber</key>
+					<string>27</string>
+					<key>Timestamp</key>
+					<string>729804306.702902</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/Views/OrganizationTabViews/NavigationColumns/ContentColumnView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>    }
+    private var storagesList: [Storage] {
+        // TODO: Improve needed for the match a</string>
+				<key>trailing</key>
+				<string>lgorithm in this computed property
+        // -[ ] Better fuzzy match algorithm
+        // -[ ] Implementation in generic of string extension
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>28</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>27</string>
+					<key>Timestamp</key>
+					<string>729804629.64656</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/Views/OrganizationTabViews/NavigationColumns/DetailViews/StorageViews/SingleStorageDetailView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>        // TODO: Improve needed for the match algorithm in this computed property
+</string>
+				<key>leading</key>
+				<string>    }
+    private var itemsList: [Item] {
+</string>
+				<key>trailing</key>
+				<string>        // -[ ] Better fuzzy match algorithm
+        // -[ ] Implementation in generic of string extension
+        return items.filter { item in
 </string>
 			</dict>
 			<key>type</key>

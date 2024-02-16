@@ -13,6 +13,7 @@ struct ContentColumnView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(AppViewModel.self) private var appModel
     @Query private var spaces: [Space]
+    @Query private var storages: [Storage]
     
     // View States
     @State private var editMode: EditMode   = .inactive
@@ -23,22 +24,18 @@ struct ContentColumnView: View {
     var selectedSpaces: [Space] {
         spaces.filter { appModel.spaceListSelectionIDs.contains($0.id) }
     }
-    var storages: [Storage] {
-        selectedSpaces.flatMap { space in
-            space.storages
-        }
-    }
     private var storagesList: [Storage] {
-        if searchText.isEmpty {
-            return storages
-        } else {
-            #warning("Computed variable can't trigger view update")
-            // TODO: Improve needed for the match algorithm in this computed property
-            // -[ ] Better fuzzy match algorithm
-            // -[ ] Implementation in generic of string extension
-            return storages.filter { storage in
-                storage.name.localizedCaseInsensitiveContains(searchText)
+        // TODO: Improve needed for the match algorithm in this computed property
+        // -[ ] Better fuzzy match algorithm
+        // -[ ] Implementation in generic of string extension
+        return storages.filter { storage in
+            guard let placement = storage.space else {
+                return false
             }
+            if searchText.isEmpty {
+                return selectedSpaces.contains(placement)
+            }
+            return selectedSpaces.contains(placement) && storage.name.localizedCaseInsensitiveContains(searchText)
         }
     }
     var title: String {
