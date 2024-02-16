@@ -38,8 +38,7 @@ struct SpaceView: View {
                     systemImage: "square.split.bottomrightquarter",
                     description: "Select one or more spaces to get started".inText)
             case 1:
-                let space = selectedSpaces.first!
-                MetaInfoView(space).navigationTitle(title)
+                MetaInfoView(selectedSpaces.first!).navigationTitle(title)
             case 2...:
                 ScrollView {
                     MetaGridView(selectedSpaces).padding()

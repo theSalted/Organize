@@ -34,10 +34,11 @@ struct ItemView: View {
             switch selectedItems.count {
             case 0:
                 ContentUnavailableView(
-                    "Select an Item", systemImage: "cube", description: "Select one or more items to get started".inText)
+                    "Select an Item", 
+                    systemImage: "cube",
+                    description: "Select one or more items to get started".inText)
             case 1:
-                SingleItemDetailView(selectedItems.first!)
-                    .navigationTitle(title)
+                SingleItemDetailView(selectedItems.first!).navigationTitle(title)
             case 2...:
                 ScrollView {
                     MetaGridView(selectedItems).padding()
