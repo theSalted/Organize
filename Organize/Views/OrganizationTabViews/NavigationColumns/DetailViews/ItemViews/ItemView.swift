@@ -9,9 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct ItemView: View {
-    @Environment(\.modelContext) private var context
     @Environment(AppViewModel.self) private var appModel
     @Query private var items: [Item]
+    
     var selectedItems: [Item] {
         items.filter { appModel.itemsListSelectionIDs.contains($0.id) }
     }
@@ -40,29 +40,7 @@ struct ItemView: View {
                     .navigationTitle(title)
             case 2...:
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 300, maximum: .infinity), spacing: 15)]) {
-                        ForEach(selectedItems) { item in
-                            NavigationLink {
-                                MetaInfoView(item)
-                                    .navigationTitle(item.name)
-                            } label: {
-                                let color = item.color
-                                VStack {
-                                    PatternDesignView(item.pattern, patternColor: color)
-                                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                                        .overlay {
-                                            RoundedRectangle(cornerRadius: 20)
-                                                .stroke(LinearGradient(colors: [color, .clear, .clear], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1)
-                                                 .brightness(1.1)
-                                        }
-                                        .shadow(color: color.opacity(0.5), radius: 10)
-                                        .frame(maxWidth: .infinity, minHeight: 200)
-                                    Text(item.name)
-                                        .font(.headline)
-                                }
-                            }.buttonStyle(.plain)
-                        }
-                    }.padding()
+                    MetaGridView(selectedItems).padding()
                 }.navigationTitle(title)
             default:
                 ContentUnavailableView(

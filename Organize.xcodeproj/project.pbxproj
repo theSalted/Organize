@@ -110,6 +110,7 @@
 		8ED48FC72B602FB900EB643A /* View+AdaptiveNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */; };
 		8ED633712B7FA80A000113E2 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED633702B7FA80A000113E2 /* ItemView.swift */; };
 		8ED633742B7FADC3000113E2 /* SingleItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED633732B7FADC3000113E2 /* SingleItemDetailView.swift */; };
+		8ED633782B7FD6EA000113E2 /* MetaGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED633772B7FD6EA000113E2 /* MetaGridView.swift */; };
 		8EDDFEB32B74B0E50009A290 /* BetterCardPatternView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB22B74B0E50009A290 /* BetterCardPatternView+Design.swift */; };
 		8EDDFEB52B74C2F90009A290 /* SymbolView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB42B74C2F90009A290 /* SymbolView+Design.swift */; };
 		8EDDFEB72B74C6000009A290 /* Character+emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDFEB62B74C6000009A290 /* Character+emoji.swift */; };
@@ -227,6 +228,7 @@
 		8ED48FC62B602FB900EB643A /* View+AdaptiveNavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AdaptiveNavigationTitle.swift"; sourceTree = "<group>"; };
 		8ED633702B7FA80A000113E2 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		8ED633732B7FADC3000113E2 /* SingleItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemDetailView.swift; sourceTree = "<group>"; };
+		8ED633772B7FD6EA000113E2 /* MetaGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaGridView.swift; sourceTree = "<group>"; };
 		8EDDFEB22B74B0E50009A290 /* BetterCardPatternView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetterCardPatternView+Design.swift"; sourceTree = "<group>"; };
 		8EDDFEB42B74C2F90009A290 /* SymbolView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymbolView+Design.swift"; sourceTree = "<group>"; };
 		8EDDFEB62B74C6000009A290 /* Character+emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+emoji.swift"; sourceTree = "<group>"; };
@@ -622,6 +624,14 @@
 			path = ItemViews;
 			sourceTree = "<group>";
 		};
+		8ED633752B7FD6C6000113E2 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				8ED633772B7FD6EA000113E2 /* MetaGridView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		8EDDFEB82B74C6800009A290 /* Emoji */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,6 +674,7 @@
 		8EF034402B6166BA00A15340 /* NavigationColumns */ = {
 			isa = PBXGroup;
 			children = (
+				8ED633752B7FD6C6000113E2 /* SubViews */,
 				8EF034422B61670700A15340 /* DetailViews */,
 				8EF034432B61A8F100A15340 /* DetailsView.swift */,
 				8ED48FC12B601A7000EB643A /* ContentColumnView.swift */,
@@ -822,6 +833,7 @@
 				8E53A3F12B77E86200A92BDB /* CircularIconSelectionView.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
 				8E9D35452B6FB7B100154078 /* CaptureOverlayView+Buttons.swift in Sources */,
+				8ED633782B7FD6EA000113E2 /* MetaGridView.swift in Sources */,
 				8E9D35332B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift in Sources */,
 				8E9D350F2B6E2FDD00154078 /* FeedbackMessages.swift in Sources */,
 				8E6CD0822B7755A300BF1A18 /* FormEditView.swift in Sources */,

@@ -9,9 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct StorageView: View {
-    @Environment(\.modelContext) private var context
     @Environment(AppViewModel.self) private var appModel
     @Query private var storages: [Storage]
+    
     var selectedStorages: [Storage] {
         storages.filter { appModel.storageListSelectionsIDs.contains($0.id) }
     }
@@ -42,29 +42,7 @@ struct StorageView: View {
                     .navigationTitle(title)
             case 2...: // Multiple Item selected
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 300, maximum: .infinity), spacing: 15)]) {
-                        ForEach(selectedStorages) { storage in
-                            NavigationLink {
-                                MetaInfoView(storage)
-                                    .navigationTitle(storage.name)
-                            } label: {
-                                let color = storage.color
-                                VStack {
-                                    PatternDesignView(storage.pattern, patternColor: color)
-                                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                                        .overlay( /// apply a rounded border
-                                            RoundedRectangle(cornerRadius: 20)
-                                                .stroke(LinearGradient(colors: [color, .clear, .clear], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1)
-                                                 .brightness(1.1)
-                                        )
-                                        .shadow(color: color.opacity(0.5), radius: 10)
-                                        .frame(maxWidth: .infinity, minHeight: 200)
-                                    Text(storage.name)
-                                        .font(.headline)
-                                }
-                            }.buttonStyle(.plain)
-                        }
-                    }.padding()
+                    MetaGridView(selectedStorages).padding()
                 }.navigationTitle(title)
             default:
                 ContentUnavailableView(

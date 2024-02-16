@@ -15,13 +15,7 @@ struct SpaceView: View {
     var selectedSpaces: [Space] {
         spaces.filter { appModel.spaceListSelectionIDs.contains($0.id) }
     }
-    
-    var storages: [Storage] {
-        selectedSpaces.flatMap { space in
-            space.storages
-        }
-    }
-    
+
     var title : String {
         switch selectedSpaces.count {
         case 1:
@@ -36,44 +30,20 @@ struct SpaceView: View {
     }
     
     var body: some View {
-        @Bindable var appModel = appModel
-        
         VStack {
             switch selectedSpaces.count {
+            case 0:
+                ContentUnavailableView(
+                    "Select an Space",
+                    systemImage: "square.split.bottomrightquarter",
+                    description: "Select one or more spaces to get started".inText)
             case 1:
                 let space = selectedSpaces.first!
                 MetaInfoView(space).navigationTitle(title)
             case 2...:
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 300, maximum: .infinity), spacing: 15)]) {
-                        ForEach(selectedSpaces) { space in
-                            NavigationLink {
-                                MetaInfoView(space)
-                                    .navigationTitle(space.name)
-                            } label: {
-                                let color = space.color
-                                VStack {
-                                    PatternDesignView(space.pattern, patternColor: color)
-                                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                                        .overlay( /// apply a rounded border
-                                            RoundedRectangle(cornerRadius: 20)
-                                                .stroke(LinearGradient(colors: [color, .clear, .clear], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1)
-                                                 .brightness(1.1)
-                                        )
-                                        .shadow(color: color.opacity(0.5), radius: 10)
-                                        .frame(maxWidth: .infinity, minHeight: 200)
-                                    Text(space.name)
-                                        .font(.headline)
-                                }
-                                
-                            }
-                            .buttonStyle(.plain)
-                        }
-                    }.padding()
-                }
-                .toolbarBackground(.clear, for: .navigationBar)
-                .toolbarBackground(.hidden, for: .navigationBar)
-                .navigationTitle(title)
+                    MetaGridView(selectedSpaces).padding()
+                }.navigationTitle(title)
             default:
                 ContentUnavailableView(
                     "Something Went Wrong...",
