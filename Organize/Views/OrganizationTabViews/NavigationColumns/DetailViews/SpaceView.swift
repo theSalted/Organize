@@ -25,7 +25,7 @@ struct SpaceView: View {
     var title : String {
         switch selectedSpaces.count {
         case 1:
-            selectedSpaces.first?.name ?? "Storages"
+            (selectedSpaces.first?.name ?? "Space") + " Detail"
         case 2:
             "\(selectedSpaces[0].name) and \(selectedSpaces[1].name)"
         case 3...:
@@ -40,31 +40,9 @@ struct SpaceView: View {
         
         VStack {
             switch selectedSpaces.count {
-            case 0:
-                List(selection: $appModel.storageListSelections) {
-                    Section(storages.isEmpty
-                            ? ""
-                            : "^[\(storages.count) storage details](inflect: true) in ^[\(selectedSpaces.count) spaces](inflect: true)") {
-                        ForEach(storages) { storage in
-                            MetaPrimitiveView(storage)
-                        }
-                        .listRowSpacing(10)
-                    }
-                }
-                .toolbarBackground(Color.pink, for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .navigationTitle(title)
-                .listStyle(.inset)
             case 1:
                 let space = selectedSpaces.first!
-                MetaInfoView(space)
-                    .background {
-                        LinearGradient(
-                            colors: [space.color,
-                                     Color(uiColor: UIColor.systemBackground),
-                                     Color(uiColor: UIColor.systemBackground)
-                                    ], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    }
+                MetaInfoView(space).navigationTitle(title)
             case 2...:
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 300, maximum: .infinity), spacing: 15)]) {

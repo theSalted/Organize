@@ -34,7 +34,7 @@ struct DetailsView: View {
         // TODO: SwiftUI bug Pageindicator TabView page style lightmode workaround
         // PageIndicator of TabViewStyle don't adopt to lightmode for some reason
         // manual implementation for lightmode
-        // For currentPageIndicatorTintiColor I choose label, but tint also works
+        // For currentPageIndicatorTintiColor I choose .label, but .tint also works
         // -[ ] Consider reproduce and file a bug report to Apple
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.label
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.secondaryLabel

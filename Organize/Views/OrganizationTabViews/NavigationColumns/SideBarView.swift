@@ -20,11 +20,17 @@ struct SideBarView: View {
     
     var backgroundColor = Color(uiColor: UIColor.secondarySystemBackground)
     
-    private var searchedSpaces : [Space] {
+    /// A list of spaces available for display on side bar, this taken in account of searchText and other vectors
+    private var spacesList: [Space] {
         if searchText.isEmpty {
             return spaces
         } else {
-            return spaces.filter { $0.name.contains(searchText) }
+            // TODO: Improve needed for the match algorithm in this computed property
+            // -[ ] Better fuzzy match algorithm
+            // -[ ] Implementation in generic of string extension
+            return spaces.filter { space in
+                space.name.localizedCaseInsensitiveContains(searchText)
+            }
         }
     }
     
@@ -37,8 +43,8 @@ struct SideBarView: View {
                 Label("Scan", systemImage: "cube.fill")
             }
             
-            Section(searchedSpaces.isEmpty ? "" : "Space") {
-                ForEach(searchedSpaces) { space in
+            Section(spacesList.isEmpty ? "" : "Space") {
+                ForEach(spacesList) { space in
                     Label {
                         Text(space.name)
                     } icon: {
@@ -92,7 +98,7 @@ struct SideBarView: View {
         }
         .overlay {
             // Placeholder View for when spaces is empty
-            if searchedSpaces.isEmpty {
+            if spacesList.isEmpty {
                 if searchText.isEmpty{
                     ContentUnavailableView(
                         "Start Organizing",

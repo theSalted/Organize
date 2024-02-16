@@ -51,6 +51,142 @@
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>21</string>
+					<key>EndingLineNumber</key>
+					<string>27</string>
+					<key>StartingColumnNumber</key>
+					<string>21</string>
+					<key>StartingLineNumber</key>
+					<string>27</string>
+					<key>Timestamp</key>
+					<string>729767349.715436</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/Views/OrganizationTabViews/NavigationColumns/SideBarView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>            return spaces
+        } else {
+            // TODO: </string>
+				<key>trailing</key>
+				<string>Improve needed for the match algorithm in this computed property
+            // -[ ] Better fuzzy match algorithm
+            // -[ ] Implementation in generic of string extension
+</string>
+			</dict>
+			<key>title</key>
+			<string>Improve needed for the match algorithm in this computed property</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>16</string>
+					<key>EndingLineNumber</key>
+					<string>34</string>
+					<key>StartingColumnNumber</key>
+					<string>16</string>
+					<key>StartingLineNumber</key>
+					<string>34</string>
+					<key>Timestamp</key>
+					<string>729767493.881955</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/Views/OrganizationTabViews/NavigationColumns/ContentColumnView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>            return storages
+        } else {
+            // T</string>
+				<key>trailing</key>
+				<string>ODO: Improve needed for the match algorithm in this computed property
+            // -[ ] Better fuzzy match algorithm
+            // -[ ] Implementation in generic of string extension
+</string>
+			</dict>
+			<key>title</key>
+			<string>Improve needed for the match algorithm in this computed property]</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>85</string>
+					<key>EndingLineNumber</key>
+					<string>34</string>
+					<key>StartingColumnNumber</key>
+					<string>85</string>
+					<key>StartingLineNumber</key>
+					<string>34</string>
+					<key>Timestamp</key>
+					<string>729767674.130343</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/Views/OrganizationTabViews/NavigationColumns/DetailViews/StorageViews/SingleStorageDetailView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>            return items
+        } else {
+            // TODO: Improve needed for the match algorithm in this computed property</string>
+				<key>trailing</key>
+				<string>
+            // -[ ] Better fuzzy match algorithm
+            // -[ ] Implementation in generic of string extension
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
 	</array>
 </dict>
 </plist>

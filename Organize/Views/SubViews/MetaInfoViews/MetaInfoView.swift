@@ -23,7 +23,6 @@ struct MetaInfoView: View {
             }
             .padding()
         }
-        .navigationTitle(meta.name)
         .scrollContentBackground(.hidden)
     }
 }

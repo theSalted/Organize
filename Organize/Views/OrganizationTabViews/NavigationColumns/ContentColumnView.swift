@@ -28,6 +28,18 @@ struct ContentColumnView: View {
             space.storages
         }
     }
+    private var storagesList: [Storage] {
+        if searchText.isEmpty {
+            return storages
+        } else {
+            // TODO: Improve needed for the match algorithm in this computed property
+            // -[ ] Better fuzzy match algorithm
+            // -[ ] Implementation in generic of string extension
+            return storages.filter { storage in
+                storage.name.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
     var title: String {
         if selectedSpaces.isEmpty {
             ""
@@ -46,9 +58,9 @@ struct ContentColumnView: View {
         case false:
             List(selection: $appModel.storageListSelections) {
                 Section(
-                    storages.isEmpty ? "" : "^[\(storages.count) Storages](inflect: true)"
+                    storagesList.isEmpty ? "" : "^[\(storagesList.count) Storages](inflect: true)"
                 ) {
-                    ForEach(storages) { storage in
+                    ForEach(storagesList) { storage in
                         Label {
                             Text(storage.name)
                         } icon: {
@@ -92,17 +104,19 @@ struct ContentColumnView: View {
             }
             .overlay {
                 // Placeholder View when space don't have any storage
-                if !searchText.isEmpty{
-                    ContentUnavailableView.search(text: searchText)
-                } else if storages.isEmpty {
-                    ContentUnavailableView(
-                        "Create a Storage",
-                        systemImage: "archivebox",
-                        description:
-                            Text("The selected " +
-                                 (count > 0 ? "spaces " : "space ") +
-                                 "don't have any storage. Press the plus button to add one.")
-                    )
+                if storagesList.isEmpty {
+                    if searchText.isEmpty {
+                        ContentUnavailableView(
+                            "Create a Storage",
+                            systemImage: "archivebox",
+                            description:
+                                Text("The selected " +
+                                     (count > 0 ? "spaces " : "space ") +
+                                     "don't have any storage. Press the plus button to add one.")
+                        )
+                    } else {
+                        ContentUnavailableView.search(text: searchText)
+                    }
                 }
             }
             .sheet(isPresented: $showCreateForm) {
