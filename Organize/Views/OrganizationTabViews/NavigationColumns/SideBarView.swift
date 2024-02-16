@@ -25,7 +25,6 @@ struct SideBarView: View {
         if searchText.isEmpty {
             return spaces
         } else {
-            #warning("Computed variable can't trigger view update")
             // TODO: Improve needed for the match algorithm in this computed property
             // -[ ] Better fuzzy match algorithm
             // -[ ] Implementation in generic of string extension
