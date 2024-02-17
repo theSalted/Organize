@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MetaGridView<T>: View where T: Meta{
     var targetsList: [T]
-    let columns = [GridItem(.adaptive(minimum: 300, maximum: .infinity), spacing: 15)]
+    let columns = [GridItem(.adaptive(minimum: 300, maximum: .infinity), spacing: 30)]
     
     init(_ targetsList: [T]) {
         self.targetsList = targetsList
@@ -31,12 +31,20 @@ struct MetaGridView<T>: View where T: Meta{
                                     .stroke(LinearGradient(colors: [color, .clear, .clear], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1)
                                      .brightness(1.1)
                             }
+                            .overlay {
+                                SymbolView(symbol: target.symbol)
+                                    .font(.system(size: 60))
+                                    .foregroundStyle(target.color.secondary)
+                                    .shadow(color: .white.opacity(0.7), radius: 10)
+                            }
                             .shadow(color: color.opacity(0.5), radius: 10)
                             .frame(maxWidth: .infinity, minHeight: 200)
                         Text(target.name)
                             .font(.headline)
                     }
-                }.buttonStyle(.plain)
+                }
+                .buttonStyle(.plain)
+                .padding(.bottom)
             }
         }
     }
