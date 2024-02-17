@@ -35,7 +35,7 @@ struct MetaGridView<T>: View where T: Meta{
                                 SymbolView(symbol: target.symbol)
                                     .font(.system(size: 60))
                                     .foregroundStyle(target.color.secondary)
-                                    .shadow(color: .white.opacity(0.7), radius: 10)
+                                    .shadow(color: .white.opacity(0.7), radius: 20)
                             }
                             .shadow(color: color.opacity(0.5), radius: 10)
                             .frame(maxWidth: .infinity, minHeight: 200)

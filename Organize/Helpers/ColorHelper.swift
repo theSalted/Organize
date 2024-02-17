@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let templateColors : [Color] = [.red, .green, .blue, .yellow, .purple, .brown, .cyan, .gray, .indigo, .mint, .pink, .teal]
+let templateColors : [Color] = [.red, .green, .blue, .yellow, .purple, .brown, .cyan, .indigo, .mint, .pink, .teal]
 
 func getRandomColorFromTemplate() -> Color {
     templateColors.randomElement(or: .accentColor)

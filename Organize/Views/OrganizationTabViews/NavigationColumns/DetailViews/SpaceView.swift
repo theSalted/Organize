@@ -38,10 +38,14 @@ struct SpaceView: View {
                     systemImage: "square.split.bottomrightquarter",
                     description: "Select one or more spaces to get started".inText)
             case 1:
-                MetaInfoView(selectedSpaces.first!).navigationTitle(title)
+                let theSelectedSpace = selectedSpaces.first!
+                MetaInfoView(theSelectedSpace)
+                    .navigationTitle(title)
+                    .tint(theSelectedSpace.color)
             case 2...:
                 ScrollView {
-                    MetaGridView(selectedSpaces).padding()
+                    MetaGridView(selectedSpaces)
+                        .padding()
                 }.navigationTitle(title)
             default:
                 ContentUnavailableView(

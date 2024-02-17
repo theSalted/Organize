@@ -47,7 +47,7 @@ struct DetailsView: View {
             case false:
                 TabView {
                     // Item Selection Detail
-                    if !appModel.itemsListSelectionIDs.isEmpty {
+                    if !appModel.itemsListSelectionIDs.isEmpty || appModel.storageListSelectionsIDs.count > 1 {
                         ItemView()
                             .tabItem {
                                 Label("Item", systemImage: "cube")

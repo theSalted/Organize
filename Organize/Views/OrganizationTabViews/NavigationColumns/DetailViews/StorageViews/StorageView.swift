@@ -38,11 +38,16 @@ struct StorageView: View {
                     systemImage: "archivebox",
                     description: "Select one or multiple storages to get started.".inText)
             case 1: // Single Item selected
-                SingleStorageDetailView(selectedStorages.first!).navigationTitle(title)
+                let theSelectedStorage = selectedStorages.first!
+                SingleStorageDetailView(theSelectedStorage)
+                    .navigationTitle(title)
+                    .tint(theSelectedStorage.color)
             case 2...: // Multiple Item selected
                 ScrollView {
-                    MetaGridView(selectedStorages).padding()
-                }.navigationTitle(title)
+                    MetaGridView(selectedStorages)
+                        .padding()
+                }
+                .navigationTitle(title)
             default:
                 ContentUnavailableView(
                     "Something Went Wrong...",

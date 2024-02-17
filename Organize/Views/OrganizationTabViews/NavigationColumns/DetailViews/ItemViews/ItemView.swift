@@ -10,22 +10,39 @@ import SwiftData
 
 struct ItemView: View {
     @Environment(AppViewModel.self) private var appModel
+    @Query private var storages: [Storage]
     @Query private var items: [Item]
     
+    var selectedStorages: [Storage] {
+        storages.filter { appModel.storageListSelectionsIDs.contains($0.id)}
+    }
+    var interpretedFromStoragesItemsList: [Item] {
+        return items.filter { item in
+            guard let placement = item.storage else {
+                return false
+            }
+            return selectedStorages.contains(placement)
+        }
+    }
     var selectedItems: [Item] {
         items.filter { appModel.itemsListSelectionIDs.contains($0.id) }
     }
-    
+    var isMultipleStoragesSelected: Bool {
+        return appModel.storageListSelectionsIDs.count > 1
+    }
     var title: String {
+        if isMultipleStoragesSelected {
+            return "Items In Selected \(selectedStorages.count) Storages"
+        }
         switch selectedItems.count {
         case 1:
-            selectedItems.first?.name ?? "Item"
+            return selectedItems.first?.name ?? "Item"
         case 2:
-            "\(selectedItems[0].name) and \(selectedItems[1].name) Items"
+            return "\(selectedItems[0].name) and \(selectedItems[1].name) Items"
         case 3...:
-            "\(selectedItems[0].name) and \(selectedItems.count - 1) More Items"
+            return "\(selectedItems[0].name) and \(selectedItems.count - 1) More Items"
         default:
-            "Item"
+            return "Item"
         }
     }
     
@@ -33,16 +50,32 @@ struct ItemView: View {
         VStack {
             switch selectedItems.count {
             case 0:
-                ContentUnavailableView(
-                    "Select an Item", 
-                    systemImage: "cube",
-                    description: "Select one or more items to get started".inText)
+                if isMultipleStoragesSelected {
+                    if interpretedFromStoragesItemsList.count > 1 {
+                        ScrollView {
+                            MetaGridView(interpretedFromStoragesItemsList)
+                                .padding()
+                        }.navigationTitle(title)
+                    } else {
+                        ContentUnavailableView("No Items in Selected Storages", systemImage: "cube", description: "Create a item in one of your storage first".inText)
+                    }
+                } else {
+                    ContentUnavailableView(
+                        "Select an Item",
+                        systemImage: "cube",
+                        description: "Select one or more items to get started".inText)
+                }
             case 1:
-                SingleItemDetailView(selectedItems.first!).navigationTitle(title)
+                let theSelectedItem = selectedItems.first!
+                SingleItemDetailView(theSelectedItem)
+                    .navigationTitle(title)
+                    .tint(theSelectedItem.color)
             case 2...:
                 ScrollView {
-                    MetaGridView(selectedItems).padding()
-                }.navigationTitle(title)
+                    MetaGridView(selectedItems)
+                        .padding()
+                }
+                .navigationTitle(title)
             default:
                 ContentUnavailableView(
                     "Something Went Wrong...",

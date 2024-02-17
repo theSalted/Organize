@@ -104,15 +104,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>38</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>33</string>
+					<string>34</string>
 					<key>StartingColumnNumber</key>
-					<string>38</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
 					<string>33</string>
 					<key>Timestamp</key>
-					<string>729800931.516893</string>
+					<string>729874150.833233</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -128,15 +128,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>        // TODO: SwiftUI bug Page Indicator TabView page style lightmode workaround
+</string>
 				<key>leading</key>
 				<string>    
     init() {
-        // TODO: SwiftUI bug Page Indi</string>
+</string>
 				<key>trailing</key>
-				<string>cator TabView page style lightmode workaround
-        // PageIndicator of TabViewStyle don't adopt to lightmode for some reason
+				<string>        // PageIndicator of TabViewStyle don't adopt to lightmode for some reason
         // manual implementation for lightmode
+        // For currentPageIndicatorTintColor I choose .label, but .tint also works
 </string>
 			</dict>
 			<key>type</key>

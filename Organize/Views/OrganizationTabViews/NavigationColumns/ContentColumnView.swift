@@ -100,6 +100,7 @@ struct ContentColumnView: View {
                     .sensoryFeedback(.success, trigger: showCreateForm)
                 }
             }
+            .tint(selectedSpaces.first?.color ?? .accent)
             .overlay {
                 // Placeholder View when space don't have any storage
                 if storagesList.isEmpty {
