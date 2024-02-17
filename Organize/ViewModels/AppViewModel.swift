@@ -7,33 +7,48 @@
 
 import Foundation
 import Observation
+import SwiftUI
 
 @Observable
 class AppViewModel {
-    var tabViewSelection:           TabViewTag =        .storage
-    var spaceListSelectionIDs:      Set<Space.ID> =     []
-    var storageListSelectionsIDs:   Set<Storage.ID> =   []
-    var itemsListSelectionIDs:      Set<Item.ID> =      []
+    var tabViewSelection:           TabViewTag =        .organize
+    
+    // MARK: Selection IDs for lists
+    private var _spaceListSelectionIDs: Set<Space.ID> = []
+    var spaceListSelectionIDs: Set<Space.ID> {
+        get { _spaceListSelectionIDs }
+        set { 
+            _spaceListSelectionIDs = newValue
+            withAnimation {
+                storageListSelectionsIDs = []
+                itemsListSelectionIDs = []
+            }
+        }
+    }
+    
+    private var _storageListSelectionsIDs: Set<Storage.ID> = []
+    var storageListSelectionsIDs: Set<Storage.ID> {
+        get { _storageListSelectionsIDs }
+        set { 
+            _storageListSelectionsIDs = newValue
+            withAnimation {
+                itemsListSelectionIDs = []
+            }
+        }
+    }
+    
+    private var _itemsListSelectionIDs: Set<Item.ID> = []
+    var itemsListSelectionIDs: Set<Item.ID> {
+        get { _itemsListSelectionIDs }
+        set { _itemsListSelectionIDs = newValue }
+    }
+    
     var detailSelections:           Set<AnyHashable> =  []
     
     enum TabViewTag: String, CaseIterable {
-        case storage, scan
+        case organize, scan
     }
     enum DetailsViewCategory  {
         case space, storage, item
-    }
-    
-    // Utilities
-    static func getListFromSearchTerm<T: Meta>(
-        _ targets: [T],
-        searchText: String
-    ) -> [T] {
-        if searchText.isEmpty {
-            return targets
-        } else {
-            return targets.filter { target in
-                target.name.localizedCaseInsensitiveContains(searchText)
-            }
-        }
     }
 }

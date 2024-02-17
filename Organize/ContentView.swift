@@ -25,7 +25,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Organize", systemImage: "circle.grid.3x3.fill")
                 }
-                .tag(AppViewModel.TabViewTag.storage)
+                .tag(AppViewModel.TabViewTag.organize)
                 .toolbar(
                     verticalSizeClass == .compact ?
                         .hidden : .automatic,
