@@ -112,13 +112,10 @@ extension CaptureOverlayView {
         @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
 
         var body: some View {
-            Button(action: {
+            Button(LocalizedString.next) {
                 logger.log("\(LocalizedString.next) button clicked!")
                 objectCaptureModel.setPreviewModelState(shown: true)
-            }, label: {
-                Text(LocalizedString.next)
-//                    .modifier(VisualEffectRoundedCorner())
-            })
+            }
         }
     }
 
@@ -127,22 +124,19 @@ extension CaptureOverlayView {
         var session: ObjectCaptureSession
 
         var body: some View {
-            Button(
-                action: {
-                    session.requestImageCapture()
-                },
-                label: {
-                    if session.canRequestImageCapture {
-                        Text(Image(systemName: "button.programmable"))
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                    } else {
-                        Text(Image(systemName: "button.programmable"))
-                            .font(.largeTitle)
-                            .foregroundColor(.gray)
-                    }
+            Button {
+                session.requestImageCapture()
+            } label: {
+                if session.canRequestImageCapture {
+                    Text(Image(systemName: "button.programmable"))
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                } else {
+                    Text(Image(systemName: "button.programmable"))
+                        .font(.largeTitle)
+                        .foregroundColor(.gray)
                 }
-            )
+            }
             .disabled(!session.canRequestImageCapture)
         }
     }
