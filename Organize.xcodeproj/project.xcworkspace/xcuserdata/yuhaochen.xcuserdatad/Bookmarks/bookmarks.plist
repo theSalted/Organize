@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>41</string>
+					<string>42</string>
 					<key>StartingColumnNumber</key>
-					<string>21</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>40</string>
+					<string>41</string>
 					<key>Timestamp</key>
-					<string>729716000.064808</string>
+					<string>729882179.277957</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,12 +34,12 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>
+				<string>                    }
 </string>
 				<key>leading</key>
 				<string>                        // Present create item form on dismiss of reconstruction view
                         captureViewModel.showCreateForm = true
-                    }</string>
+</string>
 				<key>trailing</key>
 				<string>                } content: {
                     if let folderManager = objectCaptureModel.scanFolderManager {
@@ -149,15 +149,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>47</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>27</string>
+					<string>28</string>
 					<key>StartingColumnNumber</key>
-					<string>47</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
 					<string>27</string>
 					<key>Timestamp</key>
-					<string>729804306.702902</string>
+					<string>729884771.886156</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -173,15 +173,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>        // TODO: Improve needed for the match algorithm in this computed property
+</string>
 				<key>leading</key>
 				<string>    }
     private var storagesList: [Storage] {
-        // TODO: Improve needed for the match a</string>
+</string>
 				<key>trailing</key>
-				<string>lgorithm in this computed property
-        // -[ ] Better fuzzy match algorithm
+				<string>        // -[ ] Better fuzzy match algorithm
         // -[ ] Implementation in generic of string extension
+        return storages.filter { storage in
 </string>
 			</dict>
 			<key>type</key>
@@ -195,13 +196,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>28</string>
+					<string>29</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>27</string>
+					<string>28</string>
 					<key>Timestamp</key>
-					<string>729804629.64656</string>
+					<string>729882206.10893</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>

@@ -31,6 +31,7 @@ struct ContentView: View {
                         .hidden : .automatic,
                     for: .tabBar)
                 .toolbarBackground(.hidden, for: .tabBar)
+                .environment(captureViewModel)
             #if !targetEnvironment(simulator)
             CaptureView()
                 .sheet(isPresented: $captureViewModel.showReconstructionView) {
@@ -45,7 +46,7 @@ struct ContentView: View {
                             outputFile: folderManager
                                 .modelsFolder
                                 .appendingPathComponent(
-                                    objectCaptureModel.modelName +
+                                    captureViewModel.item.name +
                                     ".usdz"
                                 )
                         )
@@ -73,7 +74,6 @@ struct ContentView: View {
             isPresented: $captureViewModel.showErrorAlert,
             actions: {
                 Button("OK") {
-//                    ContentView.logger.log("Calling restart...")
                     logger.info("Restarting Capture")
                     objectCaptureModel.state = .restart
                 }
@@ -90,7 +90,6 @@ struct ContentView: View {
                     newState == .reconstructing ||
                     newState == .viewing
             }
-            
         }
         #endif
         .environment(appModel)

@@ -61,8 +61,11 @@ struct CubicObjectCaptureView: View {
                 }
                 modelContext.insert(captureViewModel.item)
                 try? modelContext.save()
+                captureViewModel.item = Item(name: "My Item") 
             }
             .task {
+                #warning("Need Remove")
+//                captureViewModel.item.name = objectCaptureModel.modelName
                 if let storage = selectedStorages.first {
                     storage.items.append(captureViewModel.item)
                 }

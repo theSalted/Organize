@@ -11,6 +11,8 @@ import RealityKit
 #if !targetEnvironment(simulator)
 struct CaptureView: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
+    @Environment(CaptureViewModel.self) private var captureViewModel
+    
     var showProgressView: Bool {
         objectCaptureModel.state == .completed ||
         objectCaptureModel.state == .restart ||
@@ -33,6 +35,7 @@ struct CaptureView: View {
     
     var body: some View {
         NavigationStack {
+            @Bindable var captureViewModel = captureViewModel
             VStack {
                 switch viewState {
                 case .capturing:
@@ -41,7 +44,7 @@ struct CaptureView: View {
                     CubicObjectCaptureView(session: objectCaptureModel.objectCaptureSession!)
                         .toolbarBackground(.visible, for: .navigationBar)
                         .toolbarColorScheme(.dark, for: .navigationBar)
-                        .navigationTitle($objectCaptureModel.modelName)
+                        .navigationTitle($captureViewModel.item.name)
                         .navigationBarTitleDisplayMode(.inline)
                 case .progressing:
                     CircularProgressView()

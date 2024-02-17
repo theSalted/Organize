@@ -12,6 +12,7 @@ struct SingleStorageDetailView: View {
     // Environments and SwiftData Queries
     @Environment(\.modelContext) private var modelContext
     @Environment(AppViewModel.self) private var appModel
+    @Environment(CaptureViewModel.self) private var captureViewModel
     @Query private var storages: [Storage]
     @Query private var items: [Item]
     
@@ -116,6 +117,12 @@ struct SingleStorageDetailView: View {
             FormEditView(target, mode: .create) {
                 withAnimation {
                     showCreateForm = false
+                    appModel.tabViewSelection = .scan
+                    captureViewModel.item = item
+                }
+            } cancel: {
+                withAnimation {
+                    showCreateForm = false
                 }
             } confirm: {
                 withAnimation {
@@ -159,4 +166,5 @@ struct SingleStorageDetailView: View {
 #Preview {
     SingleStorageDetailView(Storage(name: "My Storage"))
         .environment(AppViewModel())
+        .environment(CaptureViewModel())
 }

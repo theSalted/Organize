@@ -179,7 +179,7 @@ struct ReconstructionProgressView: View {
     }
     
     private func createCapturedObject() {
-        let object = CapturedObject(objectCaptureModel.modelName, at: objectCaptureModel.scanFolderManager.relativeRoot)
+        let object = CapturedObject(captureViewModel.item.name, at: objectCaptureModel.scanFolderManager.relativeRoot)
         
         // Generate Preview images
         if let modelURL = object.modelURL {

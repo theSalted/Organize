@@ -45,7 +45,7 @@ class ObjectCaptureDataModel: ObservableObject, Identifiable {
     
     /// The folder set when a new capture session starts.
     private(set) var scanFolderManager: CaptureFolderManager!
-    @Published var modelName = "untitled"
+//    @Published var modelName = "Untitled"
     @Published var messageList = TimedMessageList()
     
     @Published var state: ModelState = .notSet {

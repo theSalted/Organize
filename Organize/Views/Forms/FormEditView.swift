@@ -44,6 +44,7 @@ struct FormEditView: View {
     }
     var cancelationAction: ButtonAction?
     var confirmationAction: ButtonAction?
+    var addScanAction: ButtonAction?
     
     // MARK: Inits
     init(
@@ -58,6 +59,20 @@ struct FormEditView: View {
         self.confirmationAction = confirmationAction
     }
     
+    init(
+        _ target: Binding<any Meta>,
+        mode: FormMode = .add,
+        addScan addScanAction: @escaping ButtonAction,
+        cancel cancelationAction: @escaping ButtonAction,
+        confirm confirmationAction: @escaping ButtonAction
+    ) {
+        self._target = target
+        self.mode = mode
+        self.addScanAction = addScanAction
+        self.cancelationAction = cancelationAction
+        self.confirmationAction = confirmationAction
+    }
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -66,12 +81,12 @@ struct FormEditView: View {
                 
                 // MARK: Add Scan Button
                 if let item = target as? Item,
-                    item.scan === nil {
+                   let addScanAction = addScanAction,
+                   item.scan == nil {
                     Section {
                         Button {
                             withAnimation {
-                                #warning("Need a new button action for add scan")
-//                                cancelationAction?()
+                                addScanAction()
                             }
                         } label: {
                             Label {

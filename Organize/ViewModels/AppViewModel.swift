@@ -11,24 +11,25 @@ import SwiftUI
 
 @Observable
 class AppViewModel {
-    var tabViewSelection:           TabViewTag =        .organize
+    var tabViewSelection: TabViewTag = .organize
     
     // MARK: Selection IDs for lists
     var spaceListSelectionIDs: Set<Space.ID> = [] {
         didSet { storageListSelectionsIDs = [] }
     }
+    
     var storageListSelectionsIDs: Set<Storage.ID> = [] {
         didSet { itemsListSelectionIDs = [] }
     }
-    var itemsListSelectionIDs: Set<Item.ID> = []
-    var detailSelections: Set<AnyHashable> =  []
     
-    init() {
-    }
+    var itemsListSelectionIDs: Set<Item.ID> = []
+    
+    var detailSelections: Set<AnyHashable> = []
     
     enum TabViewTag: String, CaseIterable {
         case organize, scan
     }
+    
     enum DetailsViewCategory  {
         case space, storage, item
     }

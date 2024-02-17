@@ -44,7 +44,7 @@ struct ContentColumnView: View {
         } else if selectedSpaces.count == 1 {
             selectedSpaces.first?.name ?? "Untitled"
         } else {
-            "\(selectedSpaces.count) Selected"
+            "\(selectedSpaces.count) Selected Spaces"
         }
     }
     

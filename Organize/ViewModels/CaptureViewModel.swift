@@ -12,6 +12,6 @@ import Observation
 class CaptureViewModel {
     var showErrorAlert: Bool = false
     var showReconstructionView: Bool = false
-    var item: Item = Item(name: "Untitled")
+    var item: Item = Item(name: "My Item")
     var showCreateForm = false
 }
