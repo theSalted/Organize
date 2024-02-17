@@ -15,7 +15,20 @@ struct SingleItemDetailView: View {
     }
     
     var body: some View {
-        MetaInfoView(item)
+        List {
+            Section {
+                MetaPrimitiveView(item, title: "Information")
+            }
+            
+            if let previewImage = item.scan?.previewImage {
+                Section {
+                    Image(uiImage: previewImage)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+            }
+        }
     }
 }
 

@@ -68,8 +68,8 @@ struct ItemView: View {
             case 1:
                 let theSelectedItem = selectedItems.first!
                 SingleItemDetailView(theSelectedItem)
-                    .navigationTitle(title)
-                    .tint(theSelectedItem.color)
+                .navigationTitle(title)
+                .tint(theSelectedItem.color)
             case 2...:
                 ScrollView {
                     MetaGridView(selectedItems)
