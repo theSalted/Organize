@@ -14,36 +14,17 @@ class AppViewModel {
     var tabViewSelection:           TabViewTag =        .organize
     
     // MARK: Selection IDs for lists
-    private var _spaceListSelectionIDs: Set<Space.ID> = []
-    var spaceListSelectionIDs: Set<Space.ID> {
-        get { _spaceListSelectionIDs }
-        set { 
-            _spaceListSelectionIDs = newValue
-            withAnimation {
-                storageListSelectionsIDs = []
-                itemsListSelectionIDs = []
-            }
-        }
+    var spaceListSelectionIDs: Set<Space.ID> = [] {
+        didSet { storageListSelectionsIDs = [] }
     }
-    
-    private var _storageListSelectionsIDs: Set<Storage.ID> = []
-    var storageListSelectionsIDs: Set<Storage.ID> {
-        get { _storageListSelectionsIDs }
-        set { 
-            _storageListSelectionsIDs = newValue
-            withAnimation {
-                itemsListSelectionIDs = []
-            }
-        }
+    var storageListSelectionsIDs: Set<Storage.ID> = [] {
+        didSet { itemsListSelectionIDs = [] }
     }
+    var itemsListSelectionIDs: Set<Item.ID> = []
+    var detailSelections: Set<AnyHashable> =  []
     
-    private var _itemsListSelectionIDs: Set<Item.ID> = []
-    var itemsListSelectionIDs: Set<Item.ID> {
-        get { _itemsListSelectionIDs }
-        set { _itemsListSelectionIDs = newValue }
+    init() {
     }
-    
-    var detailSelections:           Set<AnyHashable> =  []
     
     enum TabViewTag: String, CaseIterable {
         case organize, scan
