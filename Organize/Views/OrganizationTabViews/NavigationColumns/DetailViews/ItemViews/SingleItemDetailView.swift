@@ -21,15 +21,6 @@ struct SingleItemDetailView: View {
                 MetaPrimitiveView(item, title: "Information")
             }
             
-            if let previewImage = item.scan?.previewImage {
-                Section {
-                    Image(uiImage: previewImage)
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                }
-            }
-            
             if let modelNode = item.scan?.modelNode {
                 let scene: SCNScene = {
                     let scene = SCNScene()
@@ -42,6 +33,15 @@ struct SingleItemDetailView: View {
                           options: [.allowsCameraControl, .autoenablesDefaultLighting],
                           antialiasingMode: .multisampling2X)
                 .frame(height: 300)
+            }
+            
+            if let previewImage = item.scan?.previewImage {
+                Section {
+                    Image(uiImage: previewImage)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
             }
         }
     }
