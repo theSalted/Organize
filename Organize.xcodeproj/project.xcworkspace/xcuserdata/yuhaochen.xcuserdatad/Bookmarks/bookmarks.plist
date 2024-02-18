@@ -233,6 +233,228 @@
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>47</string>
+					<key>EndingLineNumber</key>
+					<string>11</string>
+					<key>StartingColumnNumber</key>
+					<string>47</string>
+					<key>StartingLineNumber</key>
+					<string>11</string>
+					<key>Timestamp</key>
+					<string>729975624.3859791</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/ViewModels/SpaceScanViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>import RoomPlan
+
+// TODO: Upgrade to using observation framework</string>
+				<key>trailing</key>
+				<string>
+class SpaceScanViewModel: ObservableObject {
+    enum Action {
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>108</string>
+					<key>EndingLineNumber</key>
+					<string>19</string>
+					<key>StartingColumnNumber</key>
+					<string>108</string>
+					<key>StartingLineNumber</key>
+					<string>19</string>
+					<key>Timestamp</key>
+					<string>729975764.996453</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/ViewModels/SpaceScanViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>    }
+    
+    // TODO: Is Combine really necessary here? I dislike an observer pattern sticking inside of MVVM pattern</string>
+				<key>trailing</key>
+				<string>
+    // TODO: These are really data models, URLs should be using the same filemanager system CapturedObject is using
+    var actions = PassthroughSubject&lt;Action, Never&gt;();
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>108</string>
+					<key>EndingLineNumber</key>
+					<string>20</string>
+					<key>StartingColumnNumber</key>
+					<string>108</string>
+					<key>StartingLineNumber</key>
+					<string>20</string>
+					<key>Timestamp</key>
+					<string>729975769.0921</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/ViewModels/SpaceScanViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>    
+    // TODO: Is Combine really necessary here? I dislike an observer pattern sticking inside of MVVM pattern
+    // TODO: These are really data models, URLs should be using the same filemanager system CapturedObject i</string>
+				<key>trailing</key>
+				<string>s using
+    var actions = PassthroughSubject&lt;Action, Never&gt;();
+    var exportURL = FileManager.default.temporaryDirectory.appending(path: "ScannedSpace.usdz")
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>12</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>11</string>
+					<key>Timestamp</key>
+					<string>729977009.093461</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/Extensions/CapturedRoom+Equatable.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>// TODO: May need a better way, this is extremely sketchy way in so many ways. I implement equitable here to solve a very specific problem of matching two Rooms that have extremely similar coordinates. But extremely similar coordinator of all objects shouldn't mean the CapturedRooms are equal. And other properties is also not consider here.
+</string>
+				<key>leading</key>
+				<string>import OSLog
+
+</string>
+				<key>trailing</key>
+				<string>extension CapturedRoom: Equatable {
+    public static func == (lhs: CapturedRoom, rhs: CapturedRoom) -&gt; Bool {
+        logger.warning("Equatable implementation for CaptureRoom is very flawed at this moment because it only compare objects of two CapturedRooms without taking account of other properties. And Object's implementation is also flawed")
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>12</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>11</string>
+					<key>Timestamp</key>
+					<string>729976769.160261</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/Extensions/CapturedRoom.Object+Equatable.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>// TODO: May need a better way, this is extremely sketchy way in so many ways. I implement equitable here to solve a very specific problem of matching two Rooms that have extremely similar coordinates. But extremely similar coordinator of all objects shouldn't mean the CapturedRooms are equal. And other properties is also not consider here.
+</string>
+				<key>leading</key>
+				<string>import OSLog
+
+</string>
+				<key>trailing</key>
+				<string>extension CapturedRoom.Object: Equatable {
+    @available(*, deprecated, message: "This is a very flawed implementation of equatable")
+    public static func == (lhs: CapturedRoom.Object, rhs: CapturedRoom.Object) -&gt; Bool {
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
 	</array>
 </dict>
 </plist>
