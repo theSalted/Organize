@@ -23,9 +23,10 @@ struct MetaGridView<T>: View where T: Meta{
                         SingleItemDetailView(item)
                             .navigationTitle(item.name)
                             .tint(item.color)
+                    } else {
+                        MetaInfoView(target)
+                            .navigationTitle(target.name)
                     }
-                    MetaInfoView(target)
-                        .navigationTitle(target.name)
                 } label: {
                     let color = target.color
                     VStack {
