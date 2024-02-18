@@ -53,13 +53,13 @@ struct ContentView: View {
                     }
                 }
                 .tabItem {
-                    Label("Scan", systemImage: "cube.fill")
+                    Label("Capture", systemImage: "cube.fill")
                 }
                 .toolbar(
                     verticalSizeClass == .compact ? 
                         .hidden : .automatic,
                     for: .tabBar)
-                .tag(AppViewModel.TabViewTag.scan)
+                .tag(AppViewModel.TabViewTag.capture)
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
                 .environmentObject(objectCaptureModel)

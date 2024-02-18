@@ -27,7 +27,7 @@ class AppViewModel {
     var detailSelections: Set<AnyHashable> = []
     
     enum TabViewTag: String, CaseIterable {
-        case organize, scan
+        case organize, capture
     }
     
     enum DetailsViewCategory  {

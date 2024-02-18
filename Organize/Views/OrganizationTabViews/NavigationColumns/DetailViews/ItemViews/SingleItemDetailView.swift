@@ -21,7 +21,7 @@ struct SingleItemDetailView: View {
                 MetaPrimitiveView(item, title: "Information")
             }
             
-            if let modelNode = item.scan?.modelNode {
+            if let modelNode = item.capture?.modelNode {
                 let scene: SCNScene = {
                     let scene = SCNScene()
                     scene.background.contents = UIColor.secondarySystemGroupedBackground
@@ -35,7 +35,7 @@ struct SingleItemDetailView: View {
                 .frame(height: 300)
             }
             
-            if let previewImage = item.scan?.previewImage {
+            if let previewImage = item.capture?.previewImage {
                 Section {
                     Image(uiImage: previewImage)
                         .resizable()

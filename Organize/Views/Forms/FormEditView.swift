@@ -82,7 +82,7 @@ struct FormEditView: View {
                 // MARK: Add Scan Button
                 if let item = target as? Item,
                    let addScanAction = addScanAction,
-                   item.scan == nil {
+                   item.capture == nil {
                     Section {
                         Button {
                             withAnimation {
@@ -90,7 +90,7 @@ struct FormEditView: View {
                             }
                         } label: {
                             Label {
-                                Text("Add a Scan")
+                                Text("Add a Capture")
                             } icon: {
                                 Image(systemName: "cube.fill")
                                     .resizable()

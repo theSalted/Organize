@@ -117,7 +117,7 @@ struct SingleStorageDetailView: View {
             FormEditView(target, mode: .create) {
                 withAnimation {
                     showCreateForm = false
-                    appModel.tabViewSelection = .scan
+                    appModel.tabViewSelection = .capture
                     captureViewModel.item = item
                 }
             } cancel: {

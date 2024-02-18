@@ -203,7 +203,7 @@ struct ReconstructionProgressView: View {
         }
         
         withAnimation {
-            captureViewModel.item.scan = object
+            captureViewModel.item.capture = object
         }
         
         modelContext.insert(object)
