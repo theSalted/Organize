@@ -6,13 +6,26 @@
 //
 
 import SwiftUI
+import OSLog
 
 struct SpaceScanView: View {
+    @EnvironmentObject var spaceScanViewModel: SpaceScanViewModel
     var body: some View {
-        Text("Space Scan View")
+        NavigationStack {
+            RoomCaptureRepresentableView(viewModel: spaceScanViewModel)
+                .onAppear {
+                    spaceScanViewModel.actions.send(.startSession)
+                }
+                .onDisappear {
+                    #warning("Need a pause")
+                }
+        }
     }
 }
 
 #Preview {
     SpaceScanView()
+        .environmentObject(SpaceScanViewModel())
 }
+
+fileprivate let logger = Logger(subsystem: OrganizeApp.bundleId, category: "SpaceScanViewModel")

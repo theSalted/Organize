@@ -62,7 +62,7 @@ class RoomCaptureViewController: UIViewController {
     }
     
     private func exportModel() {
-        exportModel()
+        exportMetadata()
         do {
             try viewModel.capturedRoom?.export(
                 to: viewModel.exportURL,

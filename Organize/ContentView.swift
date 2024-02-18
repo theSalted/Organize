@@ -14,6 +14,7 @@ struct ContentView: View {
     #if !targetEnvironment(simulator)
     @StateObject var objectCaptureModel: ObjectCaptureDataModel = ObjectCaptureDataModel.instance
     #endif
+    @StateObject var spaceScanViewModel = SpaceScanViewModel()
     @State var appModel = AppViewModel()
     @State var captureViewModel = CaptureViewModel()
     private var logger = Logger(
@@ -69,6 +70,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Scan", systemImage: "square.split.bottomrightquarter.fill")
                 }
+                .environmentObject(spaceScanViewModel)
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
         }
