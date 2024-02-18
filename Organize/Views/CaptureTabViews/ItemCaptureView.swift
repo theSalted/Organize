@@ -9,7 +9,7 @@ import SwiftUI
 import RealityKit
 
 #if !targetEnvironment(simulator)
-struct CaptureView: View {
+struct ItemCaptureView: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
     @Environment(CaptureViewModel.self) private var captureViewModel
     
@@ -66,7 +66,7 @@ struct CaptureView: View {
     }
 }
 
-extension CaptureView {
+extension ItemCaptureView {
     enum CaptureViewState {
         case capturing, progressing, unsupportedDevice, errorState
     }
