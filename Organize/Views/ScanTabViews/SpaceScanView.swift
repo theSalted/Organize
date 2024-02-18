@@ -5,4 +5,14 @@
 //  Created by Yuhao Chen on 2/19/24.
 //
 
-import Foundation
+import SwiftUI
+
+struct SpaceScanView: View {
+    var body: some View {
+        Text("Space Scan View")
+    }
+}
+
+#Preview {
+    SpaceScanView()
+}

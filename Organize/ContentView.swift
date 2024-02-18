@@ -33,7 +33,7 @@ struct ContentView: View {
                 .toolbarBackground(.hidden, for: .tabBar)
                 .environment(captureViewModel)
             #if !targetEnvironment(simulator)
-            CaptureView()
+            ItemCaptureView()
                 .sheet(isPresented: $captureViewModel.showReconstructionView) {
                     // TODO: We need a better implementation, but I think that would trigger an entire rewrite
                     withAnimation {
@@ -65,6 +65,12 @@ struct ContentView: View {
                 .environmentObject(objectCaptureModel)
                 .environment(captureViewModel)
             #endif
+            SpaceScanView()
+                .tabItem {
+                    Label("Scan", systemImage: "square.split.bottomrightquarter.fill")
+                }
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarColorScheme(.dark, for: .tabBar)
         }
         #if !targetEnvironment(simulator)
         .alert(
