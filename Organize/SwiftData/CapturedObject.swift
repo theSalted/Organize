@@ -10,6 +10,7 @@ import OSLog
 import QuickLookThumbnailing
 import SwiftData
 import UIKit
+import SceneKit.ModelIO
 
 @Model
 class CapturedObject: Identifiable, ModelDirectory {
@@ -124,6 +125,18 @@ class CapturedObject: Identifiable, ModelDirectory {
             
             return UIImage(data: data)
         }
+    }
+    
+    @Attribute(.ephemeral) var modelNode: SCNNode? {
+        guard let modelURL else {
+            return nil
+        }
+        let asset = MDLAsset(url: modelURL)
+        asset.loadTextures()
+        let object = asset.object(at: 0)
+        let node = SCNNode(mdlObject: object)
+        
+        return node
     }
     
     

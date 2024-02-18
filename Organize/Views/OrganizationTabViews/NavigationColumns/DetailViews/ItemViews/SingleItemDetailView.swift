@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SceneKit
 
 struct SingleItemDetailView: View {
     var item: Item
@@ -27,6 +28,20 @@ struct SingleItemDetailView: View {
                         .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
+            }
+            
+            if let modelNode = item.scan?.modelNode {
+                let scene: SCNScene = {
+                    let scene = SCNScene()
+                    scene.background.contents = UIColor.secondarySystemGroupedBackground
+                    scene.rootNode.addChildNode(modelNode)
+                    return scene
+                }()
+                
+                SceneView(scene: scene,
+                          options: [.allowsCameraControl, .autoenablesDefaultLighting],
+                          antialiasingMode: .multisampling2X)
+                .frame(height: 300)
             }
         }
     }
