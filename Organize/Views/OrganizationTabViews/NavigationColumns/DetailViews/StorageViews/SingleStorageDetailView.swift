@@ -106,19 +106,17 @@ struct SingleStorageDetailView: View {
         }
         .sheet(isPresented: $showCreateForm) {
             let storage = selectedStorages.first
-            var item = Item(name: "My Item", at: storage)
+            @State var item = Item(name: "My Item")
             
-            let target = Binding {
-                item as (any Meta)
-            } set: { newItemValue in
-                item = newItemValue as! Item
-            }
-            
-            FormEditView(target, mode: .create) {
+            FormEditView(
+                $item, mode: .create,
+                unsafePlacementSelectionID: storage?.id
+            ) { storageSelectionID in
                 withAnimation {
                     showCreateForm = false
                     appModel.tabViewSelection = .capture
                     captureViewModel.item = item
+                    captureViewModel.storageSelectionID = storageSelectionID
                 }
             } cancel: {
                 withAnimation {

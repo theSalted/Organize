@@ -67,11 +67,10 @@ class Item : Identifiable, Meta {
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
     }
     
-    init(name: String = "Untitled", symbol: String = "cube.fill", at storage: Storage? = nil) {
+    init(name: String = "Untitled", symbol: String = "cube.fill") {
         self.name = name
         self.createdAt = Date.now
         self.id = UUID()
-        self.storage = storage
         self.pattern = PatternDesign.getRandomDesign()
         self._colorComponents = ColorComponents.fromColor(templateColors.randomElement(or: .accent))
         self.symbol = symbol
@@ -95,3 +94,4 @@ class Item : Identifiable, Meta {
         }
     }
 }
+

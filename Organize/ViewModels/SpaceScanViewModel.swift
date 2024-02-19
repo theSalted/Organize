@@ -20,7 +20,7 @@ class SpaceScanViewModel: ObservableObject {
     // TODO: Is Combine really necessary here? I dislike an observer pattern sticking inside of MVVM pattern
     // TODO: These are really data models, URLs should be using the same filemanager system CapturedObject is using
     var actions = PassthroughSubject<Action, Never>();
-    var exportURL = FileManager.default.temporaryDirectory.appending(path: "ScannedSpace.usdz")
+    let exportURL = FileManager.default.temporaryDirectory.appending(path: "ScannedSpace.usdz")
     let metadataURL = FileManager.default.temporaryDirectory.appending(path: "ScannedSpace.json")
     
     @Published var canExport = false

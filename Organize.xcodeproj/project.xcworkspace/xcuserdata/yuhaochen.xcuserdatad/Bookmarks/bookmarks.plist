@@ -359,7 +359,7 @@ class SpaceScanViewModel: ObservableObject {
 				<key>trailing</key>
 				<string>s using
     var actions = PassthroughSubject&lt;Action, Never&gt;();
-    var exportURL = FileManager.default.temporaryDirectory.appending(path: "ScannedSpace.usdz")
+    let exportURL = FileManager.default.temporaryDirectory.appending(path: "ScannedSpace.usdz")
 </string>
 			</dict>
 			<key>type</key>
@@ -450,6 +450,51 @@ class SpaceScanViewModel: ObservableObject {
 				<string>extension CapturedRoom.Object: Equatable {
     @available(*, deprecated, message: "This is a very flawed implementation of equatable")
     public static func == (lhs: CapturedRoom.Object, rhs: CapturedRoom.Object) -&gt; Bool {
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>30</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>29</string>
+					<key>Timestamp</key>
+					<string>730019319.553911</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/Helpers/ColorComponents.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>// TODO: Improve how this is implemented, I use the ApproximateEqualTo as a temporary fix. If we strictly compare the RGB values somehow sometimes same color doesn't match. Using an approximate equal with an arbitrary tolerance of 1e-8 seems to fix the issue in the **couple** colors I tested. **NO GUARANTEE** this works for all color, **NO GUARANTEE** this doesn't mix up two colors. Checklist: 1) Investigate new ways to save color to SwiftData without using this ColorComponents workaround or any other workaround 2) Investigate why same color can have two different RGB values. Is it related how SwiftUI resolves Color for light/dark mode? If so, this issue is even more dangerous than it might appear right now. 3) If this deviation is something very innocent (e.g. inaccuracy in bits), figure out what is lowest tolerance threshold.
+</string>
+				<key>leading</key>
+				<string>}
+
+</string>
+				<key>trailing</key>
+				<string>extension ColorComponents: Equatable {
+//    @available(*, deprecated, message: "This is a temporary workaround implementation. Not a strict Equatable implementation. Use with caution.")
+    static func == (lhs: Self, rhs: Self) -&gt; Bool {
 </string>
 			</dict>
 			<key>type</key>

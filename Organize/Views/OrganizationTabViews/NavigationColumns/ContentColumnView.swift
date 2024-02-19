@@ -120,15 +120,12 @@ struct ContentColumnView: View {
             }
             .sheet(isPresented: $showCreateForm) {
                 let space = selectedSpaces.first
-                var storage = Storage(name: "My Storage", at: space)
+                @State var storage = Storage(name: "My Storage")                
                 
-                let target = Binding {
-                    storage as (any Meta)
-                } set: { newSpaceValue in
-                    storage = newSpaceValue as! Storage
-                }
-                
-                FormEditView(target, mode: .create) {
+                FormEditView(
+                    $storage, mode: .create,
+                    unsafePlacementSelectionID: space?.id
+                ) {
                     withAnimation {
                         showCreateForm = false
                     }

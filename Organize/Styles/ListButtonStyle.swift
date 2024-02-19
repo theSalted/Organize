@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ListButtonStyle: ButtonStyle {
-
-  func makeBody(configuration: Self.Configuration) -> some View {
-      configuration.label
-          .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-          .contentShape(Rectangle())
-          .foregroundColor(configuration.isPressed ? Color.white.opacity(0.5) : Color.white)  }
+    @Environment(\.isEnabled) private var isEnabled: Bool
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .contentShape(Rectangle())
+            .foregroundColor((configuration.isPressed || !isEnabled) ? Color.white.opacity(0.5) : Color.white)
+    }
 }

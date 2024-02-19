@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in closure #3 in SingleStorageDetailView.body.getter:SingleStorageDetailView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(Organize.Storage?)item._storage">
+            </PersistentString>
+            <PersistentString
+               value = "(Organize.Item._SwiftDataNoType?)item._storage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in SingleStorageDetailView.body.getter:SingleStorageDetailView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in FormEditView.body.getter:FormEditView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(Storage)item._storage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

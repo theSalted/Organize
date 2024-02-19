@@ -7,11 +7,22 @@
 
 import OSLog
 import SwiftUI
+import SwiftData
 
-struct FormEditView: View {
+struct FormEditView<T>: View where T: Meta  {
     typealias ButtonAction = () -> Void
+    typealias ButtonActionWithPlacementID = (UUID?) -> Void
     
-    @Binding var target: any Meta
+    @Environment(\.modelContext) private var modelContext
+    @Query var spaces: [Space]
+    @Query var storages: [Storage]
+    
+    @Binding var target: T
+    
+    @State private var spaceSelection: Space? = nil
+    @State private var storageSelection: Storage? = nil
+    /// UUID that will be used to finding matching
+    @State private var placementSelectionID: UUID?
     
     @State var isStyleDisclosureGroupExpanded = true
     
@@ -44,30 +55,35 @@ struct FormEditView: View {
     }
     var cancelationAction: ButtonAction?
     var confirmationAction: ButtonAction?
-    var addScanAction: ButtonAction?
+    var addScanAction: ButtonActionWithPlacementID?
     
     // MARK: Inits
     init(
-        _ target: Binding<any Meta>,
+        _ target: Binding<T>,
         mode: FormMode = .add,
+        unsafePlacementSelectionID placementSelectionID: UUID? = nil,
         cancel cancelationAction: @escaping ButtonAction,
         confirm confirmationAction: @escaping ButtonAction
     ) {
         self._target = target
         self.mode = mode
+        _placementSelectionID = State(initialValue: placementSelectionID)
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
     }
     
     init(
-        _ target: Binding<any Meta>,
+        _ target: Binding<T>,
         mode: FormMode = .add,
-        addScan addScanAction: @escaping ButtonAction,
+        unsafePlacementSelectionID placementSelectionID: UUID? = nil,
+        addScan addScanAction: @escaping ButtonActionWithPlacementID,
         cancel cancelationAction: @escaping ButtonAction,
         confirm confirmationAction: @escaping ButtonAction
     ) {
         self._target = target
         self.mode = mode
+        _placementSelectionID = State(initialValue: placementSelectionID)
+        print(self.placementSelectionID?.uuidString ?? "My Goddd")
         self.addScanAction = addScanAction
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
@@ -80,17 +96,17 @@ struct FormEditView: View {
                 Section { IconNameCardView(target) }
                 
                 // MARK: Add Scan Button
-                if let item = target as? Item,
-                   let addScanAction = addScanAction,
-                   item.capture == nil {
+                switch target {
+                case let item as Item:
                     Section {
                         Button {
                             withAnimation {
-                                addScanAction()
+                                addScanAction?(storageSelection?.id)
                             }
                         } label: {
                             Label {
-                                Text("Add a Capture")
+                                Text(item.capture == nil ? 
+                                     "Add a Capture" : "Replace Capture")
                             } icon: {
                                 Image(systemName: "cube.fill")
                                     .resizable()
@@ -102,24 +118,87 @@ struct FormEditView: View {
                         }
                         .listRowBackground(target.color)
                         .buttonStyle(ListButtonStyle())
+                        .disabled(addScanAction == nil)
+                        if item.capture != nil {
+                            
+                        }
                     }
+                default:
+                    EmptyView()
+                }
+
+                // MARK: Placement Picker
+                switch target {
+                case is Storage:
+                    Section {
+                        Picker(selection: $spaceSelection) {
+                            Text("No Selection").tag(nil as Space?)
+                            ForEach(spaces) { space in
+                                Text(space.name).tag(space as Space?)
+                            }
+                        } label: {
+                            Label {
+                                Text("Space")
+                            } icon: {
+                                Image(systemName: "square.split.bottomrightquarter")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 28, height: 28)
+                            }
+                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .pink))
+                        }
+
+                    }
+                    .onAppear {
+                        guard placementSelectionID != nil else {
+                            logger.notice("placementSelectionID is nil leaving selection to empty")
+                            return
+                        }
+                        guard let result = spaces.first(where: { $0.id == placementSelectionID }) else {
+                            logger.warning("placementSelectionID is not nil but find no match in storage query")
+                            return
+                        }
+                        logger.notice("Successfully matched placementSelectionID with a Storage in query")
+                        spaceSelection = result
+                    }
+                case is Item:
+                    Section {
+                        Picker(selection: $storageSelection) {
+                            Text("No Selection").tag(nil as Storage?)
+                            ForEach(storages) { storage in
+                                Text(storage.name).tag(storage as Storage?)
+                            }
+                        } label: {
+                            Label {
+                                Text("Storage")
+                            } icon: {
+                                Image(systemName: "archivebox")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 28, height: 28)
+                            }
+                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .pink))
+                        }
+
+                    }
+                    .onAppear {
+                        guard placementSelectionID != nil else {
+                            logger.notice("placementSelectionID is nil leaving selection to empty")
+                            return
+                        }
+                        guard let result = storages.first(where: { $0.id == placementSelectionID }) else {
+                            logger.warning("placementSelectionID is not nil but find no match in storage query")
+                            return
+                        }
+                        logger.notice("Successfully matched placementSelectionID with a Storage in query")
+                        storageSelection = result
+                    }
+                default:
+                    EmptyView()
                 }
                 
-                // MARK: Placement Picker
-                #warning("Picker not implemented")
-//                switch target {
-//                case is Item:
-//                    let selection = Binding {
-//                        target as! Item
-//                    } set: { newItem in
-//                        target = newItem
-//                    }
-//                    Section {
-//                        ItemPlacementPickerView(selection: selection)
-//                    }
-//                default:
-//                    EmptyView()
-//                }
                 
                 // MARK: Styles
                 DisclosureGroup(isExpanded: $isStyleDisclosureGroupExpanded) {
@@ -163,6 +242,7 @@ struct FormEditView: View {
                 if let confirmationAction {
                     ToolbarItem(placement: .confirmationAction) {
                         Button(confirmationButtonString) {
+                            savePlacement()
                             confirmationAction()
                         }
                     }
@@ -180,6 +260,18 @@ struct FormEditView: View {
         }
         .tint(target.color)
         .ignoresSafeArea()
+    }
+    
+    func savePlacement() {
+        switch target {
+        case let storage as Storage:
+            storage.space = spaceSelection
+        case let item as Item:
+            item.storage = storageSelection
+            return
+        default:
+            return
+        }
     }
 }
 

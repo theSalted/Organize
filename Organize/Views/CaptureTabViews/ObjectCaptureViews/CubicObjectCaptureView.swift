@@ -46,12 +46,15 @@ struct CubicObjectCaptureView: View {
         }
         .sheet(isPresented: $captureViewModel.showCreateForm) {
             let target = Binding {
-                captureViewModel.item as (any Meta)
+                captureViewModel.item
             } set: { newItemValue in
-                captureViewModel.item = newItemValue as! Item
+                captureViewModel.item = newItemValue
             }
             
-            FormEditView(target, mode: .add) {
+            FormEditView(
+                target, mode: .add,
+                unsafePlacementSelectionID: captureViewModel.storageSelectionID
+            ) {
                 withAnimation {
                     captureViewModel.showCreateForm = false
                 }
@@ -64,10 +67,8 @@ struct CubicObjectCaptureView: View {
                 captureViewModel.item = Item(name: "My Item") 
             }
             .task {
-                #warning("Need Remove")
-//                captureViewModel.item.name = objectCaptureModel.modelName
-                if let storage = selectedStorages.first {
-                    storage.items.append(captureViewModel.item)
+                if let storageSelection = selectedStorages.first {
+                    storageSelection.items.append(captureViewModel.item)
                 }
             }
         }

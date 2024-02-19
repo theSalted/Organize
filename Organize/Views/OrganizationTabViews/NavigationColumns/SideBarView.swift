@@ -115,15 +115,9 @@ struct SideBarView: View {
         }
         .navigationTitle("Organize")
         .sheet(isPresented: $showCreateForm) {
-            var space = Space(name: "My Space")
+            @State var space = Space(name: "My Space")
             
-            let target = Binding {
-                space as (any Meta)
-            } set: { newSpaceValue in
-                space = newSpaceValue as! Space
-            }
-            
-            FormEditView(target, mode: .create) {
+            FormEditView($space, mode: .create) {
                 withAnimation {
                     showCreateForm = false
                 }
@@ -134,7 +128,6 @@ struct SideBarView: View {
                 }
                 try? modelContext.save()
             }
-
         }
         .searchable(text: $searchText, isPresented: $isSearchPresented)
         

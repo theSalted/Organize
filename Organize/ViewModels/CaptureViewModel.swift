@@ -13,5 +13,6 @@ class CaptureViewModel {
     var showErrorAlert: Bool = false
     var showReconstructionView: Bool = false
     var item: Item = Item(name: "My Item")
+    var storageSelectionID: UUID?
     var showCreateForm = false
 }

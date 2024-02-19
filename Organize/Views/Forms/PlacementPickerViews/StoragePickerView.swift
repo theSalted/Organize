@@ -1,5 +1,5 @@
 //
-//  ItemPlacementPickerView.swift
+//  StoragePickerView.swift
 //  Organize
 //
 //  Created by Yuhao Chen on 2/12/24.
@@ -8,8 +8,8 @@
 import SwiftUI
 import SwiftData
 
-struct ItemPlacementPickerView: View {
-    @Binding var selection: Item
+struct StoragePickerView: View {
+    @Binding var selection: Storage?
     @Query private var storages: [Storage]
     
     var body: some View {
@@ -28,7 +28,7 @@ struct ItemPlacementPickerView: View {
             Picker(selection: $selection) {
                 ForEach(storages) { storage in
                     Text(storage.name)
-                        .id(storage)
+                        .tag(storage)
                 }
             } label: {
                 pickerLabel
@@ -53,7 +53,7 @@ struct ItemPlacementPickerView: View {
 #Preview {
     NavigationStack {
         List {
-            ItemPlacementPickerView(selection: .constant(Item(name: "My Item ")))
+            StoragePickerView(selection: .constant(Storage(name: "My Storage")))
         }
     }
 }
