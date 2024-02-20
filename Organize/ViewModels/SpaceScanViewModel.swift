@@ -27,4 +27,5 @@ class SpaceScanViewModel: ObservableObject {
     @Published var canExport = false
     @Published var showShareSheet = false
     @Published var capturedRoom: CapturedRoom?
+    @Published var name: String = "My Room"
 }

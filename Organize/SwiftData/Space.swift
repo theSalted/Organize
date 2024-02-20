@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 import SwiftUI
+import RoomPlan
 
 @Model
 final class Space : Identifiable, Meta {
@@ -21,6 +22,9 @@ final class Space : Identifiable, Meta {
     
     private var systemImage: String?
     private var emoji: String?
+   
+    #warning("This couldn't be saved")
+//    var roomPlanObject: CapturedRoom.Object?
     
     var symbol: String {
         get {

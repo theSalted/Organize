@@ -105,6 +105,7 @@
 		8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDED2B66A3130049E709 /* ColorHelper.swift */; };
 		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
+		8ED065042B8549B500B1224F /* ActivityViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */; };
 		8ED1EB742B68031E003377CA /* Curtain.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB732B68031E003377CA /* Curtain.metal */; };
 		8ED1EB762B680385003377CA /* CurtainStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB752B680385003377CA /* CurtainStack.swift */; };
 		8ED1EB782B68040C003377CA /* Shader+float2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB772B68040C003377CA /* Shader+float2.swift */; };
@@ -230,6 +231,7 @@
 		8EB7EDED2B66A3130049E709 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		8ED1EB732B68031E003377CA /* Curtain.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Curtain.metal; sourceTree = "<group>"; };
 		8ED1EB752B680385003377CA /* CurtainStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurtainStack.swift; sourceTree = "<group>"; };
 		8ED1EB772B68040C003377CA /* Shader+float2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shader+float2.swift"; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 			children = (
 				8E9D35322B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift */,
 				8E396E242B82966500508791 /* RoomCaptureRepresentableView.swift */,
+				8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */,
 			);
 			path = ViewRepresentable;
 			sourceTree = "<group>";
@@ -870,6 +873,7 @@
 				8ED633782B7FD6EA000113E2 /* MetaGridView.swift in Sources */,
 				8E9D35332B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift in Sources */,
 				8E9D350F2B6E2FDD00154078 /* FeedbackMessages.swift in Sources */,
+				8ED065042B8549B500B1224F /* ActivityViewControllerRepresentable.swift in Sources */,
 				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
 				8E396E162B82881400508791 /* SpaceScanView.swift in Sources */,
 				8E9D35292B6ED4D000154078 /* CaptureViewModel.swift in Sources */,
