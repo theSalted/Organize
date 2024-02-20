@@ -13,6 +13,7 @@ import RoomPlan
 class SpaceScanViewModel: ObservableObject {
     enum Action {
         case startSession
+        case stopSession
         case share
         case export
     }

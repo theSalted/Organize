@@ -47,6 +47,8 @@ class RoomCaptureViewController: UIViewController {
                 switch action {
                 case .startSession:
                     self?.startSession()
+                case .stopSession:
+                    self?.stopSession()
                 case .share:
                     self?.shareModel()
                 case .export:
@@ -59,6 +61,10 @@ class RoomCaptureViewController: UIViewController {
     private func startSession() {
         let sessionConfig = RoomCaptureSession.Configuration()
         roomScanView?.captureSession.run(configuration: sessionConfig)
+    }
+    
+    private func stopSession() {
+        roomScanView?.captureSession.stop()
     }
     
     private func exportModel() {

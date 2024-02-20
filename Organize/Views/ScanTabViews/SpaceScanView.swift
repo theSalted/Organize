@@ -11,14 +11,19 @@ import OSLog
 struct SpaceScanView: View {
     @EnvironmentObject var spaceScanViewModel: SpaceScanViewModel
     var body: some View {
-        NavigationStack {
-            RoomCaptureRepresentableView(viewModel: spaceScanViewModel)
-                .onAppear {
-                    spaceScanViewModel.actions.send(.startSession)
-                }
-                .onDisappear {
-                    #warning("Need a pause")
-                }
+        ZStack {
+            Rectangle()
+                .foregroundStyle(.black.gradient)
+                .ignoresSafeArea()
+            NavigationStack {
+                RoomCaptureRepresentableView(viewModel: spaceScanViewModel)
+                    .onAppear {
+                        spaceScanViewModel.actions.send(.startSession)
+                    }
+                    .onDisappear {
+                        spaceScanViewModel.actions.send(.stopSession)
+                    }
+            }
         }
     }
 }

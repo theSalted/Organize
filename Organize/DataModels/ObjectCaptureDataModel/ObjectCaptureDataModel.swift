@@ -209,7 +209,7 @@ class ObjectCaptureDataModel: ObservableObject, Identifiable {
         return true
     }
     
-    public func pauseSession() {
+    public func stopSession() {
         guard let session = objectCaptureSession else {
             logger.warning("Couldn't pause session because session is nil")
             return

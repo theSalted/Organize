@@ -309,13 +309,13 @@ class SpaceScanViewModel: ObservableObject {
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>    }
-    
-    // TODO: Is Combine really necessary here? I dislike an observer pattern sticking inside of MVVM pattern</string>
+				<string>        case export
+    }
+    </string>
 				<key>trailing</key>
 				<string>
+    // TODO: Is Combine really necessary here? I dislike an observer pattern sticking inside of MVVM pattern
     // TODO: These are really data models, URLs should be using the same filemanager system CapturedObject is using
-    var actions = PassthroughSubject&lt;Action, Never&gt;();
 </string>
 			</dict>
 			<key>type</key>
@@ -353,13 +353,13 @@ class SpaceScanViewModel: ObservableObject {
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>    
-    // TODO: Is Combine really necessary here? I dislike an observer pattern sticking inside of MVVM pattern
-    // TODO: These are really data models, URLs should be using the same filemanager system CapturedObject i</string>
+				<string>    }
+    
+    // TODO: Is Combine really necessary here? I dislike an observer pattern sticking inside of MVVM pattern</string>
 				<key>trailing</key>
-				<string>s using
+				<string>
+    // TODO: These are really data models, URLs should be using the same filemanager system CapturedObject is using
     var actions = PassthroughSubject&lt;Action, Never&gt;();
-    let exportURL = FileManager.default.temporaryDirectory.appending(path: "ScannedSpace.usdz")
 </string>
 			</dict>
 			<key>type</key>

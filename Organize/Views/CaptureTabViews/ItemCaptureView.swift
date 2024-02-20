@@ -62,7 +62,7 @@ struct ItemCaptureView: View {
             }
         }
         .onAppear { objectCaptureModel.resumeSession() }
-        .onDisappear { objectCaptureModel.pauseSession() }
+        .onDisappear { objectCaptureModel.stopSession() }
     }
 }
 
