@@ -23,8 +23,7 @@ final class Space : Identifiable, Meta {
     private var systemImage: String?
     private var emoji: String?
    
-    #warning("This couldn't be saved")
-//    var roomPlanObject: CapturedRoom.Object?
+    // TODO: Find a way to save `CapturedRoom.Object`
     
     var symbol: String {
         get {
