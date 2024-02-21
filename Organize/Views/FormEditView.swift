@@ -199,6 +199,27 @@ struct FormEditView<T>: View where T: Meta  {
                     EmptyView()
                 }
                 
+                if let item = target as? Space, item.storages.count > 0 {
+                    Section {
+                        DisclosureGroup {
+                            ForEach(item.storages) { storage in
+                                Text(storage.name)
+                            }
+                        } label: {
+                            Label {
+                                Text(item.storages.count == 1 ?
+                                     "Storage" : "Storages")
+                            } icon: {
+                                Image(systemName: "archivebox")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 28, height: 28)
+                            }
+                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), backgroundColor: .orange))
+                        }
+                    }
+                }
                 
                 // MARK: Styles
                 DisclosureGroup(isExpanded: $isStyleDisclosureGroupExpanded) {
@@ -211,7 +232,7 @@ struct FormEditView<T>: View where T: Meta  {
                             .foregroundStyle(.white)
                             .frame(width: 28, height: 28)
                     }
-                    .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), backgroundColor: .orange))
+                    .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), backgroundColor: .green))
                 }
                 if isStyleDisclosureGroupExpanded {
                     Section { ColorSelectionGridView($target.color) }
