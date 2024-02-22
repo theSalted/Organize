@@ -25,6 +25,7 @@ struct FormEditView<T>: View where T: Meta  {
     @State private var placementSelectionID: UUID?
     
     @State var isStyleDisclosureGroupExpanded = true
+    @State var isInventoryListDisclosureGroupExpanded = true
     
     var mode: FormMode = .add
     var title: String {
@@ -51,6 +52,15 @@ struct FormEditView<T>: View where T: Meta  {
             "Add"
         case .create:
             "Create"
+        }
+    }
+    var confirmationButtonDisabled: Bool {
+        switch target {
+        case let item as Item:
+            storageSelection == nil
+        case let storage as Storage:
+            spaceSelection == nil
+        default: false
         }
     }
     var cancelationAction: ButtonAction?
@@ -202,7 +212,9 @@ struct FormEditView<T>: View where T: Meta  {
                 if let item = target as? Space,
                     item.storages.count > 0 {
                     Section {
-                        DisclosureGroup {
+                        DisclosureGroup(
+                            isExpanded: $isInventoryListDisclosureGroupExpanded
+                        ) {
                             ForEach(item.storages) { storage in
                                 Text(storage.name)
                             }
@@ -267,6 +279,7 @@ struct FormEditView<T>: View where T: Meta  {
                             savePlacement()
                             confirmationAction()
                         }
+                        .disabled(confirmationButtonDisabled)
                     }
                 }
                                 

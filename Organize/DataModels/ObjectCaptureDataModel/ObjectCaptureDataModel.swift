@@ -218,8 +218,7 @@ class ObjectCaptureDataModel: ObservableObject, Identifiable {
             preventRestartOnCancel = true
             session.cancel()
         }
-        session.pause()
-        
+        session.pause()  
     }
     
     public func resumeSession() {

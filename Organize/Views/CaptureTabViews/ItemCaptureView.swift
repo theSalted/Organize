@@ -7,10 +7,11 @@
 
 import SwiftUI
 import RealityKit
+import OSLog
 
 #if !targetEnvironment(simulator)
 struct ItemCaptureView: View {
-    @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
+    @StateObject var objectCaptureModel: ObjectCaptureDataModel = ObjectCaptureDataModel.instance
     @Environment(CaptureViewModel.self) private var captureViewModel
     
     var showProgressView: Bool {
@@ -34,8 +35,8 @@ struct ItemCaptureView: View {
     }
     
     var body: some View {
+        @Bindable var captureViewModel = captureViewModel
         NavigationStack {
-            @Bindable var captureViewModel = captureViewModel
             VStack {
                 switch viewState {
                 case .capturing:
@@ -63,6 +64,49 @@ struct ItemCaptureView: View {
         }
         .onAppear { objectCaptureModel.resumeSession() }
         .onDisappear { objectCaptureModel.stopSession() }
+        .sheet(isPresented: $captureViewModel.showReconstructionView) {
+            // TODO: We need a better implementation, but I think that would trigger an entire rewrite
+            withAnimation {
+                // Present create item form on dismiss of reconstruction view
+                captureViewModel.showCreateForm = true
+            }
+        } content: {
+            if let folderManager = objectCaptureModel.scanFolderManager {
+                ReconstructionPrimaryView(
+                    outputFile: folderManager
+                        .modelsFolder
+                        .appendingPathComponent(
+                            captureViewModel.item.name +
+                            ".usdz"
+                        )
+                )
+            }
+        }
+        .alert(
+            objectCaptureModel.error != nil  ?
+                "Failed: \(String(describing: objectCaptureModel.error!))" :
+                "Failed object capture for unknown reason",
+            isPresented: $captureViewModel.showErrorAlert,
+            actions: {
+                Button("OK") {
+                    logger.info("Restarting Capture")
+                    objectCaptureModel.state = .restart
+                }
+            },
+            message: {}
+        )
+        .onChange(of: objectCaptureModel.state) { _, newState in
+            if newState == .failed {
+                captureViewModel.showErrorAlert = true
+                captureViewModel.showReconstructionView = false
+            } else {
+                captureViewModel.showErrorAlert = false
+                captureViewModel.showReconstructionView =
+                    newState == .reconstructing ||
+                    newState == .viewing
+            }
+        }
+        .environmentObject(objectCaptureModel)
     }
 }
 
@@ -71,4 +115,6 @@ extension ItemCaptureView {
         case capturing, progressing, unsupportedDevice, errorState
     }
 }
+
+fileprivate let logger = Logger(subsystem: OrganizeApp.bundleId, category: "ItemCaptureView")
 #endif

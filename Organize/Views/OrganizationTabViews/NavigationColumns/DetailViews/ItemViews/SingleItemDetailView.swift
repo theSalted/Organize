@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SceneKit
+import os
 
 struct SingleItemDetailView: View {
     var item: Item
@@ -35,12 +36,28 @@ struct SingleItemDetailView: View {
                 .frame(height: 300)
             }
             
-            if let previewImage = item.capture?.previewImage {
+            if let previewImage = item.capture?.previewImage,
+               let url = item.capture?.modelURL {
                 Section {
-                    Image(uiImage: previewImage)
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    Button {
+                        openURL(from: url)
+                    } label: {
+                        Image(uiImage: previewImage)
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
+                }
+            }
+        }
+    }
+    
+    private func openURL(from originalURL: URL) {
+        let urlString = originalURL.absoluteString.replacingOccurrences(of: "file://", with: "shareddocuments://")
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url) { success in
+                if !success {
+                    logger.warning("Couldn't open url: \(url.relativeString)")
                 }
             }
         }
@@ -50,3 +67,5 @@ struct SingleItemDetailView: View {
 #Preview {
     SingleItemDetailView(Item(name: "My Item"))
 }
+
+fileprivate let logger = Logger(subsystem: OrganizeApp.bundleId, category: "SingleItemDetailView")

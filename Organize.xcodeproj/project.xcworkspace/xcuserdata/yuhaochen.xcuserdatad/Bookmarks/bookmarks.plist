@@ -10,15 +10,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>0</string>
+					<string>29</string>
 					<key>EndingLineNumber</key>
-					<string>43</string>
+					<string>36</string>
 					<key>StartingColumnNumber</key>
-					<string>0</string>
+					<string>29</string>
 					<key>StartingLineNumber</key>
-					<string>42</string>
+					<string>36</string>
 					<key>Timestamp</key>
-					<string>729981342.923115</string>
+					<string>730315886.738657</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,16 +34,15 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>                    }
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>                        // Present create item form on dismiss of reconstruction view
-                        captureViewModel.showCreateForm = true
-</string>
+				<string>                .environment(captureViewModel)
+            #if !targetEnvironment(simulator)
+            ItemCaptureView()</string>
 				<key>trailing</key>
-				<string>                } content: {
-                    if let folderManager = objectCaptureModel.scanFolderManager {
-                        ReconstructionPrimaryView(
+				<string>
+                .tabItem {
+                    Label("Capture", systemImage: "cube.fill")
 </string>
 			</dict>
 			<key>title</key>

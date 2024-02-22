@@ -12,7 +12,7 @@ import OSLog
 struct ContentView: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     #if !targetEnvironment(simulator)
-    @StateObject var objectCaptureModel: ObjectCaptureDataModel = ObjectCaptureDataModel.instance
+//    @StateObject var objectCaptureModel: ObjectCaptureDataModel = ObjectCaptureDataModel.instance
     #endif
     @StateObject var spaceScanViewModel = SpaceScanViewModel()
     @State var appModel = AppViewModel()
@@ -35,24 +35,6 @@ struct ContentView: View {
                 .environment(captureViewModel)
             #if !targetEnvironment(simulator)
             ItemCaptureView()
-                .sheet(isPresented: $captureViewModel.showReconstructionView) {
-                    // TODO: We need a better implementation, but I think that would trigger an entire rewrite
-                    withAnimation {
-                        // Present create item form on dismiss of reconstruction view
-                        captureViewModel.showCreateForm = true
-                    }
-                } content: {
-                    if let folderManager = objectCaptureModel.scanFolderManager {
-                        ReconstructionPrimaryView(
-                            outputFile: folderManager
-                                .modelsFolder
-                                .appendingPathComponent(
-                                    captureViewModel.item.name +
-                                    ".usdz"
-                                )
-                        )
-                    }
-                }
                 .tabItem {
                     Label("Capture", systemImage: "cube.fill")
                 }
@@ -63,7 +45,6 @@ struct ContentView: View {
                 .tag(AppViewModel.TabViewTag.capture)
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
-                .environmentObject(objectCaptureModel)
                 .environment(captureViewModel)
             #endif
             SpaceScanView()
@@ -74,32 +55,7 @@ struct ContentView: View {
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
         }
-        #if !targetEnvironment(simulator)
-        .alert(
-            objectCaptureModel.error != nil  ?
-                "Failed: \(String(describing: objectCaptureModel.error!))" :
-                "Failed object capture for unknown reason",
-            isPresented: $captureViewModel.showErrorAlert,
-            actions: {
-                Button("OK") {
-                    logger.info("Restarting Capture")
-                    objectCaptureModel.state = .restart
-                }
-            },
-            message: {}
-        )
-        .onChange(of: objectCaptureModel.state) { _, newState in
-            if newState == .failed {
-                captureViewModel.showErrorAlert = true
-                captureViewModel.showReconstructionView = false
-            } else {
-                captureViewModel.showErrorAlert = false
-                captureViewModel.showReconstructionView =
-                    newState == .reconstructing ||
-                    newState == .viewing
-            }
-        }
-        #endif
+        
         .environment(appModel)
     }
 }
