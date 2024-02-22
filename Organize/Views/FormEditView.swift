@@ -181,7 +181,6 @@ struct FormEditView<T>: View where T: Meta  {
                             }
                             .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .pink))
                         }
-
                     }
                     .onAppear {
                         guard placementSelectionID != nil else {
@@ -199,7 +198,9 @@ struct FormEditView<T>: View where T: Meta  {
                     EmptyView()
                 }
                 
-                if let item = target as? Space, item.storages.count > 0 {
+                // MARK: Inventory list
+                if let item = target as? Space,
+                    item.storages.count > 0 {
                     Section {
                         DisclosureGroup {
                             ForEach(item.storages) { storage in

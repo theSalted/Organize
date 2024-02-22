@@ -74,6 +74,7 @@ struct SpaceScanView: View {
     }
     
     private func createSpaceAndStorages() {
+        spaceScanViewModel.actions.send(.stopSession)
         spaceScanViewModel.actions.send(.export)
         let capturedRoomObjects = spaceScanViewModel.capturedRoom?.objects
         let space = Space(name: spaceScanViewModel.name)
@@ -85,6 +86,8 @@ struct SpaceScanView: View {
             var output = [Storage]()
             for object in capturedRoomObjects {
                 let storage = Storage(name: object.category.getName())
+                // Save before insert because insert multiple storages into model context in single frame causes an uncaught NSException related to CoreData, but not inserting storages to model also crashes application when trying to read a space that contains these storages.
+                try? modelContext.save()
                 modelContext.insert(storage)
                 output.append(storage)
             }
