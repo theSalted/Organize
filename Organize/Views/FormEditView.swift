@@ -7,6 +7,7 @@
 
 import OSLog
 import SwiftUI
+import SceneKit
 import SwiftData
 
 struct FormEditView<T>: View where T: Meta  {
@@ -109,6 +110,14 @@ struct FormEditView<T>: View where T: Meta  {
                 switch target {
                 case let item as Item:
                     Section {
+                        if let item = target as? Item,
+                           let previewImage = item.capture?.previewImage,
+                           let url = item.capture?.modelURL {
+                            Image(uiImage: previewImage)
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
                         Button {
                             withAnimation {
                                 addScanAction?(storageSelection?.id)
@@ -209,18 +218,18 @@ struct FormEditView<T>: View where T: Meta  {
                 }
                 
                 // MARK: Inventory list
-                if let item = target as? Space,
-                    item.storages.count > 0 {
+                if let space = target as? Space,
+                    space.storages.count > 0 {
                     Section {
                         DisclosureGroup(
                             isExpanded: $isInventoryListDisclosureGroupExpanded
                         ) {
-                            ForEach(item.storages) { storage in
+                            ForEach(space.storages) { storage in
                                 Text(storage.name)
                             }
                         } label: {
                             Label {
-                                Text(item.storages.count == 1 ?
+                                Text(space.storages.count == 1 ?
                                      "Storage" : "Storages")
                             } icon: {
                                 Image(systemName: "archivebox")

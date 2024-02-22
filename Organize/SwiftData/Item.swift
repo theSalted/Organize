@@ -21,7 +21,7 @@ class Item : Identifiable, Meta {
     
     private var systemImage: String?
     private var emoji: String?
-    
+
     var symbol: String {
         get {
             if let systemImage {
