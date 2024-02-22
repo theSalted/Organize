@@ -8,14 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8E00F9DD2B7936680094B8F6 /* StoragePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00F9DC2B7936680094B8F6 /* StoragePickerView.swift */; };
-		8E0D3FBB2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 */; };
-		8E0D3FBC2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 */; };
 		8E0D3FBD2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 */; };
 		8E0D3FBE2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 */; };
 		8E0D3FBF2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB52B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 */; };
-		8E0D3FC02B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB62B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 */; };
-		8E0D3FC12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB72B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 */; };
-		8E0D3FC22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB82B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 */; };
 		8E0D3FC32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FB92B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 */; };
 		8E0D3FC42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D3FBA2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 */; };
 		8E11CFC32B6449F3000E13B0 /* WaveShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8E11CFC22B6449F3000E13B0 /* WaveShader.metal */; };
@@ -129,18 +124,15 @@
 		8EE9639E2B6983F8002AA850 /* SingleStorageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9639D2B6983F8002AA850 /* SingleStorageDetailView.swift */; };
 		8EEE7B052B83E3EE00B7AE70 /* FormEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7B042B83E3EE00B7AE70 /* FormEditView.swift */; };
 		8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF034432B61A8F100A15340 /* DetailsView.swift */; };
+		8EF45BD82B87DBDA008D6AFD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BD72B87DBDA008D6AFD /* GameScene.swift */; };
+		8EF45BDB2B87DC34008D6AFD /* CoreMotionSceneComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8E00F9DC2B7936680094B8F6 /* StoragePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoragePickerView.swift; sourceTree = "<group>"; };
-		8E0D3FB12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-3.mp4"; sourceTree = "<group>"; };
-		8E0D3FB22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-unflippable-high.mp4"; sourceTree = "<group>"; };
 		8E0D3FB32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-1.mp4"; sourceTree = "<group>"; };
 		8E0D3FB42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-unflippable-high.mp4"; sourceTree = "<group>"; };
 		8E0D3FB52B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-2.mp4"; sourceTree = "<group>"; };
-		8E0D3FB62B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-2.mp4"; sourceTree = "<group>"; };
-		8E0D3FB72B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-1.mp4"; sourceTree = "<group>"; };
-		8E0D3FB82B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPhone-FixedHeight-unflippable-low.mp4"; sourceTree = "<group>"; };
 		8E0D3FB92B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-unflippable-low.mp4"; sourceTree = "<group>"; };
 		8E0D3FBA2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScanPasses-iPad-FixedHeight-3.mp4"; sourceTree = "<group>"; };
 		8E11CFC22B6449F3000E13B0 /* WaveShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WaveShader.metal; sourceTree = "<group>"; };
@@ -256,6 +248,8 @@
 		8EE9639D2B6983F8002AA850 /* SingleStorageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStorageDetailView.swift; sourceTree = "<group>"; };
 		8EEE7B042B83E3EE00B7AE70 /* FormEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormEditView.swift; sourceTree = "<group>"; };
 		8EF034432B61A8F100A15340 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		8EF45BD72B87DBDA008D6AFD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionSceneComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,11 +279,6 @@
 				8E0D3FBA2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 */,
 				8E0D3FB42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 */,
 				8E0D3FB92B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 */,
-				8E0D3FB72B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 */,
-				8E0D3FB62B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 */,
-				8E0D3FB12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 */,
-				8E0D3FB22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 */,
-				8E0D3FB82B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -341,8 +330,16 @@
 				8E97DEBC2B77E7810007A9BA /* IconSelectionView */,
 				8E53A3F42B77FC9A00A92BDB /* PatternSelectionView.swift */,
 				8E00F9DE2B7938030094B8F6 /* PlacementPickerViews */,
+				8EEE7B042B83E3EE00B7AE70 /* FormEditView.swift */,
 			);
 			path = Forms;
+			sourceTree = "<group>";
+		};
+		8E7FAC2E2B87D6AC004FE8F0 /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OnboardingView;
 			sourceTree = "<group>";
 		};
 		8E84525D2B66902D005CA22D /* PatternDesign */ = {
@@ -384,6 +381,8 @@
 				8E9D35102B6E305C00154078 /* Protocols */,
 				8EF0343A2B61662B00A15340 /* SwiftData */,
 				8E9D35092B6E2E7800154078 /* Managers */,
+				8EF45BD92B87DC0E008D6AFD /* GameComponents */,
+				8EF45BD62B87DBB5008D6AFD /* GameScenes */,
 				8E88AD0D2B5C5C22003BDB04 /* DataModels */,
 				8EB9448F2B615A75005FBADC /* ViewModels */,
 				8E9D35312B6EDF5E00154078 /* ViewController */,
@@ -603,8 +602,8 @@
 			isa = PBXGroup;
 			children = (
 				8ED1EB7F2B681047003377CA /* SubViews */,
+				8E7FAC2E2B87D6AC004FE8F0 /* OnboardingView */,
 				8E7357A62B72837900F779B2 /* Forms */,
-				8EEE7B042B83E3EE00B7AE70 /* FormEditView.swift */,
 				8E22690B2B655255007F0C89 /* PatternViews */,
 				8E396E142B82876C00508791 /* ScanTabViews */,
 				8EF034382B615B5F00A15340 /* CaptureTabViews */,
@@ -743,6 +742,22 @@
 			path = DetailViews;
 			sourceTree = "<group>";
 		};
+		8EF45BD62B87DBB5008D6AFD /* GameScenes */ = {
+			isa = PBXGroup;
+			children = (
+				8EF45BD72B87DBDA008D6AFD /* GameScene.swift */,
+			);
+			path = GameScenes;
+			sourceTree = "<group>";
+		};
+		8EF45BD92B87DC0E008D6AFD /* GameComponents */ = {
+			isa = PBXGroup;
+			children = (
+				8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */,
+			);
+			path = GameComponents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -804,16 +819,11 @@
 				8E0D3FBE2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-high.mp4 in Resources */,
 				8E0D3FBF2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-2.mp4 in Resources */,
 				8E88AD072B5C4CE7003BDB04 /* Preview Assets.xcassets in Resources */,
-				8E0D3FC02B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-2.mp4 in Resources */,
 				8E486C172B729361005F0C4A /* README.md in Resources */,
-				8E0D3FC12B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-1.mp4 in Resources */,
-				8E0D3FBB2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-3.mp4 in Resources */,
 				8E88AD042B5C4CE7003BDB04 /* Assets.xcassets in Resources */,
 				8E0D3FC42B717E8600C89018 /* ScanPasses-iPad-FixedHeight-3.mp4 in Resources */,
 				8E0D3FBD2B717E8600C89018 /* ScanPasses-iPad-FixedHeight-1.mp4 in Resources */,
-				8E0D3FC22B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-low.mp4 in Resources */,
 				8E0D3FC32B717E8600C89018 /* ScanPasses-iPad-FixedHeight-unflippable-low.mp4 in Resources */,
-				8E0D3FBC2B717E8600C89018 /* ScanPasses-iPhone-FixedHeight-unflippable-high.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +862,7 @@
 				8E9D35482B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift in Sources */,
 				8E9D35172B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift in Sources */,
 				8E55285A2B5DA3CF00EEBCCB /* ItemCaptureView.swift in Sources */,
+				8EF45BDB2B87DC34008D6AFD /* CoreMotionSceneComponent.swift in Sources */,
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
 				8E9D355A2B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift in Sources */,
 				8E9D354B2B6FBB7E00154078 /* HelpPageView.swift in Sources */,
@@ -884,6 +895,7 @@
 				8E9D350F2B6E2FDD00154078 /* FeedbackMessages.swift in Sources */,
 				8ED065042B8549B500B1224F /* ActivityViewControllerRepresentable.swift in Sources */,
 				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
+				8EF45BD82B87DBDA008D6AFD /* GameScene.swift in Sources */,
 				8E396E162B82881400508791 /* SpaceScanView.swift in Sources */,
 				8E9D35292B6ED4D000154078 /* CaptureViewModel.swift in Sources */,
 				8ED633742B7FADC3000113E2 /* SingleItemDetailView.swift in Sources */,

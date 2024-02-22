@@ -15,4 +15,5 @@ class CaptureViewModel {
     var item: Item = Item(name: "My Item")
     var storageSelectionID: UUID?
     var showCreateForm = false
+    var showOnBoardingView = true
 }

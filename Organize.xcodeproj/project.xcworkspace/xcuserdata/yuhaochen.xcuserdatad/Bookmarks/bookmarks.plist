@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>49</string>
+					<string>36</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>34</string>
+					<string>35</string>
 					<key>Timestamp</key>
-					<string>730319127.018515</string>
+					<string>730322709.926625</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -35,29 +35,15 @@
 			<dict>
 				<key>focused</key>
 				<string>            ItemCaptureView()
-                .overlay {
-                    if storages.isEmpty {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundStyle(.regularMaterial)
-                            ContentUnavailableView(
-                                "Create a Storage First",
-                                systemImage: "archivebox",
-                                description: "Can't create item because there is no available storage for them".inText)
-                        }
-                        .frame(height: 500)
-                        .padding()
-                    }
-                }
 </string>
 				<key>leading</key>
 				<string>                .environment(captureViewModel)
             #if !targetEnvironment(simulator)
 </string>
 				<key>trailing</key>
-				<string>                .disabled(storages.isEmpty)
-                .tabItem {
-                    Label("Capture", systemImage: "cube.fill")
+				<string>                .overlay {
+                    if storages.isEmpty {
+                        ZStack {
 </string>
 			</dict>
 			<key>title</key>

@@ -19,6 +19,7 @@ struct ContentView: View {
         subsystem: OrganizeApp.bundleId, category: "ContentView")
     
     var body: some View {
+        @Bindable var captureViewModel = captureViewModel
         TabView(selection: $appModel.tabViewSelection) {
             OrganizationView()
                 .tabItem {
@@ -68,8 +69,32 @@ struct ContentView: View {
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
         }
-        
         .environment(appModel)
+        .sheet(isPresented: $captureViewModel.showOnBoardingView) {
+            NavigationStack {
+                List {
+                    
+                }
+                .navigationTitle("Forewords")
+                .toolbar {
+                    ToolbarItem(placement: .bottomBar) {
+                        Button {
+                            
+                        } label: {
+                            HStack {
+                                Text("Continue")
+                                    .bold()
+                            }
+                            .padding(8)
+                            .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .padding(.bottom)
+                    }
+                }
+                
+            }
+        }
     }
 }
 

@@ -78,14 +78,7 @@ struct OnboardingTutorialView: View {
         }
     }
 
-    private let onboardingStateToTutorialNameMapOnIphone: [CaptureOnboardingState: String] = [
-        .flipObject: "ScanPasses-iPhone-FixedHeight-2",
-        .flipObjectASecondTime: "ScanPasses-iPhone-FixedHeight-3",
-        .captureFromLowerAngle: "ScanPasses-iPhone-FixedHeight-unflippable-low",
-        .captureFromHigherAngle: "ScanPasses-iPhone-FixedHeight-unflippable-high"
-    ]
-
-    private let onboardingStateToTutorialNameMapOnIpad: [CaptureOnboardingState: String] = [
+    private let onboardingStateToTutorialNameMap: [CaptureOnboardingState: String] = [
         .flipObject: "ScanPasses-iPad-FixedHeight-2",
         .flipObjectASecondTime: "ScanPasses-iPad-FixedHeight-3",
         .captureFromLowerAngle: "ScanPasses-iPad-FixedHeight-unflippable-low",
@@ -94,11 +87,7 @@ struct OnboardingTutorialView: View {
 
     private var tutorialUrl: URL? {
         let videoName: String
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            videoName = onboardingStateToTutorialNameMapOnIpad[onboardingStateMachine.currentState] ?? "ScanPasses-iPad-FixedHeight-1"
-        } else {
-            videoName = onboardingStateToTutorialNameMapOnIphone[onboardingStateMachine.currentState] ?? "ScanPasses-iPhone-FixedHeight-1"
-        }
+        videoName = onboardingStateToTutorialNameMap[onboardingStateMachine.currentState] ?? "ScanPasses-iPad-FixedHeight-1"
         return Bundle.main.url(forResource: videoName, withExtension: "mp4")
     }
 

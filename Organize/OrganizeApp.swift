@@ -8,6 +8,16 @@
 import SwiftUI
 import SwiftData
 
+// TODO: Onboarding
+// TODO: TipKit
+// TODO: MapKit
+// TODO: SpriteKit
+// TODO: Vision
+// TODO: CoreML
+// TODO: SwiftChart
+// TODO: SceneKit
+// TODO: Camera
+
 @main
 struct OrganizeApp: App {
     static let bundleId = "app.chenyuhao.organize"
