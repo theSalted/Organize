@@ -10,10 +10,8 @@ import SwiftData
 import OSLog
 
 struct ContentView: View {
+    @Query var storages: [Storage]
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-    #if !targetEnvironment(simulator)
-//    @StateObject var objectCaptureModel: ObjectCaptureDataModel = ObjectCaptureDataModel.instance
-    #endif
     @StateObject var spaceScanViewModel = SpaceScanViewModel()
     @State var appModel = AppViewModel()
     @State var captureViewModel = CaptureViewModel()
@@ -35,6 +33,21 @@ struct ContentView: View {
                 .environment(captureViewModel)
             #if !targetEnvironment(simulator)
             ItemCaptureView()
+                .overlay {
+                    if storages.isEmpty {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundStyle(.regularMaterial)
+                            ContentUnavailableView(
+                                "Create a Storage First",
+                                systemImage: "archivebox",
+                                description: "Can't create item because there is no available storage for them".inText)
+                        }
+                        .frame(height: 500)
+                        .padding()
+                    }
+                }
+                .disabled(storages.isEmpty)
                 .tabItem {
                     Label("Capture", systemImage: "cube.fill")
                 }
