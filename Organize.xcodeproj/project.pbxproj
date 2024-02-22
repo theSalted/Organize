@@ -126,6 +126,7 @@
 		8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF034432B61A8F100A15340 /* DetailsView.swift */; };
 		8EF45BD82B87DBDA008D6AFD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BD72B87DBDA008D6AFD /* GameScene.swift */; };
 		8EF45BDB2B87DC34008D6AFD /* CoreMotionSceneComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */; };
+		8EF45BDD2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BDC2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,6 +251,7 @@
 		8EF034432B61A8F100A15340 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		8EF45BD72B87DBDA008D6AFD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionSceneComponent.swift; sourceTree = "<group>"; };
+		8EF45BDC2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2FP16.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +383,7 @@
 				8E9D35102B6E305C00154078 /* Protocols */,
 				8EF0343A2B61662B00A15340 /* SwiftData */,
 				8E9D35092B6E2E7800154078 /* Managers */,
+				8EF45BDE2B87E1D2008D6AFD /* CoreML */,
 				8EF45BD92B87DC0E008D6AFD /* GameComponents */,
 				8EF45BD62B87DBB5008D6AFD /* GameScenes */,
 				8E88AD0D2B5C5C22003BDB04 /* DataModels */,
@@ -758,6 +761,14 @@
 			path = GameComponents;
 			sourceTree = "<group>";
 		};
+		8EF45BDE2B87E1D2008D6AFD /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				8EF45BDC2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel */,
+			);
+			path = CoreML;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -901,6 +912,7 @@
 				8ED633742B7FADC3000113E2 /* SingleItemDetailView.swift in Sources */,
 				8E4BDAF12B7D2F51003471B2 /* ListButtonStyle.swift in Sources */,
 				8EA525312B76BDE40085C9B0 /* SymbolView.swift in Sources */,
+				8EF45BDD2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel in Sources */,
 				8EDDFEB52B74C2F90009A290 /* SymbolView+Design.swift in Sources */,
 				8E88ACFE2B5C4CE5003BDB04 /* OrganizeApp.swift in Sources */,
 				8E11CFC32B6449F3000E13B0 /* WaveShader.metal in Sources */,
