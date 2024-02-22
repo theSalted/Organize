@@ -51,15 +51,13 @@ extension ObjectCaptureDataModel {
         func feedbackVideoName(for interfaceIdiom: UIUserInterfaceIdiom, isObjectFlippable: Bool) -> String {
             switch self {
             case .orbit1:
-                return interfaceIdiom == .pad ? "ScanPasses-iPad-FixedHeight-1" : "ScanPasses-iPhone-FixedHeight-1"
+                return "ScanPasses-iPad-FixedHeight-1"
             case .orbit2:
-                let iPhoneVideoName = isObjectFlippable ? "ScanPasses-iPhone-FixedHeight-2" : "ScanPasses-iPhone-FixedHeight-unflippable-low"
-                let iPadVideoName = isObjectFlippable ? "ScanPasses-iPad-FixedHeight-2" : "ScanPasses-iPad-FixedHeight-unflippable-low"
-                return interfaceIdiom == .pad ? iPadVideoName : iPhoneVideoName
+                let videoName = isObjectFlippable ? "ScanPasses-iPad-FixedHeight-2" : "ScanPasses-iPad-FixedHeight-unflippable-low"
+                return videoName
             case .orbit3:
-                let iPhoneVideoName = isObjectFlippable ? "ScanPasses-iPhone-FixedHeight-3" : "ScanPasses-iPhone-FixedHeight-unflippable-high"
-                let iPadVideoName = isObjectFlippable ? "ScanPasses-iPad-FixedHeight-3" : "ScanPasses-iPad-FixedHeight-unflippable-high"
-                return interfaceIdiom == .pad ? iPadVideoName : iPhoneVideoName
+                let videoName = isObjectFlippable ? "ScanPasses-iPad-FixedHeight-3" : "ScanPasses-iPad-FixedHeight-unflippable-high"
+                return videoName
             }
         }
         

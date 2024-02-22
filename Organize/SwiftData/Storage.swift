@@ -18,9 +18,24 @@ final class Storage : Identifiable, Meta {
     @Relationship(deleteRule: .cascade, inverse: \Item.storage)
     var items = [Item]()
     var space: Space?
+     
     private var _colorComponents: ColorComponents
     private var systemImage: String?
     private var emoji: String?
+    
+    @Attribute(.externalStorage) var imageData: Data?
+    @Transient var image: UIImage? {
+        get {
+            if let data = imageData,
+               let uiImage = UIImage(data: data) {
+                return uiImage
+            }
+            return nil
+        }
+        set {
+            imageData = newValue?.pngData()
+        }
+    }
     
     var symbol: String {
         get {

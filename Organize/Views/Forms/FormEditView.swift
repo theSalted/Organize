@@ -9,10 +9,12 @@ import OSLog
 import SwiftUI
 import SceneKit
 import SwiftData
+import CoreML
 
 struct FormEditView<T>: View where T: Meta  {
     typealias ButtonAction = () -> Void
     typealias ButtonActionWithPlacementID = (UUID?) -> Void
+    let model: MobileNetV2FP16?
     
     @Environment(\.modelContext) private var modelContext
     @Query var spaces: [Space]
@@ -27,6 +29,8 @@ struct FormEditView<T>: View where T: Meta  {
     
     @State var isStyleDisclosureGroupExpanded = true
     @State var isInventoryListDisclosureGroupExpanded = true
+    
+    @State var generatedName: String? = nil
     
     var mode: FormMode = .add
     var title: String {
@@ -57,9 +61,9 @@ struct FormEditView<T>: View where T: Meta  {
     }
     var confirmationButtonDisabled: Bool {
         switch target {
-        case let item as Item:
+        case is Item:
             storageSelection == nil
-        case let storage as Storage:
+        case is Storage:
             spaceSelection == nil
         default: false
         }
@@ -81,6 +85,7 @@ struct FormEditView<T>: View where T: Meta  {
         _placementSelectionID = State(initialValue: placementSelectionID)
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
+        self.model = try? MobileNetV2FP16(configuration: MLModelConfiguration())
     }
     
     init(
@@ -94,25 +99,33 @@ struct FormEditView<T>: View where T: Meta  {
         self._target = target
         self.mode = mode
         _placementSelectionID = State(initialValue: placementSelectionID)
-        print(self.placementSelectionID?.uuidString ?? "My Goddd")
         self.addScanAction = addScanAction
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
+        self.model = try? MobileNetV2FP16(configuration: MLModelConfiguration())
     }
     
     var body: some View {
         NavigationStack {
             Form {
                 // MARK: IconNameCard
-                Section { IconNameCardView(target) }
+                Section { 
+                    IconNameCardView(target, generatedName: $generatedName)
+                        .onAppear {
+                            if let image = target.image{
+                                withAnimation {
+                                    generatedName = classifyImage(image)
+                                }
+                            }
+                        }
+                }
                 
                 // MARK: Add Scan Button
                 switch target {
                 case let item as Item:
                     Section {
                         if let item = target as? Item,
-                           let previewImage = item.capture?.previewImage,
-                           let url = item.capture?.modelURL {
+                           let previewImage = item.capture?.previewImage {
                             Image(uiImage: previewImage)
                                 .resizable()
                                 .scaledToFit()
@@ -316,6 +329,26 @@ struct FormEditView<T>: View where T: Meta  {
         default:
             return
         }
+    }
+    
+    //TODO: This should become an extension to the model class
+    private func classifyImage(_ image: UIImage) -> String? {
+        guard let resizedImage = image.resizeImageTo(size:CGSize(width: 224, height: 224)),
+              let buffer = resizedImage.convertToBuffer() else {
+              return nil
+        }
+        
+        let output = try? model?.prediction(image: buffer)
+        
+        if let output = output {
+            let results = output.classLabelProbs.sorted { $0.1 > $1.1 }
+            let result = results.map { (key, value) in
+                return "\(key) = \(String(format: "%.2f", value * 100))%"
+            }.joined(separator: "\n")
+
+            return result
+        }
+        return nil
     }
 }
 

@@ -127,6 +127,7 @@
 		8EF45BD82B87DBDA008D6AFD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BD72B87DBDA008D6AFD /* GameScene.swift */; };
 		8EF45BDB2B87DC34008D6AFD /* CoreMotionSceneComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */; };
 		8EF45BDD2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BDC2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel */; };
+		8EF45BE02B87E49E008D6AFD /* UIImage+resizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BDF2B87E49E008D6AFD /* UIImage+resizeImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -252,6 +253,7 @@
 		8EF45BD72B87DBDA008D6AFD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionSceneComponent.swift; sourceTree = "<group>"; };
 		8EF45BDC2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2FP16.mlmodel; sourceTree = "<group>"; };
+		8EF45BDF2B87E49E008D6AFD /* UIImage+resizeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resizeImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -643,6 +645,7 @@
 				8E396E1E2B828C8E00508791 /* CapturedRoom+Equatable.swift */,
 				8E396E202B828DDE00508791 /* CapturedRoom.Object+Equatable.swift */,
 				8EDB6FA62B867D8A000E6858 /* CapturedRoom.Object.Category+getName.swift */,
+				8EF45BDF2B87E49E008D6AFD /* UIImage+resizeImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -869,6 +872,7 @@
 				8ED48FC22B601A7000EB643A /* ContentColumnView.swift in Sources */,
 				8E00F9DD2B7936680094B8F6 /* StoragePickerView.swift in Sources */,
 				8EDDFEB72B74C6000009A290 /* Character+emoji.swift in Sources */,
+				8EF45BE02B87E49E008D6AFD /* UIImage+resizeImage.swift in Sources */,
 				8E9D35132B6E312100154078 /* ObjectCaptureDataModel.swift in Sources */,
 				8E9D35482B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift in Sources */,
 				8E9D35172B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift in Sources */,

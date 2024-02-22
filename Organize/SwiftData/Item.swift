@@ -17,7 +17,22 @@ class Item : Identifiable, Meta {
     var storage: Storage?
     var pattern: PatternDesign 
     @Relationship(deleteRule: .cascade, inverse: \CapturedObject.item)
+
     var capture: CapturedObject?
+    
+    @Attribute(.externalStorage) var imageData: Data?
+    @Transient var image: UIImage? {
+        get {
+            if let data = imageData,
+               let uiImage = UIImage(data: data) {
+                return uiImage
+            }
+            return nil
+        }
+        set {
+            imageData = newValue?.pngData()
+        }
+    }
     
     private var systemImage: String?
     private var emoji: String?

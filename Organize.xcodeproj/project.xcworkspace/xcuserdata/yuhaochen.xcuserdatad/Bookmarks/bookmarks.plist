@@ -500,6 +500,51 @@ class SpaceScanViewModel: ObservableObject {
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>323</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>322</string>
+					<key>Timestamp</key>
+					<string>730326592.896557</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Organize/Views/Forms/FormEditView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>    //TODO: This should become an extension to the model class
+</string>
+				<key>leading</key>
+				<string>    }
+    
+</string>
+				<key>trailing</key>
+				<string>    private func classifyImage(_ image: UIImage) -&gt; String? {
+        guard let resizedImage = image.resizeImageTo(size:CGSize(width: 224, height: 224)),
+              let buffer = resizedImage.convertToBuffer() else {
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
 	</array>
 </dict>
 </plist>

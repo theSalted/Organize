@@ -19,8 +19,6 @@ extension ObjectCaptureDataModel {
         case reconstructing
         case viewing
         case completed
-        //        case pause
-        //        case resume
         case restart
         case failed
     }

@@ -16,4 +16,5 @@ protocol Meta : Identifiable, Hashable, AnyObject where ID == UUID {
     var color:          Color           { get set }
     var symbol:         String          { get set }
     var storedIn:       String?         { get }
+    var image:          UIImage?          { get set }
 }

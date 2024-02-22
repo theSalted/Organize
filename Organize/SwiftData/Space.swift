@@ -17,11 +17,26 @@ final class Space : Identifiable, Meta {
     var createdAt : Date
     var pattern: PatternDesign
     @Relationship(deleteRule: .cascade, inverse: \Storage.space)
+    
     var storages = [Storage]()
     private var _colorComponents : ColorComponents
     
     private var systemImage: String?
     private var emoji: String?
+    
+    @Attribute(.externalStorage) var imageData: Data?
+    @Transient var image: UIImage? {
+        get {
+            if let data = imageData,
+               let uiImage = UIImage(data: data) {
+                return uiImage
+            }
+            return nil
+        }
+        set {
+            imageData = newValue?.pngData()
+        }
+    }
    
     // TODO: Find a way to save `CapturedRoom.Object`
     
