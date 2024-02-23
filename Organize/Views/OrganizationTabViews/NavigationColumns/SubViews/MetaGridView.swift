@@ -19,11 +19,20 @@ struct MetaGridView<T>: View where T: Meta{
         LazyVGrid(columns: columns) {
             ForEach(targetsList) { target in
                 NavigationLink {
-                    if let item = target as? Item {
+                    switch target {
+                    case let space as Space:
+                        SingleSpaceDetailView(space)
+                            .navigationTitle(space.name)
+                            .tint(space.color)
+                    case let storage as Storage:
+                        SingleStorageDetailView(storage)
+                            .navigationTitle(storage.name)
+                            .tint(storage.color)
+                    case let item as Item:
                         SingleItemDetailView(item)
                             .navigationTitle(item.name)
                             .tint(item.color)
-                    } else {
+                    default:
                         MetaInfoView(target)
                             .navigationTitle(target.name)
                     }
