@@ -9,8 +9,6 @@ import SwiftUI
 import SwiftData
 import TipKit
 
-// TODO: Onboarding
-// TODO: TipKit
 // TODO: MapKit
 // TODO: SpriteKit
 // TODO: Vision

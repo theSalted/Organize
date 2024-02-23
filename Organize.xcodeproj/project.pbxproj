@@ -109,6 +109,7 @@
 		8EA525312B76BDE40085C9B0 /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA525302B76BDE40085C9B0 /* SymbolView.swift */; };
 		8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDED2B66A3130049E709 /* ColorHelper.swift */; };
 		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
+		8EBF3F342B88F4AD0004E2D1 /* CodableLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F332B88F4AD0004E2D1 /* CodableLocation.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
 		8ED065042B8549B500B1224F /* ActivityViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */; };
 		8ED1EB742B68031E003377CA /* Curtain.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB732B68031E003377CA /* Curtain.metal */; };
@@ -137,6 +138,7 @@
 		8EF45BDB2B87DC34008D6AFD /* CoreMotionSceneComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */; };
 		8EF45BDD2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BDC2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel */; };
 		8EF45BE02B87E49E008D6AFD /* UIImage+resizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BDF2B87E49E008D6AFD /* UIImage+resizeImage.swift */; };
+		8EFA5ABA2B88EBBD002F5F74 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA5AB92B88EBBD002F5F74 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -246,6 +248,7 @@
 		8EA525302B76BDE40085C9B0 /* SymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SymbolView.swift; path = ../../../../SymbolView.swift; sourceTree = "<group>"; };
 		8EB7EDED2B66A3130049E709 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
+		8EBF3F332B88F4AD0004E2D1 /* CodableLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLocation.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		8ED1EB732B68031E003377CA /* Curtain.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Curtain.metal; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 		8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionSceneComponent.swift; sourceTree = "<group>"; };
 		8EF45BDC2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2FP16.mlmodel; sourceTree = "<group>"; };
 		8EF45BDF2B87E49E008D6AFD /* UIImage+resizeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resizeImage.swift"; sourceTree = "<group>"; };
+		8EFA5AB92B88EBBD002F5F74 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				8E9D350A2B6E2EE500154078 /* CaptureFolderManager.swift */,
+				8EFA5AB92B88EBBD002F5F74 /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -622,6 +627,7 @@
 				8ED1EB7B2B680F95003377CA /* Clamp.swift */,
 				8EB7EDF12B66D3130049E709 /* ColorComponents.swift */,
 				8E9D35232B6E481500154078 /* ObjectCapture */,
+				8EBF3F332B88F4AD0004E2D1 /* CodableLocation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -990,6 +996,8 @@
 				8E27BD862B88B6EC003E0C09 /* CaptureItemTip.swift in Sources */,
 				8E396E1D2B828A9D00508791 /* SpaceScanViewModel.swift in Sources */,
 				8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */,
+				8EBF3F342B88F4AD0004E2D1 /* CodableLocation.swift in Sources */,
+				8EFA5ABA2B88EBBD002F5F74 /* LocationManager.swift in Sources */,
 				8E27BD882B88B71B003E0C09 /* MultiSelectTip.swift in Sources */,
 				8E91F4052B75483100127170 /* PatternCardView.swift in Sources */,
 				8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */,
@@ -1144,6 +1152,7 @@
 				INFOPLIST_FILE = Organize/Info.plist;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to help you capture objects and rooms.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses location service to help you find your space";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1177,6 +1186,7 @@
 				INFOPLIST_FILE = Organize/Info.plist;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to help you capture objects and rooms.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses location service to help you find your space";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

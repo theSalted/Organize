@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>33</string>
+					<string>38</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>32</string>
+					<string>37</string>
 					<key>Timestamp</key>
-					<string>730386378.836445</string>
+					<string>730405297.102905</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -461,13 +461,13 @@ final class SpaceScanViewModel: ObservableObject {
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>114</string>
+					<string>121</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>113</string>
+					<string>120</string>
 					<key>Timestamp</key>
-					<string>730380688.936298</string>
+					<string>730405141.79839</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -491,7 +491,7 @@ final class SpaceScanViewModel: ObservableObject {
 </string>
 				<key>trailing</key>
 				<string>                    if let generatedName {
-                        Button("AI suggests \"\(generatedName)\"") {
+                        Button("AI suggests \"\(generatedName)\"", systemImage: "wand.and.stars") {
                             withAnimation {
 </string>
 			</dict>

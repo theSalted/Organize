@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 import SwiftUI
 import RoomPlan
+import CoreLocation
 
 @Model
 final class Space : Identifiable, Meta {
@@ -17,14 +18,32 @@ final class Space : Identifiable, Meta {
     var createdAt : Date
     var pattern: PatternDesign
     @Relationship(deleteRule: .cascade, inverse: \Storage.space)
-    
     var storages = [Storage]()
-    private var _colorComponents : ColorComponents
+    var _location: CodableLocation?
+//    var location: CLLocationCoordinate2D?
     
+    private var _colorComponents : ColorComponents
     private var systemImage: String?
     private var emoji: String?
     
     @Attribute(.externalStorage) var imageData: Data?
+    
+    @Transient var location: CLLocationCoordinate2D? {
+        get {
+            guard let latitude = _location?.latitude, let longitude = _location?.longitude else {
+                return nil
+            }
+            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        }
+        
+        set {
+            if let newValue {
+                _location = .init(latitude: newValue.latitude, longitude: newValue.longitude)
+            }
+            _location = nil
+        }
+    }
+    
     @Transient var image: UIImage? {
         get {
             if let data = imageData,

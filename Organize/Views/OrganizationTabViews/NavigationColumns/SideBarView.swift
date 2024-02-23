@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import TipKit
+import CoreLocation
 
 struct SideBarView: View {
     // Environments and SwiftData Queries
@@ -18,10 +19,14 @@ struct SideBarView: View {
     @Environment(OnboardViewModel.self) private var onboardViewModel
     @Query private var spaces: [Space]
     
+    // Location Manager
+    private let locationManager = LocationManager()
+    
     // View States
     @State private var editMode: EditMode  = .inactive
     @State private var showCreateForm      = false
     @State private var searchText          = ""
+    @State private var location: CLLocationCoordinate2D? = nil
     
     let backgroundColor = Color(uiColor: UIColor.secondarySystemBackground)
     
@@ -41,6 +46,11 @@ struct SideBarView: View {
     
     private let scanSpaceTip = ScanSpaceTip()
     private let multiSelectTip = MultiSelectTip()
+    
+    init() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+    }
     
     var body: some View {
         @Bindable var appModel = appModel
@@ -89,6 +99,13 @@ struct SideBarView: View {
                 .symbolRenderingMode(.hierarchical)
                 .popoverTip(multiSelectTip)
             }
+            ToolbarItem(placement: .secondaryAction) {
+                Button("Help", systemImage: "questionmark.circle") {
+                    withAnimation {
+                        onboardViewModel.showOnboarding = true
+                    }
+                }
+            }
             ToolbarItem(placement: .primaryAction) {
                 Button(action: addSpace) {
                     Image(systemName: "plus.circle.fill")
@@ -104,13 +121,6 @@ struct SideBarView: View {
                             appModel.tabViewSelection = .scan
                             scanSpaceTip.invalidate(reason: .actionPerformed)
                         }
-                    }
-                }
-            }
-            ToolbarItem() {
-                Button("Help", systemImage: "questionmark.circle") {
-                    withAnimation {
-                        onboardViewModel.showOnboarding = true
                     }
                 }
             }
@@ -133,7 +143,7 @@ struct SideBarView: View {
         .sheet(isPresented: $showCreateForm) {
             @State var space = Space(name: "My Space")
             
-            FormEditView($space, mode: .create) { _ in
+            FormEditView($space, location: $location, mode: .create) { _ in
                 withAnimation {
                     showCreateForm = false
                     spaceScanViewModel.space = space
@@ -145,10 +155,17 @@ struct SideBarView: View {
                 }
             } confirm: {
                 withAnimation {
+                    space.location = location
                     showCreateForm = false
                     modelContext.insert(space)
                 }
                 try? modelContext.save()
+            }
+            .task {
+                locationManager.requestLocation()
+                withAnimation {
+                    location = locationManager.location
+                }
             }
         }
         .searchable(text: $searchText)
