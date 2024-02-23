@@ -17,6 +17,8 @@ struct ContentView: View {
     @State var appModel = AppViewModel()
     @State var captureViewModel = CaptureViewModel()
     @State var onboardViewModel = OnboardViewModel()
+    @State var cameraDataModel = CameraDataModel()
+    
     @AppStorage("isFirstLaunch", store: .standard) var isFirstLaunch: Bool = false
     private let logger = Logger(
         subsystem: OrganizeApp.bundleId, category: "ContentView")
@@ -82,6 +84,7 @@ struct ContentView: View {
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
         }
+        .environment(cameraDataModel)
         .environment(appModel)
         .sheet(isPresented: $onboardViewModel.showOnboarding) {
             OnboardingView()

@@ -34,6 +34,8 @@ struct FormEditView<T>: View where T: Meta  {
     
     @State var generatedName: String? = nil
     
+    @State var cameraViewModel = CameraViewModel()
+    
     var mode: FormMode = .add
     var title: String {
         guard let targetString = {
@@ -108,6 +110,7 @@ struct FormEditView<T>: View where T: Meta  {
     }
     
     var body: some View {
+        @Bindable var cameraViewModel = cameraViewModel
         NavigationStack {
             Form {
                 // MARK: IconNameCard
@@ -180,6 +183,46 @@ struct FormEditView<T>: View where T: Meta  {
                     }
                 default:
                     EmptyView()
+                }
+                
+                // MARK: Camera
+                Section {
+                    if let image = target.image {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        Button("Remove Picture") {
+                            withAnimation {
+                                target.image = nil
+                            }
+                        }
+                        .foregroundStyle(.red)
+                    }
+                    
+                    Button {
+                        withAnimation {
+                            cameraViewModel.showCamera = true
+                        }
+                    } label: {
+                        Label {
+                            Text("Add a Picture")
+                        } icon: {
+                            Image(systemName: "camera.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(.white)
+                                .frame(width: 28, height: 28)
+                        }
+                        .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .red))
+                    }
+                    .listRowBackground(target.color)
+                    .buttonStyle(ListButtonStyle())
+                }
+                .onChange(of: cameraViewModel.capturedImage) { _, newImage in
+                    withAnimation {
+                        target.image = newImage
+                    }
                 }
 
                 // MARK: Placement Picker
@@ -395,6 +438,9 @@ struct FormEditView<T>: View where T: Meta  {
                     generatedName = model?.classifyImage(image)
                 }
             }
+        }
+        .sheet(isPresented: $cameraViewModel.showCamera) {
+            CameraView().environment(cameraViewModel)
         }
     }
     

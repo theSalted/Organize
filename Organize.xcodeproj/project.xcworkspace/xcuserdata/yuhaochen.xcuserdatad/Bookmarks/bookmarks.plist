@@ -461,13 +461,13 @@ final class SpaceScanViewModel: ObservableObject {
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>116</string>
+					<string>119</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>115</string>
+					<string>118</string>
 					<key>Timestamp</key>
-					<string>730408052.0758491</string>
+					<string>730412559.8552949</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>

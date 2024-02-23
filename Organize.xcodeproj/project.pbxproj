@@ -111,6 +111,13 @@
 		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
 		8EBF3F342B88F4AD0004E2D1 /* CodableLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F332B88F4AD0004E2D1 /* CodableLocation.swift */; };
 		8EBF3F372B891EB30004E2D1 /* SingleSpaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F362B891EB30004E2D1 /* SingleSpaceDetailView.swift */; };
+		8EBF3F3A2B892C070004E2D1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F392B892C070004E2D1 /* CameraView.swift */; };
+		8EBF3F3C2B892C730004E2D1 /* CameraDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F3B2B892C730004E2D1 /* CameraDataModel.swift */; };
+		8EBF3F3E2B892CAE0004E2D1 /* CameraViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F3D2B892CAE0004E2D1 /* CameraViewData.swift */; };
+		8EBF3F402B892D1E0004E2D1 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F3F2B892D1E0004E2D1 /* AlertError.swift */; };
+		8EBF3F422B892D800004E2D1 /* CameraPreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F412B892D800004E2D1 /* CameraPreviewContainer.swift */; };
+		8EBF3F442B892EB60004E2D1 /* CaptureButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F432B892EB60004E2D1 /* CaptureButtonStyle.swift */; };
+		8EBF3F462B8931F20004E2D1 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F452B8931F20004E2D1 /* CameraViewModel.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
 		8ED065042B8549B500B1224F /* ActivityViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */; };
 		8ED1EB742B68031E003377CA /* Curtain.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB732B68031E003377CA /* Curtain.metal */; };
@@ -251,6 +258,13 @@
 		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		8EBF3F332B88F4AD0004E2D1 /* CodableLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLocation.swift; sourceTree = "<group>"; };
 		8EBF3F362B891EB30004E2D1 /* SingleSpaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSpaceDetailView.swift; sourceTree = "<group>"; };
+		8EBF3F392B892C070004E2D1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		8EBF3F3B2B892C730004E2D1 /* CameraDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDataModel.swift; sourceTree = "<group>"; };
+		8EBF3F3D2B892CAE0004E2D1 /* CameraViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewData.swift; sourceTree = "<group>"; };
+		8EBF3F3F2B892D1E0004E2D1 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
+		8EBF3F412B892D800004E2D1 /* CameraPreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewContainer.swift; sourceTree = "<group>"; };
+		8EBF3F432B892EB60004E2D1 /* CaptureButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureButtonStyle.swift; sourceTree = "<group>"; };
+		8EBF3F452B8931F20004E2D1 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		8ED1EB732B68031E003377CA /* Curtain.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Curtain.metal; sourceTree = "<group>"; };
@@ -452,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				8E9D35112B6E309C00154078 /* ObjectCaptureDataModel */,
+				8EBF3F3B2B892C730004E2D1 /* CameraDataModel.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -476,6 +491,7 @@
 				8E486C1D2B72B9F4005F0C4A /* ShapedLabelStyle.swift */,
 				8E4BDAF02B7D2F51003471B2 /* ListButtonStyle.swift */,
 				8E27BD8D2B88C8C8003E0C09 /* GlowingButtonStyle.swift */,
+				8EBF3F432B892EB60004E2D1 /* CaptureButtonStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -575,6 +591,7 @@
 				8E9D35322B6EDF9A00154078 /* CapturedObjectARQuickLookRepresentable.swift */,
 				8E396E242B82966500508791 /* RoomCaptureRepresentableView.swift */,
 				8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */,
+				8EBF3F412B892D800004E2D1 /* CameraPreviewContainer.swift */,
 			);
 			path = ViewRepresentable;
 			sourceTree = "<group>";
@@ -630,6 +647,8 @@
 				8EB7EDF12B66D3130049E709 /* ColorComponents.swift */,
 				8E9D35232B6E481500154078 /* ObjectCapture */,
 				8EBF3F332B88F4AD0004E2D1 /* CodableLocation.swift */,
+				8EBF3F3F2B892D1E0004E2D1 /* AlertError.swift */,
+				8EBF3F3D2B892CAE0004E2D1 /* CameraViewData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -641,6 +660,7 @@
 				8E27BD912B88CAD9003E0C09 /* OnboardViewModel.swift */,
 				8E9D35282B6ED4D000154078 /* CaptureViewModel.swift */,
 				8E396E1C2B828A9D00508791 /* SpaceScanViewModel.swift */,
+				8EBF3F452B8931F20004E2D1 /* CameraViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -649,6 +669,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED1EB7F2B681047003377CA /* SubViews */,
+				8EBF3F382B892BF00004E2D1 /* Camera */,
 				8E7FAC2E2B87D6AC004FE8F0 /* OnboardingViews */,
 				8E7357A62B72837900F779B2 /* Forms */,
 				8E22690B2B655255007F0C89 /* PatternViews */,
@@ -666,6 +687,14 @@
 				8EBF3F362B891EB30004E2D1 /* SingleSpaceDetailView.swift */,
 			);
 			path = SpaceViews;
+			sourceTree = "<group>";
+		};
+		8EBF3F382B892BF00004E2D1 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				8EBF3F392B892C070004E2D1 /* CameraView.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		8ED1EB7F2B681047003377CA /* SubViews */ = {
@@ -910,6 +939,7 @@
 				8EDDFEBB2B74C8FA0009A290 /* ShapeLabelStyle+Design.swift in Sources */,
 				8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */,
 				8E6CD0862B7764D800BF1A18 /* Color+systemBackground.swift in Sources */,
+				8EBF3F442B892EB60004E2D1 /* CaptureButtonStyle.swift in Sources */,
 				8E396E232B8295E200508791 /* RoomCaptureViewController+RoomCaptureSessionDelegate.swift in Sources */,
 				8E396E1F2B828C8E00508791 /* CapturedRoom+Equatable.swift in Sources */,
 				8E84525F2B669047005CA22D /* OpacityStyle.swift in Sources */,
@@ -928,6 +958,7 @@
 				8EF45BE02B87E49E008D6AFD /* UIImage+resizeImage.swift in Sources */,
 				8E9D35132B6E312100154078 /* ObjectCaptureDataModel.swift in Sources */,
 				8E9D35482B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift in Sources */,
+				8EBF3F462B8931F20004E2D1 /* CameraViewModel.swift in Sources */,
 				8E9D35172B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift in Sources */,
 				8E27BD7F2B88795A003E0C09 /* MobileNetV2FP16+classifyImage.swift in Sources */,
 				8E55285A2B5DA3CF00EEBCCB /* ItemCaptureView.swift in Sources */,
@@ -936,6 +967,7 @@
 				8EBF3F372B891EB30004E2D1 /* SingleSpaceDetailView.swift in Sources */,
 				8E9D355A2B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift in Sources */,
 				8E9D354B2B6FBB7E00154078 /* HelpPageView.swift in Sources */,
+				8EBF3F3E2B892CAE0004E2D1 /* CameraViewData.swift in Sources */,
 				8E486C1E2B72B9F4005F0C4A /* ShapedLabelStyle.swift in Sources */,
 				8E8D092E2B64162800AB088B /* Pattern.swift in Sources */,
 				8E396E1B2B8289CD00508791 /* RoomCaptureViewController.swift in Sources */,
@@ -957,8 +989,10 @@
 				8EDB6FA72B867D8A000E6858 /* CapturedRoom.Object.Category+getName.swift in Sources */,
 				8E5528542B5D9A1A00EEBCCB /* MetaInfoView.swift in Sources */,
 				8ED1EB7E2B681028003377CA /* CurtainEffect.swift in Sources */,
+				8EBF3F3A2B892C070004E2D1 /* CameraView.swift in Sources */,
 				8E9D35412B6FB64400154078 /* CubicObjectCaptureView.swift in Sources */,
 				8E9D35152B6E31FC00154078 /* ObjectCaptureDataModel+State.swift in Sources */,
+				8EBF3F422B892D800004E2D1 /* CameraPreviewContainer.swift in Sources */,
 				8E53A3F12B77E86200A92BDB /* CircularIconSelectionView.swift in Sources */,
 				8E22690A2B654EEA007F0C89 /* PatternDesignView.swift in Sources */,
 				8E9D35452B6FB7B100154078 /* CaptureOverlayView+Buttons.swift in Sources */,
@@ -984,6 +1018,7 @@
 				8E7FAC2D2B87B53E004FE8F0 /* StorageListView.swift in Sources */,
 				8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */,
 				8E8452632B6690A2005CA22D /* GetRandomDesign.swift in Sources */,
+				8EBF3F402B892D1E0004E2D1 /* AlertError.swift in Sources */,
 				8E97DEBB2B77DFD60007A9BA /* IconSelectionGridView.swift in Sources */,
 				8E9D35432B6FB72300154078 /* CaptureOverlayView.swift in Sources */,
 				8E9D355E2B6FE0A800154078 /* String+inText.swift in Sources */,
@@ -1000,6 +1035,7 @@
 				8EDDFEBC2B74C8FA0009A290 /* ShapeIconView+Design.swift in Sources */,
 				8E396E252B82966500508791 /* RoomCaptureRepresentableView.swift in Sources */,
 				8E9D35392B6EE2BC00154078 /* TitleView.swift in Sources */,
+				8EBF3F3C2B892C730004E2D1 /* CameraDataModel.swift in Sources */,
 				8ED633712B7FA80A000113E2 /* ItemView.swift in Sources */,
 				8E9D35372B6EE22900154078 /* ProcessingStage+String.swift in Sources */,
 				8E9D353B2B6EE52000154078 /* ProgressView.swift in Sources */,
