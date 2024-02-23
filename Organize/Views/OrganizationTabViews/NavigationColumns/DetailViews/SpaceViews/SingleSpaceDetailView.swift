@@ -46,6 +46,15 @@ struct SingleSpaceDetailView: View {
                     }
                 }
                 .frame(height: 250)
+                
+                if let image = space.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .frame(height: 250)
+                        .clipped()
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+                
                 HStack(spacing: 10) {
                     CurtainStack(folds: 10) {
                         GroupBox {
