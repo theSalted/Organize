@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @Environment(OnboardViewModel.self) private var onboardViewModel
+    
     var body: some View {
         NavigationStack {
             ForewordView()
@@ -17,4 +19,5 @@ struct OnboardingView: View {
 
 #Preview {
     OnboardingView()
+        .environment(OnboardViewModel())
 }

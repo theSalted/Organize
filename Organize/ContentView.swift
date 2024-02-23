@@ -85,6 +85,7 @@ struct ContentView: View {
         .environment(appModel)
         .sheet(isPresented: $onboardViewModel.showOnboarding) {
             OnboardingView()
+                .environment(onboardViewModel)
                 .interactiveDismissDisabled()
         }
     }
