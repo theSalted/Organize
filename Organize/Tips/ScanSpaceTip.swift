@@ -21,6 +21,5 @@ struct ScanSpaceTip: Tip {
     var actions: [Action] {
         // Define a reset password button.
         Action(id: "scan-space", title: "Scan Surrounding")
-        // Define a FAQ button.
     }
 }

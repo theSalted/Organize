@@ -20,6 +20,9 @@
 		8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269102B657BEB007F0C89 /* AuroraStyles.swift */; };
 		8E27BD7F2B88795A003E0C09 /* MobileNetV2FP16+classifyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BD7E2B88795A003E0C09 /* MobileNetV2FP16+classifyImage.swift */; };
 		8E27BD822B887FC9003E0C09 /* ScanSpaceTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BD812B887FC9003E0C09 /* ScanSpaceTip.swift */; };
+		8E27BD862B88B6EC003E0C09 /* CaptureItemTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BD852B88B6EC003E0C09 /* CaptureItemTip.swift */; };
+		8E27BD882B88B71B003E0C09 /* MultiSelectTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BD872B88B71B003E0C09 /* MultiSelectTip.swift */; };
+		8E27BD8A2B88B755003E0C09 /* AISuggestedName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BD892B88B755003E0C09 /* AISuggestedName.swift */; };
 		8E396E162B82881400508791 /* SpaceScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E396E152B82881400508791 /* SpaceScanView.swift */; };
 		8E396E1B2B8289CD00508791 /* RoomCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E396E1A2B8289CD00508791 /* RoomCaptureViewController.swift */; };
 		8E396E1D2B828A9D00508791 /* SpaceScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E396E1C2B828A9D00508791 /* SpaceScanViewModel.swift */; };
@@ -146,6 +149,9 @@
 		8E2269102B657BEB007F0C89 /* AuroraStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraStyles.swift; sourceTree = "<group>"; };
 		8E27BD7E2B88795A003E0C09 /* MobileNetV2FP16+classifyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MobileNetV2FP16+classifyImage.swift"; sourceTree = "<group>"; };
 		8E27BD812B887FC9003E0C09 /* ScanSpaceTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSpaceTip.swift; sourceTree = "<group>"; };
+		8E27BD852B88B6EC003E0C09 /* CaptureItemTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureItemTip.swift; sourceTree = "<group>"; };
+		8E27BD872B88B71B003E0C09 /* MultiSelectTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectTip.swift; sourceTree = "<group>"; };
+		8E27BD892B88B755003E0C09 /* AISuggestedName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISuggestedName.swift; sourceTree = "<group>"; };
 		8E396E152B82881400508791 /* SpaceScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceScanView.swift; sourceTree = "<group>"; };
 		8E396E1A2B8289CD00508791 /* RoomCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureViewController.swift; sourceTree = "<group>"; };
 		8E396E1C2B828A9D00508791 /* SpaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceScanViewModel.swift; sourceTree = "<group>"; };
@@ -305,6 +311,9 @@
 			isa = PBXGroup;
 			children = (
 				8E27BD812B887FC9003E0C09 /* ScanSpaceTip.swift */,
+				8E27BD852B88B6EC003E0C09 /* CaptureItemTip.swift */,
+				8E27BD872B88B71B003E0C09 /* MultiSelectTip.swift */,
+				8E27BD892B88B755003E0C09 /* AISuggestedName.swift */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -950,6 +959,7 @@
 				8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */,
 				8E88AD132B5C6447003BDB04 /* SpaceView.swift in Sources */,
 				8E8452612B66906B005CA22D /* GradientEffect.swift in Sources */,
+				8E27BD8A2B88B755003E0C09 /* AISuggestedName.swift in Sources */,
 				8E9D354E2B6FBC3A00154078 /* ObjectCaptureOnboardingView.swift in Sources */,
 				8E9D351D2B6E38AE00154078 /* ModelDirectory.swift in Sources */,
 				8E53A3F52B77FC9A00A92BDB /* PatternSelectionView.swift in Sources */,
@@ -961,8 +971,10 @@
 				8E9D353B2B6EE52000154078 /* ProgressView.swift in Sources */,
 				8E9D350B2B6E2EE500154078 /* CaptureFolderManager.swift in Sources */,
 				8E88AD152B5D7395003BDB04 /* StorageView.swift in Sources */,
+				8E27BD862B88B6EC003E0C09 /* CaptureItemTip.swift in Sources */,
 				8E396E1D2B828A9D00508791 /* SpaceScanViewModel.swift in Sources */,
 				8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */,
+				8E27BD882B88B71B003E0C09 /* MultiSelectTip.swift in Sources */,
 				8E91F4052B75483100127170 /* PatternCardView.swift in Sources */,
 				8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */,
 				8ED1EB762B680385003377CA /* CurtainStack.swift in Sources */,
