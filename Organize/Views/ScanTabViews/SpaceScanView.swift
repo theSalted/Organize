@@ -30,7 +30,7 @@ struct SpaceScanView: View {
                     .onDisappear {
                         spaceScanViewModel.actions.send(.stopSession)
                     }
-                    .navigationTitle($spaceScanViewModel.name)
+                    .navigationTitle($spaceScanViewModel.space.name)
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .confirmationAction) {
@@ -76,8 +76,6 @@ struct SpaceScanView: View {
         spaceScanViewModel.actions.send(.stopSession)
         spaceScanViewModel.actions.send(.export)
         let capturedRoomObjects = spaceScanViewModel.capturedRoom?.objects
-        let space = Space(name: spaceScanViewModel.name)
-        
         var storages: [Storage] {
             guard let capturedRoomObjects else {
                 return []
@@ -93,8 +91,7 @@ struct SpaceScanView: View {
             return output
         }
         
-        space.storages = storages
-        spaceScanViewModel.space = space
+        spaceScanViewModel.space.storages = storages
         
         try? modelContext.save()
         modelContext.insert(spaceScanViewModel.space)

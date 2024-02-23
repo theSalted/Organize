@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>31</string>
+					<string>32</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>30</string>
+					<string>31</string>
 					<key>Timestamp</key>
-					<string>730370822.101289</string>
+					<string>730382465.11333</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -110,7 +110,7 @@
 					<key>StartingLineNumber</key>
 					<string>27</string>
 					<key>Timestamp</key>
-					<string>729884771.886156</string>
+					<string>730383338.989328</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -459,15 +459,15 @@ final class SpaceScanViewModel: ObservableObject {
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>83</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>110</string>
+					<string>114</string>
 					<key>StartingColumnNumber</key>
-					<string>83</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>110</string>
+					<string>113</string>
 					<key>Timestamp</key>
-					<string>730364933.7493449</string>
+					<string>730380688.936298</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -483,15 +483,16 @@ final class SpaceScanViewModel: ObservableObject {
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>                    // TODO: There is a visual glitch (related to list button style) caused by this implementation
+</string>
 				<key>leading</key>
 				<string>                Section { 
                     IconNameCardView(target)
-                    // TODO: There is a visual glitch (related to list button style) caused by this implementation</string>
+</string>
 				<key>trailing</key>
-				<string>
-                    if let generatedName {
+				<string>                    if let generatedName {
                         Button("AI suggests \"\(generatedName)\"") {
+                            withAnimation {
 </string>
 			</dict>
 			<key>type</key>

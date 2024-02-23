@@ -8,7 +8,7 @@
 import Foundation
 import TipKit
 
-struct MutiSelectTip: Tip {
+struct MultiSelectTip: Tip {
     var title: Text {
         Text("View Everything at Once")
     }

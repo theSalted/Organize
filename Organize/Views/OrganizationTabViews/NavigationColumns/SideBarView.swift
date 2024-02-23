@@ -11,6 +11,7 @@ import TipKit
 
 struct SideBarView: View {
     // Environments and SwiftData Queries
+    @EnvironmentObject var spaceScanViewModel: SpaceScanViewModel
     @Environment(\.modelContext) private var modelContext
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(AppViewModel.self) private var appModel
@@ -38,6 +39,7 @@ struct SideBarView: View {
     }
     
     private let scanSpaceTip = ScanSpaceTip()
+    private let multiSelectTip = MultiSelectTip()
     
     var body: some View {
         @Bindable var appModel = appModel
@@ -52,7 +54,6 @@ struct SideBarView: View {
                         SymbolView(symbol: space.symbol)
                             .foregroundStyle(space.color)
                     }
-                        
                 }
                 .onDelete(perform: deleteItems)
             }
@@ -85,6 +86,7 @@ struct SideBarView: View {
                 }
                 .symbolEffect(.bounce, value: editMode)
                 .symbolRenderingMode(.hierarchical)
+                .popoverTip(multiSelectTip)
             }
             ToolbarItem(placement: .primaryAction) {
                 Button(action: addSpace) {
@@ -95,7 +97,14 @@ struct SideBarView: View {
                 }
                 .symbolEffect(.bounce, value: showCreateForm)
                 .sensoryFeedback(.success, trigger: showCreateForm)
-                .popoverTip(scanSpaceTip)
+                .popoverTip(scanSpaceTip) { action in
+                    if action.id == "scan-space" {
+                        withAnimation {
+                            appModel.tabViewSelection = .scan
+                            scanSpaceTip.invalidate(reason: .actionPerformed)
+                        }
+                    }
+                }
             }
         }
         .overlay {
@@ -116,7 +125,13 @@ struct SideBarView: View {
         .sheet(isPresented: $showCreateForm) {
             @State var space = Space(name: "My Space")
             
-            FormEditView($space, mode: .create) {
+            FormEditView($space, mode: .create) { _ in
+                withAnimation {
+                    showCreateForm = false
+                    spaceScanViewModel.space = space
+                    appModel.tabViewSelection = .scan
+                }
+            } cancel: {
                 withAnimation {
                     showCreateForm = false
                 }
@@ -151,5 +166,6 @@ struct SideBarView: View {
     NavigationStack {
         SideBarView()
             .environment(AppViewModel())
+            .environmentObject(SpaceScanViewModel())
     }
 }

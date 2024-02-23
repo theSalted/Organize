@@ -33,6 +33,7 @@ struct ContentView: View {
                     for: .tabBar)
                 .toolbarBackground(.hidden, for: .tabBar)
                 .environment(captureViewModel)
+                .environmentObject(spaceScanViewModel)
             #if !targetEnvironment(simulator)
             ItemCaptureView()
                 .overlay {
@@ -66,6 +67,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Scan", systemImage: "square.split.bottomrightquarter.fill")
                 }
+                .tag(AppViewModel.TabViewTag.scan)
                 .environmentObject(spaceScanViewModel)
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)

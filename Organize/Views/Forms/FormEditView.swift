@@ -5,6 +5,7 @@
 //  Created by Yuhao Chen on 2/10/24.
 //
 
+import TipKit
 import OSLog
 import SwiftUI
 import SceneKit
@@ -71,6 +72,8 @@ struct FormEditView<T>: View where T: Meta  {
     var confirmationAction: ButtonAction?
     var addScanAction: ButtonActionWithPlacementID?
     
+    private let aiSuggestedNameTip = AISuggestedNameTip()
+    
     // MARK: Inits
     init(
         _ target: Binding<T>,
@@ -115,15 +118,38 @@ struct FormEditView<T>: View where T: Meta  {
                                 target.name = generatedName
                             }
                         }
+                        .popoverTip(aiSuggestedNameTip)
                     }
                 }
                 
                 // MARK: Add Scan Button
                 switch target {
+                case let space as Space:
+                    Section {
+                        Button {
+                            withAnimation {
+                                addScanAction?(space.id)
+                            }
+                        } label: {
+                            Label {
+                                Text("Scan Surrounding")
+                            } icon: {
+                                Image(systemName: "square.split.bottomrightquarter.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 28, height: 28)
+                            }
+                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .mint))
+                        }
+                        .listRowBackground(target.color)
+                        .buttonStyle(ListButtonStyle())
+                        .disabled(!space.storages.isEmpty)
+                        .disabled(addScanAction == nil)
+                    }
                 case let item as Item:
                     Section {
-                        if let item = target as? Item,
-                           let previewImage = item.capture?.previewImage {
+                        if let previewImage = item.capture?.previewImage {
                             Image(uiImage: previewImage)
                                 .resizable()
                                 .scaledToFit()
@@ -149,9 +175,6 @@ struct FormEditView<T>: View where T: Meta  {
                         .listRowBackground(target.color)
                         .buttonStyle(ListButtonStyle())
                         .disabled(addScanAction == nil)
-                        if item.capture != nil {
-                            
-                        }
                     }
                 default:
                     EmptyView()

@@ -29,7 +29,7 @@ final class AppViewModel {
     var showOnBoardingView = false
     
     enum TabViewTag: String, CaseIterable {
-        case organize, capture
+        case organize, capture, scan
     }
     
     enum DetailsViewCategory  {
