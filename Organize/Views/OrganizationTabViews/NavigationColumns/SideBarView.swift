@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import TipKit
 
 struct SideBarView: View {
     // Environments and SwiftData Queries
@@ -17,7 +18,6 @@ struct SideBarView: View {
     
     // View States
     @State private var editMode: EditMode  = .inactive
-    @State private var isSearchPresented   = false
     @State private var showCreateForm      = false
     @State private var searchText          = ""
     
@@ -37,15 +37,13 @@ struct SideBarView: View {
         }
     }
     
+    private let scanSpaceTip = ScanSpaceTip()
+    
     var body: some View {
         @Bindable var appModel = appModel
         
         List(selection: $appModel.spaceListSelectionIDs) {
             // Tab bar hide itself when device is in horizontal. Switch tab with a button instead.
-            if verticalSizeClass == .compact && !isSearchPresented {
-                Label("Scan", systemImage: "cube.fill")
-            }
-            
             Section(spacesList.isEmpty ? "" : "Space") {
                 ForEach(spacesList) { space in
                     Label {
@@ -97,6 +95,7 @@ struct SideBarView: View {
                 }
                 .symbolEffect(.bounce, value: showCreateForm)
                 .sensoryFeedback(.success, trigger: showCreateForm)
+                .popoverTip(scanSpaceTip)
             }
         }
         .overlay {
@@ -129,7 +128,7 @@ struct SideBarView: View {
                 try? modelContext.save()
             }
         }
-        .searchable(text: $searchText, isPresented: $isSearchPresented)
+        .searchable(text: $searchText)
         
     }
     

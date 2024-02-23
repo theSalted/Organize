@@ -14,13 +14,13 @@ struct ItemCaptureView: View {
     @StateObject var objectCaptureModel: ObjectCaptureDataModel = ObjectCaptureDataModel.instance
     @Environment(CaptureViewModel.self) private var captureViewModel
     
-    var showProgressView: Bool {
+    private var showProgressView: Bool {
         objectCaptureModel.state == .completed ||
         objectCaptureModel.state == .restart ||
         objectCaptureModel.state == .ready
     }
     
-    var viewState : CaptureViewState {
+    private var viewState : CaptureViewState {
         guard ObjectCaptureSession.isSupported else {
             return .unsupportedDevice
         }

@@ -21,7 +21,7 @@ struct CubicObjectCaptureView: View {
     
     @Query private var storages: [Storage]
     
-    var selectedStorages: [Storage] {
+    private var selectedStorages: [Storage] {
         storages.filter { appModel.storageListSelectionsIDs.contains($0.id)}
     }
     
@@ -29,7 +29,7 @@ struct CubicObjectCaptureView: View {
     
     // Pauses the scanning and shows tutorial pages. This sample passes it as
     // a binding to the two views so buttons can change the state.
-    @State var showInfo: Bool = false
+    @State private var showInfo: Bool = false
     @State private var showOnboardingView: Bool = false
     
     var body: some View {

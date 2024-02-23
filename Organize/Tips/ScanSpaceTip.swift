@@ -9,7 +9,18 @@ import Foundation
 import TipKit
 
 struct ScanSpaceTip: Tip {
-    var title = Text("Begin by Scanning Your Surrounding")
-    var image = Image(systemName: "square.split.bottomrightquarter")
-    var message = Text("Organize will scan your room and create a space and its storages for you.")
+    var title: Text {
+        Text("Begin by Scanning Your Surrounding")
+    }
+    var message: Text? {
+        Text("Organize will scan your room and create a space and its storages for you.")
+    }
+    var image: Image? {
+        Image(systemName: "square.split.bottomrightquarter")
+    }
+    var actions: [Action] {
+        // Define a reset password button.
+        Action(id: "scan-space", title: "Scan Surrounding")
+        // Define a FAQ button.
+    }
 }

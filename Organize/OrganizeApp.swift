@@ -51,5 +51,7 @@ struct OrganizeApp: App {
     
     private func configureTips() {
         try? Tips.configure()
+        try? Tips.resetDatastore()
+        Tips.showAllTipsForTesting()
     }
 }
