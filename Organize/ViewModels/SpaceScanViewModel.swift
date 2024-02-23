@@ -10,7 +10,7 @@ import Foundation
 import RoomPlan
 
 // TODO: Upgrade to using observation framework
-class SpaceScanViewModel: ObservableObject {
+final class SpaceScanViewModel: ObservableObject {
     enum Action {
         case startSession
         case stopSession

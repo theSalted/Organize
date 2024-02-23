@@ -12,53 +12,6 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>36</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>35</string>
-					<key>Timestamp</key>
-					<string>730322709.926625</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>Organize/ContentView.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>            ItemCaptureView()
-</string>
-				<key>leading</key>
-				<string>                .environment(captureViewModel)
-            #if !targetEnvironment(simulator)
-</string>
-				<key>trailing</key>
-				<string>                .overlay {
-                    if storages.isEmpty {
-                        ZStack {
-</string>
-			</dict>
-			<key>title</key>
-			<string>Todo: revisit needed on how to present create item form for capture view</string>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
 					<string>31</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
@@ -270,7 +223,7 @@
 // TODO: Upgrade to using observation framework</string>
 				<key>trailing</key>
 				<string>
-class SpaceScanViewModel: ObservableObject {
+final class SpaceScanViewModel: ObservableObject {
     enum Action {
 </string>
 			</dict>

@@ -15,7 +15,7 @@ import os
 #if !targetEnvironment(simulator)
 @MainActor
 @available(iOS 17.0, *)
-class ObjectCaptureDataModel: ObservableObject, Identifiable {
+final class ObjectCaptureDataModel: ObservableObject, Identifiable {
     let logger = Logger(subsystem: OrganizeApp.bundleId,
                         category: "AppDataModel")
     

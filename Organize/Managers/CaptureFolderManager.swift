@@ -9,7 +9,7 @@ import Dispatch
 import Foundation
 import os
 
-class CaptureFolderManager: ObservableObject {
+final class CaptureFolderManager: ObservableObject {
     static let logger = Logger(subsystem: OrganizeApp.bundleId,
                                 category: "CaptureFolderManager")
 

@@ -28,7 +28,7 @@ struct PlayerView: UIViewRepresentable {
     private static let videoSize = CGSize(width: 1280, height: 1080).applying(CGAffineTransformIdentity)
     private static let transparentPixelBufferAttributes = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
 
-    class Coordinator {
+    final class Coordinator {
         var playerLooper: AVPlayerLooper?
     }
 
@@ -99,7 +99,7 @@ struct PlayerView: UIViewRepresentable {
     }
 }
 
-class AVPlayerView: UIView {
+final class AVPlayerView: UIView {
     override class var layerClass: AnyClass {
         return AVPlayerLayer.self
     }

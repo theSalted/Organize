@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 @Model
-class Item : Identifiable, Meta {
+final class Item : Identifiable, Meta {
     var id: UUID
     var name: String
     var createdAt: Date

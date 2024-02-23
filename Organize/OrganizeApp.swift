@@ -7,13 +7,13 @@
 
 import SwiftUI
 import SwiftData
+import TipKit
 
 // TODO: Onboarding
 // TODO: TipKit
 // TODO: MapKit
 // TODO: SpriteKit
 // TODO: Vision
-// TODO: CoreML
 // TODO: SwiftChart
 // TODO: SceneKit
 // TODO: Camera
@@ -43,5 +43,13 @@ struct OrganizeApp: App {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+    }
+    
+    init() {
+        configureTips()
+    }
+    
+    private func configureTips() {
+        try? Tips.configure()
     }
 }

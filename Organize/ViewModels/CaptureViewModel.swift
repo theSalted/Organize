@@ -9,11 +9,10 @@ import Foundation
 import Observation
 
 @Observable
-class CaptureViewModel {
+final class CaptureViewModel {
     var showErrorAlert: Bool = false
     var showReconstructionView: Bool = false
     var item: Item = Item(name: "My Item")
     var storageSelectionID: UUID?
     var showCreateForm = false
-    var showOnBoardingView = true
 }

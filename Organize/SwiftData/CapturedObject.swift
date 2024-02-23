@@ -13,7 +13,7 @@ import UIKit
 import SceneKit.ModelIO
 
 @Model
-class CapturedObject: Identifiable, ModelDirectory {
+final class CapturedObject: Identifiable, ModelDirectory {
     var id: UUID
     var filename: String
     /// This is a string of a path component that will be used to build full URL of

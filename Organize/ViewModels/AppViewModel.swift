@@ -10,7 +10,7 @@ import Observation
 import SwiftUI
 
 @Observable
-class AppViewModel {
+final class AppViewModel {
     var tabViewSelection: TabViewTag = .organize
     
     // MARK: Selection IDs for lists
@@ -25,6 +25,8 @@ class AppViewModel {
     var itemsListSelectionIDs: Set<Item.ID> = []
     
     var detailSelections: Set<AnyHashable> = []
+    
+    var showOnBoardingView = false
     
     enum TabViewTag: String, CaseIterable {
         case organize, capture

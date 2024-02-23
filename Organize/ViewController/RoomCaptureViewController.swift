@@ -11,7 +11,7 @@ import Combine
 import RoomPlan
 import SwiftUI
 
-class RoomCaptureViewController: UIViewController {
+final class RoomCaptureViewController: UIViewController {
     var viewModel: SpaceScanViewModel
     private var cancellables: Set<AnyCancellable> = []
     private var roomScanView: RoomCaptureView?

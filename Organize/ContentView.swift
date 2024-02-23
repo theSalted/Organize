@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import TipKit
 import OSLog
 
 struct ContentView: View {
@@ -15,7 +16,7 @@ struct ContentView: View {
     @StateObject var spaceScanViewModel = SpaceScanViewModel()
     @State var appModel = AppViewModel()
     @State var captureViewModel = CaptureViewModel()
-    private var logger = Logger(
+    private let logger = Logger(
         subsystem: OrganizeApp.bundleId, category: "ContentView")
     
     var body: some View {
@@ -70,7 +71,7 @@ struct ContentView: View {
                 .toolbarColorScheme(.dark, for: .tabBar)
         }
         .environment(appModel)
-        .sheet(isPresented: $captureViewModel.showOnBoardingView) {
+        .sheet(isPresented: $appModel.showOnBoardingView) {
             NavigationStack {
                 List {
                     

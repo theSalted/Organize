@@ -13,7 +13,7 @@ import SwiftUI
 /// Adds a message to a queue that appears with a minimum duration.
 ///
 /// The duration extends if the queue refreshes and automatically removes items for which the timer is expired.
-class TimedMessageList: ObservableObject {
+final class TimedMessageList: ObservableObject {
     /// A unique container for a message string and timestamps.
     ///
     /// SwiftUI can consistently animate each `Message` instance because the

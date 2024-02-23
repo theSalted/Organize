@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import QuickLook
 
-class QuickLookViewController: UIViewController {
+final class QuickLookViewController: UIViewController {
     let qlvc = QLPreviewController()
     var qlPresented = false
 
