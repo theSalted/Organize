@@ -17,38 +17,69 @@ struct SingleItemDetailView: View {
     }
     
     var body: some View {
-        List {
-            Section {
-                MetaPrimitiveView(item, title: "Information")
-            }
-            
-            if let modelNode = item.capture?.modelNode {
-                let scene: SCNScene = {
-                    let scene = SCNScene()
-                    scene.background.contents = UIColor.secondarySystemGroupedBackground
-                    scene.rootNode.addChildNode(modelNode)
-                    return scene
-                }()
-                
-                SceneView(scene: scene,
-                          options: [.allowsCameraControl, .autoenablesDefaultLighting],
-                          antialiasingMode: .multisampling2X)
-                .frame(height: 300)
-            }
-            
-            if let previewImage = item.capture?.previewImage,
-               let url = item.capture?.modelURL {
-                Section {
-                    Button {
-                        openURL(from: url)
-                    } label: {
-                        Image(uiImage: previewImage)
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
+        ScrollView(.vertical) {
+            VStack(spacing: 15) {
+                HStack(spacing: 10) {
+                    IconNameCardView(item, mode: .display)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    if let image = item.image {
+                        ZStack {
+                            Rectangle().foregroundStyle(Color(uiColor: .secondarySystemBackground))
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .clipped()
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                 }
+                .frame(height: 250)
+                
+                HStack(spacing: 10) {
+                    if let modelNode = item.capture?.modelNode {
+                        let scene: SCNScene = {
+                            let scene = SCNScene()
+                            scene.background.contents = UIColor.secondarySystemGroupedBackground
+                            scene.rootNode.addChildNode(modelNode)
+                            return scene
+                        }()
+        
+                        SceneView(scene: scene,
+                                  options: [.allowsCameraControl, .autoenablesDefaultLighting],
+                                  antialiasingMode: .multisampling2X)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
+                    
+                    if let previewImage = item.capture?.previewImage,
+                       let url = item.capture?.modelURL {
+                        Button {
+                            openURL(from: url)
+                        } label: {
+                            ZStack {
+                                Color.white
+                                Image(uiImage: previewImage)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .clipped()
+                            }
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
+                    }
+                }
+                .frame(height: 300)
+                
+                HStack(spacing: 10) {
+                    CurtainStack(folds: 10) {
+                        GroupBox {
+                            MetaPrimitiveView(item, title: "Information")
+                        }
+                    } background: {
+                        Text("Hey! You found me.")
+                    }
+                }
+                .gridCellColumns(2)
             }
+            .padding()
         }
     }
     

@@ -51,6 +51,17 @@ struct SingleStorageDetailView: View {
         let count = appModel.storageListSelectionsIDs.count
         List(selection: $appModel.itemsListSelectionIDs) {
             Section("Detail") {
+                if let image = storage.image {
+                    HStack(alignment: .center) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .clipped()
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 250)
+                }
                 MetaPrimitiveView(storage, title: "Information")
             }
             if itemsList.isEmpty {
