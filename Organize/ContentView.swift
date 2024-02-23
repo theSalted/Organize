@@ -16,8 +16,17 @@ struct ContentView: View {
     @StateObject var spaceScanViewModel = SpaceScanViewModel()
     @State var appModel = AppViewModel()
     @State var captureViewModel = CaptureViewModel()
+    @State var onboardViewModel = OnboardViewModel()
+    @AppStorage("isFirstLaunch", store: .standard) var isFirstLaunch: Bool = false
     private let logger = Logger(
         subsystem: OrganizeApp.bundleId, category: "ContentView")
+    
+    init() {
+        if isFirstLaunch {
+            onboardViewModel.showOnboarding = true
+            isFirstLaunch = false
+        }
+    }
     
     var body: some View {
         @Bindable var captureViewModel = captureViewModel
@@ -32,6 +41,7 @@ struct ContentView: View {
                         .hidden : .automatic,
                     for: .tabBar)
                 .toolbarBackground(.hidden, for: .tabBar)
+                .environment(onboardViewModel)
                 .environment(captureViewModel)
                 .environmentObject(spaceScanViewModel)
             #if !targetEnvironment(simulator)
@@ -73,30 +83,9 @@ struct ContentView: View {
                 .toolbarColorScheme(.dark, for: .tabBar)
         }
         .environment(appModel)
-        .sheet(isPresented: $appModel.showOnBoardingView) {
-            NavigationStack {
-                List {
-                    
-                }
-                .navigationTitle("Forewords")
-                .toolbar {
-                    ToolbarItem(placement: .bottomBar) {
-                        Button {
-                            
-                        } label: {
-                            HStack {
-                                Text("Continue")
-                                    .bold()
-                            }
-                            .padding(8)
-                            .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .padding(.bottom)
-                    }
-                }
-                
-            }
+        .sheet(isPresented: $onboardViewModel.showOnboarding) {
+            OnboardingView()
+                .interactiveDismissDisabled()
         }
     }
 }

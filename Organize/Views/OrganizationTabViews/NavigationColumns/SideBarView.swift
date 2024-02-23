@@ -15,6 +15,7 @@ struct SideBarView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(AppViewModel.self) private var appModel
+    @Environment(OnboardViewModel.self) private var onboardViewModel
     @Query private var spaces: [Space]
     
     // View States
@@ -106,6 +107,13 @@ struct SideBarView: View {
                     }
                 }
             }
+            ToolbarItem() {
+                Button("Help", systemImage: "questionmark.circle") {
+                    withAnimation {
+                        onboardViewModel.showOnboarding = true
+                    }
+                }
+            }
         }
         .overlay {
             // Placeholder View for when spaces is empty
@@ -166,6 +174,7 @@ struct SideBarView: View {
     NavigationStack {
         SideBarView()
             .environment(AppViewModel())
+            .environment(OnboardViewModel())
             .environmentObject(SpaceScanViewModel())
     }
 }

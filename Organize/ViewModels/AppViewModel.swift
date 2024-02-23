@@ -26,7 +26,7 @@ final class AppViewModel {
     
     var detailSelections: Set<AnyHashable> = []
     
-    var showOnBoardingView = false
+    var showOnBoardingView = true
     
     enum TabViewTag: String, CaseIterable {
         case organize, capture, scan
