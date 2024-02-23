@@ -39,7 +39,7 @@ struct SpaceView: View {
                     description: "Select one or more spaces to get started".inText)
             case 1:
                 let theSelectedSpace = selectedSpaces.first!
-                MetaInfoView(theSelectedSpace)
+                SingleSpaceDetailView(theSelectedSpace)
                     .navigationTitle(title)
                     .tint(theSelectedSpace.color)
             case 2...:

@@ -110,6 +110,7 @@
 		8EB7EDEE2B66A3130049E709 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDED2B66A3130049E709 /* ColorHelper.swift */; };
 		8EB7EDF22B66D3130049E709 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB7EDF12B66D3130049E709 /* ColorComponents.swift */; };
 		8EBF3F342B88F4AD0004E2D1 /* CodableLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F332B88F4AD0004E2D1 /* CodableLocation.swift */; };
+		8EBF3F372B891EB30004E2D1 /* SingleSpaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F362B891EB30004E2D1 /* SingleSpaceDetailView.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
 		8ED065042B8549B500B1224F /* ActivityViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */; };
 		8ED1EB742B68031E003377CA /* Curtain.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB732B68031E003377CA /* Curtain.metal */; };
@@ -249,6 +250,7 @@
 		8EB7EDED2B66A3130049E709 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		8EB7EDF12B66D3130049E709 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		8EBF3F332B88F4AD0004E2D1 /* CodableLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLocation.swift; sourceTree = "<group>"; };
+		8EBF3F362B891EB30004E2D1 /* SingleSpaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSpaceDetailView.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		8ED1EB732B68031E003377CA /* Curtain.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Curtain.metal; sourceTree = "<group>"; };
@@ -657,6 +659,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8EBF3F352B891E780004E2D1 /* SpaceViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E88AD122B5C6447003BDB04 /* SpaceView.swift */,
+				8EBF3F362B891EB30004E2D1 /* SingleSpaceDetailView.swift */,
+			);
+			path = SpaceViews;
+			sourceTree = "<group>";
+		};
 		8ED1EB7F2B681047003377CA /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -781,7 +792,7 @@
 		8EF034422B61670700A15340 /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
-				8E88AD122B5C6447003BDB04 /* SpaceView.swift */,
+				8EBF3F352B891E780004E2D1 /* SpaceViews */,
 				8ED6336F2B7F5541000113E2 /* StorageViews */,
 				8ED633722B7FAD97000113E2 /* ItemViews */,
 			);
@@ -922,6 +933,7 @@
 				8E55285A2B5DA3CF00EEBCCB /* ItemCaptureView.swift in Sources */,
 				8EF45BDB2B87DC34008D6AFD /* CoreMotionSceneComponent.swift in Sources */,
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,
+				8EBF3F372B891EB30004E2D1 /* SingleSpaceDetailView.swift in Sources */,
 				8E9D355A2B6FBFB300154078 /* OnboardingButtonView+LocailizedString.swift in Sources */,
 				8E9D354B2B6FBB7E00154078 /* HelpPageView.swift in Sources */,
 				8E486C1E2B72B9F4005F0C4A /* ShapedLabelStyle.swift in Sources */,

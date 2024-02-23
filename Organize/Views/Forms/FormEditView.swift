@@ -22,7 +22,6 @@ struct FormEditView<T>: View where T: Meta  {
     @Query var storages: [Storage]
     
     @Binding var target: T
-    @Binding var location: CLLocationCoordinate2D?
     
     @State private var spaceSelection: Space? = nil
     @State private var storageSelection: Storage? = nil
@@ -80,7 +79,6 @@ struct FormEditView<T>: View where T: Meta  {
     // MARK: Inits
     init(
         _ target: Binding<T>,
-        location: Binding<CLLocationCoordinate2D?> = .constant(nil),
         mode: FormMode = .add,
         unsafePlacementSelectionID placementSelectionID: UUID? = nil,
         cancel cancelationAction: @escaping ButtonAction,
@@ -91,12 +89,10 @@ struct FormEditView<T>: View where T: Meta  {
         _placementSelectionID = State(initialValue: placementSelectionID)
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
-        self._location = location
     }
     
     init(
         _ target: Binding<T>,
-        location: Binding<CLLocationCoordinate2D?> = .constant(nil),
         mode: FormMode = .add,
         unsafePlacementSelectionID placementSelectionID: UUID? = nil,
         addScan addScanAction: @escaping ButtonActionWithPlacementID,
@@ -109,7 +105,6 @@ struct FormEditView<T>: View where T: Meta  {
         self.addScanAction = addScanAction
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
-        self._location = location
     }
     
     var body: some View {
@@ -321,7 +316,8 @@ struct FormEditView<T>: View where T: Meta  {
                 }
                 
                 // MARK: Map
-                if let location = location {
+                if let space = target as? Space,
+                   let location = space.location {
                     let position = MapCameraPosition.region(
                         MKCoordinateRegion(
                             center: location,
@@ -329,40 +325,42 @@ struct FormEditView<T>: View where T: Meta  {
                         )
                     )
                     
-                    DisclosureGroup(isExpanded: $isMapDisclosureGroupExpanded) {
-                        Map(initialPosition: position) {
-                            Marker(coordinate: location) {
-                                Label {
-                                    Text(target.name)
-                                } icon: {
-                                    SymbolView(symbol: target.symbol)
+                    Section {
+                        DisclosureGroup(isExpanded: $isMapDisclosureGroupExpanded) {
+                            Map(initialPosition: position) {
+                                Marker(coordinate: location) {
+                                    Label {
+                                        Text(target.name)
+                                    } icon: {
+                                        SymbolView(symbol: target.symbol)
+                                    }
+                                    .font(.title)
                                 }
-                                .font(.title)
-
                             }
-                        }
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .frame(height: 350)
-                        Button("Remove Location") {
-                            withAnimation {
-                                self.location = nil
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .frame(height: 350)
+                            Button("Remove Location") {
+                                withAnimation {
+                                    space.location = nil
+                                }
                             }
+                            .foregroundStyle(.red)
+                        } label: {
+                            Label { "Location".inText
+                            } icon: {
+                                Image(systemName: "mappin.square.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 28, height: 28)
+                            }
+                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), backgroundColor: .blue))
                         }
-                        .foregroundStyle(.red)
-                    } label: {
-                        Label { "Location".inText
-                        } icon: {
-                            Image(systemName: "mappin.square.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .foregroundStyle(.white)
-                                .frame(width: 28, height: 28)
-                        }
-                        .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), backgroundColor: .blue))
                     }
                 }
 
             }
+            .listSectionSpacing(15)
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

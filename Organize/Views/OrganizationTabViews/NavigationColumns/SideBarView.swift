@@ -26,7 +26,6 @@ struct SideBarView: View {
     @State private var editMode: EditMode  = .inactive
     @State private var showCreateForm      = false
     @State private var searchText          = ""
-    @State private var location: CLLocationCoordinate2D? = nil
     
     let backgroundColor = Color(uiColor: UIColor.secondarySystemBackground)
     
@@ -143,7 +142,7 @@ struct SideBarView: View {
         .sheet(isPresented: $showCreateForm) {
             @State var space = Space(name: "My Space")
             
-            FormEditView($space, location: $location, mode: .create) { _ in
+            FormEditView($space, mode: .create) { _ in
                 withAnimation {
                     showCreateForm = false
                     spaceScanViewModel.space = space
@@ -155,7 +154,7 @@ struct SideBarView: View {
                 }
             } confirm: {
                 withAnimation {
-                    space.location = location
+                    print(space.location.debugDescription)
                     showCreateForm = false
                     modelContext.insert(space)
                 }
@@ -164,7 +163,7 @@ struct SideBarView: View {
             .task {
                 locationManager.requestLocation()
                 withAnimation {
-                    location = locationManager.location
+                    space.location = locationManager.location
                 }
             }
         }

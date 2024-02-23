@@ -39,6 +39,7 @@ final class Space : Identifiable, Meta {
         set {
             if let newValue {
                 _location = .init(latitude: newValue.latitude, longitude: newValue.longitude)
+                return
             }
             _location = nil
         }
