@@ -299,6 +299,7 @@ struct FormEditView<T>: View where T: Meta  {
                             savePlacement()
                             confirmationAction()
                         }
+                        .tint(target.color)
                         .disabled(confirmationButtonDisabled)
                     }
                 }
@@ -308,6 +309,7 @@ struct FormEditView<T>: View where T: Meta  {
                         Button("Cancel") {
                             cancelationAction()
                         }
+                        .tint(target.color)
                     }
                 }
                 
