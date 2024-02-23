@@ -18,6 +18,7 @@
 		8E22690D2B65529F007F0C89 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690C2B65529F007F0C89 /* PatternView.swift */; };
 		8E22690F2B655906007F0C89 /* AuroraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22690E2B655905007F0C89 /* AuroraView.swift */; };
 		8E2269112B657BEB007F0C89 /* AuroraStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2269102B657BEB007F0C89 /* AuroraStyles.swift */; };
+		8E27BD7F2B88795A003E0C09 /* MobileNetV2FP16+classifyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BD7E2B88795A003E0C09 /* MobileNetV2FP16+classifyImage.swift */; };
 		8E396E162B82881400508791 /* SpaceScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E396E152B82881400508791 /* SpaceScanView.swift */; };
 		8E396E1B2B8289CD00508791 /* RoomCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E396E1A2B8289CD00508791 /* RoomCaptureViewController.swift */; };
 		8E396E1D2B828A9D00508791 /* SpaceScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E396E1C2B828A9D00508791 /* SpaceScanViewModel.swift */; };
@@ -142,6 +143,7 @@
 		8E22690C2B65529F007F0C89 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		8E22690E2B655905007F0C89 /* AuroraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraView.swift; sourceTree = "<group>"; };
 		8E2269102B657BEB007F0C89 /* AuroraStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraStyles.swift; sourceTree = "<group>"; };
+		8E27BD7E2B88795A003E0C09 /* MobileNetV2FP16+classifyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MobileNetV2FP16+classifyImage.swift"; sourceTree = "<group>"; };
 		8E396E152B82881400508791 /* SpaceScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceScanView.swift; sourceTree = "<group>"; };
 		8E396E1A2B8289CD00508791 /* RoomCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureViewController.swift; sourceTree = "<group>"; };
 		8E396E1C2B828A9D00508791 /* SpaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceScanViewModel.swift; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF45BDC2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel */,
+				8E27BD7E2B88795A003E0C09 /* MobileNetV2FP16+classifyImage.swift */,
 			);
 			path = CoreML;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				8E9D35132B6E312100154078 /* ObjectCaptureDataModel.swift in Sources */,
 				8E9D35482B6FB82F00154078 /* CaptureOverlayView+LocalizedString.swift in Sources */,
 				8E9D35172B6E324300154078 /* ObjectCaptureDataModel+Orbit.swift in Sources */,
+				8E27BD7F2B88795A003E0C09 /* MobileNetV2FP16+classifyImage.swift in Sources */,
 				8E55285A2B5DA3CF00EEBCCB /* ItemCaptureView.swift in Sources */,
 				8EF45BDB2B87DC34008D6AFD /* CoreMotionSceneComponent.swift in Sources */,
 				8E88AD022B5C4CE5003BDB04 /* Space.swift in Sources */,

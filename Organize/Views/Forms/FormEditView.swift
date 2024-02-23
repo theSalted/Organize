@@ -14,7 +14,6 @@ import CoreML
 struct FormEditView<T>: View where T: Meta  {
     typealias ButtonAction = () -> Void
     typealias ButtonActionWithPlacementID = (UUID?) -> Void
-    let model: MobileNetV2FP16?
     
     @Environment(\.modelContext) private var modelContext
     @Query var spaces: [Space]
@@ -85,7 +84,6 @@ struct FormEditView<T>: View where T: Meta  {
         _placementSelectionID = State(initialValue: placementSelectionID)
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
-        self.model = try? MobileNetV2FP16(configuration: MLModelConfiguration())
     }
     
     init(
@@ -102,7 +100,6 @@ struct FormEditView<T>: View where T: Meta  {
         self.addScanAction = addScanAction
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
-        self.model = try? MobileNetV2FP16(configuration: MLModelConfiguration())
     }
     
     var body: some View {
@@ -110,14 +107,15 @@ struct FormEditView<T>: View where T: Meta  {
             Form {
                 // MARK: IconNameCard
                 Section { 
-                    IconNameCardView(target, generatedName: $generatedName)
-                        .onAppear {
-                            if let image = target.image{
-                                withAnimation {
-                                    generatedName = classifyImage(image)
-                                }
+                    IconNameCardView(target)
+                    // TODO: There is a visual glitch (related to list button style) caused by this implementation
+                    if let generatedName {
+                        Button("AI suggests \"\(generatedName)\"") {
+                            withAnimation {
+                                target.name = generatedName
                             }
                         }
+                    }
                 }
                 
                 // MARK: Add Scan Button
@@ -317,6 +315,14 @@ struct FormEditView<T>: View where T: Meta  {
         }
         .tint(target.color)
         .ignoresSafeArea()
+        .task {
+            if let image = target.image{
+                let model = try? MobileNetV2FP16(configuration: MLModelConfiguration())
+                withAnimation {
+                    generatedName = model?.classifyImage(image)
+                }
+            }
+        }
     }
     
     func savePlacement() {
@@ -329,26 +335,6 @@ struct FormEditView<T>: View where T: Meta  {
         default:
             return
         }
-    }
-    
-    //TODO: This should become an extension to the model class
-    private func classifyImage(_ image: UIImage) -> String? {
-        guard let resizedImage = image.resizeImageTo(size:CGSize(width: 224, height: 224)),
-              let buffer = resizedImage.convertToBuffer() else {
-              return nil
-        }
-        
-        let output = try? model?.prediction(image: buffer)
-        
-        if let output = output {
-            let results = output.classLabelProbs.sorted { $0.1 > $1.1 }
-            let result = results.map { (key, value) in
-                return "\(key) = \(String(format: "%.2f", value * 100))%"
-            }.joined(separator: "\n")
-
-            return result
-        }
-        return nil
     }
 }
 

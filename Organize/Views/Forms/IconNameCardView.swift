@@ -13,24 +13,20 @@ struct IconNameCardView: View {
     var color: Color
     var pattern: PatternDesign
     var symbol: String
-    @Binding var generatedName: String?
     
     init(name: Binding<String>,
          color: Color,
          pattern: PatternDesign,
-         symbol: String,
-         generatedName: Binding<String?> = .constant(nil)
+         symbol: String
     ) {
         self._name = name
         self.color = color
         self.pattern = pattern
         self.symbol = symbol
-        self._generatedName = generatedName
     }
     
     init(
-        _ target: any Meta,
-        generatedName: Binding<String?> = .constant(nil)
+        _ target: any Meta
     ) {
         self._name = Binding {
             target.name
@@ -41,7 +37,6 @@ struct IconNameCardView: View {
         self.color = target.color
         self.pattern = target.pattern
         self.symbol = target.symbol
-        self._generatedName = generatedName
     }
     
     var body: some View {
@@ -58,13 +53,6 @@ struct IconNameCardView: View {
             icon.shadow(color: color, radius: 20)
             TextField("Name", text: $name)
                 .textFieldStyle(.roundedBorder)
-            if let generatedName {
-                Button("AI suggests \"\(generatedName)\"") {
-                    withAnimation {
-                        name = generatedName
-                    }
-                }
-            }
         }
 
     }
