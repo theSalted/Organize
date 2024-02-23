@@ -530,16 +530,16 @@ class SpaceScanViewModel: ObservableObject {
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>    //TODO: This should become an extension to the model class
+				<string>        switch target {
 </string>
 				<key>leading</key>
-				<string>    }
-    
+				<string>    
+    func savePlacement() {
 </string>
 				<key>trailing</key>
-				<string>    private func classifyImage(_ image: UIImage) -&gt; String? {
-        guard let resizedImage = image.resizeImageTo(size:CGSize(width: 224, height: 224)),
-              let buffer = resizedImage.convertToBuffer() else {
+				<string>        case let storage as Storage:
+            storage.space = spaceSelection
+        case let item as Item:
 </string>
 			</dict>
 			<key>type</key>

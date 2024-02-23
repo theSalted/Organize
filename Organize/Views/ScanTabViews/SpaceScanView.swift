@@ -54,14 +54,13 @@ struct SpaceScanView: View {
                     .toolbarColorScheme(.dark, for: .navigationBar)
             }
             .sheet(isPresented:$showCreateSpaceForm) {
-                FormEditView($spaceScanViewModel.space) {
+                FormEditView($spaceScanViewModel.space, mode: .edit) {
                     withAnimation {
                         showCreateSpaceForm = false
                     }
                 } confirm: {
                     withAnimation {
                         showCreateSpaceForm = false
-                        modelContext.insert(spaceScanViewModel.space)
                     }
                     try? modelContext.save()
                 }
@@ -96,6 +95,10 @@ struct SpaceScanView: View {
         
         space.storages = storages
         spaceScanViewModel.space = space
+        
+        try? modelContext.save()
+        modelContext.insert(spaceScanViewModel.space)
+        
         withAnimation {
             showCreateSpaceForm = true
         }
