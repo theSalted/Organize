@@ -19,7 +19,8 @@ struct ContentView: View {
     @State var onboardViewModel = OnboardViewModel()
     @State var cameraDataModel = CameraDataModel()
     
-    @AppStorage("isFirstLaunch", store: .standard) var isFirstLaunch: Bool = false
+    @AppStorage("isFirstLaunch", store: .standard) var isFirstLaunch: Bool = true
+    
     private let logger = Logger(
         subsystem: OrganizeApp.bundleId, category: "ContentView")
     
