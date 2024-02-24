@@ -114,10 +114,12 @@ struct FormEditView<T>: View where T: Meta  {
         NavigationStack {
             Form {
                 // MARK: No Selection Warning
-                Section {
-                    Label("Please Select a Place to Store", image: "exclamationmark.circle.fill")
-                        .bold()
-                        .foregroundStyle(.red)
+                if confirmationButtonDisabled {
+                    Section {
+                        Label("Please Select a Place to Store", systemImage: "exclamationmark.circle.fill")
+                            .bold()
+                            .foregroundStyle(.red)
+                    }
                 }
                 
                 // MARK: IconNameCard

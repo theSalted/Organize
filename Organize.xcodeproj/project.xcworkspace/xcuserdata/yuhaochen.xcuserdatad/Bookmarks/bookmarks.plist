@@ -461,13 +461,13 @@ final class SpaceScanViewModel: ObservableObject {
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>126</string>
+					<string>492</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>125</string>
+					<string>492</string>
 					<key>Timestamp</key>
-					<string>730495071.622771</string>
+					<string>730495536.912889</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -483,17 +483,13 @@ final class SpaceScanViewModel: ObservableObject {
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>                    // TODO: There is a visual glitch (related to list button style) caused by this implementation
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>                Section { 
-                    IconNameCardView(target)
+				<string>        })
+}
 </string>
 				<key>trailing</key>
-				<string>                    if let generatedName {
-                        Button("AI suggests \"\(generatedName)\"", systemImage: "wand.and.stars") {
-                            withAnimation {
-</string>
+				<string></string>
 			</dict>
 			<key>type</key>
 			<string>bookmark</string>
