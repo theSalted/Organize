@@ -12,7 +12,7 @@ import SwiftUI
 import SwiftData
 import os
 
-#if !targetEnvironment(simulator)
+#if !(targetEnvironment(simulator) || targetEnvironment(macCatalyst))
 struct CubicObjectCaptureView: View {
     @EnvironmentObject var objectCaptureModel: ObjectCaptureDataModel
     @Environment(\.modelContext) private var modelContext

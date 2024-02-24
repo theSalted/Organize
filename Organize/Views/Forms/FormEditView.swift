@@ -113,6 +113,13 @@ struct FormEditView<T>: View where T: Meta  {
         @Bindable var cameraViewModel = cameraViewModel
         NavigationStack {
             Form {
+                // MARK: No Selection Warning
+                Section {
+                    Label("Please Select a Place to Store", image: "exclamationmark.circle.fill")
+                        .bold()
+                        .foregroundStyle(.red)
+                }
+                
                 // MARK: IconNameCard
                 Section { 
                     IconNameCardView(target)
@@ -125,6 +132,81 @@ struct FormEditView<T>: View where T: Meta  {
                         }
                         .popoverTip(aiSuggestedNameTip)
                     }
+                }
+                
+                // MARK: Placement Picker
+                switch target {
+                case is Storage:
+                    Section {
+                        Picker(selection: $spaceSelection) {
+                            Text("No Selection").tag(nil as Space?)
+                                .bold()
+                                .foregroundStyle(.red)
+                            ForEach(spaces) { space in
+                                Text(space.name).tag(space as Space?)
+                            }
+                        } label: {
+                            Label {
+                                Text("Space")
+                            } icon: {
+                                Image(systemName: "square.split.bottomrightquarter")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 28, height: 28)
+                            }
+                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .pink))
+                        }
+
+                    }
+                    .onAppear {
+                        guard placementSelectionID != nil else {
+                            logger.notice("placementSelectionID is nil leaving selection to empty")
+                            return
+                        }
+                        guard let result = spaces.first(where: { $0.id == placementSelectionID }) else {
+                            logger.warning("placementSelectionID is not nil but find no match in storage query")
+                            return
+                        }
+                        logger.notice("Successfully matched placementSelectionID with a Storage in query")
+                        spaceSelection = result
+                    }
+                case is Item:
+                    Section {
+                        Picker(selection: $storageSelection) {
+                            Text("No Selection").tag(nil as Storage?)
+                                .bold()
+                                .foregroundStyle(.red)
+                            ForEach(storages) { storage in
+                                Text(storage.name).tag(storage as Storage?)
+                            }
+                        } label: {
+                            Label {
+                                Text("Storage")
+                            } icon: {
+                                Image(systemName: "archivebox")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 28, height: 28)
+                            }
+                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .pink))
+                        }
+                    }
+                    .onAppear {
+                        guard placementSelectionID != nil else {
+                            logger.notice("placementSelectionID is nil leaving selection to empty")
+                            return
+                        }
+                        guard let result = storages.first(where: { $0.id == placementSelectionID }) else {
+                            logger.warning("placementSelectionID is not nil but find no match in storage query")
+                            return
+                        }
+                        logger.notice("Successfully matched placementSelectionID with a Storage in query")
+                        storageSelection = result
+                    }
+                default:
+                    EmptyView()
                 }
                 
                 // MARK: Add Scan Button
@@ -223,77 +305,6 @@ struct FormEditView<T>: View where T: Meta  {
                     withAnimation {
                         target.image = newImage
                     }
-                }
-
-                // MARK: Placement Picker
-                switch target {
-                case is Storage:
-                    Section {
-                        Picker(selection: $spaceSelection) {
-                            Text("No Selection").tag(nil as Space?)
-                            ForEach(spaces) { space in
-                                Text(space.name).tag(space as Space?)
-                            }
-                        } label: {
-                            Label {
-                                Text("Space")
-                            } icon: {
-                                Image(systemName: "square.split.bottomrightquarter")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .foregroundStyle(.white)
-                                    .frame(width: 28, height: 28)
-                            }
-                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .pink))
-                        }
-
-                    }
-                    .onAppear {
-                        guard placementSelectionID != nil else {
-                            logger.notice("placementSelectionID is nil leaving selection to empty")
-                            return
-                        }
-                        guard let result = spaces.first(where: { $0.id == placementSelectionID }) else {
-                            logger.warning("placementSelectionID is not nil but find no match in storage query")
-                            return
-                        }
-                        logger.notice("Successfully matched placementSelectionID with a Storage in query")
-                        spaceSelection = result
-                    }
-                case is Item:
-                    Section {
-                        Picker(selection: $storageSelection) {
-                            Text("No Selection").tag(nil as Storage?)
-                            ForEach(storages) { storage in
-                                Text(storage.name).tag(storage as Storage?)
-                            }
-                        } label: {
-                            Label {
-                                Text("Storage")
-                            } icon: {
-                                Image(systemName: "archivebox")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .foregroundStyle(.white)
-                                    .frame(width: 28, height: 28)
-                            }
-                            .labelStyle(ShapedLabelStyle(shape: .roundedRectangle(6), scaleEffect: 0.6, backgroundColor: .pink))
-                        }
-                    }
-                    .onAppear {
-                        guard placementSelectionID != nil else {
-                            logger.notice("placementSelectionID is nil leaving selection to empty")
-                            return
-                        }
-                        guard let result = storages.first(where: { $0.id == placementSelectionID }) else {
-                            logger.warning("placementSelectionID is not nil but find no match in storage query")
-                            return
-                        }
-                        logger.notice("Successfully matched placementSelectionID with a Storage in query")
-                        storageSelection = result
-                    }
-                default:
-                    EmptyView()
                 }
                 
                 // MARK: Inventory list

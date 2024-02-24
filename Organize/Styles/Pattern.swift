@@ -93,7 +93,7 @@ extension ShapeStyle where Self == AnyShapeStyle {
             
         let d = radius * 3 * sqrt(2)
         let size = patternSize ?? CGSize(width: d, height: d)
-
+            
         return AnyShapeStyle(ShaderLibrary.default.polkaDots(
             .boundingRect,
             .float(radius),
