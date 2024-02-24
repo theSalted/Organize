@@ -11,12 +11,14 @@ import SpriteKit
 
 struct ItemsBucketView: View {
     @Environment(\.colorScheme) private var colorScheme
-    let scene: GameScene
+    let scene: BucketGameScene
     let items: [Item]
+    @State var selectedItem: Item? = nil
+    @State var showDetailSheet: Bool = false
     
     init(
         _ items: [Item],
-        scene: GameScene = GameScene()
+        scene: BucketGameScene = BucketGameScene()
     ) {
         self.scene = scene
         self.items = items
@@ -24,12 +26,29 @@ struct ItemsBucketView: View {
     
     var body: some View {
         let itemNodeSpawnerComponent = ItemNodeSpawnerComponent(node: scene, items: items)
+        let itemDetailMonitorComponent = ItemDetailMonitorComponent($selectedItem, showItemPreview: $showDetailSheet)
+        
         SpriteView(scene: scene)
             .onChange(of: colorScheme) { _, _ in
                 scene.backgroundColor = UIColor.systemBackground
             }
             .onAppear {
                 scene.sceneEntity.addComponent(itemNodeSpawnerComponent)
+                scene.sceneEntity.addComponent(itemDetailMonitorComponent)
+            }
+            .sheet(isPresented: $showDetailSheet) {
+                if let selectedItem {
+                    SingleItemDetailView(selectedItem)
+                        .toolbar {
+                            ToolbarItem(placement: .confirmationAction) {
+                                Button("Done") {
+                                    withAnimation {
+                                        showDetailSheet = false
+                                    }
+                                }
+                            }
+                        }
+                }
             }
     }
 }

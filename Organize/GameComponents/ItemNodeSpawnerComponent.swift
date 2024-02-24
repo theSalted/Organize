@@ -98,18 +98,21 @@ final class ItemNodeSpawnerComponent: GKComponent {
         if let image = randomItem.image {
             let spriteNode = createSpriteNode(from: image)
             spriteNode.scale(to: CGSize(width: 80, height: 80))
+            spriteNode.entity?.addComponent(ItemComponent(randomItem))
             return spriteNode
         }
         
         if randomItem.symbol.isSingleEmoji {
             let labelNode = SKLabelNode(text: randomItem.symbol)
             labelNode.fontSize = 90  // Adjust font size for visibility
+            labelNode.entity?.addComponent(ItemComponent(randomItem))
             return labelNode
         }
         
         if let systemImage = UIImage(systemName: randomItem.symbol) {
             let spriteNode = createSpriteNode(from: systemImage)
             spriteNode.scale(to: CGSize(width: 80, height: 80))
+            spriteNode.entity?.addComponent(ItemComponent(randomItem))
             return spriteNode
         }
         

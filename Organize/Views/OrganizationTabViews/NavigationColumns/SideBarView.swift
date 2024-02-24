@@ -72,7 +72,7 @@ struct SideBarView: View {
             if !items.isEmpty {
                 Section {
                     NavigationLink {
-                        ItemsBucketView(items)
+                        ItemsBucketView(items).ignoresSafeArea()
                     } label: {
                         Label("Item Bucket", systemImage: "shippingbox")
                     }

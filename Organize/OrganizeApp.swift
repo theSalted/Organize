@@ -9,10 +9,8 @@ import SwiftUI
 import SwiftData
 import TipKit
 
-// TODO: SpriteKit
 // TODO: Vision
 // TODO: SwiftChart
-// TODO: SceneKit
 
 @main
 struct OrganizeApp: App {

@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  BucketGameScene.swift
 //  Organize
 //
 //  Created by Yuhao Chen on 2/23/24.
@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 import OSLog
 
-final class GameScene : SKScene, ObservableObject {
+final class BucketGameScene : SKScene, ObservableObject {
     var sceneEntity = GKEntity()
     var lastUpdateTimeInterval: TimeInterval = 0
     
@@ -25,7 +25,7 @@ final class GameScene : SKScene, ObservableObject {
         #endif
         
         self.scaleMode = .resizeFill
-        logger.info("Game Scene successfully loaded")
+        logger.info("BucketGameScene successfully loaded")
     }
     
     override func didMove(to view: SKView) {
@@ -39,7 +39,7 @@ final class GameScene : SKScene, ObservableObject {
         #if canImport(AppKit)
         self.backgroundColor = NSColor.windowBackgroundColor
         #endif
-        logger.info("Game Scene is presented into view")
+        logger.info("BucketGameScene is presented into view")
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -54,6 +54,7 @@ final class GameScene : SKScene, ObservableObject {
         let touchedNode = self.atPoint(position)
         logger.debug("\(touchedNode.description) is created but not used, because touchbegan is not implemented")
         // TODO: SpriteKit Detail Implementation can go here
+        sceneEntity.component(ofType: ItemDetailMonitorComponent.self)?.detect(touchedNode)
     }
     #endif
     
@@ -71,4 +72,4 @@ final class GameScene : SKScene, ObservableObject {
     }
 }
 
-fileprivate let logger = Logger(subsystem: OrganizeApp.bundleId, category: "GameScene")
+fileprivate let logger = Logger(subsystem: OrganizeApp.bundleId, category: "BucketGameScene")
