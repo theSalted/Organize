@@ -96,7 +96,9 @@ final class ItemNodeSpawnerComponent: GKComponent {
         }
         
         if let image = randomItem.image {
-            return createSpriteNode(from: image)
+            let spriteNode = createSpriteNode(from: image)
+            spriteNode.scale(to: CGSize(width: 80, height: 80))
+            return spriteNode
         }
         
         if randomItem.symbol.isSingleEmoji {
@@ -106,7 +108,9 @@ final class ItemNodeSpawnerComponent: GKComponent {
         }
         
         if let systemImage = UIImage(systemName: randomItem.symbol) {
-            return createSpriteNode(from: systemImage)
+            let spriteNode = createSpriteNode(from: systemImage)
+            spriteNode.scale(to: CGSize(width: 80, height: 80))
+            return spriteNode
         }
         
         logger.warning("Failed to create a node: Unrecognized symbol '\(randomItem.symbol)'.")

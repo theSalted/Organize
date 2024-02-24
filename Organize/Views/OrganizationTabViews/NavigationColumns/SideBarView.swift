@@ -18,6 +18,7 @@ struct SideBarView: View {
     @Environment(AppViewModel.self) private var appModel
     @Environment(OnboardViewModel.self) private var onboardViewModel
     @Query private var spaces: [Space]
+    @Query private var items: [Item]
     
     // Location Manager
     private let locationManager = LocationManager()
@@ -66,6 +67,16 @@ struct SideBarView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
+            }
+            
+            if !items.isEmpty {
+                Section {
+                    NavigationLink {
+                        ItemsBucketView(items)
+                    } label: {
+                        Label("Item Bucket", systemImage: "shippingbox")
+                    }
+                }
             }
         }
         .environment(\.editMode, $editMode)
