@@ -124,6 +124,8 @@
 		8EBF3F462B8931F20004E2D1 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF3F452B8931F20004E2D1 /* CameraViewModel.swift */; };
 		8ECBDC412B605BDF00CCF70F /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBDC402B605BDF00CCF70F /* Meta.swift */; };
 		8ED065042B8549B500B1224F /* ActivityViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */; };
+		8ED0BE1B2B8A7DDD0044D534 /* MinimumCaptureTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0BE1A2B8A7DDD0044D534 /* MinimumCaptureTip.swift */; };
+		8ED0BE1D2B8A7EB00044D534 /* SkipCaptureTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0BE1C2B8A7EB00044D534 /* SkipCaptureTip.swift */; };
 		8ED1EB742B68031E003377CA /* Curtain.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB732B68031E003377CA /* Curtain.metal */; };
 		8ED1EB762B680385003377CA /* CurtainStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB752B680385003377CA /* CurtainStack.swift */; };
 		8ED1EB782B68040C003377CA /* Shader+float2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1EB772B68040C003377CA /* Shader+float2.swift */; };
@@ -275,6 +277,8 @@
 		8EBF3F452B8931F20004E2D1 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		8ECBDC402B605BDF00CCF70F /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		8ED065032B8549B500B1224F /* ActivityViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		8ED0BE1A2B8A7DDD0044D534 /* MinimumCaptureTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumCaptureTip.swift; sourceTree = "<group>"; };
+		8ED0BE1C2B8A7EB00044D534 /* SkipCaptureTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipCaptureTip.swift; sourceTree = "<group>"; };
 		8ED1EB732B68031E003377CA /* Curtain.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Curtain.metal; sourceTree = "<group>"; };
 		8ED1EB752B680385003377CA /* CurtainStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurtainStack.swift; sourceTree = "<group>"; };
 		8ED1EB772B68040C003377CA /* Shader+float2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shader+float2.swift"; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				8E27BD852B88B6EC003E0C09 /* CaptureItemTip.swift */,
 				8E27BD872B88B71B003E0C09 /* MultiSelectTip.swift */,
 				8E27BD892B88B755003E0C09 /* AISuggestedName.swift */,
+				8ED0BE1A2B8A7DDD0044D534 /* MinimumCaptureTip.swift */,
+				8ED0BE1C2B8A7EB00044D534 /* SkipCaptureTip.swift */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -1026,6 +1032,7 @@
 				8EF45BD82B87DBDA008D6AFD /* BucketGameScene.swift in Sources */,
 				8E396E162B82881400508791 /* SpaceScanView.swift in Sources */,
 				8E9D35292B6ED4D000154078 /* CaptureViewModel.swift in Sources */,
+				8ED0BE1B2B8A7DDD0044D534 /* MinimumCaptureTip.swift in Sources */,
 				8ED633742B7FADC3000113E2 /* SingleItemDetailView.swift in Sources */,
 				8E4BDAF12B7D2F51003471B2 /* ListButtonStyle.swift in Sources */,
 				8EF45BDD2B87E1BD008D6AFD /* MobileNetV2FP16.mlmodel in Sources */,
@@ -1071,6 +1078,7 @@
 				8E6EC0462B89B93400152182 /* ItemNodeSpawnerComponent.swift in Sources */,
 				8E27BD882B88B71B003E0C09 /* MultiSelectTip.swift in Sources */,
 				8E91F4052B75483100127170 /* PatternCardView.swift in Sources */,
+				8ED0BE1D2B8A7EB00044D534 /* SkipCaptureTip.swift in Sources */,
 				8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */,
 				8ED1EB762B680385003377CA /* CurtainStack.swift in Sources */,
 				8E6EC0572B8A28F900152182 /* SymbolView.swift in Sources */,

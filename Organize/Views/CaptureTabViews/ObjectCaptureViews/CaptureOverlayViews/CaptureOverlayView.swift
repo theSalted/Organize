@@ -44,9 +44,11 @@ struct CaptureOverlayView: View {
             HStack(alignment: .bottom, spacing: 0) {
                 HStack(spacing: 0) {
                     if case .capturing = session.state {
+                        let minimumCaptureTip = MinimumCaptureTip()
                         NumOfImagesButton(session: session)
                             .rotationEffect(rotationAngle)
                             .transition(.opacity)
+                            .popoverTip(minimumCaptureTip)
                     } else if case .detecting = session.state {
                         ResetBoundingBoxButton(session: session)
                             .transition(.opacity)

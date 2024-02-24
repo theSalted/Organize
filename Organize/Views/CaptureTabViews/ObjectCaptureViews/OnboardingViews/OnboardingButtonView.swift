@@ -19,6 +19,7 @@ struct OnboardingButtonView: View {
     @ObservedObject var onboardingStateMachine: CaptureOnBoardingStateMachine
     @State private var userHasIndicatedObjectCannotBeFlipped: Bool? = nil
     @State private var userHasIndicatedFlipObjectAnyway: Bool? = nil
+    let skipCaptureTip = SkipCaptureTip()
 
     var body: some View {
         VStack {
@@ -46,6 +47,7 @@ struct OnboardingButtonView: View {
                                  action: {
                         transition(with: .skip(isFlippable: objectCaptureModel.isObjectFlippable))
                     })
+                    .popoverTip(skipCaptureTip)
                 }
                 if currentStateInputs.contains(where: { $0 == .finish }) {
                     CreateButton(buttonLabel: LocalizedString.finish,
