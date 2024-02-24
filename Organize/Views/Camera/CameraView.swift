@@ -170,11 +170,6 @@ struct CameraView: View {
                 return
             }
             
-            withAnimation {
-                #warning("Incomplete Implementation")
-//                viewModel.showJournalAddItemMenu = false
-            }
-            
             item.loadTransferable(type: Data.self) { result in
                 switch result {
                 case .success(let data):

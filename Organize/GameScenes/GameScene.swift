@@ -53,7 +53,7 @@ final class GameScene : SKScene, ObservableObject {
         let position = touch.location(in: self)
         let touchedNode = self.atPoint(position)
         logger.debug("\(touchedNode.description) is created but not used, because touchbegan is not implemented")
-        #warning("SpriteKit Detail Implementation go here")
+        // TODO: SpriteKit Detail Implementation can go here
     }
     #endif
     

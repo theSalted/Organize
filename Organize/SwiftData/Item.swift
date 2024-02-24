@@ -16,11 +16,12 @@ final class Item : Identifiable, Meta {
     var createdAt: Date
     var storage: Storage?
     var pattern: PatternDesign 
+    
     @Relationship(deleteRule: .cascade, inverse: \CapturedObject.item)
-
     var capture: CapturedObject?
     
     @Attribute(.externalStorage) var imageData: Data?
+    
     @Transient var image: UIImage? {
         get {
             if let data = imageData,
@@ -36,7 +37,7 @@ final class Item : Identifiable, Meta {
     
     private var systemImage: String?
     private var emoji: String?
-
+    
     var symbol: String {
         get {
             if let systemImage {
@@ -48,7 +49,6 @@ final class Item : Identifiable, Meta {
                 return systemImage!
             }
         }
-        
         set {
             if newValue.isSingleEmoji {
                 systemImage = nil

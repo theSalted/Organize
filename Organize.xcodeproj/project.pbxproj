@@ -48,6 +48,7 @@
 		8E6CD0842B7757F200BF1A18 /* IconNameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6CD0832B7757F200BF1A18 /* IconNameCardView.swift */; };
 		8E6CD0862B7764D800BF1A18 /* Color+systemBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6CD0852B7764D800BF1A18 /* Color+systemBackground.swift */; };
 		8E6CD0882B77946100BF1A18 /* ColorSelectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6CD0872B77946100BF1A18 /* ColorSelectionGridView.swift */; };
+		8E6EC0462B89B93400152182 /* ItemNodeSpawnerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6EC0452B89B93400152182 /* ItemNodeSpawnerComponent.swift */; };
 		8E7357A82B72842900F779B2 /* ItemAddFormView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7357A72B72842900F779B2 /* ItemAddFormView+Design.swift */; };
 		8E7FAC2D2B87B53E004FE8F0 /* StorageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FAC2C2B87B53E004FE8F0 /* StorageListView.swift */; };
 		8E84525A2B663D84005CA22D /* PatternDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8452592B663D84005CA22D /* PatternDesign.swift */; };
@@ -193,6 +194,7 @@
 		8E6CD0832B7757F200BF1A18 /* IconNameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNameCardView.swift; sourceTree = "<group>"; };
 		8E6CD0852B7764D800BF1A18 /* Color+systemBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+systemBackground.swift"; sourceTree = "<group>"; };
 		8E6CD0872B77946100BF1A18 /* ColorSelectionGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionGridView.swift; sourceTree = "<group>"; };
+		8E6EC0452B89B93400152182 /* ItemNodeSpawnerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNodeSpawnerComponent.swift; sourceTree = "<group>"; };
 		8E7357A72B72842900F779B2 /* ItemAddFormView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemAddFormView+Design.swift"; sourceTree = "<group>"; };
 		8E7FAC2B2B87AB7E004FE8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8E7FAC2C2B87B53E004FE8F0 /* StorageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageListView.swift; sourceTree = "<group>"; };
@@ -840,6 +842,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF45BDA2B87DC34008D6AFD /* CoreMotionSceneComponent.swift */,
+				8E6EC0452B89B93400152182 /* ItemNodeSpawnerComponent.swift */,
 			);
 			path = GameComponents;
 			sourceTree = "<group>";
@@ -1046,6 +1049,7 @@
 				8ED48FC42B6028CA00EB643A /* View+If.swift in Sources */,
 				8EBF3F342B88F4AD0004E2D1 /* CodableLocation.swift in Sources */,
 				8EFA5ABA2B88EBBD002F5F74 /* LocationManager.swift in Sources */,
+				8E6EC0462B89B93400152182 /* ItemNodeSpawnerComponent.swift in Sources */,
 				8E27BD882B88B71B003E0C09 /* MultiSelectTip.swift in Sources */,
 				8E91F4052B75483100127170 /* PatternCardView.swift in Sources */,
 				8E5528522B5D925B00EEBCCB /* SideBarView.swift in Sources */,

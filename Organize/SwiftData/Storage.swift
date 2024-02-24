@@ -15,8 +15,10 @@ final class Storage : Identifiable, Meta {
     var id: UUID
     var createdAt: Date
     var pattern: PatternDesign
+    
     @Relationship(deleteRule: .cascade, inverse: \Item.storage)
     var items = [Item]()
+    
     var space: Space?
      
     private var _colorComponents: ColorComponents
