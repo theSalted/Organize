@@ -22,11 +22,11 @@ struct ItemsBucketView: View {
     ) {
         self.scene = scene
         self.items = items
+        self.scene.isPaused = true
     }
     
     var body: some View {
         let itemNodeSpawnerComponent = ItemNodeSpawnerComponent(node: scene, items: items)
-        let itemDetailMonitorComponent = ItemDetailMonitorComponent($selectedItem, showItemPreview: $showDetailSheet)
         
         SpriteView(scene: scene)
             .onChange(of: colorScheme) { _, _ in
@@ -34,7 +34,12 @@ struct ItemsBucketView: View {
             }
             .onAppear {
                 scene.sceneEntity.addComponent(itemNodeSpawnerComponent)
-                scene.sceneEntity.addComponent(itemDetailMonitorComponent)
+                scene.isPaused = false
+            }
+            .onDisappear {
+                scene.removeAllChildren()
+                scene.sceneEntity.removeComponent(ofType: ItemNodeSpawnerComponent.self)
+                scene.isPaused = true
             }
             .sheet(isPresented: $showDetailSheet) {
                 if let selectedItem {

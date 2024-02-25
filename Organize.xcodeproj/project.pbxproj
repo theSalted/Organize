@@ -146,6 +146,7 @@
 		8EDDFEBB2B74C8FA0009A290 /* ShapeLabelStyle+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C192B72AEA5005F0C4A /* ShapeLabelStyle+Design.swift */; };
 		8EDDFEBC2B74C8FA0009A290 /* ShapeIconView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E486C1B2B72B6E1005F0C4A /* ShapeIconView+Design.swift */; };
 		8EE9639E2B6983F8002AA850 /* SingleStorageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9639D2B6983F8002AA850 /* SingleStorageDetailView.swift */; };
+		8EEB42272B8B305700D1D0AE /* AllItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB42262B8B305700D1D0AE /* AllItemsView.swift */; };
 		8EEE7B052B83E3EE00B7AE70 /* FormEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7B042B83E3EE00B7AE70 /* FormEditView.swift */; };
 		8EF034442B61A8F100A15340 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF034432B61A8F100A15340 /* DetailsView.swift */; };
 		8EF45BD82B87DBDA008D6AFD /* BucketGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF45BD72B87DBDA008D6AFD /* BucketGameScene.swift */; };
@@ -297,6 +298,7 @@
 		8EDDFEB62B74C6000009A290 /* Character+emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+emoji.swift"; sourceTree = "<group>"; };
 		8EDDFEB92B74C6980009A290 /* String+emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+emoji.swift"; sourceTree = "<group>"; };
 		8EE9639D2B6983F8002AA850 /* SingleStorageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStorageDetailView.swift; sourceTree = "<group>"; };
+		8EEB42262B8B305700D1D0AE /* AllItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllItemsView.swift; sourceTree = "<group>"; };
 		8EEE7B042B83E3EE00B7AE70 /* FormEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormEditView.swift; sourceTree = "<group>"; };
 		8EF034432B61A8F100A15340 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		8EF45BD72B87DBDA008D6AFD /* BucketGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketGameScene.swift; sourceTree = "<group>"; };
@@ -822,6 +824,7 @@
 		8EF034402B6166BA00A15340 /* NavigationColumns */ = {
 			isa = PBXGroup;
 			children = (
+				8EEB42262B8B305700D1D0AE /* AllItemsView.swift */,
 				8ED633752B7FD6C6000113E2 /* SubViews */,
 				8EF034422B61670700A15340 /* DetailViews */,
 				8EF034432B61A8F100A15340 /* DetailsView.swift */,
@@ -1028,6 +1031,7 @@
 				8E9D350F2B6E2FDD00154078 /* FeedbackMessages.swift in Sources */,
 				8ED065042B8549B500B1224F /* ActivityViewControllerRepresentable.swift in Sources */,
 				8E27BD902B88C9EC003E0C09 /* OnboardingView.swift in Sources */,
+				8EEB42272B8B305700D1D0AE /* AllItemsView.swift in Sources */,
 				8ED1EB7C2B680F95003377CA /* Clamp.swift in Sources */,
 				8EF45BD82B87DBDA008D6AFD /* BucketGameScene.swift in Sources */,
 				8E396E162B82881400508791 /* SpaceScanView.swift in Sources */,

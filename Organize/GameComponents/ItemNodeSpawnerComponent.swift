@@ -13,7 +13,7 @@ import GameplayKit
 final class ItemNodeSpawnerComponent: GKComponent {
     var node: SKNode
     var items = [Item]()
-    var maximumNode = 100
+    var maximumNode = 10
     
     init(node: SKNode, items: [Item] = [Item]()) {
         self.node = node
@@ -27,6 +27,7 @@ final class ItemNodeSpawnerComponent: GKComponent {
     
     override func didAddToEntity() {
         logger.info("MetaNodeSpawnerComponent is attached to An Entity")
+        placeConfiguredNodeAtRandomLocation()
     }
     
     override func willRemoveFromEntity() {
@@ -34,16 +35,24 @@ final class ItemNodeSpawnerComponent: GKComponent {
     }
     
     override func update(deltaTime seconds: TimeInterval) {
-        guard node.children.count <= maximumNode, // Number of nodes is smaller than maximum
-              1 == Int.random(in: 1...5), // 1 in 5 chances
-              let configuredNode = generateConfiguredNode()
-        else {
+        if node.children.count <= maximumNode, // Number of nodes is smaller than maximum
+           1 == Int.random(in: 1...100)// 1 in 100 chances
+        {
+            placeConfiguredNodeAtRandomLocation()
+        }
+    }
+    
+    private func placeConfiguredNodeAtRandomLocation() {
+        guard let configuredNode = generateConfiguredNode() else {
             return
         }
+        
         let randomizer = CGFloat.random(in: 0...1)
+        
         configuredNode.position = CGPoint(
             x: randomizer * node.frame.width,
             y: node.frame.height - 100)
+        
         node.addChild(configuredNode)
     }
     
@@ -58,7 +67,7 @@ final class ItemNodeSpawnerComponent: GKComponent {
         }
         
         // Configure node properties and physics body
-        node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 80, height: 80), center: CGPoint(x: 0, y: 20))
+        node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 80, height: 80), center: CGPoint(x: 0, y: 0))
         node.zPosition = -10
         node.alpha = 0
         
@@ -95,23 +104,9 @@ final class ItemNodeSpawnerComponent: GKComponent {
             return nil
         }
         
-        if let image = randomItem.image {
+        if let image = randomItem.subjectMaskedImage {
             let spriteNode = createSpriteNode(from: image)
-            spriteNode.scale(to: CGSize(width: 80, height: 80))
-            spriteNode.entity?.addComponent(ItemComponent(randomItem))
-            return spriteNode
-        }
-        
-        if randomItem.symbol.isSingleEmoji {
-            let labelNode = SKLabelNode(text: randomItem.symbol)
-            labelNode.fontSize = 90  // Adjust font size for visibility
-            labelNode.entity?.addComponent(ItemComponent(randomItem))
-            return labelNode
-        }
-        
-        if let systemImage = UIImage(systemName: randomItem.symbol) {
-            let spriteNode = createSpriteNode(from: systemImage)
-            spriteNode.scale(to: CGSize(width: 80, height: 80))
+            spriteNode.scale(to: CGSize(width: 100, height: 100))
             spriteNode.entity?.addComponent(ItemComponent(randomItem))
             return spriteNode
         }
