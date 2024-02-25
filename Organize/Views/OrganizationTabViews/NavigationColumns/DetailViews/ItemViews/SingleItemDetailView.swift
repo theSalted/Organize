@@ -35,19 +35,33 @@ struct SingleItemDetailView: View {
                 }
                 .frame(height: 250)
                 
+                if let modelNode = item.capture?.modelNode {
+                    let scene: SCNScene = {
+                        let scene = SCNScene()
+                        scene.background.contents = UIColor.secondarySystemGroupedBackground
+                        scene.rootNode.addChildNode(modelNode)
+                        return scene
+                    }()
+    
+                    SceneView(scene: scene,
+                              options: [.allowsCameraControl, .autoenablesDefaultLighting],
+                              antialiasingMode: .multisampling2X)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .frame(height: 300)
+                }
+                
+                #warning("This leave a gap when content from both block are absence")
                 HStack(spacing: 10) {
-                    if let modelNode = item.capture?.modelNode {
-                        let scene: SCNScene = {
-                            let scene = SCNScene()
-                            scene.background.contents = UIColor.secondarySystemGroupedBackground
-                            scene.rootNode.addChildNode(modelNode)
-                            return scene
-                        }()
-        
-                        SceneView(scene: scene,
-                                  options: [.allowsCameraControl, .autoenablesDefaultLighting],
-                                  antialiasingMode: .multisampling2X)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    if let image = item.subjectMaskedImage {
+                        ZStack {
+                            Rectangle().foregroundStyle(Color(uiColor: .secondarySystemBackground))
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .clipped()
+                                .padding()
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                     
                     if let previewImage = item.capture?.previewImage,

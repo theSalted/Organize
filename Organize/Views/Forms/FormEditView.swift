@@ -36,6 +36,8 @@ struct FormEditView<T>: View where T: Meta  {
     
     @State var cameraViewModel = CameraViewModel()
     
+    let model: MobileNetV2FP16?
+    
     var mode: FormMode = .add
     var title: String {
         guard let targetString = {
@@ -91,6 +93,7 @@ struct FormEditView<T>: View where T: Meta  {
         _placementSelectionID = State(initialValue: placementSelectionID)
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
+        self.model = try? MobileNetV2FP16(configuration: MLModelConfiguration())
     }
     
     init(
@@ -107,6 +110,7 @@ struct FormEditView<T>: View where T: Meta  {
         self.addScanAction = addScanAction
         self.cancelationAction = cancelationAction
         self.confirmationAction = confirmationAction
+        self.model = try? MobileNetV2FP16(configuration: MLModelConfiguration())
     }
     
     var body: some View {
@@ -272,10 +276,21 @@ struct FormEditView<T>: View where T: Meta  {
                 // MARK: Camera
                 Section {
                     if let image = target.image {
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        HStack(spacing: 15) {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                            
+                            // Display subject masked image if available
+                            if let item = target as? Item, let subjectMaskedImage = item.subjectMaskedImage {
+                                Image(uiImage: subjectMaskedImage)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .padding()
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                            }
+                        }
                         Button("Remove Picture") {
                             withAnimation {
                                 target.image = nil
@@ -444,9 +459,15 @@ struct FormEditView<T>: View where T: Meta  {
         }
         .tint(target.color)
         .ignoresSafeArea()
+        .onChange(of: target.image) { _, newImage in
+            if let newImage {
+                withAnimation {
+                    generatedName = model?.classifyImage(newImage)
+                }
+            }
+        }
         .task {
-            if let image = target.image{
-                let model = try? MobileNetV2FP16(configuration: MLModelConfiguration())
+            if let image = target.image {
                 withAnimation {
                     generatedName = model?.classifyImage(image)
                 }

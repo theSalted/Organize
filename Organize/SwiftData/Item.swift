@@ -8,6 +8,9 @@
 import Foundation
 import SwiftData
 import SwiftUI
+import Vision
+import OSLog
+import VideoToolbox
 
 @Model
 final class Item : Identifiable, Meta {
@@ -32,6 +35,37 @@ final class Item : Identifiable, Meta {
         }
         set {
             imageData = newValue?.pngData()
+        }
+    }
+    
+    @Transient var subjectMaskedImage: UIImage? {
+        get {
+            let request = VNGenerateForegroundInstanceMaskRequest()
+            guard let cgImage = image?.cgImage else {
+                logger.warning("Couldn't generate cgImage from uiImage")
+                return nil
+            }
+            let handler = VNImageRequestHandler(cgImage: cgImage)
+            try? handler.perform([request])
+            guard let result = request.results?.first else {
+                logger.warning("VNImageRequestHandler did not return result from performing VNGenerateForegroundInstanceMaskRequest")
+                return nil
+            }
+            guard let output = try? result.generateMaskedImage(
+                ofInstances: result.allInstances,
+                from: handler, 
+                croppedToInstancesExtent: true)
+            else {
+                logger.warning("Couldn't generateMaskedImage from result of VNGenerateForegroundInstanceMaskRequest")
+                return nil
+            }
+            var outputCGImage: CGImage?
+            VTCreateCGImageFromCVPixelBuffer(output, options: nil, imageOut: &outputCGImage)
+            guard let outputCGImage else {
+                logger.warning("Failed to create a cgimage from pixel buffer")
+                return nil
+            }
+            return UIImage(cgImage: outputCGImage)
         }
     }
     
@@ -110,3 +144,4 @@ final class Item : Identifiable, Meta {
     }
 }
 
+fileprivate let logger = Logger(subsystem: OrganizeApp.bundleId, category: "Item")

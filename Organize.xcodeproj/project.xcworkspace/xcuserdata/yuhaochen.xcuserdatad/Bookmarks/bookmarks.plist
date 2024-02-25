@@ -458,16 +458,12 @@ final class SpaceScanViewModel: ObservableObject {
 			<dict>
 				<key>location-parameters</key>
 				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>492</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
+					<string>513</string>
 					<key>StartingLineNumber</key>
-					<string>492</string>
+					<string>513</string>
 					<key>Timestamp</key>
-					<string>730495536.912889</string>
+					<string>730537325.975729</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
