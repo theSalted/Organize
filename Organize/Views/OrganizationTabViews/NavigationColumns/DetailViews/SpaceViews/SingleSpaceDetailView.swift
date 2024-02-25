@@ -47,18 +47,22 @@ struct SingleSpaceDetailView: View {
                 }
                 .frame(height: 250)
                 
-                if let image = space.image {
-                    ZStack {
-                        Rectangle()
-                            .foregroundStyle(Color(uiColor: .secondarySystemBackground))
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 250)
-                            .clipped()
+                HStack {
+                    SpaceItemsDistributionPieChart(space: space)
+                        .frame(height: 250)
+                    if let image = space.image {
+                        ZStack {
+                            Rectangle()
+                                .foregroundStyle(Color(uiColor: .secondarySystemBackground))
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 250)
+                                .clipped()
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                }
+                }.frame(minHeight: 0)
                 
                 HStack(spacing: 10) {
                     CurtainStack(folds: 10) {
