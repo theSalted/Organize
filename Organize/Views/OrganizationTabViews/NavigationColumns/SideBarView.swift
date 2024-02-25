@@ -66,7 +66,7 @@ struct SideBarView: View {
                             .foregroundStyle(space.color)
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteSpaces)
             }
             
             if !items.isEmpty {
@@ -188,7 +188,7 @@ struct SideBarView: View {
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteSpaces(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
                 modelContext.delete(spaces[index])

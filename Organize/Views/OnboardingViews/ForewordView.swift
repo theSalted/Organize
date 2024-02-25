@@ -16,7 +16,7 @@ struct ForewordView: View {
                 .font(.system(.title, weight: .bold))
                 .multilineTextAlignment(.center)
             Text(
-                "The inspiration of this app comes from Grandma. She used to have this habit of keeping inventory of everything in a notebook. When I visited her during the New Year, she told me she stopped because her vision. I decided I would help her to record again. Me being not so good at note taking, I decided to develop an app.")
+                "Welcome to Organize.\nThe idea for this app came from my grandma. She used to write everything down in a notebook, but she stopped because she couldn't see well anymore. When I visited her during the New Year, she told me about it. I'm not great at writing things down, so I decided to make this app to help her keep track of things again.\nThis app is dedicated to her.")
                 .font(.system(.body, design: .default, weight: .regular))
                 .lineSpacing(10)
                 .multilineTextAlignment(.center)
