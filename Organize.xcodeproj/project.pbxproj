@@ -178,6 +178,7 @@
 		8E27BD8D2B88C8C8003E0C09 /* GlowingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowingButtonStyle.swift; sourceTree = "<group>"; };
 		8E27BD8F2B88C9EC003E0C09 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8E27BD912B88CAD9003E0C09 /* OnboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewModel.swift; sourceTree = "<group>"; };
+		8E323A972B8BAB700060C351 /* OrganizeApp.swiftpm */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OrganizeApp.swiftpm; sourceTree = "<group>"; };
 		8E396E152B82881400508791 /* SpaceScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceScanView.swift; sourceTree = "<group>"; };
 		8E396E1A2B8289CD00508791 /* RoomCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureViewController.swift; sourceTree = "<group>"; };
 		8E396E1C2B828A9D00508791 /* SpaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceScanViewModel.swift; sourceTree = "<group>"; };
@@ -437,6 +438,7 @@
 		8E88ACF12B5C4CE5003BDB04 = {
 			isa = PBXGroup;
 			children = (
+				8E323A972B8BAB700060C351 /* OrganizeApp.swiftpm */,
 				8E88ACFC2B5C4CE5003BDB04 /* Organize */,
 				8E88ACFB2B5C4CE5003BDB04 /* Products */,
 			);
