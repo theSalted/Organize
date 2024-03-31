@@ -2,7 +2,7 @@
 
 Organize help you organize.
 
-Organize uses a wide range of technologies iPadOS, to provides a comprehensive  UI, AR, Photogrammetry, Computer Vision, Room Scanning, Machine Learning, Camera, and etc.
+Organize uses a wide range of technologies on iPadOS. Including technologies such as UI, AR, Photogrammetry, Computer Vision, Room Scanning, Machine Learning, Camera, and etc.
 
 UI & Application Frameworks
 - SwiftUI: UI/Application Framework
